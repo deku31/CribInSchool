@@ -15,6 +15,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
     //sliding puzzle script
     public GameObject progressbarpuzzle;
+    public GameObject progressbarTime;
     [Header("tiles")]
     public GameObject slidingpuzzleobj;
     //tiles atau kotak yang ada di dalam permainan
@@ -36,7 +37,7 @@ public class slidingpuzzlescript : MonoBehaviour
     public bool hitungwaktu;
     private float spawniconsearching = 1f;
     //icon searcing
-    public float gantikotak;
+    public float gantikotak=3f;
     //==============================================================
     public bool _pause;
     //==============================================================
@@ -54,6 +55,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
     private void Start()
     {
+        poskotakbenar = Random.Range(0, poskotak.Length);
         EndPanel.SetActive(false);
         lihatKotak = false;
         slidingPuzzle = true;
@@ -74,6 +76,33 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     private void Update()
     {
+        /*icon searching script*/
+        //menghitung waktu kembali kotak ke default
+        if (lihatKotak==true)
+        {
+            if (gantikotak>=0.1f)
+            {
+                gantikotak -= Time.deltaTime;
+            }
+            else
+            {
+                lihatKotak = false;
+                gantikotak = 3f;
+            }
+        }
+        //fungsi mengembalikan kotak default
+        else
+        {
+            for (int i = 0; i < Box.Length; i++)
+            {
+                Box[i].sprite = kotakdefault;
+                print("kembali" + i);
+                lihatKotak = false;
+            }
+        }
+        /*endiconsearching script*/
+
+        //menghitung waktu bermain puzzle
         if (hitungwaktu == true && solved == false)
         {
             waktu.waktu -= Time.deltaTime;
@@ -105,6 +134,7 @@ public class slidingpuzzlescript : MonoBehaviour
         {
             gantipuzzle();
             int posbenar = 0;
+            progressbar.current = 0;
             foreach (var i in tiles)
             {
                 if (i != null)
@@ -198,7 +228,6 @@ public class slidingpuzzlescript : MonoBehaviour
                             }
                         }
                     }
-                    
                 }
                 else
                 {
@@ -214,6 +243,7 @@ public class slidingpuzzlescript : MonoBehaviour
                         {
                             print("salah");
                             box.sprite = kotaksalah;
+                            gantikotak = 3f;
                             lihatKotak = true;
                         }
                     }
