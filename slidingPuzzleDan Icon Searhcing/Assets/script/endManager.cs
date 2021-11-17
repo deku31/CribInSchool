@@ -27,9 +27,16 @@ public class endManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sisaWaktu.text =string.Format("{0:00}", puzzle.waktu.waktu-1)+" detik";
         hasilAkhir.text = jawabanBenar.ToString();
 
+        if (puzzle.waktu.waktu-1>=0.1)
+        {
+            sisaWaktu.text = string.Format("{0:00}", puzzle.waktu.waktu - 1) + " detik";
+        }
+        else
+        {
+            sisaWaktu.text = "0";
+        }
         //panel akhir setting
         if (jawabanBenar==nilaitertinggi&&puzzle.waktu.waktu>=40)
         {
