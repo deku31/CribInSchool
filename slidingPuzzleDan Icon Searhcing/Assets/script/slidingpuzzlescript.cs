@@ -24,12 +24,16 @@ public class slidingpuzzlescript : MonoBehaviour
     public float jarak;
 
     //iconsearching script
+    public Box[] boxmanager;
     public GameObject iconsearchingObj;
     public SpriteRenderer[] Box;
     public Transform[] poskotak;
     public int poskotakbenar;
-    public Sprite kotakbenar, kotaksalah, kotakdefault;
-    public  bool lihatKotak;
+    //public Sprite kotakbenar, kotaksalah, kotakdefault;
+    public bool lihatKotak;
+
+    public int r = 0;
+
 
     //waktu
     public float time;
@@ -37,7 +41,7 @@ public class slidingpuzzlescript : MonoBehaviour
     public bool hitungwaktu;
     private float spawniconsearching = 1f;
     //icon searcing
-    public float gantikotak=3f;
+    public float gantikotak = 0.5f;
     //==============================================================
     public bool _pause;
     //==============================================================
@@ -78,16 +82,16 @@ public class slidingpuzzlescript : MonoBehaviour
     {
         /*icon searching script*/
         //menghitung waktu kembali kotak ke default
-        if (lihatKotak==true)
+        if (lihatKotak == true)
         {
-            if (gantikotak>=0.1f)
+            if (gantikotak >= 0.1f)
             {
                 gantikotak -= Time.deltaTime;
             }
             else
             {
                 lihatKotak = false;
-                gantikotak = 3f;
+                gantikotak = 0.5f;
             }
         }
         //fungsi mengembalikan kotak default
@@ -95,8 +99,7 @@ public class slidingpuzzlescript : MonoBehaviour
         {
             for (int i = 0; i < Box.Length; i++)
             {
-                Box[i].sprite = kotakdefault;
-                print("kembali" + i);
+                boxmanager[i].img.sprite = boxmanager[i].kotakdefault;
                 lihatKotak = false;
             }
         }
@@ -112,7 +115,7 @@ public class slidingpuzzlescript : MonoBehaviour
         if (solved == true)
         {
             print("selesai");
-            if (hitungwaktu==true)
+            if (hitungwaktu == true)
             {
                 time -= Time.deltaTime;
                 if (time < 0)
@@ -121,7 +124,7 @@ public class slidingpuzzlescript : MonoBehaviour
                     EndGame();
                 }
             }
-           
+
         }
         if (waktu.waktu < 0.1f)
         {
@@ -146,10 +149,10 @@ public class slidingpuzzlescript : MonoBehaviour
                     }
                 }
             }
-         
-            if (posbenar == tiles.Length )
+
+            if (posbenar == tiles.Length)
             {
-                if (slidingPuzzle==true)
+                if (slidingPuzzle == true)
                 {
                     end.jawabanBenar++;
                     slidingPuzzle = false;
@@ -160,6 +163,14 @@ public class slidingpuzzlescript : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 manager();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                for (int i = 0; i < boxmanager.Length; i++)
+                {
+                    boxmanager[i].click = false;
+                    boxmanager[i].transform.position = boxmanager[i].defaultPosition.position;
+                }
             }
         }
         if (Input.GetKey(KeyCode.Escape))
@@ -172,7 +183,7 @@ public class slidingpuzzlescript : MonoBehaviour
     //ganti puzzle
     private void gantipuzzle()
     {
-        if (slidingPuzzle==true)
+        if (slidingPuzzle == true)
         {
             slidingpuzzleobj.SetActive(true);
             iconsearchingObj.SetActive(false);
@@ -207,47 +218,76 @@ public class slidingpuzzlescript : MonoBehaviour
             else
             {
                 SpriteRenderer box = hit.transform.GetComponent<SpriteRenderer>();
+                //script kondisi icon benar
                 if (hit.transform.position == poskotak[poskotakbenar].position)
                 {
                     for (int i = 0; i < Box.Length; i++)
                     {
-                        if (lihatKotak == true && Box[i].sprite != kotakdefault)
+                        if (lihatKotak == true & poskotak[i].transform.position != box.transform.position)
                         {
-                            Box[i].sprite = kotakdefault;
-                            lihatKotak = false;
-                        }
-                        if (lihatKotak == false || box.transform.position == poskotak[i].transform.position)
-                        {
-                            box.sprite = kotakbenar;
-                            lihatKotak = true;
-
-                            if (solved==false)
+                            if (poskotakbenar !=i )
                             {
-                                end.jawabanBenar++;
-                                solved = true;
+                                boxmanager[poskotakbenar].click = true;
+                                boxmanager[poskotakbenar].lihat = true;
+                            }
+                            boxmanager[i].img.sprite = boxmanager[i].kotakdefault;
+                            lihatKotak = false;
+
+                        }
+                        if (lihatKotak == false || box.transform.position == poskotak[poskotakbenar].transform.position)
+                        {
+                            if (boxmanager[poskotakbenar].lihat == false)
+                            {
+                                box.sprite = boxmanager[poskotakbenar].kotakbenar;
+                                gantikotak = 0.5f;
+                                box.transform.tag = "Box2";
+                                lihatKotak = true;
+                            }
+                            else
+                            {
+                                boxmanager[poskotakbenar].click = true;
                             }
                         }
                     }
                 }
                 else
                 {
-                    for (int i = 0; i < Box.Length; i++)
+                    for (int i = 0; i < boxmanager.Length; i++)
                     {
-                        if (lihatKotak == true&&Box[i].sprite!=kotakdefault)
+                        if (lihatKotak == true & poskotak[i].transform.position != box.transform.position)
                         {
-                            Box[i].sprite = kotakdefault;
-                            print("kembali" + i);
+                            if (r != i)
+                            {
+                                boxmanager[r].click = true;
+                                boxmanager[r].lihat = true;
+                            }
+                            boxmanager[i].img.sprite = boxmanager[i].kotakdefault;
                             lihatKotak = false;
+
                         }
-                        if (lihatKotak == false || box.transform.position == poskotak[i].transform.position)
+
+                        if (lihatKotak == false && box.transform.position == poskotak[i].transform.position)
                         {
-                            print("salah");
-                            box.sprite = kotaksalah;
-                            gantikotak = 3f;
-                            lihatKotak = true;
+                            if (boxmanager[i].lihat == false)
+                            {
+                                r = i;
+                                print("salah");
+                                box.sprite = boxmanager[r].kotaksalah;
+                                gantikotak = 0.5f;
+                                lihatKotak = true;
+                                boxmanager[r].lihat = true;
+
+                            }
+                            else
+                            {
+                                boxmanager[i].click = true;
+                            }
                         }
+
                     }
                 }
+                lihatKotak = true;
+
             }
         }
     }
@@ -275,7 +315,7 @@ public class slidingpuzzlescript : MonoBehaviour
     {
         EndPanel.SetActive(true);
 
-        if (solved==false&&hitungwaktu==false)
+        if (solved == false && hitungwaktu == false)
         {
         }
     }
