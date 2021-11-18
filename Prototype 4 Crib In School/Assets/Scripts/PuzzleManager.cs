@@ -5,12 +5,10 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     [Header("TimeManager")]
-    public NewTimerManager timeBar;
     public GameObject progressBarTime;
 
     //Waktu
     public float time;
-    public NewTimerManager waktu;
     public bool hitungWaktu;
     public bool _pause;
 
@@ -30,23 +28,16 @@ public class PuzzleManager : MonoBehaviour
 
     public GameObject obj;
 
+    public GameObject gameComplete;
+    public GameObject puzzlePrefab;
 
     private void Start()
     {
-        Waktu();
 
         PuzzleNUmber = 0;
         slidingPuzzlePrefabs[urutanPuzzle].SetActive(true);
-        //munculpuzzle = true;
+        munculpuzzle = true;
         hitungScore = false;
-    }
-
-    public void Waktu()
-    {
-        waktu.waktu = waktu.menit * 60;
-        hitungWaktu = false;
-        timeBar.currentTime = waktu.waktu;
-        timeBar.maxLenghtTime = waktu.waktu;
     }
 
     private void Update()
@@ -117,5 +108,10 @@ public class PuzzleManager : MonoBehaviour
         Instantiate(jenis[urutanPuzzle], perent);
     }
 
-
+    public void EndGame()
+    {
+        Debug.Log("Game Over");
+        gameComplete.SetActive(true);
+        puzzlePrefab.SetActive(false);
+    }
 }

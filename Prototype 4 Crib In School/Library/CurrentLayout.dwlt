@@ -73,7 +73,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 96
+  controlID: 81
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,8 +142,8 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 931
-  m_MinSize: {x: 711, y: 474}
-  m_MaxSize: {x: 18006, y: 14024}
+  m_MinSize: {x: 713, y: 498}
+  m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
   controlID: 11
 --- !u!114 &7
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 880
     height: 504
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -215,10 +215,10 @@ MonoBehaviour:
     y: 0
     width: 469
     height: 931
-  m_MinSize: {x: 234, y: 474}
-  m_MaxSize: {x: 10004, y: 14024}
+  m_MinSize: {x: 234, y: 498}
+  m_MaxSize: {x: 10004, y: 14048}
   vertical: 1
-  controlID: 119
+  controlID: 24
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,8 +264,8 @@ MonoBehaviour:
     y: 0
     width: 469
     height: 415
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -434,19 +434,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/GamePlay
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\DATA DIO\2. STUDI INDEPENDEN\Prototype 4 Crib In School
+  m_LastProjectPath: C:\Users\Lezh\Documents\GitHub\CribInSchool\Prototype 4 Crib
+    In School
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 822e0000
     m_LastClickedID: 11906
-    m_ExpandedIDs: 0000000082260000da270000ea270000802900009c290000042a00004c2a00009c2b00002a2c0000ae2d00004a370000
+    m_ExpandedIDs: 000000002e26000086270000962700002c29000048290000b0290000e6290000f8290000482b0000d62b00005c2d000036330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -471,24 +472,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 334}
+    scrollPos: {x: 0, y: 218}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000082260000da270000ea270000802900009c290000042a00004c2a00009c2b00002a2c0000ae2d00004a370000
+    m_ExpandedIDs: ffffffff000000002e26000086270000962700002c29000048290000b0290000e6290000f8290000482b0000d62b0000c62c00005c2d000036330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PuzzleManager
+      m_OriginalName: PuzzleManager
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 9460
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -640,9 +641,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 910, y: 490, z: 0}
+    m_Target: {x: 0, y: -0.76, z: -0.97599983}
     speed: 2
-    m_Value: {x: 910, y: 490, z: 0}
+    m_Value: {x: 0, y: -0.76, z: -0.97599983}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -674,9 +675,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1030.2454
+    m_Target: 22
     speed: 2
-    m_Value: 1030.2454
+    m_Value: 22
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -717,20 +718,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 50230000
       m_LastClickedID: 0
-      m_ExpandedIDs: b8b4ffffd4fbffff922e0000a62e0000982f00009e2f0000
+      m_ExpandedIDs: e4c4fefff0c4fefff6cffeff02d0feff94dafeffa0dafeffbe0fffffc80ffffff0a7fffffaa7ffff3cc7ffff46c7ffff50c7ffff70f3ffff7cf3ffff4ef4ffff90f5ffffc2fbffff583700005c3700007037000024380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: TimeManager
-        m_OriginalName: TimeManager
+        m_Name: PuzzleManager
+        m_OriginalName: PuzzleManager
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 11996
+        m_UserData: -3204
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
