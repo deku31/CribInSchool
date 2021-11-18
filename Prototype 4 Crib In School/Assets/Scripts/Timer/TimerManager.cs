@@ -10,9 +10,6 @@ public class TimerManager : MonoBehaviour
 
     public GameObject puzzleManager;
 
-    bool aktif;
-    bool nonaktif;
-
     private void Awake()
     {
         BeginPause();
@@ -20,26 +17,31 @@ public class TimerManager : MonoBehaviour
 
     private void Start()
     {
-        aktif = true;
-        nonaktif = false;
 
         timer1.SetDuration(120).Begin();
     }
 
     public void Update()
     {
-        if (Input.GetKeyUp("p"))
+        if (!puzzleManager.gameObject.activeInHierarchy == false)
+        {
+            timer1.SetPaused(!timer1.IsPaused);
+        }
+
+        else if(!pausePanel.gameObject.activeInHierarchy == true)
+        {
+            timer1.SetPaused(!timer1.IsPaused);
+        }
+
+        //if (Input.GetKeyUp("p"))
         {
             //pausePanel.SetActive(true);
-            timer1.SetPaused(!timer1.IsPaused);
+           // timer1.SetPaused(!timer1.IsPaused);
         }
     }
 
     public void BeginPause()
     {
-        //if (puzzleManager.SetActive(false))
-        {
-            //timer1.SetPaused(!timer1.IsPaused);
-        }
+
     }
 }

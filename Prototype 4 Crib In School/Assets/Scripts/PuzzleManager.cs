@@ -33,17 +33,30 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        Waktu();
+
         PuzzleNUmber = 0;
         slidingPuzzlePrefabs[urutanPuzzle].SetActive(true);
-        munculpuzzle = true;
+        //munculpuzzle = true;
         hitungScore = false;
     }
+
+    public void Waktu()
+    {
+        waktu.waktu = waktu.menit * 60;
+        hitungWaktu = false;
+        timeBar.currentTime = waktu.waktu;
+        timeBar.maxLenghtTime = waktu.waktu;
+    }
+
     private void Update()
     {
+
 
         if (PuzzleNUmber==0)
         {
             slidingPuzzle();
+            
         }
 
         else if (PuzzleNUmber==1)
@@ -74,6 +87,8 @@ public class PuzzleManager : MonoBehaviour
             munculpuzzle = false;
             instance(slidingPuzzlePrefabs);
         }
+
+
         if ( GameObject.Find(slidingPuzzlePrefabs[urutanPuzzle].name + "(Clone)") == null&&PuzzleNUmber==0)
         {
             score += 1;

@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    public GameObject puzzleManager;
-
     [Header("Timer UI references")]
     [SerializeField] private Image uiFillImage;
     [SerializeField] private Text uiText;
