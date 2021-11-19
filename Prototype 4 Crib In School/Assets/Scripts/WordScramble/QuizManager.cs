@@ -27,6 +27,8 @@ public class QuizManager : MonoBehaviour
 
     public PuzzleManager _puzzleManager;
 
+    public GameObject puzzleScramble;
+
     private void Awake()
     {
         if (instance == null)
@@ -42,6 +44,8 @@ public class QuizManager : MonoBehaviour
         selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
+
+    
 
     void SetQuestion()
     {
@@ -150,6 +154,7 @@ public class QuizManager : MonoBehaviour
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                    
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
 
@@ -157,8 +162,7 @@ public class QuizManager : MonoBehaviour
                 {
                     Debug.Log("Game Complete"); //else game is complete
                     gameComplete.SetActive(true);
-                    FindObjectOfType<PuzzleManager>().EndGame();
-                    _puzzleManager.EndGame();
+                    Destroy(puzzleScramble);
                 }
             }
         }

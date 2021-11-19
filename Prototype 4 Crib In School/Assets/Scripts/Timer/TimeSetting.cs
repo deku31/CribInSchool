@@ -9,6 +9,7 @@ public class TimeSetting : MonoBehaviour
     public float waktu;
 
     public bool waktuAktif = true;
+    public GameObject puzzleScramble;
 
     public void SetText()
     {
@@ -37,7 +38,8 @@ public class TimeSetting : MonoBehaviour
         {
             Debug.Log("Game Over1");
             waktuAktif = false;
-            FindObjectOfType<PuzzleManager>().EndGame();
+            //FindObjectOfType<PuzzleManager>().EndGame();
+            Destroy(puzzleScramble);
         }
 
         SetText();

@@ -1414,7 +1414,7 @@ PrefabInstance:
         type: 3}
       propertyPath: slidingPuzzlePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 5991148510797285127, guid: 30c071409d69a884bb34fde0c7f40aaf,
+      objectReference: {fileID: 11827310486517168, guid: e586392ac6f0ca347a158cecae96ef56,
         type: 3}
     - target: {fileID: 7404696628083386712, guid: 0183e8aca7c1b1144b822a107a67e130,
         type: 3}
@@ -2414,6 +2414,7 @@ MonoBehaviour:
   textTimer: {fileID: 1421020537}
   waktu: 5
   waktuAktif: 1
+  puzzleScramble: {fileID: 0}
 --- !u!114 &1757346314
 MonoBehaviour:
   m_ObjectHideFlags: 0

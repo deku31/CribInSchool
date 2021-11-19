@@ -2874,6 +2874,7 @@ MonoBehaviour:
   - {fileID: 11827309364547644}
   _puzzleManager: {fileID: 7404696628083386712, guid: 0183e8aca7c1b1144b822a107a67e130,
     type: 3}
+  puzzleScramble: {fileID: 0}
 --- !u!114 &4468505904970326029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,8 +2888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 11827310552489463}
-  waktu: 3
+  waktu: 90
   waktuAktif: 1
+  puzzleScramble: {fileID: 11827310486517168}
 --- !u!1 &11827310744030735
 GameObject:
   m_ObjectHideFlags: 0
