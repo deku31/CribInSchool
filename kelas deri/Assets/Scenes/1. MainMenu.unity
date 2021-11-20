@@ -250,7 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 597357169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a80af362e696654798444618602f9c4, type: 3}
+  m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &597357171
@@ -300,8 +300,8 @@ RectTransform:
   m_Father: {fileID: 493491106}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.742125, y: 0.030000001}
-  m_AnchorMax: {x: 0.91452086, y: 0.19079168}
+  m_AnchorMin: {x: 0.742125, y: 0.04393826}
+  m_AnchorMax: {x: 0.9165209, y: 0.19079168}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: -109, y: -51}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -344,7 +344,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 607678234}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 597357170}
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &607678234
@@ -796,9 +807,9 @@ RectTransform:
   m_Father: {fileID: 493491106}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.505, y: 0.030000001}
-  m_AnchorMax: {x: 0.70400006, y: 0.19183335}
-  m_AnchoredPosition: {x: -0.24002075, y: -0.16992188}
+  m_AnchorMin: {x: 0.505, y: 0.04393826}
+  m_AnchorMax: {x: 0.69534856, y: 0.19183335}
+  m_AnchoredPosition: {x: -0.23999023, y: -0.16992188}
   m_SizeDelta: {x: -127.68, y: -51.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606885851

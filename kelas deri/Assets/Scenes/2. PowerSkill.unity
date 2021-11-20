@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,13 +142,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
-  m_Father: {fileID: 152324645}
-  m_RootOrder: 2
+  m_Father: {fileID: 83707694}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.70552087, y: 0.04433333}
   m_AnchorMax: {x: 0.777271, y: 0.14}
-  m_AnchoredPosition: {x: -0.32998657, y: 0.5}
-  m_SizeDelta: {x: 0.91, y: 0}
+  m_AnchoredPosition: {x: 439.0108, y: -399.17667}
+  m_SizeDelta: {x: 131.49513, y: 93.75334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40961312
 MonoBehaviour:
@@ -266,9 +266,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 613139617}
+  - {fileID: 40961311}
   m_Father: {fileID: 152324645}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -366,8 +368,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1601988455}
-  - {fileID: 613139617}
-  - {fileID: 40961311}
   - {fileID: 83707694}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -558,13 +558,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 152324645}
-  m_RootOrder: 1
+  m_Father: {fileID: 83707694}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83100003, y: 0.059000004}
   m_AnchorMax: {x: 0.94747925, y: 0.15451851}
-  m_AnchoredPosition: {x: 0, y: 0.5}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 708.41614, y: -384.87595}
+  m_SizeDelta: {x: 211.99222, y: 93.608154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613139618
 MonoBehaviour:
@@ -614,7 +614,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: gameplay 1
+          m_StringArgument: Gameplay1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -836,6 +836,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1982241566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a80af362e696654798444618602f9c4, type: 3}
+  m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
