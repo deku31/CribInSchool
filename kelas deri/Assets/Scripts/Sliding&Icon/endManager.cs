@@ -12,23 +12,23 @@ public class endManager : MonoBehaviour
     public Sprite[] berhasil,gagal;
 
     public GameObject papan;
-    public GameObject panelButon;
 
     public int jawabanBenar;
     //berdasarkan jumlah puzzle
     public int nilaitertinggi;
 
     public PuzzleManager puzzle;
-    // Start is called before the first frame update
-    void Start()
+    private bool ending;
+    void Awake()
     {
-
-    }   
+        ending = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //sisaWaktu.text =string.Format("{0:00}", puzzle.slidingscript[puzzle.urutanPuzzle].waktu.waktu-1)+" detik";
+        nilaitertinggi = puzzle.jumlahSoal;
+
         hasilAkhir.text = puzzle.score.ToString();
         //panel akhir setting
         if (jawabanBenar==nilaitertinggi)
@@ -36,12 +36,12 @@ public class endManager : MonoBehaviour
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
         }
-        else if (jawabanBenar==nilaitertinggi/2)
+        else if (jawabanBenar>=nilaitertinggi/2)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
         }
-        else
+        else 
         {
             title.sprite = gagal[0];
             grade.sprite = gagal[2];
@@ -59,7 +59,7 @@ public class endManager : MonoBehaviour
     public void close()
     {
         papan.SetActive(false);
-        panelButon.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Next()

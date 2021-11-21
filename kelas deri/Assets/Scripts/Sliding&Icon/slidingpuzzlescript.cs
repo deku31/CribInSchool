@@ -44,7 +44,7 @@ public class slidingpuzzlescript : MonoBehaviour
     public bool hitungwaktu;
     private float spawniconsearching = 1f;
     //icon searcing
-    public float gantikotak = 0.5f;
+    public float gantikotak = 0.2f;
     //==============================================================
     public bool _pause;
     //==============================================================
@@ -58,11 +58,11 @@ public class slidingpuzzlescript : MonoBehaviour
     [Header("managerPuzzle")]
     public bool slidingPuzzle;
     public int jawabanBenar;
-   
 
-
+    
     private void Start()
     {
+        pzm.jumlahSoal += 2;
         progressbarpuzzle.SetActive(true);
         poskotakbenar = Random.Range(0, poskotak.Length);
         lihatKotak = false;
@@ -95,7 +95,7 @@ public class slidingpuzzlescript : MonoBehaviour
             else
             {
                 lihatKotak = false;
-                gantikotak = 0.5f;
+                gantikotak = 0.2f;
             }
         }
         //fungsi mengembalikan kotak default
@@ -159,7 +159,7 @@ public class slidingpuzzlescript : MonoBehaviour
             {
                 if (slidingPuzzle == true)
                 {
-                    jawabanBenar++;
+                    pzm.score++;
                     slidingPuzzle = false;
                 }
                 progressbarpuzzle.SetActive(false);
@@ -244,7 +244,7 @@ public class slidingpuzzlescript : MonoBehaviour
                             if (boxmanager[poskotakbenar].lihat == false)
                             {
                                 box.sprite = boxmanager[poskotakbenar].kotakbenar;
-                                gantikotak = 0.5f;
+                                gantikotak = 0.2f;
                                 box.transform.tag = "Box2";
                                 lihatKotak = true;
                             }
@@ -277,7 +277,7 @@ public class slidingpuzzlescript : MonoBehaviour
                             {
                                 r = i;
                                 box.sprite = boxmanager[r].kotaksalah;
-                                gantikotak = 0.5f;
+                                gantikotak = 0.2f;
                                 lihatKotak = true;
                                 boxmanager[r].lihat = true;
 

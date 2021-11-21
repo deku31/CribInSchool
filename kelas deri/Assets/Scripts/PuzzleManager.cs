@@ -47,12 +47,16 @@ public class PuzzleManager : MonoBehaviour
     //memunculkan btn popup
     public GameObject btnPopuppuzzle;
 
+    //menghitung jumlah soal seluruh puzzle
+    public int jumlahSoal;
+
     //end game
     public GameObject EndPanel;
     public endManager end;
 
     private void Start()
     {
+        jumlahSoal = 0;
         puzzleanim = GetComponent<Animator>();/*mengambil komponen animator*/
         //PuzzleNUmber = Random.Range(0,jumlahPuzzle);
         SlidingpuzzlePrefabs[urutanPuzzle].SetActive(true);
@@ -61,7 +65,7 @@ public class PuzzleManager : MonoBehaviour
     }
     private void Update()
     {
-        end.jawabanBenar = score;
+       
 
         if (PuzzleNUmber == 0)
         {
@@ -75,6 +79,8 @@ public class PuzzleManager : MonoBehaviour
         }
         else
         {
+            end.nilaitertinggi = jumlahSoal;
+            end.jawabanBenar = score;
             EndPanel.SetActive(true);
         }
         if (player.munculPuzzle == true)
@@ -88,6 +94,7 @@ public class PuzzleManager : MonoBehaviour
     //=============================================================================================================================
     private void WordScramble()
     {
+        wordScrambleScript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
             munculpuzzle = false;
@@ -95,12 +102,10 @@ public class PuzzleManager : MonoBehaviour
         }
         if (GameObject.Find(_WordScramble[urutanPuzzle].name + "(Clone)") == null)
         {
-            score += 1;
             munculpuzzle = true;
             PuzzleNUmber += 1;
         }
     }    
-    //=============================================================================================================================
     //=============================================================================================================================
     private void slidingPuzzle()
     {

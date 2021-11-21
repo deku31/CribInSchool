@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 7548796264600967255}
   - component: {fileID: 7548796264600967248}
   m_Layer: 0
-  m_Name: SlidingPuzzle&iconSearch
+  m_Name: SlidingPuzzle&IconSearch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3118,6 +3118,7 @@ MonoBehaviour:
   - {fileID: 2456878919157763644}
   time: {fileID: 2883678959539910733}
   progressbar: {fileID: 1756583028088157480}
+  solved: 0
 --- !u!114 &1756583028088157480
 MonoBehaviour:
   m_ObjectHideFlags: 0

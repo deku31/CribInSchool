@@ -30,6 +30,8 @@ public class QuizManager : MonoBehaviour
     public progressbarTimeWordScramble progressbar;
     public bool solved;
 
+    public PuzzleManager pzm;
+
     private void Awake()
     {
         if (instance == null)
@@ -166,13 +168,33 @@ public class QuizManager : MonoBehaviour
                 Debug.Log("Correct Answer");
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
-
+                pzm.score++;
+                pzm.jumlahSoal += 1;
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
                 else if(currentQuestionIndex >= questionDataScriptable.questions.Count)
+                {
+                    Destroy(this.gameObject);
+                    solved = true;
+                    Debug.Log("Game Complete"); //else game is complete
+                }
+            }
+            else
+            {
+                pzm.jumlahSoal += 1;
+                time.waktu -= 5;
+                gameStatus = GameStatus.Next; //set the game status
+                currentQuestionIndex++; //increase currentQuestionIndex
+
+                //if currentQuestionIndex is less that total available questions
+                if (currentQuestionIndex < questionDataScriptable.questions.Count)
+                {
+                    Invoke("SetQuestion", 0.5f); //go to next question
+                }
+                else if (currentQuestionIndex >= questionDataScriptable.questions.Count)
                 {
                     Destroy(this.gameObject);
                     solved = true;
@@ -189,7 +211,9 @@ public class QuizManager : MonoBehaviour
             int index = selectedWordsIndex[selectedWordsIndex.Count - 1];
             optionsWordList[index].gameObject.SetActive(true);
             selectedWordsIndex.RemoveAt(selectedWordsIndex.Count - 1);
-            answerWordList[currentAnswerIndex].SetWord('_');
+            answerWordList[currentAnswerIndex].gameObject.SetActive(true);
+            answerWordList[currentAnswerIndex].SetWord(answerWord[currentAnswerIndex]);
+
         }
     }
 
