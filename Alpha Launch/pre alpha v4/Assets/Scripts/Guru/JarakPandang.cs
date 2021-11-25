@@ -19,14 +19,50 @@ public class JarakPandang : MonoBehaviour
     public GameObject _puzzle; //puzzle manager
     public GameObject _endPanel; //end progress
 
+
     public void Start()
     {
 
-        _puzzle = GameObject.FindGameObjectWithTag("MainCamera");
-        _endPanel = GameObject.FindGameObjectWithTag("EndPanel");
-        
+        _puzzle = FindInActiveObjectByName("PuzzleManager");
+
+        _endPanel = FindInActiveObjectByTag("EndPanel");
+
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+    }
+
+    GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
+
+    GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
+    {
+        
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].CompareTag(tag))
+                {
+                    
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
     }
 
     public IEnumerator FOVRoutine()
@@ -57,12 +93,13 @@ public class JarakPandang : MonoBehaviour
                 {
                     canSeePlayer = true;
 
-                    if (canSeePlayer == true && _puzzle.activeSelf == false)
+                    if (canSeePlayer == true && _puzzle.activeSelf == true)
                     {
+                        
                         _endPanel.SetActive(true);
+                        
                         Debug.Log("Kamu Ketahuan");
                     }
-                    
                 }
                 else
                 {

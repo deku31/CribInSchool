@@ -30,6 +30,8 @@ public class endManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         nilaitertinggi = puzzle.jumlahSoal;
 
         hasilAkhir.text = puzzle.score.ToString();
@@ -68,10 +70,5 @@ public class endManager : MonoBehaviour
     public void Next()
     {
         SceneManager.LoadScene("Gameplay1");
-    }
-
-    public void EndPanel()
-    {
-        endPanel.SetActive(true);
     }
 }
