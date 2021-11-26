@@ -340,10 +340,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 60
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594334944696191019}
   - component: {fileID: 7603460810536123364}
+  - component: {fileID: 3038808470263617786}
   m_Layer: 0
   m_Name: FOV
   m_TagString: Untagged
@@ -434,6 +435,25 @@ MonoBehaviour:
   playerRef: {fileID: 0}
   _puzzle: {fileID: 0}
   _endPanel: {fileID: 0}
+--- !u!95 &3038808470263617786
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791900939337450516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 016bde9ed54cafa4194806c88f07b546, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7589515516049505942
 GameObject:
   m_ObjectHideFlags: 0
