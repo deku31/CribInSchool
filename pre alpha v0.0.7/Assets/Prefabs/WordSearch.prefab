@@ -91,7 +91,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.25
+  orthographic size: 6.3366895
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -596,6 +596,9 @@ MonoBehaviour:
   x: 0
   cek: 0
   solved: 0
+  barPlayer: {fileID: 8729899759200081817, guid: ad986dd9d8c21674b986b4a2bba5ae34,
+    type: 3}
+  progresBarPlayer: {fileID: 0}
 --- !u!114 &4190133684801984441
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,11 @@ public class WordChecker : MonoBehaviour
     public int x;
     public bool cek;
     public bool solved;
+
+    // Bar Player-------------------------
+    public ProgressBarPlayer barPlayer;
+    public GameObject progresBarPlayer;
+
     private void OnEnable()
     {
         GameEvent.OnChecksquare += SquareSelected;
@@ -42,6 +47,11 @@ public class WordChecker : MonoBehaviour
     }
     void Start()
     {
+        // Bar Player
+        progresBarPlayer = FindInActiveObjectByTag("BarPlayer");
+        progresBarPlayer.SetActive(true);
+        barPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        //-----------------------------------------------------
         timer.waktu = timer.menit * 60;
         progressbar.maxlenghtTime = timer.waktu;
         progressbar.currentTime = timer.waktu;
@@ -54,6 +64,8 @@ public class WordChecker : MonoBehaviour
         CheckBoard();
         if (solved==false)
         {
+            //barPlayer.current = 0; //Bar Player
+
             timer.waktu -= Time.deltaTime;
             progressbar.currentTime = timer.waktu;
         }
@@ -67,7 +79,9 @@ public class WordChecker : MonoBehaviour
             }
             if(solved)
             {
-                Destroy(this.gameObject);
+                barPlayer.current = 1; // Bar Player
+                
+                //Destroy(this.gameObject);
             }
         }
 
@@ -206,5 +220,23 @@ public class WordChecker : MonoBehaviour
             print("sukses");
             solved = true;
         }
+    }
+
+    GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
+    {
+
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].CompareTag(tag))
+                {
+
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
     }
 }
