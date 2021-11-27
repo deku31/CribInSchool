@@ -30,7 +30,7 @@ public class PuzzleManager : MonoBehaviour
     public QuizManager[] wordScrambleScript;
 
     public GameObject[] wordSearchingPref;
-    public WordGrid[] WordSearchingScript;
+    public WordChecker[] WordSearchingScript;
 
     public Transform perent;/*berfungsi tempan instance atau tempat munculnya puzzle*/
     //nomor puzzle
@@ -85,9 +85,10 @@ public class PuzzleManager : MonoBehaviour
         }
         else
         {
-            end.nilaitertinggi = jumlahSoal;
-            end.jawabanBenar = score;
-            EndPanel.SetActive(true);
+            keluar();
+            //end.nilaitertinggi = jumlahSoal;
+            //end.jawabanBenar = score;
+            //EndPanel.SetActive(true);
         }
         if (player.munculPuzzle == true)
         {
@@ -133,6 +134,7 @@ public class PuzzleManager : MonoBehaviour
     //=============================================================================================================================
     private void WordSearching()
     {
+        WordSearchingScript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
             munculpuzzle = false;

@@ -16,6 +16,6 @@ public class positionSetting : MonoBehaviour
     void Update()
     {
         progresPuzzle.position = transform.position;
-        progresPuzzle.transform.localScale = this.transform.localScale;
+        //progresPuzzle.transform.localScale = this.transform.localScale;
     }
 }

@@ -7,6 +7,8 @@ public class WordChecker : MonoBehaviour
     //timemanger
     public timeManager timer;
     public progressbarTimeWordScramble progressbar;//script progresbarnya sama dengan word scramble jadi ku pake
+    //puzzle manager
+    public PuzzleManager pzm;
 
     public GameData currentGameData;
 
@@ -42,6 +44,7 @@ public class WordChecker : MonoBehaviour
     }
     private void Awake()
     {
+        pzm.jumlahSoal = currentGameData.selectBoardData.searchingWords.Count;
         x = currentGameData.selectBoardData.searchingWords.Count;
         solved = false;
     }
@@ -69,7 +72,10 @@ public class WordChecker : MonoBehaviour
             timer.waktu -= Time.deltaTime;
             progressbar.currentTime = timer.waktu;
         }
-        
+        if (timer.waktu<=0.1f)
+        {
+            Destroy(this.gameObject);
+        }
         if (Input.GetMouseButtonUp(0))
         {
             if (cek == true)
@@ -80,8 +86,7 @@ public class WordChecker : MonoBehaviour
             if(solved)
             {
                 barPlayer.current = 1; // Bar Player
-                
-                //Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
         }
 
@@ -143,7 +148,7 @@ public class WordChecker : MonoBehaviour
             {
                 GameEvent.correctWordMethod(_word, correctList);
                 x -= 1;
-                print(x);
+                pzm.score +=1;
                 _word = string.Empty;
                 cek = false;
                 return;
