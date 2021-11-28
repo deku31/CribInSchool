@@ -7,8 +7,11 @@ public class Gamemanager : MonoBehaviour
     public player _PlayerManager;
     public guruMangaer _GuruManger;
     public PuzzleManager _PuzzleManager;
-    public JarakPandang _JarakPandang;
-
+    private PauseManager _PauseManager;
+    private void Awake()
+    {
+        _PauseManager = GameObject.Find("gameplaymanager").GetComponent<PauseManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +21,11 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_PlayerManager.munculPuzzle==false)
             {
-                Application.Quit();
+                _PauseManager.Pause();
             }
             else if (_PlayerManager.puzzle==true)
             {

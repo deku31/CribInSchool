@@ -8,6 +8,7 @@ public class slidingpuzzlescript : MonoBehaviour
 {
     //gamemanager
     public PuzzleManager pzm;
+    ProgressBarPlayer progresplayer;
 
     [Header("ProgressBar")]
     public progressBarScript progressbar;
@@ -59,7 +60,10 @@ public class slidingpuzzlescript : MonoBehaviour
     public bool slidingPuzzle;
     public int jawabanBenar;
 
-    
+    private void Awake()
+    {
+        progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+    }
     private void Start()
     {
         pzm.jumlahSoal += 2;
@@ -120,6 +124,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
         if (solved == true)
         {
+            progresplayer.current++;
             pzm.score++;
             if (hitungwaktu == true)
             {
@@ -160,6 +165,7 @@ public class slidingpuzzlescript : MonoBehaviour
             {
                 if (slidingPuzzle == true)
                 {
+                    progresplayer.current++;
                     pzm.score++;
                     slidingPuzzle = false;
                 }

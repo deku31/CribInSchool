@@ -157,7 +157,7 @@ public class WordGrid : MonoBehaviour
     private float GetHalfScreenWidth()
     {
         float height = Camera.main.orthographicSize * 2;
-        float width = (1.7f * height) * Screen.width / Screen.height;
+        float width = (1.4f * height) * Screen.width / Screen.height;
         return width / 2;
     }
 }
