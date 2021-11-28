@@ -21,7 +21,7 @@ public class FitToCam : MonoBehaviour
     {
         float unitsPerPixel = sceneWidth / Screen.width;
 
-        float desiredHalfHeight =unitsPerPixel * Screen.height * 0.55f;
+        float desiredHalfHeight =unitsPerPixel * Screen.height * 0.6f;
 
         _camera.orthographicSize = desiredHalfHeight;
     }
