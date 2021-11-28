@@ -920,7 +920,7 @@ MonoBehaviour:
   WordSearchingScript:
   - {fileID: 3145171775230084367, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
   perent: {fileID: 95810395}
-  PuzzleNUmber: 0
+  PuzzleNUmber: 2
   jumlahPuzzle: 2
   urutanPuzzle: 0
   munculpuzzle: 0
