@@ -8,7 +8,9 @@ public class slidingpuzzlescript : MonoBehaviour
 {
     //gamemanager
     public PuzzleManager pzm;
-    ProgressBarPlayer progresplayer;
+    public ProgressBarPlayer progresPlayer;
+    private int _progresPlayer;
+    
 
     [Header("ProgressBar")]
     public progressBarScript progressbar;
@@ -62,10 +64,12 @@ public class slidingpuzzlescript : MonoBehaviour
 
     private void Awake()
     {
-        progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        progresPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
     }
     private void Start()
     {
+        _progresPlayer = progresPlayer.current;
+
         pzm.jumlahSoal += 2;
         progressbarpuzzle.SetActive(true);
         poskotakbenar = Random.Range(0, poskotak.Length);
@@ -124,7 +128,9 @@ public class slidingpuzzlescript : MonoBehaviour
 
         if (solved == true)
         {
-            progresplayer.current++;
+            _progresPlayer++;
+            progresPlayer.current = _progresPlayer * 1;
+
             pzm.score++;
             if (hitungwaktu == true)
             {
@@ -148,6 +154,7 @@ public class slidingpuzzlescript : MonoBehaviour
         {
             gantipuzzle();
             int posbenar = 0;
+            
             progressbar.current = 0;
             foreach (var i in tiles)
             {
@@ -163,9 +170,13 @@ public class slidingpuzzlescript : MonoBehaviour
 
             if (posbenar == tiles.Length)
             {
+
                 if (slidingPuzzle == true)
                 {
-                    progresplayer.current++;
+                    _progresPlayer++;
+                    progresPlayer.current = _progresPlayer * 1;
+
+
                     pzm.score++;
                     slidingPuzzle = false;
                 }
@@ -236,6 +247,8 @@ public class slidingpuzzlescript : MonoBehaviour
                     {
                         if (lihatKotak == true & poskotak[i].transform.position != box.transform.position)
                         {
+                            
+
                             if (poskotakbenar !=i )
                             {
                                 boxmanager[poskotakbenar].click = true;

@@ -29,8 +29,8 @@ public class WordChecker : MonoBehaviour
     public bool solved;
 
     // Bar Player-------------------------
-    public ProgressBarPlayer barPlayer;
-    public GameObject progresBarPlayer;
+    public ProgressBarPlayer progresPlayer;
+    private int _progresPlayer;
 
     private void OnEnable()
     {
@@ -44,6 +44,8 @@ public class WordChecker : MonoBehaviour
     }
     private void Awake()
     {
+        progresPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+
         pzm.jumlahSoal = currentGameData.selectBoardData.searchingWords.Count;
         x = currentGameData.selectBoardData.searchingWords.Count;
         solved = false;
@@ -51,9 +53,8 @@ public class WordChecker : MonoBehaviour
     void Start()
     {
         // Bar Player
-        progresBarPlayer = FindInActiveObjectByTag("BarPlayer");
-        progresBarPlayer.SetActive(true);
-        barPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        _progresPlayer = progresPlayer.current;
+
         //-----------------------------------------------------
         timer.waktu = timer.menit * 60;
         progressbar.maxlenghtTime = timer.waktu;
@@ -85,7 +86,9 @@ public class WordChecker : MonoBehaviour
             }
             if(solved)
             {
-                barPlayer.current = 1; // Bar Player
+                _progresPlayer++;
+                progresPlayer.current = _progresPlayer * 1;
+
                 Destroy(this.gameObject);
             }
         }

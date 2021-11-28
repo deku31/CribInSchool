@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pzm: {fileID: 0}
+  progresPlayer: {fileID: 0}
   progressbar: {fileID: 7548796264462092271}
   progressbarpuzzle: {fileID: 7548796265843633457}
   progressbarTime: {fileID: 7548796265599701772}

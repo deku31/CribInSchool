@@ -597,9 +597,7 @@ MonoBehaviour:
   x: 0
   cek: 0
   solved: 0
-  barPlayer: {fileID: 8729899759200081817, guid: ad986dd9d8c21674b986b4a2bba5ae34,
-    type: 3}
-  progresBarPlayer: {fileID: 0}
+  progresPlayer: {fileID: 0}
 --- !u!114 &4190133684801984441
 MonoBehaviour:
   m_ObjectHideFlags: 0

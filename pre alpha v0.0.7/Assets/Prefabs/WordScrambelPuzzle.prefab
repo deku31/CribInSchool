@@ -3121,6 +3121,7 @@ MonoBehaviour:
   progressbar: {fileID: 1756583028088157480}
   solved: 0
   pzm: {fileID: 0}
+  progresPlayer: {fileID: 0}
 --- !u!114 &1756583028088157480
 MonoBehaviour:
   m_ObjectHideFlags: 0

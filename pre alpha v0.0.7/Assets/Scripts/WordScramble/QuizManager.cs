@@ -32,17 +32,25 @@ public class QuizManager : MonoBehaviour
 
     public PuzzleManager pzm;
 
+    public ProgressBarPlayer progresPlayer;
+    private int _progresPlayer;
+
     private void Awake()
     {
+        progresPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+
         if (instance == null)
             instance = this;
         else
             Destroy(this.gameObject);
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        _progresPlayer = progresPlayer.current;
+
         pzm.jumlahSoal += 4;
         solved = false;
         timeCheck = true;
@@ -138,6 +146,7 @@ public class QuizManager : MonoBehaviour
     /// <param name="value"></param>
     public void SelectedOption(WordData value)
     {
+        
         //if gameStatus is next or currentAnswerIndex is more or equal to answerWord length
         if (gameStatus == GameStatus.Next || currentAnswerIndex >= answerWord.Length) return;
 
@@ -166,6 +175,8 @@ public class QuizManager : MonoBehaviour
             //if correctAnswer is true
             if (correctAnswer)
             {
+                //int _progresPlayer = progresPlayer.current;
+
                 Debug.Log("Correct Answer");
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
@@ -173,10 +184,15 @@ public class QuizManager : MonoBehaviour
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                    
+
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
                 else if(currentQuestionIndex >= questionDataScriptable.questions.Count)
                 {
+                    _progresPlayer++;
+                    progresPlayer.current = _progresPlayer * 1;
+                    
                     Destroy(this.gameObject);
                     solved = true;
                     Debug.Log("Game Complete"); //else game is complete
