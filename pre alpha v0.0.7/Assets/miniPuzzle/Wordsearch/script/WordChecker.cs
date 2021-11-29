@@ -29,8 +29,13 @@ public class WordChecker : MonoBehaviour
     public bool solved;
 
     // Bar Player-------------------------
-    public ProgressBarPlayer progresPlayer;
-    private int _progresPlayer;
+    public ProgressBarPlayer barPlayer;
+    public GameObject progresBarPlayer;
+
+
+    //line test
+    public Vector3 starline;
+    public Vector3 endline;
 
     private void OnEnable()
     {
@@ -44,8 +49,6 @@ public class WordChecker : MonoBehaviour
     }
     private void Awake()
     {
-        progresPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
-
         pzm.jumlahSoal = currentGameData.selectBoardData.searchingWords.Count;
         x = currentGameData.selectBoardData.searchingWords.Count;
         solved = false;
@@ -53,8 +56,9 @@ public class WordChecker : MonoBehaviour
     void Start()
     {
         // Bar Player
-        _progresPlayer = progresPlayer.current;
-
+        progresBarPlayer = FindInActiveObjectByTag("BarPlayer");
+        progresBarPlayer.SetActive(true);
+        barPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
         //-----------------------------------------------------
         timer.waktu = timer.menit * 60;
         progressbar.maxlenghtTime = timer.waktu;
@@ -86,14 +90,12 @@ public class WordChecker : MonoBehaviour
             }
             if(solved)
             {
-                _progresPlayer++;
-                progresPlayer.current = _progresPlayer * 1;
-
+                barPlayer.current ++; // Bar Player
                 Destroy(this.gameObject);
             }
         }
 
-
+        
         if (_assignPoints > 0 && Application.isEditor)
         {
             Debug.DrawRay(rayUp.origin, rayUp.direction * 4);
@@ -152,6 +154,8 @@ public class WordChecker : MonoBehaviour
                 GameEvent.correctWordMethod(_word, correctList);
                 x -= 1;
                 pzm.score +=1;
+                //DrawLine(starline, endline, Color.red);
+
                 _word = string.Empty;
                 cek = false;
                 return;
@@ -165,11 +169,13 @@ public class WordChecker : MonoBehaviour
 
     private bool IsPointOnTheRay(Ray currentRay, Vector3 point)
     {
+       
         var hits = Physics.RaycastAll(currentRay, 100.0f);
-        for (int i = 0; i < hits.Length; i++)
+       for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i].transform.position == point)
             {
+                //starline.position = point;
                 return true;
             }
         }
@@ -240,12 +246,26 @@ public class WordChecker : MonoBehaviour
             {
                 if (objs[i].CompareTag(tag))
                 {
-
                     return objs[i].gameObject;
                 }
             }
         }
         return null;
     }
-  
+    //mengambar garis di unity
+    public LineRenderer lR;
+
+    void DrawLine(Vector3 start, Vector3 end, Color color)
+    {
+        GameObject myLine = new GameObject();
+        myLine.transform.position = start;
+        myLine.AddComponent<LineRenderer>();
+        LineRenderer lr = myLine.GetComponent<LineRenderer>();
+        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+        lr.SetColors(color, color);
+        lr.SetWidth(0.1f, 0.1f);
+        lr.SetPosition(0, start);
+        lr.SetPosition(1, end);
+        //GameObject.Destroy(myLine, duration);
+    }
 }

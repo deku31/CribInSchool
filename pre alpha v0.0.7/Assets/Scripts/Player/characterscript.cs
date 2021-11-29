@@ -5,11 +5,11 @@ using UnityEngine;
 public class characterscript : MonoBehaviour
 {
     public bool tukangcontek;
-    public GameObject tanda;
+    public Transform tanda;
     public LayerMask layer;
     private void Start()
     {
-        tanda.SetActive(false);
+        //tanda.SetActive(false);
         manager();
     }
     private void manager()
@@ -21,19 +21,19 @@ public class characterscript : MonoBehaviour
         }
         else
         {
-            transform.gameObject.tag = "Untagged";
+            //transform.gameObject.tag = "player2";
             transform.gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }
     private void Update()
     {
-        if (tukangcontek==true)
-        {
-            tanda.SetActive(true);
-        }
-        else
-        {
-            tanda.SetActive(false);
-        }
+        //if (tukangcontek==true)
+        //{
+        //    tanda.SetActive(true);
+        //}
+        //else
+        //{
+        //    tanda.SetActive(false);
+        //}
     }
 }

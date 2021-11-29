@@ -117,4 +117,5 @@ public class GridSquare : MonoBehaviour
             GameEvent.ChecksquareMethod(_normalLetterData.letter, gameObject.transform.position, _index);
         }
     }
+    
 }

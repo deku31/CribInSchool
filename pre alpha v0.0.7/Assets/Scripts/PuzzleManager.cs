@@ -59,7 +59,7 @@ public class PuzzleManager : MonoBehaviour
     {
         jumlahSoal = 0;
         puzzleanim = GetComponent<Animator>();/*mengambil komponen animator*/
-        //PuzzleNUmber = Random.Range(0,jumlahPuzzle);
+        PuzzleNUmber = Random.Range(0,jumlahPuzzle);
         SlidingpuzzlePrefabs[urutanPuzzle].SetActive(true);
         munculpuzzle = true;
         hitungScore = false;
@@ -110,7 +110,7 @@ public class PuzzleManager : MonoBehaviour
         if (GameObject.Find(_WordScramble[urutanPuzzle].name + "(Clone)") == null)
         {
             munculpuzzle = true;
-            PuzzleNUmber += 1;
+            PuzzleNUmber = Random.Range(PuzzleNUmber,jumlahPuzzle) ;
         }
     }    
     //=============================================================================================================================

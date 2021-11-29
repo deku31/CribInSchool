@@ -12,6 +12,7 @@ TagManager:
   - EndPanel
   - PanelResult
   - BarPlayer
+  - player2
   layers:
   - Default
   - TransparentFX

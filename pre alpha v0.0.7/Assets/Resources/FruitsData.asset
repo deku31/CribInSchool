@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - answer: apel
+  - answer: mangga
+  - answer: jeruk
+  - answer: pepaya
