@@ -23,18 +23,21 @@ public class FieldOfView : MonoBehaviour {
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
-    public GameObject playerRef;
+    //public GameObject playerRef;
     public GameObject _puzzle; //puzzle manager
     public GameObject _endPanel; //end progress
 
-    void Start()
+    public void Awake()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        //playerRef = GameObject.FindGameObjectWithTag("Player");
 
         _puzzle = FindInActiveObjectByName("PuzzleManager");
 
         _endPanel = FindInActiveObjectByTag("EndPanel");
+    }
 
+    void Start()
+    {
         viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
