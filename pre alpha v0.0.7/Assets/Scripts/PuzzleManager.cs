@@ -50,6 +50,7 @@ public class PuzzleManager : MonoBehaviour
 
     //menghitung jumlah soal seluruh puzzle
     public int jumlahSoal;
+    public int jumlahseluruhpuzzle=3;
 
     //end game
     public GameObject EndPanel;
@@ -66,8 +67,6 @@ public class PuzzleManager : MonoBehaviour
     }
     private void Update()
     {
-       
-
         if (PuzzleNUmber == 0)
         {
             cam.enabled = false;
@@ -77,6 +76,7 @@ public class PuzzleManager : MonoBehaviour
         {
             cam.enabled = true;
             WordScramble();
+
         }
         else if (PuzzleNUmber == 2)
         {
@@ -85,7 +85,14 @@ public class PuzzleManager : MonoBehaviour
         }
         else
         {
-            keluar();
+            if (jumlahseluruhpuzzle==0)
+            {
+                keluar();
+            }
+            else if(jumlahseluruhpuzzle==1)
+            {
+                PuzzleNUmber=0;
+            }
             //end.nilaitertinggi = jumlahSoal;
             //end.jawabanBenar = score;
             //EndPanel.SetActive(true);
@@ -109,8 +116,10 @@ public class PuzzleManager : MonoBehaviour
         }
         if (GameObject.Find(_WordScramble[urutanPuzzle].name + "(Clone)") == null)
         {
+            jumlahseluruhpuzzle -= 1;
+
             munculpuzzle = true;
-            PuzzleNUmber = Random.Range(PuzzleNUmber,jumlahPuzzle) ;
+            PuzzleNUmber += 1;
         }
     }    
     //=============================================================================================================================
@@ -119,6 +128,7 @@ public class PuzzleManager : MonoBehaviour
         slidingscript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
+
             munculpuzzle = false;
             instance(SlidingpuzzlePrefabs);
 
@@ -126,8 +136,17 @@ public class PuzzleManager : MonoBehaviour
         if (GameObject.Find(SlidingpuzzlePrefabs[urutanPuzzle].name + "(Clone)") == null)
         {
             //score += 1;
+            jumlahseluruhpuzzle -= 1;
+            if (jumlahseluruhpuzzle > 1)
+            {
+                PuzzleNUmber += 1;
+            }
+            else if (jumlahseluruhpuzzle < 1)
+            {
+                PuzzleNUmber += jumlahPuzzle + 1;
+            }
             munculpuzzle = true;
-            PuzzleNUmber += 1;
+            
         }
       
     }
@@ -143,6 +162,8 @@ public class PuzzleManager : MonoBehaviour
         }
         if (GameObject.Find(wordSearchingPref[urutanPuzzle].name + "(Clone)") == null)
         {
+            jumlahseluruhpuzzle -= 1;
+
             //score += 1;
             munculpuzzle = true;
             PuzzleNUmber += 1;

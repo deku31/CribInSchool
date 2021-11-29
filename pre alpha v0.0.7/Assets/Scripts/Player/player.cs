@@ -23,6 +23,8 @@ public class player : MonoBehaviour
 
     public int jumlahPlayer;
     public int PencontekAwal;
+    public int temanPencontek;
+
 
     // int depan,tengah,acak;
     //public cekposisi[] cekpos;
@@ -34,6 +36,7 @@ public class player : MonoBehaviour
     public Transform posisibar;//membaca posisi bar kalo mau ganti objek tambahin function transform baru
     private void Start()
     {
+        temanPencontek = PencontekAwal;
         munculPuzzle = false;
         Invoke("addplayer", 0.9f);
     }

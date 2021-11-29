@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.450449, g: 0.5004494, b: 0.5751932, a: 1}
+  m_IndirectSpecularColor: {r: 0.45044857, g: 0.5004495, b: 0.5751923, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -928,6 +928,7 @@ MonoBehaviour:
   puzzleanim: {fileID: 198891970}
   btnPopuppuzzle: {fileID: 1719751241}
   jumlahSoal: 0
+  jumlahseluruhpuzzle: 3
   EndPanel: {fileID: 835164175}
   end: {fileID: 835164177}
 --- !u!95 &198891970
@@ -2205,6 +2206,7 @@ MonoBehaviour:
   nomorKursi: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   jumlahPlayer: 5
   PencontekAwal: 0
+  temanPencontek: 0
   munculPuzzle: 0
   _transfer: 0
   targetpostransfer: {fileID: 0}
