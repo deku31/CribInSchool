@@ -22,7 +22,7 @@ public class characterscript : MonoBehaviour
         else
         {
             //transform.gameObject.tag = "player2";
-            transform.gameObject.layer = LayerMask.NameToLayer("Nothing");
+            transform.gameObject.layer = layer;
         }
     }
     private void Update()

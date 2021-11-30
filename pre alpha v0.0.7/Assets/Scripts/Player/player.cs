@@ -33,6 +33,7 @@ public class player : MonoBehaviour
     //untuk transfer contekan
     public bool _transfer;
     public Transform targetpostransfer;//target player yang akan di bagikan contekan
+    public Transform postransferawal;//target player awal contekan
     public Transform posisibar;//membaca posisi bar kalo mau ganti objek tambahin function transform baru
     private void Start()
     {
@@ -63,6 +64,8 @@ public class player : MonoBehaviour
             }
             
         }
+        posisibar.position = targetpostransfer.position;
+        postransferawal.position = posisibar.position;
     }
     // Update is called once per frame
     void Update()
@@ -93,8 +96,11 @@ public class player : MonoBehaviour
                        
                         if (Input.GetKey(KeyCode.Mouse0))
                         {
-                            _transfer=true;//jika posisi player tidak sama maka transfer true
-                            targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
+                            if (_transfer==false&&selection.position.x!=postransferawal.position.x)
+                            {
+                                _transfer = true;//jika posisi player tidak sama maka transfer true
+                                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
+                            }
                         }
                     }
                     _slection = selection;
@@ -129,10 +135,6 @@ public class player : MonoBehaviour
             {
                 speedX *= -1;
             }
-            else
-            {
-                _transfer = false;
-            }
             //kondisi posisi z jika tidak sama dengan posisi target maka berikut pengaturannya
             if ((posisibar.position.z < postransfer.position.z - 0.01f))
             {
@@ -142,6 +144,10 @@ public class player : MonoBehaviour
             {
                 speedz *= -1;
             }
+            else
+            {
+                speedz = 0;
+            }
         }
         else
         {
@@ -150,6 +156,7 @@ public class player : MonoBehaviour
         posisibar.position = new Vector3(posisibar.position.x + speedX, posisibar.position.y, posisibar.position.z + speedz);
 
     }
+   
     public void openPuzzle()
     {
         maincamera.SetActive(false);

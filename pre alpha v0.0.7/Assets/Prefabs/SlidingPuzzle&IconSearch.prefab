@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresPuzzle: {fileID: 7548796265106318981}
+  playermanager: {fileID: 0}
 --- !u!1 &7548796264278561981
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7548796264340229238
 Transform:
   m_ObjectHideFlags: 0
@@ -394,8 +395,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7548796264462092268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.41, y: 0, z: 6.7}
-  m_LocalScale: {x: 0.97145, y: 0.97145, z: 0.97145}
+  m_LocalPosition: {x: 3.6082, y: 0.076553, z: 6.663}
+  m_LocalScale: {x: 1.0436491, y: 1.0436491, z: 1.0436491}
   m_Children:
   - {fileID: 7548796264921930270}
   - {fileID: 7548796266081720499}
@@ -889,7 +890,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.1875
+  orthographic size: 6.7500005
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3713,6 +3714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresPuzzle: {fileID: 7548796265843633458}
+  playermanager: {fileID: 0}
 --- !u!1 &7548796266096836397
 GameObject:
   m_ObjectHideFlags: 0

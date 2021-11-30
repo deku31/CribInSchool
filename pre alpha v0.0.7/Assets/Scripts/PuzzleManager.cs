@@ -93,9 +93,9 @@ public class PuzzleManager : MonoBehaviour
             {
                 PuzzleNUmber=0;
             }
-            //end.nilaitertinggi = jumlahSoal;
-            //end.jawabanBenar = score;
-            //EndPanel.SetActive(true);
+            end.nilaitertinggi = jumlahSoal;
+            end.jawabanBenar = score;
+            EndPanel.SetActive(true);
         }
         if (player.munculPuzzle == true)
         {
