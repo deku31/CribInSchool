@@ -53,11 +53,13 @@ public class PuzzleManager : MonoBehaviour
     public int jumlahseluruhpuzzle=3;
 
     //end game
+    public bool solvedPuzzle;
     public GameObject EndPanel;
     public endManager end;
 
     private void Start()
     {
+        solvedPuzzle = false;
         jumlahSoal = 0;
         puzzleanim = GetComponent<Animator>();/*mengambil komponen animator*/
         PuzzleNUmber = Random.Range(0,jumlahPuzzle);
@@ -93,9 +95,7 @@ public class PuzzleManager : MonoBehaviour
             {
                 PuzzleNUmber=0;
             }
-            end.nilaitertinggi = jumlahSoal;
-            end.jawabanBenar = score;
-            EndPanel.SetActive(true);
+           
         }
         if (player.munculPuzzle == true)
         {
@@ -176,6 +176,18 @@ public class PuzzleManager : MonoBehaviour
     }
     public void keluar()
     {
+        gamePlaycamera2.SetActive(false);
+        gamePlayCamera.SetActive(true);
+        gameObject.SetActive(false);
+        btnPopuppuzzle.SetActive(true);
+        player.munculPuzzle = false;
+    }
+    public void solved()
+    {
+        solvedPuzzle = true;
+        end.nilaitertinggi = jumlahSoal;
+        end.jawabanBenar = score;
+        EndPanel.SetActive(true);
         gamePlaycamera2.SetActive(false);
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);

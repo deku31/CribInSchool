@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class PesawatScript : MonoBehaviour
 {
-    public ProgressBarPlayer progresPlayer;
-    public int _progresPlayer;
-
-    private void Awake()
+    
+    public player playermanager;
+    public Gamemanager gamemanager;
+    public GameObject _endPanel;
+    /*
+     * jika terkena tag player maka posisi nya akan berubah ke posisi ditentukan
+     * jika terkena tag enemy bakal keluar panel end
+     */
+    private void OnTriggerEnter(Collider other)
     {
-        progresPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
-    }
-
-    void Start()
-    {
-        _progresPlayer = progresPlayer.current;
-    }
-
-    public void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 20), "Score : " + _progresPlayer);
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "TargetPesawat")
+        if (other.transform.tag == "player2")
         {
-            _progresPlayer++;
-            progresPlayer.current = _progresPlayer;
-            //Destroy(gameObject);
-            Debug.Log("Sudah Transfer");
+            print("a");
+            playermanager.pesawatpos.position = playermanager.targetpostransfer.position;
+            playermanager.pesawat.SetActive(false);
+            playermanager.postransferawal.position = playermanager.targetpostransfer.position;
+            playermanager._transfer = false;
+        }
+        else if (other.transform.tag =="enemy")
+        {
+            Destroy(playermanager.pesawat);
+            _endPanel.SetActive(true);
         }
     }
 }

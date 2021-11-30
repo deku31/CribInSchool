@@ -5,7 +5,8 @@ using UnityEngine;
 public class characterscript : MonoBehaviour
 {
     public bool tukangcontek;
-    public Transform tanda;
+    public GameObject tanda;
+    public Transform posisi;
     public LayerMask layer;
     private void Start()
     {
@@ -21,19 +22,20 @@ public class characterscript : MonoBehaviour
         }
         else
         {
-            //transform.gameObject.tag = "player2";
+            transform.gameObject.tag = "player2";
             transform.gameObject.layer = layer;
         }
     }
     private void Update()
     {
-        //if (tukangcontek==true)
-        //{
-        //    tanda.SetActive(true);
-        //}
-        //else
-        //{
-        //    tanda.SetActive(false);
-        //}
+        manager();
+        if (tukangcontek == true)
+        {
+            tanda.SetActive(true);
+        }
+        else
+        {
+            tanda.SetActive(false);
+        }
     }
 }

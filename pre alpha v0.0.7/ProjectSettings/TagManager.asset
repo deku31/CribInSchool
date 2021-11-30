@@ -13,6 +13,9 @@ TagManager:
   - PanelResult
   - BarPlayer
   - player2
+  - pesawat
+  - enemy
+  - guru
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,1 @@
+-itu di player ada script yang perlu diperbaiki coba perbaikin bang

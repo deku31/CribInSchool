@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresPuzzle: {fileID: 7548796265106318981}
-  playermanager: {fileID: 0}
 --- !u!1 &7548796264278561981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,7 +3713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresPuzzle: {fileID: 7548796265843633458}
-  playermanager: {fileID: 0}
 --- !u!1 &7548796266096836397
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class positionSetting : MonoBehaviour
 {
     public Transform progresPuzzle;
-    public player playermanager;
    
     // Start is called before the first frame update
     void Start()
@@ -20,15 +19,5 @@ public class positionSetting : MonoBehaviour
         progresPuzzle.transform.localScale = this.transform.localScale;
     }
     
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag=="Player")
-        {
-            print("a");
-            playermanager.posisibar.position =playermanager.targetpostransfer.position;
-            playermanager.postransferawal.position =playermanager.targetpostransfer.position;
-            playermanager._transfer=false;
-
-        }
-    }
+   
 }
