@@ -2193,9 +2193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2288ebac0aaa044b152bbb78423c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progres: 0
+  hasilProgres: 0
   playermanager: {fileID: 551273111}
   gamemanager: {fileID: 1378172961}
   _endPanel: {fileID: 835164175}
+  puzzleManager: {fileID: 198891969}
 --- !u!1 &546686431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,6 +6105,7 @@ GameObject:
   - component: {fileID: 1378172961}
   - component: {fileID: 1378172962}
   - component: {fileID: 1378172963}
+  - component: {fileID: 1378172964}
   m_Layer: 0
   m_Name: gameplaymanager
   m_TagString: Untagged
@@ -6168,6 +6172,18 @@ MonoBehaviour:
   maxlenght: 10
   current: 0
   imgProgressPuzzle: {fileID: 1297187583}
+--- !u!114 &1378172964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378172959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406957328
 GameObject:
   m_ObjectHideFlags: 0
@@ -7232,15 +7248,15 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1378172962}
-          m_MethodName: Restart
-          m_Mode: 1
+        - m_Target: {fileID: 1378172964}
+          m_MethodName: LoadScene
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: Level 1
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,

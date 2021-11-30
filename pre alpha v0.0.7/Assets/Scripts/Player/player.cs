@@ -16,6 +16,7 @@ public class player : MonoBehaviour
     public GameObject puzzle;
     public PuzzleManager pzm;
     [SerializeField] private string selecttag = "player2";
+    [SerializeField] private string _selecttag = "player3";
 
     [Header("Player")]
     public characterscript[]playerpref;
@@ -44,6 +45,11 @@ public class player : MonoBehaviour
         foreach (var player in playerpref)
         {
             player.name = "player2";
+        }
+
+        foreach (var player in playerpref)
+        {
+            player.name = "player3";
         }
     }
     private void Start()
@@ -104,6 +110,7 @@ public class player : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
+
                 if (selection.CompareTag("player2"))
                 {
                     var selectionrenderer = selection.GetComponent<Renderer>();
@@ -115,6 +122,28 @@ public class player : MonoBehaviour
                         if (Input.GetKey(KeyCode.Mouse0))
                         {
                             if (pzm.solvedPuzzle==true&&_transfer==false)
+                            {
+                                pesawat.SetActive(true);
+
+                                _transfer = true;//jika posisi player tidak sama maka transfer true
+                                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
+                            }
+                        }
+                    }
+                    _slection = selection;
+                }
+
+                else if (selection.CompareTag("player3"))
+                {
+                    var selectionrenderer = selection.GetComponent<Renderer>();
+                    if (selectionrenderer != null)
+                    {
+                        print(selectionrenderer.name);
+                        //selectionrenderer.material = material;
+
+                        if (Input.GetKey(KeyCode.Mouse0))
+                        {
+                            if (pzm.solvedPuzzle == true && _transfer == false)
                             {
                                 pesawat.SetActive(true);
 

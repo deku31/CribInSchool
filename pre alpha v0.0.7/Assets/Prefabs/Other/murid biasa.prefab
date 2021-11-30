@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4424521187348517893}
   m_Layer: 0
   m_Name: murid biasa
-  m_TagString: Untagged
+  m_TagString: player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
