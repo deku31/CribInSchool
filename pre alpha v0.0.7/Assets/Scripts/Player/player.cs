@@ -24,7 +24,7 @@ public class player : MonoBehaviour
     public int[] nomorKursi;
 
     public int jumlahPlayer;
-    public int PencontekAwal;
+    public int PencontekAwal; //Nomer Kursi Player Utama
     public int temanPencontek;
 
 

@@ -89,7 +89,7 @@ public class PuzzleManager : MonoBehaviour
         {
             if (jumlahseluruhpuzzle==0)
             {
-                keluar();
+                solved();
             }
             else if(jumlahseluruhpuzzle==1)
             {
@@ -187,7 +187,7 @@ public class PuzzleManager : MonoBehaviour
         solvedPuzzle = true;
         end.nilaitertinggi = jumlahSoal;
         end.jawabanBenar = score;
-        EndPanel.SetActive(true);
+        //EndPanel.SetActive(true);
         gamePlaycamera2.SetActive(false);
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);

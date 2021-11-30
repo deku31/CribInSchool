@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PesawatScript : MonoBehaviour
 {
-    
     public player playermanager;
     public Gamemanager gamemanager;
     public GameObject _endPanel;
@@ -16,7 +15,7 @@ public class PesawatScript : MonoBehaviour
     {
         if (other.transform.tag == "player2")
         {
-            print("a");
+            print("On The Way");
             playermanager.pesawatpos.position = playermanager.targetpostransfer.position;
             playermanager.pesawat.SetActive(false);
             playermanager.postransferawal.position = playermanager.targetpostransfer.position;
