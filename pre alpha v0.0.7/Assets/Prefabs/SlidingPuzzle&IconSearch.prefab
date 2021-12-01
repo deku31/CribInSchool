@@ -1781,6 +1781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35d43c5e23bb0248bed06daf32ff0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiomanager: {fileID: 0}
+  nomorPopup: 0
   Panel: {fileID: 0}
   popupButton: {fileID: 0}
 --- !u!1 &7548796265111822068

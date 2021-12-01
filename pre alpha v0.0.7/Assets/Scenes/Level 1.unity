@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.450449, g: 0.5004494, b: 0.5751932, a: 1}
+  m_IndirectSpecularColor: {r: 0.45044857, g: 0.5004495, b: 0.5751923, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2193,12 +2193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2288ebac0aaa044b152bbb78423c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progres: 0
-  hasilProgres: 0
   playermanager: {fileID: 551273111}
   gamemanager: {fileID: 1378172961}
   _endPanel: {fileID: 835164175}
-  puzzleManager: {fileID: 198891969}
 --- !u!1 &546686431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235ae2359c5a6f4d8b28c9bd59f62c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiomanager: {fileID: 918151072}
+  nomorPopup: 1
   maincamera: {fileID: 1042394397}
   camera: {fileID: 1039058531}
   btnPopuppuzzle: {fileID: 1719751241}
@@ -3405,6 +3404,152 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 892077479}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &918151071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918151074}
+  - component: {fileID: 918151073}
+  - component: {fileID: 918151072}
+  m_Layer: 0
+  m_Name: audio manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &918151072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918151071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2286498014c370a4ca1baa0782bc2dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmclip:
+  - {fileID: 8300000, guid: 0456a99ef81355c48aef434fff0afddc, type: 3}
+  popupclip:
+  - {fileID: 8300000, guid: a2477f49a353b784f92c9288afe6b3b5, type: 3}
+  - {fileID: 8300000, guid: 71f4b6af63dbc614e93449cc18d50d02, type: 3}
+  clickbuttonClip: {fileID: 8300000, guid: 18fb887a5e8f92a4b8957a64399f268a, type: 3}
+--- !u!82 &918151073
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918151071}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &918151074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918151071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.518749, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919721419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,7 +6250,6 @@ GameObject:
   - component: {fileID: 1378172961}
   - component: {fileID: 1378172962}
   - component: {fileID: 1378172963}
-  - component: {fileID: 1378172964}
   m_Layer: 0
   m_Name: gameplaymanager
   m_TagString: Untagged
@@ -6143,6 +6287,8 @@ MonoBehaviour:
   _PlayerManager: {fileID: 551273111}
   _GuruManger: {fileID: 21884722}
   _PuzzleManager: {fileID: 198891969}
+  bgmkelas: {fileID: 918151072}
+  nomorAudio: 0
 --- !u!114 &1378172962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6155,6 +6301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f3c0eaaf4f1b945ab7753d94c9b94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSfx: {fileID: 0}
   pausePanel: {fileID: 1487813533}
   gameIsPaused: 0
 --- !u!114 &1378172963
@@ -6172,18 +6319,6 @@ MonoBehaviour:
   maxlenght: 10
   current: 0
   imgProgressPuzzle: {fileID: 1297187583}
---- !u!114 &1378172964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378172959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1406957328
 GameObject:
   m_ObjectHideFlags: 0
@@ -7248,15 +7383,15 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1378172964}
-          m_MethodName: LoadScene
-          m_Mode: 5
+        - m_Target: {fileID: 1378172962}
+          m_MethodName: Restart
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Level 1
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,

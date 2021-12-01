@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class player : MonoBehaviour
 {
-
+    //audio manager
+    [SerializeField]private SoundManager audiomanager;
+    [SerializeField] private int nomorPopup;//menentukan sound popup mana yang akan keluar
     
     public GameObject maincamera;
     public GameObject camera;
@@ -16,7 +18,6 @@ public class player : MonoBehaviour
     public GameObject puzzle;
     public PuzzleManager pzm;
     [SerializeField] private string selecttag = "player2";
-    [SerializeField] private string _selecttag = "player3";
 
     [Header("Player")]
     public characterscript[]playerpref;
@@ -45,11 +46,6 @@ public class player : MonoBehaviour
         foreach (var player in playerpref)
         {
             player.name = "player2";
-        }
-
-        foreach (var player in playerpref)
-        {
-            player.name = "player3";
         }
     }
     private void Start()
@@ -110,15 +106,11 @@ public class player : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-
                 if (selection.CompareTag("player2"))
                 {
                     var selectionrenderer = selection.GetComponent<Renderer>();
                     if (selectionrenderer != null)
                     {
-                        print(selectionrenderer.name);
-                        //selectionrenderer.material = material;
-                       
                         if (Input.GetKey(KeyCode.Mouse0))
                         {
                             if (pzm.solvedPuzzle==true&&_transfer==false)
@@ -132,15 +124,11 @@ public class player : MonoBehaviour
                     }
                     _slection = selection;
                 }
-
-                else if (selection.CompareTag("player3"))
+                else if (selection.CompareTag("umpan"))
                 {
                     var selectionrenderer = selection.GetComponent<Renderer>();
                     if (selectionrenderer != null)
                     {
-                        print(selectionrenderer.name);
-                        //selectionrenderer.material = material;
-
                         if (Input.GetKey(KeyCode.Mouse0))
                         {
                             if (pzm.solvedPuzzle == true && _transfer == false)
@@ -152,7 +140,6 @@ public class player : MonoBehaviour
                             }
                         }
                     }
-                    _slection = selection;
                 }
             }
 
@@ -162,51 +149,15 @@ public class player : MonoBehaviour
     //function atau method untuk script tranfer
     void transfer(Transform postransfer)
     {
-        /*
-         * catatan 
-         * itu kecepatan nya blm ku atur agar balance
-         * jika z atau x sampai lebih dulu pada posisi objek nya akan goyang goyang
-         * coba perbaikin kecepatan biar balence  gak goyang goyang
-         */
-
-        float speedX=1.5f*Time.deltaTime;
-        float speedz=1f*Time.deltaTime;
-        //kondisi posisi x jika tidak sama dengan posisi target maka berikut pengaturannya
-        if (pesawatpos.position!=postransfer.position)
-        {
-            if ((pesawatpos.position.x < postransfer.position.x - 0.01f))
-            {
-                speedX *= 1;
-            }
-            else if ((pesawatpos.position.x > postransfer.position.x + 0.01f))
-            {
-                speedX *= -1;
-            }
-            //kondisi posisi z jika tidak sama dengan posisi target maka berikut pengaturannya
-            if ((pesawatpos.position.z < postransfer.position.z - 0.01f))
-            {
-                speedz *= 1;
-            }
-            else if ((pesawatpos.position.z > postransfer.position.z + 0.01f))
-            {
-                speedz *= -1;
-            }
-            else
-            {
-                speedz = 0;
-            }
-        }
-        else
-        {
-            _transfer = false;
-        }
-        pesawatpos.position = new Vector3(pesawatpos.position.x + speedX, pesawatpos.position.y, pesawatpos.position.z + speedz);
+        pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, 2f * Time.deltaTime);
     }
    
     public void openPuzzle()
     {
         if (_transfer==false)
         {
+            audiomanager.popupMetohod(nomorPopup);
+
             maincamera.SetActive(false);
             camera.SetActive(true);
             puzzle.SetActive(true);

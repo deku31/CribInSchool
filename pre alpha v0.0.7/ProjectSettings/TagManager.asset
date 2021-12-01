@@ -16,7 +16,8 @@ TagManager:
   - pesawat
   - enemy
   - guru
-  - player3
+  - umpan
+  - muridBiasa
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,8 @@ public class QuizManager : MonoBehaviour
 
     public PuzzleManager pzm;
     private ProgressBarPlayer progresplayer;
+
+    private int keluarke = 0;
     private void Awake()
     {
         // Bar Player
@@ -60,6 +62,7 @@ public class QuizManager : MonoBehaviour
     }
     private void Update()
     {
+        answerWordList[currentAnswerIndex /*+ keluarke*/].SetWord(answerWord[currentAnswerIndex /*+ keluarke*/]);
         if (timeCheck==true)
         {
             time.waktu -= Time.deltaTime;
@@ -109,6 +112,7 @@ public class QuizManager : MonoBehaviour
     //Method called on Reset Button click and on new question
     public void ResetQuestion()
     {
+        keluarke = 0;
         //activate all the answerWordList gameobject and set their word to "_"
         for (int i = 0; i < answerWordList.Length; i++)
         {
@@ -116,7 +120,9 @@ public class QuizManager : MonoBehaviour
         }
         for (int i = 0; i < answerWord.Length; i++)
         {
-            answerWordList[i].SetWord(answerWord[i]);
+
+            answerWordList[i].SetWord('-');
+
             answerWordLisTextDefault[i].color = new Color(answerWordLisTextDefault[i].color.r, answerWordLisTextDefault[i].color.g, answerWordLisTextDefault[i].color.b, 0.5f);
         }
 

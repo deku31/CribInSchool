@@ -8,9 +8,13 @@ public class Gamemanager : MonoBehaviour
     public guruMangaer _GuruManger;
     public PuzzleManager _PuzzleManager;
     private PauseManager _PauseManager;
+    [SerializeField]private SoundManager bgmkelas;
+    [SerializeField] private int nomorAudio;
     private void Awake()
     {
         _PauseManager = GameObject.Find("gameplaymanager").GetComponent<PauseManager>();
+        bgmkelas.bgmMethod(nomorAudio);
+
     }
     // Start is called before the first frame update
     void Start()
