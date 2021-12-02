@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class slidingpuzzlescript : MonoBehaviour
 {
+    [Header("audioManager")]
+    public SoundManager audiomanager;
+    [SerializeField]private int nomorSfx;//menentukan sfxpuzzle mana yang akan keluar
+
+
     //gamemanager
     public PuzzleManager pzm;
     ProgressBarPlayer progresplayer;
@@ -62,6 +67,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
     private void Awake()
     {
+        audiomanager = FindObjectOfType<SoundManager>();
         progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
     }
     private void Start()
@@ -141,6 +147,7 @@ public class slidingpuzzlescript : MonoBehaviour
         {
             //gameover
             hitungwaktu = false;
+            audiomanager.popupMetohod(4);
             EndGame();
         }
         //ketika solved bernilai true maka kotak tidak bisa dipindahkan lagi
@@ -165,6 +172,7 @@ public class slidingpuzzlescript : MonoBehaviour
             {
                 if (slidingPuzzle == true)
                 {
+                    audiomanager.slidingPuzzleMetohod(1);
                     progresplayer.current++;
                     pzm.score++;
                     slidingPuzzle = false;
@@ -218,6 +226,7 @@ public class slidingpuzzlescript : MonoBehaviour
             {
                 if (Vector2.Distance(emptyspace.position, hit.transform.position) < jarak)
                 {
+                    audiomanager.slidingPuzzleMetohod(nomorSfx);
                     Vector3 lastPosition = emptyspace.position;
                     Tiles tile = hit.transform.GetComponent<Tiles>();
                     emptyspace.position = tile.posisitarget;
@@ -245,7 +254,7 @@ public class slidingpuzzlescript : MonoBehaviour
                             lihatKotak = false;
 
                         }
-                        if (lihatKotak == false || box.transform.position == poskotak[poskotakbenar].transform.position)
+                        if (lihatKotak == false && box.transform.position == poskotak[poskotakbenar].transform.position)
                         {
                             if (boxmanager[poskotakbenar].lihat == false)
                             {
@@ -253,10 +262,12 @@ public class slidingpuzzlescript : MonoBehaviour
                                 gantikotak = 0.2f;
                                 box.transform.tag = "Box2";
                                 lihatKotak = true;
+                                audiomanager.slidingPuzzleMetohod(nomorSfx);
                             }
                             else
                             {
                                 boxmanager[poskotakbenar].click = true;
+
                             }
                         }
                     }
@@ -269,7 +280,6 @@ public class slidingpuzzlescript : MonoBehaviour
                         {
                             if (r != i)
                             {
-                                //boxmanager[r].lihat = true;
                             }
                             boxmanager[i].img.sprite = boxmanager[i].kotakdefault;
                             lihatKotak = false;
@@ -284,8 +294,8 @@ public class slidingpuzzlescript : MonoBehaviour
 
                                 box.sprite = boxmanager[r].kotaksalah;
                                 gantikotak = 0.2f;
+                                audiomanager.slidingPuzzleMetohod(nomorSfx);
                                 lihatKotak = true;
-                                //boxmanager[r].lihat = true;
                             }
                             else
                             {
@@ -296,7 +306,6 @@ public class slidingpuzzlescript : MonoBehaviour
                     }
                 }
                 lihatKotak = true;
-
             }
         }
     }

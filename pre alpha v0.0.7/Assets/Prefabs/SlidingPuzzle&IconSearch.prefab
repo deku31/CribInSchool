@@ -643,6 +643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd136c13b3ba0e64e8473a984c30a91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiomanager: {fileID: 0}
+  nomorSfx: 0
   pzm: {fileID: 0}
   progressbar: {fileID: 7548796264462092271}
   progressbarpuzzle: {fileID: 7548796265843633457}

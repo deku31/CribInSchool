@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
+    [Header("audioManager")]
+    public SoundManager audiomanager;
+
     public static QuizManager instance; //Instance to make is available in other scripts without reference
 
     [SerializeField] private GameObject gameComplete;
@@ -36,6 +39,9 @@ public class QuizManager : MonoBehaviour
     private int keluarke = 0;
     private void Awake()
     {
+        //audio
+        audiomanager = FindObjectOfType<SoundManager>();
+
         // Bar Player
         progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
 
@@ -70,6 +76,7 @@ public class QuizManager : MonoBehaviour
         }
         if (time.waktu<=0.1f)
         {
+            audiomanager.popupMetohod(4);
             Destroy(this.gameObject);
             solved = false;
         }
@@ -149,11 +156,13 @@ public class QuizManager : MonoBehaviour
     {
         //if gameStatus is next or currentAnswerIndex is more or equal to answerWord length
         if (gameStatus == GameStatus.Next || currentAnswerIndex >= answerWord.Length) return;
-
         selectedWordsIndex.Add(value.transform.GetSiblingIndex()); //add the child index to selectedWordsIndex list
         value.gameObject.SetActive(false); //deactivate options object
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
         answerWordLisText[currentAnswerIndex].color = new Color(answerWordLisText[currentAnswerIndex].color.r, answerWordLisText[currentAnswerIndex].color.g, answerWordLisText[currentAnswerIndex].color.b, 1);
+
+        //audio
+        audiomanager.WordScrambleMethod(0);
 
         currentAnswerIndex++;   //increase currentAnswerIndex
 
@@ -174,6 +183,7 @@ public class QuizManager : MonoBehaviour
             //if correctAnswer is true
             if (correctAnswer)
             {
+                audiomanager.WordScrambleMethod(1);
                 Debug.Log("Correct Answer");
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
@@ -196,6 +206,7 @@ public class QuizManager : MonoBehaviour
             else
             {
                 time.waktu -= 5;
+                audiomanager.popupMetohod(3);
                 ResetQuestion();
             }
         }

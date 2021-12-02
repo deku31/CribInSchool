@@ -54,7 +54,7 @@ public class player : MonoBehaviour
         pesawat.SetActive(false);
         temanPencontek = PencontekAwal;
         munculPuzzle = false;
-        Invoke("addplayer", 0.9f);
+        Invoke("addplayer", 0.2f);
     }
     void addplayer() 
     {
