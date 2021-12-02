@@ -11,7 +11,7 @@ public class guruMangaer : MonoBehaviour
     void Start()
     {
         guru.wayPoint = wayPoint;
-        Invoke("instanceGuru", 1.5f);
+        Invoke("instanceGuru", 0.5f);
     }
     void instanceGuru()
     {

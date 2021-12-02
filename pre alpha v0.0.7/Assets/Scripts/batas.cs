@@ -21,11 +21,13 @@ public class batas : MonoBehaviour
         if (collision.transform.tag == "Box")
         {
             sldps.waktu.waktu -= 5;
+            sldps.audiomanager.popupMetohod(3);
         }
         //jika box benar terkena tag
         if (collision.transform.tag=="Box2")
         {
             sldps.jawabanBenar++;
+            sldps.audiomanager.slidingPuzzleMetohod(1);
             sldps.solved = true;
         }
 
