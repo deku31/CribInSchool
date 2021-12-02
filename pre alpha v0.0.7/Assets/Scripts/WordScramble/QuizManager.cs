@@ -18,7 +18,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Text[] answerWordLisTextDefault;
 
     private GameStatus gameStatus = GameStatus.Playing;     //to keep track of game status
-    private char[] wordsArray = new char[7];               //array which store char of each options
+    private char[] wordsArray = new char[8];               //array which store char of each options
 
     private List<int> selectedWordsIndex;                   //list which keep track of option word index w.r.t answer word index
     private int currentAnswerIndex = 0, currentQuestionIndex = 0;   //index to keep track of current answer and current question
@@ -121,7 +121,7 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < answerWord.Length; i++)
         {
 
-            answerWordList[i].SetWord('-');
+            answerWordList[i].SetWord('_');
 
             answerWordLisTextDefault[i].color = new Color(answerWordLisTextDefault[i].color.r, answerWordLisTextDefault[i].color.g, answerWordLisTextDefault[i].color.b, 0.5f);
         }

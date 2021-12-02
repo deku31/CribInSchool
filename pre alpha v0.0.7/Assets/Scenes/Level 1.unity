@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45044857, g: 0.5004495, b: 0.5751923, a: 1}
+  m_IndirectSpecularColor: {r: 0.450449, g: 0.5004494, b: 0.5751932, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -843,7 +843,7 @@ MonoBehaviour:
   gamePlaycamera2: {fileID: 1039058531}
   score: 0
   SlidingpuzzlePrefabs:
-  - {fileID: 7548796264600967254, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 2456878920465875380, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
   slidingscript:
   - {fileID: 7548796264600967248, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
   _WordScramble:
