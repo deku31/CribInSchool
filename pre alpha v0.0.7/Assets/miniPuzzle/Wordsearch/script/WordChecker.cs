@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WordChecker : MonoBehaviour
 {
+    [Header("audioManager")]
+    public SoundManager audiomanager;
+
     //timemanger
     public timeManager timer;
     public progressbarTimeWordScramble progressbar;//script progresbarnya sama dengan word scramble jadi ku pake
@@ -49,6 +52,9 @@ public class WordChecker : MonoBehaviour
     }
     private void Awake()
     {
+        //audio
+        audiomanager = FindObjectOfType<SoundManager>();
+
         pzm.jumlahSoal = currentGameData.selectBoardData.searchingWords.Count;
         x = currentGameData.selectBoardData.searchingWords.Count;
         solved = false;
@@ -79,17 +85,20 @@ public class WordChecker : MonoBehaviour
         }
         if (timer.waktu<=0.1f)
         {
+            audiomanager.popupMetohod(4);
             Destroy(this.gameObject);
         }
         if (Input.GetMouseButtonUp(0))
         {
             if (cek == true)
             {
+                audiomanager.popupMetohod(3);
                 timer.waktu -= 5f;
                 cek = false;
             }
             if(solved)
             {
+                audiomanager.popupMetohod(2);
                 barPlayer.current ++; // Bar Player
                 Destroy(this.gameObject);
             }
@@ -155,13 +164,14 @@ public class WordChecker : MonoBehaviour
                 x -= 1;
                 pzm.score +=1;
                 //DrawLine(starline, endline, Color.red);
-
+                audiomanager.popupMetohod(2);
                 _word = string.Empty;
                 cek = false;
                 return;
             }
             else
             {
+                audiomanager.slidingPuzzleMetohod(0);
                 cek = true;
             }
         }

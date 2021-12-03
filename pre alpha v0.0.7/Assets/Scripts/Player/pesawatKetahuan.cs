@@ -6,10 +6,14 @@ public class pesawatKetahuan : MonoBehaviour
 {
     public player playermanager;
     public GameObject _endPanel;
+
+    //audio manager
+    private SoundManager audiomanager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audiomanager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class pesawatKetahuan : MonoBehaviour
     {
         if (other.transform.tag=="guru")
         {
+            audiomanager.resultMethod(1);
             print("ketahuan");
             Destroy(playermanager.pesawat);
             _endPanel.SetActive(true);

@@ -15,7 +15,7 @@ public class loadingscane : MonoBehaviour
     }
     IEnumerator Loading()
     {
-        AsyncOperation loading = SceneManager.LoadSceneAsync("Gameplay1");
+        AsyncOperation loading = SceneManager.LoadSceneAsync("Level 1");
         while (!loading.isDone)
         {
             loadingFill.fillAmount = loading.progress/0.9f;

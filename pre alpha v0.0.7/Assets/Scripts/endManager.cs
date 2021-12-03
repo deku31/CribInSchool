@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class endManager : MonoBehaviour
 {
+    [SerializeField] private SoundManager audiomanager;
     //isi panel
     //public Text sisaWaktu;
     public Text hasilAkhir;
@@ -24,9 +25,13 @@ public class endManager : MonoBehaviour
 
     void Awake()
     {
+        audiomanager = FindObjectOfType<SoundManager>();
         ending = true;
     }
-
+    private void Start()
+    {
+        audiomanager.resultMethod(4);
+    }
 
     // Update is called once per frame
     void Update()
@@ -74,7 +79,7 @@ public class endManager : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene("Gameplay1");
+        SceneManager.LoadScene("Level 1");
         Time.timeScale = 1;
     }
 }

@@ -8,11 +8,14 @@ public class Gamemanager : MonoBehaviour
     public guruMangaer _GuruManger;
     public PuzzleManager _PuzzleManager;
     private PauseManager _PauseManager;
-    [SerializeField]private SoundManager bgmkelas;
+    [SerializeField]private BgmManager bgmkelas;
     [SerializeField] private int nomorAudio;
     private void Awake()
     {
         _PauseManager = GameObject.Find("gameplaymanager").GetComponent<PauseManager>();
+    }
+    private void Start()
+    {
         bgmkelas.bgmMethod(nomorAudio);
     }
     void Update()

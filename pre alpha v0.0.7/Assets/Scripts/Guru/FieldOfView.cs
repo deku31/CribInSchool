@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class FieldOfView : MonoBehaviour {
 
-	public float viewRadius;
+    [SerializeField] private SoundManager audiomanager;
+
+    public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
 
@@ -27,10 +29,11 @@ public class FieldOfView : MonoBehaviour {
     public GameObject _puzzle; //puzzle manager
     public GameObject _endPanel; //end progress
 
+    private bool gameover;
     public void Awake()
     {
         //playerRef = GameObject.FindGameObjectWithTag("Player");
-
+        audiomanager = FindObjectOfType<SoundManager>();
         _puzzle = FindInActiveObjectByName("PuzzleManager");
 
         _endPanel = FindInActiveObjectByTag("EndPanel");
@@ -52,10 +55,28 @@ public class FieldOfView : MonoBehaviour {
 			FindVisibleTargets ();
 		}
 	}
-
-	void LateUpdate() {
-		DrawFieldOfView ();
-	}
+    private void Update()
+    {
+        if (gameover==true)
+        {
+            Invoke("endpanel", 0.5f);
+            Debug.Log("Kamu Ketahuan");
+        }
+        else
+        {
+            DrawFieldOfView();
+        }
+    }
+    void endpanel()
+    {
+        audiomanager.resultMethod(1);
+        _endPanel.SetActive(true);
+    }
+    void LateUpdate() {
+        if (gameover==false)
+        {
+        }
+    }
 
 	void FindVisibleTargets()
     {
@@ -75,9 +96,7 @@ public class FieldOfView : MonoBehaviour {
 					visibleTargets.Add (target);
                     if (canSeePlayer && _puzzle.activeSelf == true)
                     {
-                        _endPanel.SetActive(true);
-
-                        Debug.Log("Kamu Ketahuan");
+                        gameover = true;
                     }
 				}
                 else

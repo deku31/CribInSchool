@@ -13,13 +13,11 @@ public class TeacherAI : MonoBehaviour
     //audio manager
     private SoundManager audiomanager;
     private float volume;
-    private float pitch;
     bool mendekat;
     //player manager
     private player playermanager;
     void Start()
     {
-        pitch = 1;
         volume = 0.3f;
         step = true;
         audiomanager = FindObjectOfType<SoundManager>();
@@ -33,15 +31,14 @@ public class TeacherAI : MonoBehaviour
     {
         if (step == true)
         {
-            Invoke("stepSound", 0.8f);
+            Invoke("stepSound", 1.5f-agent.speed);
             step = false;
         }
         if (playermanager.munculPuzzle==true)
         {
-            pitch =1.20f;
             if (mendekat == true && volume < 1)
             {
-                volume +=0.3f*Time.deltaTime;
+                volume += 0.3f*Time.deltaTime;
             }
             else if (mendekat == false && volume > 0.3f)
             {
@@ -51,7 +48,6 @@ public class TeacherAI : MonoBehaviour
         else
         {
             volume = 0.5f;
-            pitch = 1;
         }
         if (Vector3.Distance(transform.position,target)<1)
         {
@@ -61,7 +57,7 @@ public class TeacherAI : MonoBehaviour
     }
     void stepSound()
     {
-        audiomanager.guruWalkMethod(volume,pitch);
+        audiomanager.guruWalkMethod(volume);
         step = true;
     }
     void UpdateDestination()
@@ -79,14 +75,14 @@ public class TeacherAI : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag=="Player")
+        if (other.transform.tag=="deteksiguru")
         {
             mendekat = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "deteksiguru")
         {
             mendekat = false;
         }

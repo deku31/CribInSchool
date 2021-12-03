@@ -68,7 +68,10 @@ public class QuizManager : MonoBehaviour
     }
     private void Update()
     {
-        answerWordList[currentAnswerIndex /*+ keluarke*/].SetWord(answerWord[currentAnswerIndex /*+ keluarke*/]);
+        if (solved==false)
+        {
+            answerWordList[currentAnswerIndex /*+ keluarke*/].SetWord(answerWord[currentAnswerIndex /*+ keluarke*/]);
+        }
         if (timeCheck==true)
         {
             time.waktu -= Time.deltaTime;

@@ -27,7 +27,7 @@ public class player : MonoBehaviour
 
     public int jumlahPlayer;
     public int PencontekAwal; //Nomer Kursi Player Utama
-    public int temanPencontek;
+    public int[] temanPencontek;
 
 
     // int depan,tengah,acak;
@@ -50,9 +50,7 @@ public class player : MonoBehaviour
     }
     private void Start()
     {
-        
         pesawat.SetActive(false);
-        temanPencontek = PencontekAwal;
         munculPuzzle = false;
         Invoke("addplayer", 0.2f);
     }
@@ -116,7 +114,7 @@ public class player : MonoBehaviour
                             if (pzm.solvedPuzzle==true&&_transfer==false)
                             {
                                 pesawat.SetActive(true);
-
+                                audiomanager.transferMethod(0);
                                 _transfer = true;//jika posisi player tidak sama maka transfer true
                                 targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
                             }
@@ -124,23 +122,23 @@ public class player : MonoBehaviour
                     }
                     _slection = selection;
                 }
-                else if (selection.CompareTag("umpan"))
-                {
-                    var selectionrenderer = selection.GetComponent<Renderer>();
-                    if (selectionrenderer != null)
-                    {
-                        if (Input.GetKey(KeyCode.Mouse0))
-                        {
-                            if (pzm.solvedPuzzle == true && _transfer == false)
-                            {
-                                pesawat.SetActive(true);
+                //else if (selection.CompareTag("umpan"))
+                //{
+                //    var selectionrenderer = selection.GetComponent<Renderer>();
+                //    if (selectionrenderer != null)
+                //    {
+                //        if (Input.GetKey(KeyCode.Mouse0))
+                //        {
+                //            if (pzm.solvedPuzzle == true && _transfer == false)
+                //            {
+                //                pesawat.SetActive(true);
 
-                                _transfer = true;//jika posisi player tidak sama maka transfer true
-                                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
-                            }
-                        }
-                    }
-                }
+                //                _transfer = true;//jika posisi player tidak sama maka transfer true
+                //                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
+                //            }
+                //        }
+                //    }
+                //}
             }
 
         }

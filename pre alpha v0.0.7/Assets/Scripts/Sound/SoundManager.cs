@@ -6,9 +6,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("classroom")]
-    public AudioClip[] bgmclip;//kusus bgm game
-    private AudioSource bgm;
-
+   
     public AudioClip[] popupclip;//kusus popup sfx
     private AudioSource popup;
 
@@ -18,6 +16,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip guruWalkClip;//sfx suara guru jalan
     private AudioSource guruWalk;
 
+    public AudioClip[] transferClip;//sfx suara lempar
+    private AudioSource transfer;
+
     [Header("Puzzle manager")]
     public AudioClip[] SlidingPuzzleClip;
     private AudioSource sfxSlidingPuzzle;
@@ -25,25 +26,31 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] WordScrambleClip;
     private AudioSource WordScramble;
 
+    [Header("Result manager")]
+    public AudioClip[] ResultClip;
+    private AudioSource result;
     private void Awake()
     {
-        bgm = GetComponent<AudioSource>();
         popup = GetComponent<AudioSource>();
         clickButton = GetComponent<AudioSource>();
         guruWalk = GetComponent<AudioSource>();
+        transfer = GetComponent<AudioSource>();
         //puzzle sfx
         sfxSlidingPuzzle = GetComponent<AudioSource>();
         WordScramble = GetComponent<AudioSource>();
+        //result sfx
+        result = GetComponent<AudioSource>();
     }
-    public void bgmMethod(int nomorbgm)
+
+    public void resultMethod(int nomorClip)
     {
         /*keterangan :
-        *nomorbgm 0 bgm class
-        * nomorbgm 1 blm dimasukan 
+        * 0 ketahuan guru
         */
-        bgm.PlayOneShot(bgmclip[nomorbgm], 0.4f);
-        bgm.loop = true;
+        result.PlayOneShot(ResultClip[nomorClip],0.4f);
     }
+
+   
     public void popupMetohod(int nomorPopup)
     {
         /*keterangan :
@@ -55,15 +62,18 @@ public class SoundManager : MonoBehaviour
         */
         popup.PlayOneShot(popupclip[nomorPopup],0.8f);
     }
+    public void transferMethod(int nomorClip)
+    {
+        transfer.PlayOneShot(transferClip[nomorClip],0.9f);
+    }
     public void buttonclickMethod()
     {
         clickButton.PlayOneShot(clickbuttonClip,0.8f);
     }
 
-    public void guruWalkMethod(float volume, float pitch)//dapat mengatur suara volume ketika mendekati player
+    public void guruWalkMethod(float volume)//dapat mengatur suara volume ketika mendekati player
     {
         guruWalk.PlayOneShot(guruWalkClip,volume);
-        guruWalk.pitch = pitch;
     }
 
     //puzzle method

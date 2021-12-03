@@ -18,6 +18,7 @@ TagManager:
   - guru
   - umpan
   - muridBiasa
+  - deteksiguru
   layers:
   - Default
   - TransparentFX
