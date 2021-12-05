@@ -9,22 +9,29 @@ public class EquipmentSlot : MonoBehaviour
     // Script yang aku komenkan itu script yang tidak digunakan atau hasil copas yang tidak kuhapus wkwkw
 
 	protected DropArea DropArea;
-	//protected DraggableComponent CurrentItem = null;
+    //protected DraggableComponent CurrentItem = null;
 
-	//private DisableDropCondition disableDropCondition;
+    //private DisableDropCondition disableDropCondition;
+    public Selection selectskill;
+
+    
 
 	protected virtual void Awake()
 	{
 		DropArea = GetComponent<DropArea>() ?? gameObject.AddComponent<DropArea>();
 		DropArea.OnDropHandler += OnItemDropped;
-		//disableDropCondition = new DisableDropCondition();
-	}
+        //disableDropCondition = new DisableDropCondition();
+
+        //selectskill = GetComponent<Selection>().selectSkill();
+    }
 
 	private void OnItemDropped(DraggableComponent draggable)
 	{
         draggable.upgradeButton.SetActive(false);
-
+        
 		draggable.transform.position = transform.position;
+
+        //selectskill.selectSkill++;
 		//CurrentItem = draggable;
 		//DropArea.DropConditions.Add(disableDropCondition);
 		//draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
