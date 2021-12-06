@@ -1,4 +1,4 @@
 sceneSetups:
-- path: D:/githubRepositori/GitHub/CribInSchool/pre alpha v0.0.7/Assets/Scenes/Gameplay1.unity
+- path: Assets/Scenes/Skill Menu.unity
   isLoaded: 1
   isActive: 1
