@@ -19,6 +19,7 @@ TagManager:
   - umpan
   - muridBiasa
   - deteksiguru
+  - deteksi pesawat
   layers:
   - Default
   - TransparentFX

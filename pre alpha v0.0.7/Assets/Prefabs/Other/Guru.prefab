@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 1188875255871250158}
   m_Layer: 0
   m_Name: deteksi pesawat
-  m_TagString: guru
+  m_TagString: deteksi pesawat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,8 +136,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.90361714, y: 2.6425896, z: 1.8593798}
-  m_Center: {x: -0.08074534, y: 0.42672062, z: 0.15047503}
+  m_Size: {x: 0.90361714, y: 2.6425896, z: 1.1887769}
+  m_Center: {x: -0.08074534, y: 0.42672062, z: 0.3292712}
 --- !u!1 &3436775686592860430
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -244,7 +244,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.4
+  m_Speed: 0.8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 60
@@ -367,8 +367,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5791900939337450516}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}

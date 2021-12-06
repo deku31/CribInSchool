@@ -5,44 +5,66 @@ using UnityEngine.SceneManagement;
 public class player : MonoBehaviour
 {
     //audio manager
-    [SerializeField]private SoundManager audiomanager;
+    [SerializeField] private SoundManager audiomanager;
     [SerializeField] private int nomorPopup;//menentukan sound popup mana yang akan keluar
-    
+
     public GameObject maincamera;
     public GameObject camera;
     //variabel btn popup puzzle
     public GameObject btnPopuppuzzle;
 
-    [SerializeField]public Material material,defaultmaterial;
+    [SerializeField] public Material material, defaultmaterial;
     private Transform _slection;
     public GameObject puzzle;
     public PuzzleManager pzm;
     [SerializeField] private string selecttag = "player2";
 
     [Header("Player")]
-    public characterscript[]playerpref;
+    public characterscript[] playerpref;
     public Transform[] posisi;
     public Transform[] posisibarplayer;
     public int[] nomorKursi;
 
     public int jumlahPlayer;
-    public int PencontekAwal; //Nomer Kursi Player Utama
+    [SerializeField]private int pemainAwal;//jumlah dari pencontek awal
+    public int PencontekAwal; //Nomer Kursi Player awal
     public int[] temanPencontek;
+    public int acakpencontek;
 
+    [Header("Progress Player")]
+    public ProgressBarPlayer[] progresplayer;
+    public int nourut;
 
     // int depan,tengah,acak;
     //public cekposisi[] cekpos;
 
     public bool munculPuzzle;//kondisi memunculkan puzzle
+    [Header("transfer")]
     //untuk transfer contekan
     public bool _transfer;
     public Transform targetpostransfer;//target player yang akan di bagikan contekan
     public Transform postransferawal;//target player awal contekan
     public Transform pesawatpos;//posisi pesawat
-    public GameObject pesawat;//posisi pesawat
+    public GameObject pesawat;//objek pesawat
+    public GameObject tanda;//objek tanda dan deteksi
+    public GameObject peringatanObj;//peringatan
     public Transform posisibar;//membaca posisi bar kalo mau ganti objek tambahin function transform baru
+
+    public  bool stargame;
     private void Awake()
     {
+        stargame = false;
+        acakpencontek = Random.Range(0, 2);
+        if (acakpencontek == 0)
+        {
+            nourut = 0;
+            pemainAwal=PencontekAwal;
+        }
+        else
+        {
+            nourut = 1;
+            pemainAwal = temanPencontek[0];
+        }
         foreach (var player in playerpref)
         {
             player.name = "player2";
@@ -50,26 +72,27 @@ public class player : MonoBehaviour
     }
     private void Start()
     {
+       
         pesawat.SetActive(false);
         munculPuzzle = false;
         Invoke("addplayer", 0.2f);
     }
-    void addplayer() 
+    void addplayer()
     {
         for (int i = 0; i < playerpref.Length; i++)
         {
 
             if (i == PencontekAwal)
             {
-                playerpref[i].tukangcontek = true;
+                playerpref[i].pencontekawal = true;
             }
             else
             {
-                playerpref[i].tukangcontek = false;
+                playerpref[i].pencontekawal = false;
             }
-            if (nomorKursi.Length==posisi.Length)
+            if (nomorKursi.Length == posisi.Length)
             {
-                playerpref[i].name ="player"+i;
+                playerpref[i].name = "player" + i;
 
                 Instantiate(playerpref[i], posisi[nomorKursi[i]]);
             }
@@ -77,23 +100,23 @@ public class player : MonoBehaviour
             {
                 Debug.Log("jumlah nomor kurang");
             }
-            
         }
-        posisibar.position = posisibarplayer[PencontekAwal].position;
-        pesawatpos.position=posisibar.position;
+        targetpostransfer.position=posisibarplayer[pemainAwal].position;
+        posisibar.position = posisibarplayer[pemainAwal].position;
+        pesawatpos.position = posisibar.position;
         postransferawal.position = posisibar.position;
     }
     // Update is called once per frame
     void Update()
     {
-       
-        if (_slection!=null)
+
+        if (_slection != null)
         {
             var selectionrenderer = _slection.GetComponent<Renderer>();
             selectionrenderer.material = defaultmaterial;
             _slection = null;
         }
-        if (munculPuzzle ==false)
+        if (munculPuzzle == false)
         {
             if (_transfer == true)//jika transfer bernilai true maka dapat pindah posisi
             {
@@ -104,44 +127,44 @@ public class player : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                if (selection.CompareTag("player2"))
+                if (selection.CompareTag("Player"))
                 {
-                    var selectionrenderer = selection.GetComponent<Renderer>();
-                    if (selectionrenderer != null)
-                    {
-                        if (Input.GetKey(KeyCode.Mouse0))
-                        {
-                            if (pzm.solvedPuzzle==true&&_transfer==false)
-                            {
-                                pesawat.SetActive(true);
-                                audiomanager.transferMethod(0);
-                                _transfer = true;//jika posisi player tidak sama maka transfer true
-                                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
-                            }
-                        }
-                    }
-                    _slection = selection;
+                    transferPesawatMethod(selection);
                 }
-                //else if (selection.CompareTag("umpan"))
-                //{
-                //    var selectionrenderer = selection.GetComponent<Renderer>();
-                //    if (selectionrenderer != null)
-                //    {
-                //        if (Input.GetKey(KeyCode.Mouse0))
-                //        {
-                //            if (pzm.solvedPuzzle == true && _transfer == false)
-                //            {
-                //                pesawat.SetActive(true);
-
-                //                _transfer = true;//jika posisi player tidak sama maka transfer true
-                //                targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
-                //            }
-                //        }
-                //    }
-                //}
+                else if (selection.CompareTag("player2"))
+                {
+                    transferPesawatMethod(selection);
+                }
             }
 
         }
+    }
+
+    public void transferPesawatMethod(Transform selection)
+    {
+        var selectionrenderer = selection.GetComponent<Renderer>();
+        if (selectionrenderer != null)
+        {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                if (_transfer == false&&selection.position!=targetpostransfer.position)
+                {
+                    if (selection.position.x!=targetpostransfer.position.x)
+                    {
+                        stargame = true;
+                    }
+                    if (stargame==true)
+                    {
+                        pesawat.SetActive(true);
+                        tanda.SetActive(false);
+                        audiomanager.transferMethod(0);
+                        _transfer = true;//jika posisi player tidak sama maka transfer true
+                        targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
+                    }
+                }
+            }
+        }
+        _slection = selection;
     }
 
     //function atau method untuk script tranfer
@@ -149,10 +172,10 @@ public class player : MonoBehaviour
     {
         pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, 2f * Time.deltaTime);
     }
-   
+
     public void openPuzzle()
     {
-        if (_transfer==false)
+        if (_transfer == false)
         {
             audiomanager.popupMetohod(nomorPopup);
 

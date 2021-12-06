@@ -23,7 +23,7 @@ public class pesawatKetahuan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag=="guru")
+        if (other.transform.tag=="deteksi pesawat")
         {
             audiomanager.resultMethod(1);
             print("ketahuan");

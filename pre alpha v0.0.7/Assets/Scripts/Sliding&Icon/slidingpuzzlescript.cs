@@ -8,12 +8,12 @@ public class slidingpuzzlescript : MonoBehaviour
 {
     [Header("audioManager")]
     public SoundManager audiomanager;
-    [SerializeField]private int nomorSfx;//menentukan sfxpuzzle mana yang akan keluar
+    [SerializeField] private int nomorSfx;//menentukan sfxpuzzle mana yang akan keluar
 
 
     //gamemanager
     public PuzzleManager pzm;
-    ProgressBarPlayer progresplayer;
+    private player playermanager;
 
     [Header("ProgressBar")]
     public progressBarScript progressbar;
@@ -68,7 +68,7 @@ public class slidingpuzzlescript : MonoBehaviour
     private void Awake()
     {
         audiomanager = FindObjectOfType<SoundManager>();
-        progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        playermanager = FindObjectOfType<player>();
     }
     private void Start()
     {
@@ -130,7 +130,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
         if (solved == true)
         {
-            progresplayer.current++;
+            playermanager.progresplayer[playermanager.nourut].current++;
             pzm.score++;
             if (hitungwaktu == true)
             {
@@ -151,7 +151,7 @@ public class slidingpuzzlescript : MonoBehaviour
             EndGame();
         }
         //ketika solved bernilai true maka kotak tidak bisa dipindahkan lagi
-        if (solved == false&&waktu.waktu>0)
+        if (solved == false && waktu.waktu > 0)
         {
             gantipuzzle();
             int posbenar = 0;
@@ -173,14 +173,14 @@ public class slidingpuzzlescript : MonoBehaviour
                 if (slidingPuzzle == true)
                 {
                     audiomanager.slidingPuzzleMetohod(1);
-                    progresplayer.current++;
+                    playermanager.progresplayer[playermanager.nourut].current++;
                     pzm.score++;
                     slidingPuzzle = false;
                 }
                 progressbarpuzzle.SetActive(false);
             }
 
-            if (Input.GetMouseButtonDown(0)&&waktu.waktu>0)
+            if (Input.GetMouseButtonDown(0) && waktu.waktu > 0)
             {
                 manager();
             }
@@ -245,7 +245,7 @@ public class slidingpuzzlescript : MonoBehaviour
                     {
                         if (lihatKotak == true & poskotak[i].transform.position != box.transform.position)
                         {
-                            if (poskotakbenar !=i )
+                            if (poskotakbenar != i)
                             {
                                 boxmanager[poskotakbenar].click = true;
                                 //boxmanager[poskotakbenar].lihat = true;

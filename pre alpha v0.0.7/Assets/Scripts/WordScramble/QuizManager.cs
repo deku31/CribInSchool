@@ -34,8 +34,7 @@ public class QuizManager : MonoBehaviour
     public bool solved;
 
     public PuzzleManager pzm;
-    private ProgressBarPlayer progresplayer;
-
+    public player playermanager;
     private int keluarke = 0;
     private void Awake()
     {
@@ -43,7 +42,7 @@ public class QuizManager : MonoBehaviour
         audiomanager = FindObjectOfType<SoundManager>();
 
         // Bar Player
-        progresplayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        playermanager = FindObjectOfType<player>();
 
         if (instance == null)
             instance = this;
@@ -60,7 +59,7 @@ public class QuizManager : MonoBehaviour
         time.waktu = time.menit * 60;
         progressbar.maxlenghtTime = time.waktu;
         progressbar.currentTime = time.waktu;
-        if (time.waktu>0.1)
+        if (time.waktu > 0.1)
         {
             selectedWordsIndex = new List<int>();           //create a new list at start
             SetQuestion();                                  //set question
@@ -68,16 +67,16 @@ public class QuizManager : MonoBehaviour
     }
     private void Update()
     {
-        if (solved==false)
+        if (solved == false)
         {
             answerWordList[currentAnswerIndex /*+ keluarke*/].SetWord(answerWord[currentAnswerIndex /*+ keluarke*/]);
         }
-        if (timeCheck==true)
+        if (timeCheck == true)
         {
             time.waktu -= Time.deltaTime;
             progressbar.currentTime = time.waktu;
         }
-        if (time.waktu<=0.1f)
+        if (time.waktu <= 0.1f)
         {
             audiomanager.popupMetohod(4);
             Destroy(this.gameObject);
@@ -90,7 +89,7 @@ public class QuizManager : MonoBehaviour
 
         //set the answerWord string variable
         answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
-            
+
         ResetQuestion();                               //reset the answers and options value to orignal
 
         selectedWordsIndex.Clear();                     //clear the list for new question
@@ -191,7 +190,7 @@ public class QuizManager : MonoBehaviour
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
-                progresplayer.current++;//bar player
+                playermanager.progresplayer[playermanager.nourut].current++;//bar player
 
                 pzm.score++;
                 //if currentQuestionIndex is less that total available questions
@@ -199,7 +198,7 @@ public class QuizManager : MonoBehaviour
                 {
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
-                else if(currentQuestionIndex >= questionDataScriptable.questions.Count)
+                else if (currentQuestionIndex >= questionDataScriptable.questions.Count)
                 {
                     Destroy(this.gameObject);
                     solved = true;
@@ -237,6 +236,6 @@ public class QuestionData
 
 public enum GameStatus
 {
-   Next,
-   Playing
+    Next,
+    Playing
 }
