@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmclip:
   - {fileID: 8300000, guid: 0456a99ef81355c48aef434fff0afddc, type: 3}
-  - {fileID: 8300000, guid: 269d6c8367a5d964f81723bb6a3d7a9c, type: 3}
+  - {fileID: 8300000, guid: 0dadd8a7e6f751c4dbb7eb8debbb25b9, type: 3}
   bgm: {fileID: 0}
 --- !u!82 &1699950395
 AudioSource:

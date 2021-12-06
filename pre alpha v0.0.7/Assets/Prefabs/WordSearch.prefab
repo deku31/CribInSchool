@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 82644041735303003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.47, y: 3.23, z: 1}
-  m_LocalScale: {x: 15, y: 13, z: 1}
+  m_LocalScale: {x: 20, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 142527527417327703}
   m_RootOrder: 1
@@ -91,7 +91,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.2972975
+  orthographic size: 8.4375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0371b2c6bdefc4693c40fc33c52af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiomanager: {fileID: 0}
   timer: {fileID: 4190133684801984441}
   progressbar: {fileID: 4823782013143305883}
   pzm: {fileID: 0}
@@ -599,8 +600,7 @@ MonoBehaviour:
   x: 0
   cek: 0
   solved: 0
-  barPlayer: {fileID: 8729899759200081817, guid: ad986dd9d8c21674b986b4a2bba5ae34,
-    type: 3}
+  playermanager: {fileID: 0}
   progresBarPlayer: {fileID: 0}
   starline: {x: 0, y: 0, z: 0}
   endline: {x: 0, y: 0, z: 0}
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   _gridsquarescript: {fileID: 7472473176876863286, guid: 15635a1485e72954dafa44531d6858a7,
     type: 3}
   timer: {fileID: 4190133684801984441}
-  squareOffset: 1
+  squareOffset: 0.7
   topPosition: 4.12
   posisi: {fileID: 5069131068173579652}
 --- !u!1 &6717546976775789325

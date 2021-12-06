@@ -179,19 +179,27 @@ public class PuzzleManager : MonoBehaviour
         gamePlaycamera2.SetActive(false);
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);
-        btnPopuppuzzle.SetActive(true);
+        
         player.munculPuzzle = false;
+        if (solvedPuzzle == false)
+        {
+            btnPopuppuzzle.SetActive(true);
+        }
     }
     public void solved()
     {
         solvedPuzzle = true;
         end.nilaitertinggi = jumlahSoal;
         end.jawabanBenar = score;
-        //EndPanel.SetActive(true);
         gamePlaycamera2.SetActive(false);
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);
         btnPopuppuzzle.SetActive(true);
         player.munculPuzzle = false;
+        //Invoke("solvedPuzzleResult", 0.5f);
+    }
+    void solvedPuzzleResult()
+    {
+        EndPanel.SetActive(true);
     }
 }

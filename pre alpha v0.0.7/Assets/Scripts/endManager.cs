@@ -7,7 +7,10 @@ public class endManager : MonoBehaviour
 {
     [SerializeField] private SoundManager audiomanager;
     //isi panel
-    //public Text sisaWaktu;
+    public Text lulustxt;
+    int totallulus;
+
+    //jumlah puzzle benar
     public Text hasilAkhir;
     public Image title,grade;
     public Sprite[] berhasil,gagal;
@@ -23,21 +26,33 @@ public class endManager : MonoBehaviour
     private bool ending;
     private float timestop=1f;
 
+    //player manager
+    [SerializeField] private player playermanager;
+
     void Awake()
     {
+        playermanager = FindObjectOfType<player>();
         audiomanager = FindObjectOfType<SoundManager>();
         ending = true;
     }
     private void Start()
     {
-        audiomanager.resultMethod(4);
+        audiomanager.resultMethod(2);
     }
 
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < playermanager.progresplayer.Length; i++)
+        {
+            if (playermanager.progresplayer[i].current>=playermanager.progresplayer[i].maxlenght*0.8f)
+            {
+                totallulus = 1;
+            }
+        }
+       
         nilaitertinggi = puzzle.jumlahSoal;
-
+        lulustxt.text = totallulus.ToString();
         hasilAkhir.text = puzzle.score.ToString();
         //panel akhir setting
         if (jawabanBenar==nilaitertinggi)

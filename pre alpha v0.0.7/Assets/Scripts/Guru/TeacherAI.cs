@@ -38,15 +38,19 @@ public class TeacherAI : MonoBehaviour
         {
             if (mendekat == true && volume < 1)
             {
-                volume += 0.3f*Time.deltaTime;
+                playermanager.peringatanObj.SetActive(true);
+                volume += 1;
             }
             else if (mendekat == false && volume > 0.3f)
             {
+                playermanager.peringatanObj.SetActive(false);
                 volume -= Time.deltaTime;
             }
         }
         else
         {
+            mendekat = false;
+            playermanager.peringatanObj.SetActive(false);
             volume = 0.5f;
         }
         if (Vector3.Distance(transform.position,target)<1)

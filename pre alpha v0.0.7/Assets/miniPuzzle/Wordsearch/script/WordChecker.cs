@@ -32,7 +32,7 @@ public class WordChecker : MonoBehaviour
     public bool solved;
 
     // Bar Player-------------------------
-    public ProgressBarPlayer barPlayer;
+    public player playermanager;
     public GameObject progresBarPlayer;
 
 
@@ -64,7 +64,7 @@ public class WordChecker : MonoBehaviour
         // Bar Player
         progresBarPlayer = FindInActiveObjectByTag("BarPlayer");
         progresBarPlayer.SetActive(true);
-        barPlayer = GameObject.Find("gameplaymanager").GetComponent<ProgressBarPlayer>();
+        playermanager = FindObjectOfType<player>();
         //-----------------------------------------------------
         timer.waktu = timer.menit * 60;
         progressbar.maxlenghtTime = timer.waktu;
@@ -99,7 +99,7 @@ public class WordChecker : MonoBehaviour
             if(solved)
             {
                 audiomanager.popupMetohod(2);
-                barPlayer.current ++; // Bar Player
+                playermanager.progresplayer[playermanager.urutan].current ++; // Bar Player
                 Destroy(this.gameObject);
             }
         }
