@@ -2,31 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Selection : MonoBehaviour
 {
-    public GameObject[] skill;
-    public int selectSkill = 0;
+    public EquipmentSlot skill_1;
+    public EquipmentSlot skill_2;
+
+    public int selectSkill_1 = 0;
+    public int selectSkill_2 = 0;
 
     public void Awake()
     {
-        //skill = FindInActiveObjectByTag("Skill");
-        skill = GameObject.FindGameObjectsWithTag("Skill");
-    }
-
-    public void Start()
-    {
-        skill = GameObject.FindGameObjectsWithTag("Skill");
+        
     }
 
     public void Update()
     {
-        skill = GameObject.FindGameObjectsWithTag("Skill");
+        selectSkill_1 = skill_1.nomer;
+        selectSkill_2 = skill_2.nomer;
     }
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("selectSkill", selectSkill);
+        PlayerPrefs.SetInt("selectSkill_1", selectSkill_1);
+        PlayerPrefs.SetInt("selectSkill_2", selectSkill_2);
+        
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 

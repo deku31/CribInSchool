@@ -19,6 +19,8 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public GameObject upgradeButton;
 
+    public int nomorSkill;
+
 	private void Awake()
 	{
 		rectTransform = GetComponent<RectTransform>();

@@ -112,6 +112,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &403047199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403047200}
+  - component: {fileID: 403047201}
+  m_Layer: 5
+  m_Name: Target Skill1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &403047200
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403047199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1922042561}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -800, y: 54}
+  m_SizeDelta: {x: 230, y: 222}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &403047201
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403047199}
+  m_CullTransparentMesh: 0
 --- !u!1 &967858007
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPrefabs:
   - {fileID: 1304076249799700205, guid: 9cee4e2314f2ae04d90c64dc564d860e, type: 3}
-  - {fileID: 1304076249799700205, guid: 9cee4e2314f2ae04d90c64dc564d860e, type: 3}
-  spawnPointSkill: {fileID: 1585905100}
+  - {fileID: 2861175792575913942, guid: aefcf29eacba0aa4e839662fb47d5774, type: 3}
+  spawnPointSkill_1: {fileID: 1355730473}
+  spawnPointSkill_2: {fileID: 403047200}
 --- !u!4 &1320724740
 Transform:
   m_ObjectHideFlags: 0
@@ -708,6 +753,7 @@ RectTransform:
   m_Children:
   - {fileID: 1564259001}
   - {fileID: 1355730473}
+  - {fileID: 403047200}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

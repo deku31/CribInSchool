@@ -241,6 +241,11 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2861175792575913768, guid: aefcf29eacba0aa4e839662fb47d5774,
+        type: 3}
+      propertyPath: nomorSkill
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aefcf29eacba0aa4e839662fb47d5774, type: 3}
 --- !u!1 &168319465
@@ -330,7 +335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29c77827c7b28e4ba452bfc38d99fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectskill: {fileID: 694433449}
+  select: {fileID: 694433449}
+  nomer: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29c77827c7b28e4ba452bfc38d99fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectskill: {fileID: 694433449}
+  select: {fileID: 694433449}
+  nomer: 0
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,10 +771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de640f9d02fc0a3499dd4028e5466b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill:
-  - {fileID: 236011878}
-  - {fileID: 168319465}
-  selectSkill: 0
+  skill_1: {fileID: 236011883}
+  skill_2: {fileID: 168319470}
+  selectSkill_1: 0
+  selectSkill_2: 0
 --- !u!1 &1254330495
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29c77827c7b28e4ba452bfc38d99fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectskill: {fileID: 0}
+  select: {fileID: 0}
+  nomer: 0
 --- !u!114 &1254330498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29c77827c7b28e4ba452bfc38d99fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectskill: {fileID: 0}
+  select: {fileID: 0}
+  nomer: 0
 --- !u!114 &1306197976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1411,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill1
       objectReference: {fileID: 0}
+    - target: {fileID: 1304076249799700205, guid: 9cee4e2314f2ae04d90c64dc564d860e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1304076249799700204, guid: 9cee4e2314f2ae04d90c64dc564d860e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1507,6 +1521,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1304076249799700179, guid: 9cee4e2314f2ae04d90c64dc564d860e,
+        type: 3}
+      propertyPath: nomorSkill
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cee4e2314f2ae04d90c64dc564d860e, type: 3}
 --- !u!1001 &2861175790892075176
@@ -1524,7 +1543,7 @@ PrefabInstance:
     - target: {fileID: 2861175792575913942, guid: aefcf29eacba0aa4e839662fb47d5774,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2861175792575913943, guid: aefcf29eacba0aa4e839662fb47d5774,
         type: 3}
@@ -1630,6 +1649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861175792575913768, guid: aefcf29eacba0aa4e839662fb47d5774,
+        type: 3}
+      propertyPath: nomorSkill
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aefcf29eacba0aa4e839662fb47d5774, type: 3}

@@ -12,26 +12,36 @@ public class EquipmentSlot : MonoBehaviour
     //protected DraggableComponent CurrentItem = null;
 
     //private DisableDropCondition disableDropCondition;
-    public Selection selectskill;
+    public Selection select;
 
-    
+    public int nomer;
 
 	protected virtual void Awake()
 	{
 		DropArea = GetComponent<DropArea>() ?? gameObject.AddComponent<DropArea>();
 		DropArea.OnDropHandler += OnItemDropped;
+
+        
+
         //disableDropCondition = new DisableDropCondition();
 
         //selectskill = GetComponent<Selection>().selectSkill();
     }
 
-	private void OnItemDropped(DraggableComponent draggable)
+    public void Start()
+    {
+
+    }
+
+    private void OnItemDropped(DraggableComponent draggable)
 	{
+
         draggable.upgradeButton.SetActive(false);
         
 		draggable.transform.position = transform.position;
 
-        //selectskill.selectSkill++;
+        //select.selectSkill = draggable.nomorSkill;
+        nomer = draggable.nomorSkill;
 		//CurrentItem = draggable;
 		//DropArea.DropConditions.Add(disableDropCondition);
 		//draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
