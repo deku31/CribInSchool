@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPosition: {x: 0, y: 0, z: 0}
   upgradeButton: {fileID: 1304076250637174760}
+  nomorSkill: 0
 --- !u!1 &1304076250011844818
 GameObject:
   m_ObjectHideFlags: 0

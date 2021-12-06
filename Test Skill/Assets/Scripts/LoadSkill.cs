@@ -16,7 +16,10 @@ public class LoadSkill : MonoBehaviour
         GameObject prefab_1 = skillPrefabs[selectSkill_1];
         GameObject prefab_2 = skillPrefabs[selectSkill_2];
 
-        GameObject clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, Quaternion.identity);
-        GameObject clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, Quaternion.identity);
+        //GameObject clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, Quaternion.identity);
+        //GameObject clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, Quaternion.identity);
+
+        GameObject clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
+        GameObject clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
     }
 }
