@@ -138,7 +138,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89071487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 72}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1922042561}
@@ -444,10 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillPrefabs:
-  - {fileID: 1659971893148281588, guid: c753ebcd5062e8d4d941d94015e02622, type: 3}
-  - {fileID: 5480360000320931561, guid: ed17b897f67230743a5cd96a0274474e, type: 3}
-  - {fileID: 7794357584548208598, guid: 2d9581a141273784c91c9e9139055bb2, type: 3}
-  - {fileID: 9076315295359332021, guid: 6fe261b8d2ce6ec45807c6da25f927e6, type: 3}
+  - {fileID: 1401566155703998999, guid: c753ebcd5062e8d4d941d94015e02622, type: 3}
+  - {fileID: 1548658108174367149, guid: ed17b897f67230743a5cd96a0274474e, type: 3}
   spawnPointSkill_1: {fileID: 1427022011}
   spawnPointSkill_2: {fileID: 89071488}
   prefab_1: {fileID: 0}
@@ -480,8 +478,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b942834d995f44c881a3ceae6b8bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragScript: {fileID: 0}
-  draggableComponent: {fileID: 0}
+  dragScript_1: {fileID: 0}
+  dragScript_2: {fileID: 0}
+  dragScript_3: {fileID: 0}
+  dragScript_4: {fileID: 0}
+  dragScript_5: {fileID: 0}
+  spriteS1: {fileID: 21300000, guid: ae40ca4be06588244897d854659e7fb7, type: 3}
+  spriteS2: {fileID: 21300000, guid: 114204b958c0cf44ab6e1ead2b905835, type: 3}
+  spriteS3: {fileID: 21300000, guid: d553ba14f0ef3664f98407e32a3356d5, type: 3}
+  spriteS4: {fileID: 21300000, guid: 88b870502f740e640ba50d609fceaa63, type: 3}
+  spriteS5: {fileID: 21300000, guid: 458e1176147fe904398b8d12e26b8db6, type: 3}
+  objectSprite1: {fileID: 0}
+  objectSprite2: {fileID: 0}
+  objectSprite3: {fileID: 0}
+  objectSprite4: {fileID: 0}
+  objectSprite5: {fileID: 0}
+  skillManager_1: {fileID: 0}
+  skillManager_2: {fileID: 0}
 --- !u!1 &1427022010
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +521,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427022010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1922042561}

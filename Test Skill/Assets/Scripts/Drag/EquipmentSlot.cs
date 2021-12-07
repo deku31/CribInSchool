@@ -16,6 +16,9 @@ public class EquipmentSlot : MonoBehaviour
 
     public int nomer;
 
+    public GameObject spriteSkill1;
+    public Sprite sprite1;
+
 	protected virtual void Awake()
 	{
 		DropArea = GetComponent<DropArea>() ?? gameObject.AddComponent<DropArea>();
@@ -30,7 +33,7 @@ public class EquipmentSlot : MonoBehaviour
 
     public void Start()
     {
-
+        //spriteSkill1 = FindInActiveObjectByName("Sprite Skill 1");
     }
 
     private void OnItemDropped(DraggableComponent draggable)
@@ -42,20 +45,37 @@ public class EquipmentSlot : MonoBehaviour
 
         //select.selectSkill = draggable.nomorSkill;
         nomer = draggable.nomorSkill;
-		//CurrentItem = draggable;
-		//DropArea.DropConditions.Add(disableDropCondition);
-		//draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+        //CurrentItem = draggable;
+        //DropArea.DropConditions.Add(disableDropCondition);
+        //draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+        //spriteSkill1.gameObject.GetComponent<SpriteRenderer>().sprite = sprite1;
 	}
+
+    GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
 
     //public void Initialize(DraggableComponent currentItem)
     //{
-        //if (currentItem == null)
-        //{
-           //Debug.LogError("Tried to initialize the slot with an null item!");
-            //return;
-        //}
+    //if (currentItem == null)
+    //{
+    //Debug.LogError("Tried to initialize the slot with an null item!");
+    //return;
+    //}
 
-        //OnItemDropped(currentItem);
+    //OnItemDropped(currentItem);
     //}
 
     //Current item is being dragged so we listen for the EndDrag event

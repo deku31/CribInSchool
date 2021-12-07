@@ -21,13 +21,32 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public int nomorSkill;
 
-	private void Awake()
+    public SkillManager skillManager_1;
+    public SkillManager skillManager_2;
+    //public SkillManager skillManager_3;
+    //public SkillManager skillManager_4;
+    //public SkillManager skillManager_5;
+
+    private void Awake()
 	{
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
 	}
 
-	public void OnBeginDrag(PointerEventData eventData)
+    public void Start()
+    {
+        skillManager_1 = FindInActiveObjectByName("Skill Manager 1").GetComponent<SkillManager>();
+        skillManager_2 = FindInActiveObjectByName("Skill Manager 2").GetComponent<SkillManager>();
+
+        skillManager_1.ActiveSkill_1();
+    }
+
+    public void Update()
+    {
+
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
 	{
 		if (!CanDrag)
 		{
@@ -94,6 +113,23 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
 	public void OnInitializePotentialDrag(PointerEventData eventData)
 	{
-		StartPosition = rectTransform.anchoredPosition;
+        
+        StartPosition = rectTransform.anchoredPosition;
 	}
+
+    GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
 }
