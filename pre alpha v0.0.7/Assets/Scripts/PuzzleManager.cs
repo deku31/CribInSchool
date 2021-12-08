@@ -189,12 +189,17 @@ public class PuzzleManager : MonoBehaviour
     public void solved()
     {
         solvedPuzzle = true;
+        player.jumlahPlayer--;
         end.nilaitertinggi = jumlahSoal;
         end.jawabanBenar = score;
         gamePlaycamera2.SetActive(false);
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);
-        btnPopuppuzzle.SetActive(true);
+        end.totallulus += 1;
+        //if (solvedPuzzle==false)
+        //{
+        //    btnPopuppuzzle.SetActive(true);
+        //}
         player.munculPuzzle = false;
         //Invoke("solvedPuzzleResult", 0.5f);
     }

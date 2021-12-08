@@ -42,6 +42,7 @@ public class player : MonoBehaviour
     [Header("transfer")]
     //untuk transfer contekan
     public bool _transfer;
+    public int speedTransfer;
     public Transform targetpostransfer;//target player yang akan di bagikan contekan
     public Transform postransferawal;//target player awal contekan
     public Transform pesawatpos;//posisi pesawat
@@ -53,6 +54,7 @@ public class player : MonoBehaviour
     public  bool stargame;
     private void Awake()
     {
+        audiomanager = FindObjectOfType<SoundManager>();
         stargame = false;
         acakpencontek = Random.Range(0, 2);
         if (acakpencontek == 0)
@@ -140,7 +142,7 @@ public class player : MonoBehaviour
         }
     }
 
-    public void transferPesawatMethod(Transform selection)
+    public void transferPesawatMethod(Transform selection)//berfungsi kalo mau menambahkan player
     {
         var selectionrenderer = selection.GetComponent<Renderer>();
         if (selectionrenderer != null)
@@ -157,6 +159,7 @@ public class player : MonoBehaviour
                     {
                         pesawat.SetActive(true);
                         tanda.SetActive(false);
+                        peringatanObj.SetActive(false);
                         audiomanager.transferMethod(0);
                         _transfer = true;//jika posisi player tidak sama maka transfer true
                         targetpostransfer = selection;//mengubah posisi target sesuai player yang di klik
@@ -170,7 +173,7 @@ public class player : MonoBehaviour
     //function atau method untuk script tranfer
     void transfer(Transform postransfer)
     {
-        pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, 2f * Time.deltaTime);
+        pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, speedTransfer * Time.deltaTime);
     }
 
     public void openPuzzle()

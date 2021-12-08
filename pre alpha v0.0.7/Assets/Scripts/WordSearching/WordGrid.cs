@@ -156,10 +156,10 @@ public class WordGrid : MonoBehaviour
     }
     private float GetHalfScreenWidth()
     {
-        //float height = Camera.main.orthographicSize * 2;
-        float height = posisi.localScale.x * 2;
-        //float width = (1.4f * height) * Screen.width / Screen.height;
-        float width = (1.4f * height) * posisi.localScale.y / posisi.localScale.x;
+        float height = Camera.main.orthographicSize * 2;
+        //float height = posisi.localScale.x * 2;
+        float width = (1.4f * height) * Screen.width / Screen.height;
+        //float width = (1.4f * height) * posisi.localScale.y / posisi.localScale.x;
         return width / 2;
     }
 }

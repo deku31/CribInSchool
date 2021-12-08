@@ -7,6 +7,8 @@ public class guruMangaer : MonoBehaviour
     public TeacherAI guru;
     public Transform[] wayPoint;
 
+    public endManager panelakhir;
+    public bool ketahuan;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,9 @@ public class guruMangaer : MonoBehaviour
 
     void Update()
     {
+        if (ketahuan==true)
+        {
+            panelakhir.ketahuan = true;
+        }
     }
 }

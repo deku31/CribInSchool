@@ -6,7 +6,8 @@ public class BgmManager : MonoBehaviour
 {
     public AudioClip[] bgmclip;//kusus bgm game
     public AudioSource bgm;
-
+    public float maxvol=0.4f;
+    public float volume;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class BgmManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bgm.volume = volume;
     }
     public void bgmMethod(int nomorbgm)
     {
@@ -27,7 +28,7 @@ public class BgmManager : MonoBehaviour
         *nomorbgm 0 bgm class
         * nomorbgm 1 blm dimasukan 
         */
-        bgm.PlayOneShot(bgmclip[nomorbgm], 0.4f);
+        bgm.PlayOneShot(bgmclip[nomorbgm]);
         bgm.loop = true;
     }
 }

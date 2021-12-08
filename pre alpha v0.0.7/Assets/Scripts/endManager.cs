@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+[RequireComponent(typeof(endManager))]
 public class endManager : MonoBehaviour
 {
     [SerializeField] private SoundManager audiomanager;
     //isi panel
     public Text lulustxt;
-    int totallulus;
+    public int totallulus;
 
     //jumlah puzzle benar
     public Text hasilAkhir;
@@ -20,11 +22,13 @@ public class endManager : MonoBehaviour
 
     public int jawabanBenar;
     //berdasarkan jumlah puzzle
-    public int nilaitertinggi;
+    public float nilaitertinggi;
 
     public PuzzleManager puzzle;
     private bool ending;
     private float timestop=1f;
+
+    public bool ketahuan;//ketahuan guru dan murid cepu
 
     //player manager
     [SerializeField] private player playermanager;
@@ -43,24 +47,28 @@ public class endManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < playermanager.progresplayer.Length; i++)
-        {
-            if (playermanager.progresplayer[i].current>=playermanager.progresplayer[i].maxlenght*0.8f)
-            {
-                totallulus = 1;
-            }
-        }
+        //for (int i = 0; i < playermanager.jumlahPlayer; i++)
+        //{
+        //    if (playermanager.progresplayer[i].current>=playermanager.progresplayer[i].maxlenght*0.8f)
+        //    {
+        //        totallulus = 1;
+        //    }
+        //    else
+        //    {
+        //        totallulus += 0;
+        //    }
+        //}
        
         nilaitertinggi = puzzle.jumlahSoal;
         lulustxt.text = totallulus.ToString();
         hasilAkhir.text = puzzle.score.ToString();
         //panel akhir setting
-        if (jawabanBenar==nilaitertinggi)
+        if (jawabanBenar==nilaitertinggi&& ketahuan==false)
         {
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
         }
-        else if (jawabanBenar>=nilaitertinggi/2)
+        else if (jawabanBenar>=nilaitertinggi-1 && ketahuan == false)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];

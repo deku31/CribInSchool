@@ -72,7 +72,7 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     private void Start()
     {
-        pzm.jumlahSoal += 2;
+        pzm.jumlahSoal += 1;
         progressbarpuzzle.SetActive(true);
         poskotakbenar = Random.Range(0, poskotak.Length);
         lihatKotak = false;
@@ -130,14 +130,15 @@ public class slidingpuzzlescript : MonoBehaviour
 
         if (solved == true)
         {
-            playermanager.progresplayer[playermanager.nourut].current++;
-            pzm.score++;
             if (hitungwaktu == true)
             {
                 time -= Time.deltaTime;
                 if (time < 0)
                 {
                     hitungwaktu = false;
+                    playermanager.progresplayer[playermanager.nourut].current++;
+
+                    pzm.score++;
                     EndGame();
                 }
             }
@@ -173,8 +174,6 @@ public class slidingpuzzlescript : MonoBehaviour
                 if (slidingPuzzle == true)
                 {
                     audiomanager.slidingPuzzleMetohod(1);
-                    playermanager.progresplayer[playermanager.nourut].current++;
-                    pzm.score++;
                     slidingPuzzle = false;
                 }
                 progressbarpuzzle.SetActive(false);
@@ -331,7 +330,6 @@ public class slidingpuzzlescript : MonoBehaviour
     // method ketika puzzle selesai
     private void EndGame()
     {
-
         Destroy(this.gameObject);
         //EndPanel.SetActive(true);
     }

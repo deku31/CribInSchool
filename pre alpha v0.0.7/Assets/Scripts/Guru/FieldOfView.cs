@@ -28,14 +28,14 @@ public class FieldOfView : MonoBehaviour {
     //public GameObject playerRef;
     public GameObject _puzzle; //puzzle manager
     public GameObject _endPanel; //end progress
-
+    public guruMangaer gm;
     private bool gameover;
     public void Awake()
     {
         //playerRef = GameObject.FindGameObjectWithTag("Player");
         audiomanager = FindObjectOfType<SoundManager>();
         _puzzle = FindInActiveObjectByName("PuzzleManager");
-
+        gm = FindObjectOfType<guruMangaer>();
         _endPanel = FindInActiveObjectByTag("EndPanel");
     }
 
@@ -59,6 +59,7 @@ public class FieldOfView : MonoBehaviour {
     {
         if (gameover==true)
         {
+            gm.ketahuan = true;
             Invoke("endpanel", 0.5f);
             Debug.Log("Kamu Ketahuan");
         }

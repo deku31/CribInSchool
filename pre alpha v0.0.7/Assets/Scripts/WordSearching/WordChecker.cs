@@ -55,7 +55,7 @@ public class WordChecker : MonoBehaviour
         //audio
         audiomanager = FindObjectOfType<SoundManager>();
 
-        pzm.jumlahSoal = currentGameData.selectBoardData.searchingWords.Count;
+        pzm.jumlahSoal += 1;
         x = currentGameData.selectBoardData.searchingWords.Count;
         solved = false;
     }
@@ -99,6 +99,7 @@ public class WordChecker : MonoBehaviour
             if (solved)
             {
                 audiomanager.popupMetohod(2);
+                pzm.score += 1;
                 playermanager.progresplayer[playermanager.nourut].current++; // Bar Player
                 Destroy(this.gameObject);
             }
@@ -162,7 +163,6 @@ public class WordChecker : MonoBehaviour
             {
                 GameEvent.correctWordMethod(_word, correctList);
                 x -= 1;
-                pzm.score += 1;
                 //DrawLine(starline, endline, Color.red);
                 audiomanager.popupMetohod(2);
                 _word = string.Empty;

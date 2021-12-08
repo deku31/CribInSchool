@@ -49,9 +49,20 @@ public class TeacherAI : MonoBehaviour
         }
         else
         {
-            mendekat = false;
-            playermanager.peringatanObj.SetActive(false);
             volume = 0.5f;
+            if (mendekat == true&&playermanager._transfer==false)
+            { 
+                playermanager.peringatanObj.SetActive(true);
+            }
+            else if (mendekat == false && playermanager._transfer==false)
+            {
+                playermanager.peringatanObj.SetActive(false);
+            }
+            else
+            {
+                mendekat = false;
+            }
+
         }
         if (Vector3.Distance(transform.position,target)<1)
         {

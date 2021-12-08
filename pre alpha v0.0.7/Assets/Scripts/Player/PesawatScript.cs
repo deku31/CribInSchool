@@ -7,6 +7,7 @@ public class PesawatScript : MonoBehaviour
     public player playermanager;
     public Gamemanager gamemanager;
     public GameObject _endPanel;
+    [SerializeField] private endManager panelscript;
 
     public ProgressBarPlayer[] pemain;
 
@@ -23,7 +24,7 @@ public class PesawatScript : MonoBehaviour
         _endPanel.SetActive(true);
         audiomanager.resultMethod(3);
     }
-    void triggercallplayer(int pemain1, int pemain2)
+    void triggercallplayer(int pemain1, int pemain2)//jika menambah player tambah fungsi ini
     {
         var pemegangcontekan = pemain1;
         pemain[pemegangcontekan].current = pemain[pemain2].current;
@@ -37,7 +38,12 @@ public class PesawatScript : MonoBehaviour
         playermanager.nourut = urutan;
         if (playermanager.pzm.solvedPuzzle == true)
         {
-            Invoke("endpanelMethod", 0.5f);
+            panelscript.totallulus += 1;
+            playermanager.jumlahPlayer--;
+            if (playermanager.jumlahPlayer==0)
+            {
+                Invoke("endpanelMethod", 0.5f);
+            }
         }
     }
     /*

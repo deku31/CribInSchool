@@ -53,7 +53,7 @@ public class QuizManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pzm.jumlahSoal += 4;
+        pzm.jumlahSoal += 1;
         solved = false;
         timeCheck = true;
         time.waktu = time.menit * 60;
@@ -190,9 +190,7 @@ public class QuizManager : MonoBehaviour
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
-                playermanager.progresplayer[playermanager.nourut].current++;//bar player
 
-                pzm.score++;
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
@@ -200,6 +198,8 @@ public class QuizManager : MonoBehaviour
                 }
                 else if (currentQuestionIndex >= questionDataScriptable.questions.Count)
                 {
+                    pzm.score++;
+                    playermanager.progresplayer[playermanager.nourut].current++;//bar player
                     Destroy(this.gameObject);
                     solved = true;
                     Debug.Log("Game Complete"); //else game is complete

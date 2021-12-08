@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ff13b56ba8afe4386054b914c34dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fildofview: {fileID: 7603460810536123364}
   wayPoint:
   - {fileID: 0}
   - {fileID: 0}
@@ -340,6 +341,7 @@ MonoBehaviour:
   viewMeshFilter: {fileID: 964632139355670746}
   _puzzle: {fileID: 0}
   _endPanel: {fileID: 0}
+  panelscript: {fileID: 0}
 --- !u!95 &3038808470263617786
 Animator:
   serializedVersion: 3

@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
+    //setting
+    public float maxvol;
+    public float volumeafx;
+    
     [Header("classroom")]
    
     public AudioClip[] popupclip;//kusus popup sfx

@@ -6,6 +6,7 @@ public class pesawatKetahuan : MonoBehaviour
 {
     public player playermanager;
     public GameObject _endPanel;
+    public endManager panelmanager;
 
     //audio manager
     private SoundManager audiomanager;
@@ -25,9 +26,11 @@ public class pesawatKetahuan : MonoBehaviour
     {
         if (other.transform.tag=="deteksi pesawat")
         {
+
             audiomanager.resultMethod(1);
             print("ketahuan");
             Destroy(playermanager.pesawat);
+            panelmanager.ketahuan = true;
             _endPanel.SetActive(true);
         }
     }
