@@ -21,8 +21,10 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public int nomorSkill;
 
-    public SkillManager skillManager_1;
-    public SkillManager skillManager_2;
+    public Sprite spriteChange;
+    public GameObject[] objectSkillManager;
+    public SkillManager[] skillManager;
+
     //public SkillManager skillManager_3;
     //public SkillManager skillManager_4;
     //public SkillManager skillManager_5;
@@ -35,15 +37,18 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public void Start()
     {
-        skillManager_1 = FindInActiveObjectByName("Skill Manager 1").GetComponent<SkillManager>();
-        skillManager_2 = FindInActiveObjectByName("Skill Manager 2").GetComponent<SkillManager>();
-
-        skillManager_1.ActiveSkill_1();
+        objectSkillManager = GameObject.FindGameObjectsWithTag("SkillManager");
+        skillManager = new SkillManager[objectSkillManager.Length];
+        for (int i = 0; i < objectSkillManager.Length; i++)
+        {
+            skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
+        }
     }
 
     public void Update()
     {
-
+        //skillManager[0].enabled = false;
+        //skillManager[1].enabled = false;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

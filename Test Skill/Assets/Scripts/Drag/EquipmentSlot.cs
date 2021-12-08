@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class EquipmentSlot : MonoBehaviour
 {
@@ -9,47 +11,81 @@ public class EquipmentSlot : MonoBehaviour
     // Script yang aku komenkan itu script yang tidak digunakan atau hasil copas yang tidak kuhapus wkwkw
 
 	protected DropArea DropArea;
-    //protected DraggableComponent CurrentItem = null;
+    protected DraggableComponent CurrentItem = null;
 
-    //private DisableDropCondition disableDropCondition;
+    private DisableDropCondition disableDropCondition;
     public Selection select;
 
     public int nomer;
 
-    public GameObject spriteSkill1;
-    public Sprite sprite1;
+    private Vector3 resize = new Vector3(259f, 247f, 0f);
+    public GameObject[] objectImage;
+    public Image[] imageSkill;
 
-	protected virtual void Awake()
+    protected virtual void Awake()
 	{
 		DropArea = GetComponent<DropArea>() ?? gameObject.AddComponent<DropArea>();
 		DropArea.OnDropHandler += OnItemDropped;
-
-        
-
-        //disableDropCondition = new DisableDropCondition();
-
-        //selectskill = GetComponent<Selection>().selectSkill();
+        disableDropCondition = new DisableDropCondition();
     }
 
     public void Start()
     {
-        //spriteSkill1 = FindInActiveObjectByName("Sprite Skill 1");
+        objectImage = GameObject.FindGameObjectsWithTag("Sprite");
+        imageSkill = new Image[objectImage.Length];
+        for (int i = 0; i < objectImage.Length; i++)
+        {
+            
+            imageSkill[i] = objectImage[i].GetComponent<Image>();
+        }
+    }
+
+    public void Initialize(DraggableComponent currentItem)
+    {
+        if (currentItem == null)
+        {
+            Debug.LogError("Tried to initialize the slot with an null item!");
+            return;
+        }
+
+        OnItemDropped(currentItem);
     }
 
     private void OnItemDropped(DraggableComponent draggable)
 	{
-
-        draggable.upgradeButton.SetActive(false);
         
-		draggable.transform.position = transform.position;
-
-        //select.selectSkill = draggable.nomorSkill;
+        //imageSkill[0].rectTransform.sizeDelta = resize;
+        //imageSkill[1].rectTransform.sizeDelta = resize;
+        draggable.upgradeButton.SetActive(false);
         nomer = draggable.nomorSkill;
-        //CurrentItem = draggable;
-        //DropArea.DropConditions.Add(disableDropCondition);
-        //draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
-        //spriteSkill1.gameObject.GetComponent<SpriteRenderer>().sprite = sprite1;
-	}
+
+        draggable.transform.position = transform.position;
+        CurrentItem = draggable;
+        DropArea.DropConditions.Add(disableDropCondition);
+        draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+    }
+
+
+
+    //Current item is being dragged so we listen for the EndDrag event
+    private void CurrentItemOnBeginDrag(PointerEventData eventData)
+    {
+        CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
+    }
+
+    private void CurrentItemEndDragHandler(PointerEventData eventData, bool dropped)
+    {
+        CurrentItem.OnEndDragHandler -= CurrentItemEndDragHandler;
+
+        if (!dropped)
+        {
+            return;
+        }
+
+        DropArea.DropConditions.Remove(disableDropCondition); //We dropped the component in another slot so we can remove the DisableDropCondition
+        CurrentItem.OnBeginDragHandler -= CurrentItemOnBeginDrag; //We make sure to remove this listener as the item is no longer in this slot
+        CurrentItem = null; //We no longer have an item in this slot, so we remove the refference
+    }
 
     GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
     {
@@ -67,34 +103,5 @@ public class EquipmentSlot : MonoBehaviour
         return null;
     }
 
-    //public void Initialize(DraggableComponent currentItem)
-    //{
-    //if (currentItem == null)
-    //{
-    //Debug.LogError("Tried to initialize the slot with an null item!");
-    //return;
-    //}
-
-    //OnItemDropped(currentItem);
-    //}
-
-    //Current item is being dragged so we listen for the EndDrag event
-    //private void CurrentItemOnBeginDrag(PointerEventData eventData)
-    //{
-    //CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
-    //}
-
-    //private void CurrentItemEndDragHandler(PointerEventData eventData, bool dropped)
-    //{
-    //CurrentItem.OnEndDragHandler -= CurrentItemEndDragHandler;
-
-    //if (!dropped)
-    //{
-    //return;
-    //}
-
-    //DropArea.DropConditions.Remove(disableDropCondition); //We dropped the component in another slot so we can remove the DisableDropCondition
-    //CurrentItem.OnBeginDragHandler -= CurrentItemOnBeginDrag; //We make sure to remove this listener as the item is no longer in this slot
-    //CurrentItem = null; //We no longer have an item in this slot, so we remove the refference
-    //}
+    
 }
