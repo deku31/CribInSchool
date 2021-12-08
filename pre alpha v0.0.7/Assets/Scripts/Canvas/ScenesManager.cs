@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
+    //panel
+    public GameObject settingpannel;
+    //audio
     private BgmManager bgm;
     private SoundManager sfx;
     public GameObject bgmo;
     public GameObject audiomanager;
     public setting settingmanager;
-    public GameObject settingpannel;
     public int nomorbgm;
 
     private void Awake()
@@ -49,6 +51,12 @@ public class ScenesManager : MonoBehaviour
     {
         sfx.buttonclickMethod();
         settingmanager.panel.SetActive(true);
+    }
+    public void About()
+    {
+        sfx.buttonclickMethod();
+        settingmanager.panel.SetActive(false);
+        settingmanager.about.SetActive(true);
     }
     public void Exit()
     {

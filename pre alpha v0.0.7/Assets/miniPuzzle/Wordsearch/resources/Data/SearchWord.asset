@@ -19,60 +19,59 @@ MonoBehaviour:
   Board:
   - Size: 7
     Row:
-    - A
-    - G
-    - N
     - D
-    - E
+    - K
+    - N
     - A
-    - R
+    - B
+    - K
+    - S
   - Size: 7
     Row:
+    - G
+    - U
+    - I
+    - D
+    - E
+    - P
+    - Q
+  - Size: 7
+    Row:
+    - J
+    - D
+    - O
     - M
+    - B
+    - A
+    - N
+  - Size: 7
+    Row:
+    - F
+    - A
+    - K
+    - T
+    - E
+    - O
+    - L
+  - Size: 7
+    Row:
+    - K
+    - H
+    - E
+    - V
     - K
     - A
-    - P
-    - L
-    - G
     - X
   - Size: 7
     Row:
-    - Q
-    - A
-    - H
-    - M
-    - A
-    - H
-    - G
-  - Size: 7
-    Row:
+    - C
     - D
-    - I
-    - K
-    - M
-    - R
+    - T
     - E
-    - Y
-  - Size: 7
-    Row:
-    - B
-    - N
     - F
     - A
-    - I
-    - O
-    - Y
-  - Size: 7
-    Row:
-    - F
-    - H
-    - M
-    - I
-    - N
-    - U
-    - M
+    - Q
   searchingWords:
-  - word: MAKAN
-  - word: KAIN
-  - word: MINUM
-  - word: LARI
+  - word: KUDA
+  - word: DOMBA
+  - word: BEBEK

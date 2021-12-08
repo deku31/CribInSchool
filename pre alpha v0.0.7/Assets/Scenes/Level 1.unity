@@ -855,23 +855,24 @@ MonoBehaviour:
   - {fileID: 608, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
   _WordScramble:
   - {fileID: 2456878920465875380, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
-  - {fileID: 223, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 2456878920465875380, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
   wordScrambleScript:
   - {fileID: 214094147881659110, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
+  - {fileID: 214094147881659110, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
   wordSearchingPref:
   - {fileID: 2456878920465875380, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
   WordSearchingScript:
   - {fileID: 3145171775230084367, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
   perent: {fileID: 95810395}
   PuzzleNUmber: 2
-  jumlahPuzzle: 2
+  jumlahPuzzle: 4
   urutanPuzzle: 0
-  munculpuzzle: 0
+  munculpuzzle: 1
   hitungScore: 0
   puzzleanim: {fileID: 198891970}
   btnPopuppuzzle: {fileID: 1719751241}
   jumlahSoal: 0
-  jumlahseluruhpuzzle: 3
+  jumlahseluruhpuzzle: 4
   solvedPuzzle: 0
   EndPanel: {fileID: 835164175}
   end: {fileID: 835164177}
@@ -952,7 +953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198891968}
   m_LocalRotation: {x: 0.002875482, y: -0, z: -0, w: 0.9999959}
-  m_LocalPosition: {x: 0, y: 0, z: -1.3}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 933211745}
@@ -2186,6 +2187,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 480182372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &490410484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490410485}
+  m_Layer: 0
+  m_Name: TEST
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &490410485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490410484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.734455, y: 9.384677, z: 48.21808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 918151074}
+  - {fileID: 503265086}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &503265083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &503265084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2325,12 +2358,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503265083}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.518749, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.734455, y: -8.865928, z: -48.21808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 490410485}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505456884
 GameObject:
@@ -3143,10 +3176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingpannel: {fileID: 0}
   bgmo: {fileID: 0}
   audiomanager: {fileID: 0}
   settingmanager: {fileID: 0}
-  settingpannel: {fileID: 0}
   nomorbgm: 0
 --- !u!4 &658242132
 Transform:
@@ -3160,7 +3193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &691936842
 GameObject:
@@ -4138,7 +4171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &918151072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4280,12 +4313,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918151071}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.518749, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.734455, y: -8.865928, z: -48.21808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 490410485}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919721419
 GameObject:

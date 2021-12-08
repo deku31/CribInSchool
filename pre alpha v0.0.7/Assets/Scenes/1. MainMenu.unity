@@ -220,10 +220,10 @@ RectTransform:
   m_Father: {fileID: 1599929366}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06574836, y: 0.14712405}
-  m_AnchorMax: {x: 0.33655035, y: 0.2723747}
-  m_AnchoredPosition: {x: 0.5, y: 68}
-  m_SizeDelta: {x: 0.5, y: -24.6}
+  m_AnchorMin: {x: 0.06574836, y: 0.2808114}
+  m_AnchorMax: {x: 0.33655035, y: 0.36600003}
+  m_AnchoredPosition: {x: 0.125, y: 0.000030517578}
+  m_SizeDelta: {x: -0.25, y: 0.0000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69833632
 MonoBehaviour:
@@ -415,6 +415,134 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!1 &179954548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179954549}
+  - component: {fileID: 179954552}
+  - component: {fileID: 179954551}
+  - component: {fileID: 179954550}
+  m_Layer: 5
+  m_Name: back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &179954549
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179954548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1589105626}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.03134375, y: 0.8014445}
+  m_AnchorMax: {x: 0.1324375, y: 0.9734445}
+  m_AnchoredPosition: {x: 2, y: 2}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &179954550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179954548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 179954551}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 417705513}
+        m_MethodName: AboutEx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &179954551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179954548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0e62fe38a3e87ef4a8f49c8e029e1789, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &179954552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179954548}
+  m_CullTransparentMesh: 0
 --- !u!1 &192357066
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,11 +784,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc46cf373a3d29d40adb6f89c55a753e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1599929365}
+  about: {fileID: 1589105625}
   volumesetting: {fileID: 235284373}
   volumesettingsfx: {fileID: 1883600331}
   bgm: {fileID: 0}
   sfx: {fileID: 0}
-  panel: {fileID: 1599929365}
   quality: {fileID: 1995552352}
   lvquality: 0
 --- !u!114 &417705514
@@ -1084,10 +1213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddeb76343aa89064d9519795abe00615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingpannel: {fileID: 1599929365}
   bgmo: {fileID: 1699950393}
   audiomanager: {fileID: 1674621536}
   settingmanager: {fileID: 417705513}
-  settingpannel: {fileID: 1599929365}
   nomorbgm: 1
 --- !u!4 &597357171
 Transform:
@@ -1449,7 +1578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: kembali
+  m_Text: back
 --- !u!222 &786922310
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3593,6 +3722,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2020470976}
+  - {fileID: 179954549}
   m_Father: {fileID: 417705517}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3682,8 +3812,8 @@ RectTransform:
   m_Father: {fileID: 417705517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.29764163, y: 0.14483964}
-  m_AnchorMax: {x: 0.86616296, y: 0.9679645}
+  m_AnchorMin: {x: 0.29764163, y: 0.10479308}
+  m_AnchorMax: {x: 0.87179446, y: 0.88453406}
   m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3958,7 +4088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LOW
+  m_Text: HIGH
 --- !u!222 &1609480416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4819,11 +4949,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: LOW
+    - m_Text: HIGH
       m_Image: {fileID: 0}
     - m_Text: MEDIUM
       m_Image: {fileID: 0}
-    - m_Text: HIGH
+    - m_Text: LOW
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5213,8 +5343,8 @@ RectTransform:
   m_Father: {fileID: 1599929366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06574836, y: 0.14712405}
-  m_AnchorMax: {x: 0.33655035, y: 0.2723747}
+  m_AnchorMin: {x: 0.06574836, y: 0.11651911}
+  m_AnchorMax: {x: 0.36150733, y: 0.25936112}
   m_AnchoredPosition: {x: 0.5, y: -1.5}
   m_SizeDelta: {x: 0.5, y: -4.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5580,10 +5710,10 @@ RectTransform:
   m_Father: {fileID: 1599929366}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6044968, y: 0.16574936}
-  m_AnchorMax: {x: 0.87200004, y: 0.2723747}
-  m_AnchoredPosition: {x: -2, y: -7}
-  m_SizeDelta: {x: 2.5, y: 6.5}
+  m_AnchorMin: {x: 0.6308941, y: 0.13411048}
+  m_AnchorMax: {x: 0.9276414, y: 0.25936112}
+  m_AnchoredPosition: {x: -0.375, y: 0.375}
+  m_SizeDelta: {x: -0.75, y: -0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124190814
 MonoBehaviour:
@@ -5640,8 +5770,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 417705513}
-        m_MethodName: optionex
+      - m_Target: {fileID: 597357170}
+        m_MethodName: About
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

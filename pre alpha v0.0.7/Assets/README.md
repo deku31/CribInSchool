@@ -1,1 +1,2 @@
--itu di player ada script yang perlu diperbaiki coba perbaikin bang
+tambahan : 
+-setting dan memasukan asset sliding puzzle yang baru

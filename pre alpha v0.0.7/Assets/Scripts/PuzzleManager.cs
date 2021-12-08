@@ -77,13 +77,19 @@ public class PuzzleManager : MonoBehaviour
         else if (PuzzleNUmber == 1)
         {
             cam.enabled = true;
-            WordScramble();
+            WordScramble(0);
 
         }
         else if (PuzzleNUmber == 2)
         {
             cam.enabled = false;
             WordSearching();
+        }
+        else if (PuzzleNUmber == 3)
+        {
+            cam.enabled = false;
+            
+            WordScramble(1);
         }
         else
         {
@@ -106,15 +112,15 @@ public class PuzzleManager : MonoBehaviour
         }
     }
     //=============================================================================================================================
-    private void WordScramble()
+    private void WordScramble(int urutan)
     {
-        wordScrambleScript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
+        wordScrambleScript[urutan].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
             munculpuzzle = false;
-            instance(_WordScramble);
+            instance(_WordScramble,urutan);
         }
-        if (GameObject.Find(_WordScramble[urutanPuzzle].name + "(Clone)") == null)
+        if (GameObject.Find(_WordScramble[urutan].name + "(Clone)") == null)
         {
             jumlahseluruhpuzzle -= 1;
 
@@ -130,7 +136,7 @@ public class PuzzleManager : MonoBehaviour
         {
 
             munculpuzzle = false;
-            instance(SlidingpuzzlePrefabs);
+            instance(SlidingpuzzlePrefabs,0);
 
         }
         if (GameObject.Find(SlidingpuzzlePrefabs[urutanPuzzle].name + "(Clone)") == null)
@@ -157,7 +163,7 @@ public class PuzzleManager : MonoBehaviour
         if (munculpuzzle == true)
         {
             munculpuzzle = false;
-            instance(wordSearchingPref);
+            instance(wordSearchingPref,0);
 
         }
         if (GameObject.Find(wordSearchingPref[urutanPuzzle].name + "(Clone)") == null)
@@ -170,9 +176,9 @@ public class PuzzleManager : MonoBehaviour
         }
       
     }
-    private void instance(GameObject[] jenis)
+    private void instance(GameObject[] jenis,int urutan)
     {
-        Instantiate(jenis[urutanPuzzle], perent);
+        Instantiate(jenis[urutan], perent);
     }
     public void keluar()
     {

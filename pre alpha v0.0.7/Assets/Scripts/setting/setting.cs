@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class setting : MonoBehaviour
 {
+    public GameObject panel;
+    public GameObject about;
+    //sound
     public Slider volumesetting;
     public Slider volumesettingsfx;
     public BgmManager bgm;
     public SoundManager sfx;
-    public GameObject panel;
 
     //QUALITY   setting
     public Dropdown quality;
@@ -32,6 +34,12 @@ public class setting : MonoBehaviour
     {
         sfx.buttonclickMethod();
         panel.SetActive(false);
+    }
+    public void AboutEx()
+    {
+        sfx.buttonclickMethod();
+        panel.SetActive(true);
+        about.SetActive(false);
     }
     // Update is called once per frame
     void Update()
