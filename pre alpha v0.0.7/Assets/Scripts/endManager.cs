@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(endManager))]
 public class endManager : MonoBehaviour
 {
-    [SerializeField] private SoundManager audiomanager;
+    [SerializeField] private SoundManager audiomanager=null;
+    [SerializeField] private BgmManager bgm=null;
     //isi panel
     public Text lulustxt;
     public int totallulus;
@@ -37,10 +38,12 @@ public class endManager : MonoBehaviour
     {
         playermanager = FindObjectOfType<player>();
         audiomanager = FindObjectOfType<SoundManager>();
+        bgm = FindObjectOfType<BgmManager>();
         ending = true;
     }
     private void Start()
     {
+        bgm.bgm.Stop();
         audiomanager.resultMethod(2);
     }
 

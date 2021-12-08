@@ -6,8 +6,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     //setting
-    public float maxvol;
+    public float maxvol=0.9f;
     public float volumeafx;
+    public setting seting;
     
     [Header("classroom")]
    
@@ -44,6 +45,16 @@ public class SoundManager : MonoBehaviour
         WordScramble = GetComponent<AudioSource>();
         //result sfx
         result = GetComponent<AudioSource>();
+        //seting
+        seting = FindObjectOfType<setting>();
+    }
+    private void Start()
+    {
+    }
+    private void Update()
+    {
+        popup.volume = volumeafx;
+
     }
 
     public void resultMethod(int nomorClip)

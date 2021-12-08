@@ -51,10 +51,14 @@ public class player : MonoBehaviour
     public GameObject peringatanObj;//peringatan
     public Transform posisibar;//membaca posisi bar kalo mau ganti objek tambahin function transform baru
 
+    [Header("pause")]
+    public PauseManager pause;
+
     public  bool stargame;
     private void Awake()
     {
         audiomanager = FindObjectOfType<SoundManager>();
+        pause = FindObjectOfType<PauseManager>();
         stargame = false;
         acakpencontek = Random.Range(0, 2);
         if (acakpencontek == 0)
@@ -111,7 +115,8 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (pause.gameIsPaused==false)
+       
         if (_slection != null)
         {
             var selectionrenderer = _slection.GetComponent<Renderer>();
