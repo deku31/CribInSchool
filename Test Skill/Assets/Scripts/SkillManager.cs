@@ -5,9 +5,26 @@ using UnityEngine.EventSystems;
 
 public class SkillManager : MonoBehaviour
 {
+    public static SkillManager instance;
+    public Skill[] skills;
+    public SkillButton[] skillButton;
+
+    public Skill activateSkill;
+
     public void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void Start()
@@ -18,15 +35,5 @@ public class SkillManager : MonoBehaviour
     public void Update()
     {
         
-    }
-
-    public void ActiveSkill_1()
-    {
-        Debug.Log("Skill 1 Sudah Aktif");
-    }
-
-    public void ActiveSkill_2()
-    {
-        Debug.Log("Skill 2 Sudah Aktif");
     }
 }

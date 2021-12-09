@@ -89,11 +89,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1548658108060837850}
   - component: {fileID: 1548658108060837852}
+  - component: {fileID: 6474482443078302351}
+  - component: {fileID: 2707782491518713629}
   - component: {fileID: 1548658108060837853}
   - component: {fileID: 1851823499316644381}
   m_Layer: 5
   m_Name: Sprite Skill 2
-  m_TagString: Untagged
+  m_TagString: Sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +127,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548658108060837851}
   m_CullTransparentMesh: 0
+--- !u!114 &6474482443078302351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548658108060837851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b381a6ca47cdecd4f8d9ea83c4402539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Suspicious Here
+  skillDeskripsi: Mengalih Perhatikan Pengawas Ujian.
+--- !u!114 &2707782491518713629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548658108060837851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f11b1e66fc769c4c8d3772f8c4556ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNameText: {fileID: 0}
+  skilDeskripsiText: {fileID: 0}
+  spriteChange: {fileID: 0}
+  skillId: 1
 --- !u!114 &1548658108060837853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548658109043647552}
+      - m_Target: {fileID: 0}
         m_MethodName: ActiveSkill_2
         m_Mode: 1
         m_Arguments:
@@ -338,14 +370,13 @@ RectTransform:
   m_Children:
   - {fileID: 1548658108060837850}
   - {fileID: 1548658108964477354}
-  - {fileID: 1548658109043647553}
   m_Father: {fileID: 1548658108174367153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -433.99994, y: 150.22}
-  m_SizeDelta: {x: -1619.6401, y: -879.79987}
+  m_SizeDelta: {x: 300.35986, y: 200.20013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1548658108263599031
 CanvasRenderer:
@@ -399,8 +430,9 @@ MonoBehaviour:
   StartPosition: {x: 0, y: 0, z: 0}
   upgradeButton: {fileID: 1548658108964477355}
   nomorSkill: 1
-  skillManager_1: {fileID: 0}
-  skillManager_2: {fileID: 0}
+  spriteChange: {fileID: 21300000, guid: 114204b958c0cf44ab6e1ead2b905835, type: 3}
+  objectSkillManager: []
+  skillManager: []
 --- !u!1 &1548658108964477355
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,51 +551,3 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1548658109043647678
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1548658109043647553}
-  - component: {fileID: 1548658109043647552}
-  m_Layer: 5
-  m_Name: Skill Manager 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1548658109043647553
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548658109043647678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1548658108263599026}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1548658109043647552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548658109043647678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3196b29078e3e2c48b1d823344a230e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

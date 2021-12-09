@@ -5,23 +5,19 @@ using UnityEngine.UI;
 
 public class SkillSetting : MonoBehaviour
 {
+    public GameObject[] objectDrag;
+    public DraggableComponent[] dragComponent;
     //public GameObject dragScript_1;
     //public GameObject dragScript_2;
     //public GameObject dragScript_3;
     //public GameObject dragScript_4;
     //public GameObject dragScript_5;
 
-    public DraggableComponent dragScript_1;
-    public DraggableComponent dragScript_2;
-    public DraggableComponent dragScript_3;
-    public DraggableComponent dragScript_4;
-    public DraggableComponent dragScript_5;
-
-    public Sprite spriteS1;
-    public Sprite spriteS2;
-    public Sprite spriteS3;
-    public Sprite spriteS4;
-    public Sprite spriteS5;
+    //public DraggableComponent dragScript_1;
+    //public DraggableComponent dragScript_2;
+    //public DraggableComponent dragScript_3;
+    //public DraggableComponent dragScript_4;
+    //public DraggableComponent dragScript_5;
 
     //public GameObject objectSprite1;
     //public GameObject objectSprite2;
@@ -29,57 +25,79 @@ public class SkillSetting : MonoBehaviour
     //public GameObject objectSprite4;
     //public GameObject objectSprite5;
 
-    public Image objectSprite1;
-    public Image objectSprite2;
-    public Image objectSprite3;
-    public Image objectSprite4;
-    public Image objectSprite5;
+    public GameObject[] objectImage;
+    public Image[] image;
 
-    public SkillManager skillManager_1;
-    public SkillManager skillManager_2;
-    //public SkillManager skillManager_3;
-    //public SkillManager skillManager_4;
-    //public SkillManager skillManager_5;
+    public GameObject[] objectSkillButton;
+    public SkillButton[] skillButton;
+
+    public GameObject[] objectSkillManager;
+    public SkillManager[] skillManager;
 
     public void Start()
     {
-        dragScript_1 = FindInActiveObjectByName("Skill1").GetComponent<DraggableComponent>();
-        dragScript_2 = FindInActiveObjectByName("Skill2").GetComponent<DraggableComponent>();
+        
+        objectDrag = GameObject.FindGameObjectsWithTag("Skill");
+        dragComponent = new DraggableComponent[objectDrag.Length];
+        for (int i = 0; i < objectDrag.Length; i++)
+        {
+            dragComponent[i] = objectDrag[i].GetComponent<DraggableComponent>();
+        }
+
+        objectImage = GameObject.FindGameObjectsWithTag("Sprite");
+        image = new Image[objectImage.Length];
+        for (int i = 0; i < objectImage.Length; i++)
+        {
+            image[i] = objectImage[i].GetComponent<Image>();
+        }
+        //dragScript_1 = FindInActiveObjectByName("Skill1").GetComponent<DraggableComponent>();
+        //dragScript_2 = FindInActiveObjectByName("Skill2").GetComponent<DraggableComponent>();
         //dragScript_3 = FindInActiveObjectByName("Skill3").GetComponent<DraggableComponent>();
         //dragScript_4 = FindInActiveObjectByName("Skill4").GetComponent<DraggableComponent>();
         //dragScript_5 = FindInActiveObjectByName("Skill5").GetComponent<DraggableComponent>();
 
-        objectSprite1 = FindInActiveObjectByName("Sprite Skill 1").GetComponent<Image>();
-        objectSprite2 = FindInActiveObjectByName("Sprite Skill 2").GetComponent<Image>();
+        //objectSprite1 = FindInActiveObjectByName("Sprite Skill 1").GetComponent<Image>();
+        //objectSprite2 = FindInActiveObjectByName("Sprite Skill 2").GetComponent<Image>();
         //objectSprite3 = FindInActiveObjectByName("Sprite Skill 3").GetComponent<Image>();
         //objectSprite4 = FindInActiveObjectByName("Sprite Skill 4").GetComponent<Image>();
         //objectSprite5 = FindInActiveObjectByName("Sprite Skill 5").GetComponent<Image>();
 
-        skillManager_1 = FindInActiveObjectByName("Skill Manager 1").GetComponent<SkillManager>();
-        skillManager_2 = FindInActiveObjectByName("Skill Manager 2").GetComponent<SkillManager>();
-        
+        //skillManager_1 = FindInActiveObjectByName("Skill Manager 1").GetComponent<SkillManager>();
+        //skillManager_2 = FindInActiveObjectByName("Skill Manager 2").GetComponent<SkillManager>();
+
+        objectSkillManager = GameObject.FindGameObjectsWithTag("SkillManager");
+        skillManager = new SkillManager[objectSkillManager.Length];
+        for (int i = 0; i < objectSkillManager.Length; i++)
+        {
+            skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
+        }
+
+        objectSkillButton = GameObject.FindGameObjectsWithTag("Sprite");
+        skillButton = new SkillButton[objectSkillButton.Length];
+        for (int i = 0; i < objectSkillButton.Length; i++)
+        {
+            skillButton[i] = objectSkillButton[i].GetComponent<SkillButton>();
+        }
 
     }
 
     public void Update()
     {
-        dragScript_1.enabled = false;
-        dragScript_2.enabled = false;
+        dragComponent[1].enabled = false;
+        dragComponent[0].enabled = false;
 
-        if (dragScript_1.enabled == false)
+        if (dragComponent[0].enabled == false)
         {
-            skillManager_1.enabled = true;
-            objectSprite1.sprite = spriteS1;
-            objectSprite1.rectTransform.sizeDelta = new Vector2(189f, 177f);
-            //objectSprite1.rectTransform.localPosition = new Vector3(-809f, -227, 0);
+            //skillButton[0].enabled = false;
+            image[0].sprite = dragComponent[0].spriteChange;
+            image[0].rectTransform.sizeDelta = new Vector2(189f, 177f);
         }
 
-        if (dragScript_2.enabled == false)
+        if (dragComponent[1].enabled == false)
         {
-            skillManager_2.enabled = true;
-            objectSprite2.sprite = spriteS2;
-            objectSprite2.rectTransform.sizeDelta = new Vector2(189f, 177f);
-            //objectSprite2.rectTransform.localPosition = new Vector3(-809f, -227, 0);
+            //skillButton[1].enabled = false;
+            image[1].sprite = dragComponent[1].spriteChange;
+            image[1].rectTransform.sizeDelta = new Vector2(189f, 177f);
         }
 
         //objectSprite1 = FindInActiveObjectByName("Sprite Skill 1");

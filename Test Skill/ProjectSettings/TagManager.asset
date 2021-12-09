@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Skill
+  - Sprite
+  - SkillManager
   layers:
   - Default
   - TransparentFX
