@@ -363,7 +363,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1926777631656740, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592770765900944, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_RootOrder
@@ -850,9 +850,9 @@ MonoBehaviour:
   gamePlaycamera2: {fileID: 1039058531}
   score: 0
   SlidingpuzzlePrefabs:
-  - {fileID: 223, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 151, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
   slidingscript:
-  - {fileID: 608, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 495, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
   _WordScramble:
   - {fileID: 2456878920465875380, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
   - {fileID: 2456878920465875380, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
@@ -865,9 +865,9 @@ MonoBehaviour:
   - {fileID: 3145171775230084367, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
   perent: {fileID: 95810395}
   PuzzleNUmber: 2
-  jumlahPuzzle: 4
+  jumlahPuzzle: 3
   urutanPuzzle: 0
-  munculpuzzle: 1
+  munculpuzzle: 0
   hitungScore: 0
   puzzleanim: {fileID: 198891970}
   btnPopuppuzzle: {fileID: 1719751241}
@@ -2066,7 +2066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926777631656740, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592770765900944, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_RootOrder
@@ -2845,15 +2845,15 @@ MonoBehaviour:
   pzm: {fileID: 198891969}
   selecttag: Player
   playerpref:
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 1514739241493290376, guid: bfa7807596648e24b901428858f44c3e, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 1514739241493290376, guid: bfa7807596648e24b901428858f44c3e, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
-  - {fileID: 587, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
   posisi:
   - {fileID: 1082307922}
   - {fileID: 919721420}
@@ -5086,10 +5086,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -10
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 63
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -5113,13 +5113,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042394397}
-  m_LocalRotation: {x: 0.04494348, y: 0.95125127, z: -0.25488704, w: 0.16773133}
-  m_LocalPosition: {x: 51.5, y: 4.25, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalRotation: {x: -0.00000003903528, y: 0.92927593, z: -0.36938632, w: -0.00000018313972}
+  m_LocalPosition: {x: 53.21, y: 5.427, z: 8.211}
+  m_LocalScale: {x: 1, y: 1, z: 0.84066}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 160, z: 0}
+  m_LocalEulerAnglesHint: {x: 43.356003, y: 179.99998, z: 0}
 --- !u!1001 &1047779060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5133,7 +5133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926777631656740, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592770765900944, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_RootOrder
@@ -5467,7 +5467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926777631656740, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592770765900944, guid: 935ba91ea5459eb4d8917d5e94bc3ddf, type: 3}
       propertyPath: m_RootOrder
@@ -5756,7 +5756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1477330340642922, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4225417865233548, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_RootOrder
@@ -6508,7 +6508,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95344317, b: 0.06132078, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -6528,7 +6528,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -7244,7 +7244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxlenght: 3
+  maxlenght: 4
   current: 0
   imgProgressPuzzle: {fileID: 1297187583}
   panelscript: {fileID: 0}
@@ -7647,7 +7647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1477330340642922, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4225417865233548, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_RootOrder
@@ -8497,7 +8497,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1477330340642922, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4225417865233548, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_RootOrder
@@ -8714,7 +8714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxlenght: 3
+  maxlenght: 4
   current: 0
   imgProgressPuzzle: {fileID: 1909288970}
   panelscript: {fileID: 0}
@@ -9231,7 +9231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1796371640
 Transform:
   m_ObjectHideFlags: 0
@@ -10493,7 +10493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1477330340642922, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4225417865233548, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_RootOrder
@@ -10556,7 +10556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1477330340642922, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4225417865233548, guid: 7218b9728928b894eb1799b26af67733, type: 3}
       propertyPath: m_RootOrder

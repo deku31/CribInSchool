@@ -61,10 +61,10 @@ public class ScenesManager : MonoBehaviour
     public void Exit()
     {
         sfx.buttonclickMethod();
-        Invoke("exitmethod", 0.2f);
+        Application.Quit();
+
     }
     void exitmethod()
     {
-        Application.Quit();
     }
 }

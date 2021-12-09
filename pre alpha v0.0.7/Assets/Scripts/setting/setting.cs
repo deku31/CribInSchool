@@ -18,7 +18,6 @@ public class setting : MonoBehaviour
     public int lvquality=3;
     private void Awake()
     {
-        Screen.SetResolution(640, 480, FullScreenMode.ExclusiveFullScreen, 60);
         bgm = FindObjectOfType<BgmManager>();
         sfx = FindObjectOfType<SoundManager>();
     }

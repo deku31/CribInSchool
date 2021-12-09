@@ -76,7 +76,7 @@ public class PuzzleManager : MonoBehaviour
         }
         else if (PuzzleNUmber == 1)
         {
-            cam.enabled = true;
+            cam.enabled = false;
             WordScramble(0);
 
         }
@@ -85,10 +85,11 @@ public class PuzzleManager : MonoBehaviour
             cam.enabled = false;
             WordSearching();
         }
+
         else if (PuzzleNUmber == 3)
         {
             cam.enabled = false;
-            
+
             WordScramble(1);
         }
         else
@@ -97,7 +98,7 @@ public class PuzzleManager : MonoBehaviour
             {
                 solved();
             }
-            else if(jumlahseluruhpuzzle==1)
+            else if(jumlahseluruhpuzzle>=1)
             {
                 PuzzleNUmber=0;
             }
@@ -163,10 +164,10 @@ public class PuzzleManager : MonoBehaviour
         if (munculpuzzle == true)
         {
             munculpuzzle = false;
-            instance(wordSearchingPref,0);
+            Instantiate(wordSearchingPref[urutanPuzzle], perent);
 
         }
-        if (GameObject.Find(wordSearchingPref[urutanPuzzle].name + "(Clone)") == null)
+        else if (GameObject.Find(wordSearchingPref[urutanPuzzle].name + "(Clone)") == null)
         {
             jumlahseluruhpuzzle -= 1;
 
