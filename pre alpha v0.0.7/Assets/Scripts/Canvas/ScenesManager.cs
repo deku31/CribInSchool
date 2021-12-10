@@ -14,6 +14,11 @@ public class ScenesManager : MonoBehaviour
     public GameObject audiomanager;
     public setting settingmanager;
     public int nomorbgm;
+    //about
+    public GameObject about;
+    //popip setting
+    public GameObject popupPos;
+   
 
     private void Awake()
     {
@@ -31,7 +36,9 @@ public class ScenesManager : MonoBehaviour
     {
         sfx.buttonclickMethod();
         SceneManager.LoadScene(screenName);
+        //setting
         DontDestroyOnLoad(bgmo);
+        DontDestroyOnLoad(about);
         DontDestroyOnLoad(audiomanager);
         DontDestroyOnLoad(settingmanager);
     }
@@ -52,12 +59,7 @@ public class ScenesManager : MonoBehaviour
         sfx.buttonclickMethod();
         settingmanager.panel.SetActive(true);
     }
-    public void About()
-    {
-        sfx.buttonclickMethod();
-        settingmanager.panel.SetActive(false);
-        settingmanager.about.SetActive(true);
-    }
+   
     public void Exit()
     {
         sfx.buttonclickMethod();

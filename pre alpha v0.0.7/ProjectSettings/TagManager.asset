@@ -20,6 +20,9 @@ TagManager:
   - muridBiasa
   - deteksiguru
   - deteksi pesawat
+  - popupbtn
+  - popupbtn2
+  - popupbtnkanan
   layers:
   - Default
   - TransparentFX
