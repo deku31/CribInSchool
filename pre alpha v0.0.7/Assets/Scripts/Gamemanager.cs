@@ -10,9 +10,11 @@ public class Gamemanager : MonoBehaviour
     private PauseManager _PauseManager;
     [SerializeField]private BgmManager bgmkelas;
     [SerializeField] private int nomorAudio;
+    public GameObject test;
     private void Awake()
     {
         _PauseManager = GameObject.Find("gameplaymanager").GetComponent<PauseManager>();
+        test = GameObject.FindGameObjectWithTag("popupbtn");
     }
     private void Start()
     {

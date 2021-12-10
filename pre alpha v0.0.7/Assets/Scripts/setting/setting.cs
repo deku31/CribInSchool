@@ -16,10 +16,17 @@ public class setting : MonoBehaviour
     //QUALITY   setting
     public Dropdown quality;
     public int lvquality=3;
+    //popup   setting
+    public Dropdown settingpopuppos;
+    public GameObject poskanan;
+    public GameObject poskiri;
+
     private void Awake()
     {
         bgm = FindObjectOfType<BgmManager>();
         sfx = FindObjectOfType<SoundManager>();
+        poskanan = GameObject.FindGameObjectWithTag("popupbtn");
+        poskiri = GameObject.FindGameObjectWithTag("popupbtn2");
     }
     // Start is called before the first frame update
     void Start()
@@ -34,6 +41,12 @@ public class setting : MonoBehaviour
         sfx.buttonclickMethod();
         panel.SetActive(false);
     }
+    public void About()
+    {
+        sfx.buttonclickMethod();
+        panel.SetActive(false);
+        about.SetActive(true);
+    }
     public void AboutEx()
     {
         sfx.buttonclickMethod();
@@ -45,6 +58,12 @@ public class setting : MonoBehaviour
     {
         bgm.volume = volumesetting.value;
         sfx.volumeafx = volumesettingsfx.value;
+        qualitysetting();
+        popupsetting();
+       
+    }
+    void qualitysetting()
+    {
         if (quality.captionText.text == "LOW")
         {
             lvquality = 1;
@@ -57,11 +76,20 @@ public class setting : MonoBehaviour
         {
             lvquality = 3;
         }
-        //for (int i = 0; i < quality.options.Count; i++)
-        //{
-
-        //}
         PlayerPrefs.SetInt("masterQuality", lvquality);
         QualitySettings.SetQualityLevel(lvquality);
+    }
+    void popupsetting()
+    {
+        if (settingpopuppos.captionText.text=="KANAN")
+        {
+            poskiri.SetActive(false);
+            poskanan.SetActive(true);
+        }
+        else if (settingpopuppos.captionText.text=="KIRI")
+        {
+            poskanan.SetActive(false);
+            poskiri.SetActive(true);
+        }
     }
 }
