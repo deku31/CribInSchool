@@ -53,9 +53,6 @@ public class EquipmentSlot : MonoBehaviour
 
     private void OnItemDropped(DraggableComponent draggable)
 	{
-        
-        //imageSkill[0].rectTransform.sizeDelta = resize;
-        //imageSkill[1].rectTransform.sizeDelta = resize;
         draggable.upgradeButton.SetActive(false);
         nomer = draggable.nomorSkill;
 
@@ -64,8 +61,6 @@ public class EquipmentSlot : MonoBehaviour
         DropArea.DropConditions.Add(disableDropCondition);
         draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
     }
-
-
 
     //Current item is being dragged so we listen for the EndDrag event
     private void CurrentItemOnBeginDrag(PointerEventData eventData)

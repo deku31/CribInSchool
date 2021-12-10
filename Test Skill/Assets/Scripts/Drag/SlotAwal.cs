@@ -31,7 +31,6 @@ public class SlotAwal : MonoBehaviour
         {
             imageSkill[i] = objectImage[i].GetComponent<Image>();
         }
-        //spriteSkill1 = FindInActiveObjectByName("Sprite Skill 1");
     }
 
     public void Initialize(DraggableComponent currentItem)
@@ -47,8 +46,6 @@ public class SlotAwal : MonoBehaviour
 
     private void OnItemDropped(DraggableComponent draggable)
 	{
-        imageSkill[0].rectTransform.sizeDelta = new Vector3(299f, 287f,0f);
-        imageSkill[1].rectTransform.sizeDelta = new Vector3(299f, 287f, 0f);
         draggable.upgradeButton.SetActive(true);
 
         draggable.transform.position = transform.position;

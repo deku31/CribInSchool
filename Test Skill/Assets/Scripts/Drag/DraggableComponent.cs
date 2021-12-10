@@ -37,18 +37,14 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public void Start()
     {
+        StartPosition = rectTransform.anchoredPosition;
+
         objectSkillManager = GameObject.FindGameObjectsWithTag("SkillManager");
         skillManager = new SkillManager[objectSkillManager.Length];
         for (int i = 0; i < objectSkillManager.Length; i++)
         {
             skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
         }
-    }
-
-    public void Update()
-    {
-        //skillManager[0].enabled = false;
-        //skillManager[1].enabled = false;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -63,8 +59,6 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
 	public void OnDrag(PointerEventData eventData)
 	{
-        upgradeButton.SetActive(false);
-
 		if (!CanDrag)
 		{
 			return;
@@ -76,7 +70,9 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 		{
 			rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 		}
-	}
+
+        upgradeButton.SetActive(false);
+    }
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
@@ -112,13 +108,12 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 		}
 
 		rectTransform.anchoredPosition = StartPosition;
-        upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);
-	}
+        upgradeButton.SetActive(true);
+    }
 
 	public void OnInitializePotentialDrag(PointerEventData eventData)
 	{
-        
         StartPosition = rectTransform.anchoredPosition;
 	}
 
