@@ -23,10 +23,12 @@ public class slidingpuzzlescript : MonoBehaviour
     private Camera _Camera;
 
     //sliding puzzle script
+    public GameObject contohpuzzle;
     public GameObject progressbarpuzzle;
     public GameObject progressbarTime;
     [Header("tiles")]
     public GameObject slidingpuzzleobj;
+    public GameObject buttonliat;
     //tiles atau kotak yang ada di dalam permainan
     [SerializeField] private Transform emptyspace = null;
     [SerializeField] public Tiles[] tiles;
@@ -72,6 +74,7 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     private void Start()
     {
+        contohpuzzle.SetActive(false);
         pzm.jumlahSoal += 1;
         progressbarpuzzle.SetActive(true);
         poskotakbenar = Random.Range(0, poskotak.Length);
@@ -204,13 +207,14 @@ public class slidingpuzzlescript : MonoBehaviour
     {
         if (slidingPuzzle == true)
         {
-            slidingpuzzleobj.SetActive(true);
+            //slidingpuzzleobj.SetActive(true);
             iconsearchingObj.SetActive(false);
         }
         else
         {
-            slidingpuzzleobj.SetActive(false);
+            //slidingpuzzleobj.SetActive(false);
             iconsearchingObj.SetActive(true);
+            buttonliat.SetActive(false);
         }
     }
 
@@ -333,7 +337,31 @@ public class slidingpuzzlescript : MonoBehaviour
         Destroy(this.gameObject);
         //EndPanel.SetActive(true);
     }
-
+    public void liatcontoh()
+    {
+        if (slidingPuzzle==true)
+        {
+            slidingpuzzleobj.SetActive(false);
+            audiomanager.buttonclickMethod();
+            contohpuzzle.SetActive(true);
+        }
+        else
+        {
+            contohpuzzle.SetActive(false);
+        }
+    }
+    public void lepasliatcontoh()
+    {
+        if (slidingPuzzle==true)
+        {
+            contohpuzzle.SetActive(false);
+            slidingpuzzleobj.SetActive(true);
+        }
+        else
+        {
+            contohpuzzle.SetActive(false);
+        }
+    }
 
 
     public void shuffle() //merandom posisi kotak diawal

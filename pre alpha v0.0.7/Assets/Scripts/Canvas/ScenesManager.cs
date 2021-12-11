@@ -18,7 +18,8 @@ public class ScenesManager : MonoBehaviour
     public GameObject about;
     //popip setting
     public GameObject popupPos;
-   
+    //help
+    public GameObject help;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class ScenesManager : MonoBehaviour
     }
     public void LoadScene(string screenName)
     {
+
         sfx.buttonclickMethod();
         SceneManager.LoadScene(screenName);
         //setting

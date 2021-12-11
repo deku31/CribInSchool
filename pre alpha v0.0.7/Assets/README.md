@@ -1,2 +1,4 @@
 tambahan : 
--setting dan memasukan asset sliding puzzle yang baru
+- update tutorial panel tinggal masukin gambar
+- puzzle slidingpuzzle dibesarkan
+- lihat puzzle
