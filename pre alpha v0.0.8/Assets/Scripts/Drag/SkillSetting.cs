@@ -5,25 +5,11 @@ using UnityEngine.UI;
 
 public class SkillSetting : MonoBehaviour
 {
+    public Vector2 sizeSkill_1 = new Vector2();
+    public Vector2 sizeSkill_2 = new Vector2();
+
     public GameObject[] objectDrag;
     public DraggableComponent[] dragComponent;
-    //public GameObject dragScript_1;
-    //public GameObject dragScript_2;
-    //public GameObject dragScript_3;
-    //public GameObject dragScript_4;
-    //public GameObject dragScript_5;
-
-    //public DraggableComponent dragScript_1;
-    //public DraggableComponent dragScript_2;
-    //public DraggableComponent dragScript_3;
-    //public DraggableComponent dragScript_4;
-    //public DraggableComponent dragScript_5;
-
-    //public GameObject objectSprite1;
-    //public GameObject objectSprite2;
-    //public GameObject objectSprite3;
-    //public GameObject objectSprite4;
-    //public GameObject objectSprite5;
 
     public GameObject[] objectImage;
     public Image[] image;
@@ -94,14 +80,16 @@ public class SkillSetting : MonoBehaviour
         {
             //skillButton[0].enabled = false;
             image[0].sprite = dragComponent[0].spriteChange;
-            image[0].rectTransform.sizeDelta = new Vector2(189f, 177f);
+            image[0].rectTransform.sizeDelta = sizeSkill_1;
+            //image[0].rectTransform.sizeDelta = new Vector2(79f, 67f);
         }
 
         if (dragComponent[1].enabled == false)
         {
             //skillButton[1].enabled = false;
             image[1].sprite = dragComponent[1].spriteChange;
-            image[1].rectTransform.sizeDelta = new Vector2(189f, 177f);
+            image[1].rectTransform.sizeDelta = sizeSkill_2;
+            //image[1].rectTransform.sizeDelta = new Vector2(79f, 67f);
         }
 
         //objectSprite1 = FindInActiveObjectByName("Sprite Skill 1");

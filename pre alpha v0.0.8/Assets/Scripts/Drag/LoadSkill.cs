@@ -11,6 +11,8 @@ public class LoadSkill : MonoBehaviour
     public Vector3 spawn_1 = new Vector3(-910f, -200f, 0f);
     public Vector3 spawn_2 = new Vector3(-910f, -400f, 0f);
 
+    public Transform test;
+
     public GameObject prefab_1;
     public GameObject prefab_2;
 
@@ -53,8 +55,9 @@ public class LoadSkill : MonoBehaviour
 
     public void Update()
     {
-        imageClone[0].transform.localPosition = spawn_1;
-        imageClone[1].transform.localPosition = spawn_2;
+        imageClone[0].transform.position = spawnPointSkill_1.position;
+        imageClone[1].transform.position = spawnPointSkill_2.position;
+        
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
