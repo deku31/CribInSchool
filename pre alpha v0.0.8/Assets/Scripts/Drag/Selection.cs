@@ -28,7 +28,7 @@ public class Selection : MonoBehaviour
         PlayerPrefs.SetInt("selectSkill_1", selectSkill_1);
         PlayerPrefs.SetInt("selectSkill_2", selectSkill_2);
         
-        SceneManager.LoadScene(4, LoadSceneMode.Single);
+        SceneManager.LoadScene("lodingScane", LoadSceneMode.Single);
     }
 
     //GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag

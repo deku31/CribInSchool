@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 59c4b4dac3a7c834e8237a41e968e847
   - enabled: 1
     path: Assets/Scenes/2. PowerSkill.unity
-    guid: 61cc1d5f9e0601049ac6cf3eabb1dc01
+    guid: 99514062accda364b83c8ef854d30ba4
   - enabled: 1
     path: Assets/Scenes/lodingScane.unity
     guid: e3fba72fcdb8a1d4ca90958452ea43ab

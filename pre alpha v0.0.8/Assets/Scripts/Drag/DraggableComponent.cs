@@ -115,7 +115,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
         StartPosition = posisiAwal;
     }
 
-    GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
+    public GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama
     {
         Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
         for (int i = 0; i < objs.Length; i++)

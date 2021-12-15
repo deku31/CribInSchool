@@ -53,8 +53,8 @@ public class LoadSkill : MonoBehaviour
 
     public void Update()
     {
-        imageClone[0].rectTransform.localPosition = spawn_1;
-        imageClone[1].rectTransform.localPosition = spawn_2;
+        clone_1.transform.localPosition = spawn_1;
+        clone_2.transform.localPosition = spawn_2;
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag

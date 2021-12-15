@@ -7,6 +7,14 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(endManager))]
 public class endManager : MonoBehaviour
 {
+    //======================================================================================================================
+    //lv unlock fariabel
+    levelmanager lm;
+    public int bukalv;//nomor lv yang ingin dibuka
+
+
+    //======================================================================================================================
+
     [SerializeField] private SoundManager audiomanager=null;
     [SerializeField] private BgmManager bgm=null;
     //isi panel
@@ -36,6 +44,7 @@ public class endManager : MonoBehaviour
 
     void Awake()
     {
+        lm = FindObjectOfType<levelmanager>();
         playermanager = FindObjectOfType<player>();
         audiomanager = FindObjectOfType<SoundManager>();
         bgm = FindObjectOfType<BgmManager>();
@@ -70,11 +79,14 @@ public class endManager : MonoBehaviour
         {
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
+            lm.lvUnlock[bukalv - 1] = true;
+
         }
         else if (jawabanBenar>=nilaitertinggi-1 && ketahuan == false)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
+            lm.lvUnlock[bukalv - 1] = true;
         }
         else 
         {
@@ -106,6 +118,7 @@ public class endManager : MonoBehaviour
 
     public void Next()
     {
+        DontDestroyOnLoad(lm);
         SceneManager.LoadScene("Level 1");
         Time.timeScale = 1;
     }
