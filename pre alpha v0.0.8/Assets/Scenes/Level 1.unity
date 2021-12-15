@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.5755825, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.57558316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2385,7 +2385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &501154847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7487,8 +7487,8 @@ MonoBehaviour:
   - {fileID: 7133741120095031, guid: 5abbc4e745636af4d9ce8de7a21f3483, type: 3}
   spawnPointSkill_1: {fileID: 501154847}
   spawnPointSkill_2: {fileID: 2063226616}
-  spawn_1: {x: -360, y: -110, z: 0}
-  spawn_2: {x: -360, y: -170, z: 0}
+  spawn_1: {x: -910, y: -200, z: 0}
+  spawn_2: {x: -910, y: -400, z: 0}
   prefab_1: {fileID: 0}
   prefab_2: {fileID: 0}
   clone_1: {fileID: 0}
@@ -11964,7 +11964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063226616
 RectTransform:
   m_ObjectHideFlags: 0

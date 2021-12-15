@@ -36,20 +36,8 @@ public class SkillSetting : MonoBehaviour
 
     public void Start()
     {
-        
-        objectDrag = GameObject.FindGameObjectsWithTag("Skill");
-        dragComponent = new DraggableComponent[objectDrag.Length];
-        for (int i = 0; i < objectDrag.Length; i++)
-        {
-            dragComponent[i] = objectDrag[i].GetComponent<DraggableComponent>();
-        }
 
-        objectImage = GameObject.FindGameObjectsWithTag("Sprite");
-        image = new Image[objectImage.Length];
-        for (int i = 0; i < objectImage.Length; i++)
-        {
-            image[i] = objectImage[i].GetComponent<Image>();
-        }
+
         //dragScript_1 = FindInActiveObjectByName("Skill1").GetComponent<DraggableComponent>();
         //dragScript_2 = FindInActiveObjectByName("Skill2").GetComponent<DraggableComponent>();
         //dragScript_3 = FindInActiveObjectByName("Skill3").GetComponent<DraggableComponent>();
@@ -69,8 +57,28 @@ public class SkillSetting : MonoBehaviour
         //skillManager = new SkillManager[objectSkillManager.Length];
         //for (int i = 0; i < objectSkillManager.Length; i++)
         //{
-            //skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
+        //skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
         //}
+
+        
+
+    }
+
+    public void Update()
+    {
+        objectDrag = GameObject.FindGameObjectsWithTag("Skill");
+        dragComponent = new DraggableComponent[objectDrag.Length];
+        for (int i = 0; i < objectDrag.Length; i++)
+        {
+            dragComponent[i] = objectDrag[i].GetComponent<DraggableComponent>();
+        }
+
+        objectImage = GameObject.FindGameObjectsWithTag("Sprite");
+        image = new Image[objectImage.Length];
+        for (int i = 0; i < objectImage.Length; i++)
+        {
+            image[i] = objectImage[i].GetComponent<Image>();
+        }
 
         objectSkillButton = GameObject.FindGameObjectsWithTag("Sprite");
         skillButton = new SkillButton[objectSkillButton.Length];
@@ -79,10 +87,6 @@ public class SkillSetting : MonoBehaviour
             skillButton[i] = objectSkillButton[i].GetComponent<SkillButton>();
         }
 
-    }
-
-    public void Update()
-    {
         dragComponent[1].enabled = false;
         dragComponent[0].enabled = false;
 

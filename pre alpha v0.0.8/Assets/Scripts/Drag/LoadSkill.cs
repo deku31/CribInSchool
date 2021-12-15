@@ -8,8 +8,8 @@ public class LoadSkill : MonoBehaviour
     public GameObject[] skillPrefabs;
     public Transform spawnPointSkill_1;
     public Transform spawnPointSkill_2;
-    public Vector3 spawn_1 = new Vector3(-360f, -110f, 0f);
-    public Vector3 spawn_2 = new Vector3(-360f, -170f, 0f);
+    public Vector3 spawn_1 = new Vector3(-910f, -200f, 0f);
+    public Vector3 spawn_2 = new Vector3(-910f, -400f, 0f);
 
     public GameObject prefab_1;
     public GameObject prefab_2;
@@ -53,8 +53,8 @@ public class LoadSkill : MonoBehaviour
 
     public void Update()
     {
-        clone_1.transform.localPosition = spawn_1;
-        clone_2.transform.localPosition = spawn_2;
+        imageClone[0].transform.localPosition = spawn_1;
+        imageClone[1].transform.localPosition = spawn_2;
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
