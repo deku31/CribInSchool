@@ -24,10 +24,17 @@ public class SkillButton : MonoBehaviour
 
     public void SkillDeskripsi()
     {
-        SkillManager.instance.activateSkill = transform.GetComponent<Skill>();
+        if (skillNameText!=null&&skilDeskripsiText!=null)
+        {
+            SkillManager.instance.activateSkill = transform.GetComponent<Skill>();
 
-        skillNameText.text = SkillManager.instance.skills[skillId].skillName;
-        skilDeskripsiText.text = SkillManager.instance.skills[skillId].skillDeskripsi;
+            skillNameText.text = SkillManager.instance.skills[skillId].skillName;
+            skilDeskripsiText.text = SkillManager.instance.skills[skillId].skillDeskripsi;
+        }
+        else
+        {
+            print("deskripsi tidak ada");
+        }
     }
 
     public void ActiveSkill_1()

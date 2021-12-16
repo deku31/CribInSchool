@@ -40,10 +40,19 @@ public class LoadSkill : MonoBehaviour
 
         //GameObject clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, Quaternion.identity);
         //GameObject clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, Quaternion.identity);
+        if (selectSkill_1!=selectSkill_2)
+        {
+            clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
+            clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
 
-        clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
-        clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
-
+        }
+        else
+        {
+            foreach (var item in imageClone)
+            {
+                item.enabled = false;
+            }
+        }
 
         ObjectImageClone = GameObject.FindGameObjectsWithTag("Skill");
         imageClone = new Image[ObjectImageClone.Length];

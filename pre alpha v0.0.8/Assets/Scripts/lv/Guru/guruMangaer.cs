@@ -9,6 +9,8 @@ public class guruMangaer : MonoBehaviour
 
     public endManager panelakhir;
     public bool ketahuan;
+
+    public bool frezee;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class guruMangaer : MonoBehaviour
 
     void Update()
     {
+       
         if (ketahuan==true)
         {
             panelakhir.ketahuan = true;

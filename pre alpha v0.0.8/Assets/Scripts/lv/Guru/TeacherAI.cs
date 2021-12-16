@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class TeacherAI : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public Transform[] wayPoint;
     int wayPoitIndex;
     Vector3 target;
@@ -16,16 +16,22 @@ public class TeacherAI : MonoBehaviour
     bool mendekat;
     //player manager
     private player playermanager;
-
     //animasi
     public Animator anim;
 
+    //skill setting;
     // random
-    public int random;
+    public int random;//selain angka 0guru akan diam
+    public float time;//durasi guru diam
+    public float Defaulttime=3f;//durasi guru diam
+    public Skill1 skill1;
+
 
     public float defauldspeed;
     void Start()
     {
+        time = Defaulttime;
+        skill1 = FindObjectOfType<Skill1>();
         volume = 0.3f;
         step = true;
         audiomanager = FindObjectOfType<SoundManager>();
@@ -75,19 +81,56 @@ public class TeacherAI : MonoBehaviour
             }
 
         }
-        if (Vector3.Distance(transform.position,target)<1)
+        if (skill1!=null)
         {
-            if (random != 0)
+            if (skill1.frezeer == true)
             {
                 agent.speed = 0;
                 step = false;
-                Invoke("jalan",3f);
+                anim.SetBool("jalan", false);
             }
-            if(random==0)
+            else
             {
-                IterateWaypoint();
-                UpdateDestination();
+                anim.SetBool("jalan", true);
+
+                jalan();
             }
+        }
+       
+        if (Vector3.Distance(transform.position,target)<1)
+        {
+            if (skill1!=null)
+            {
+                if (skill1.frezeer == false)
+                {
+                    if (random != 0)
+                    {
+                        agent.speed = 0;
+                        step = false;
+                        Invoke("jalan", time);
+                    }
+                    if (random == 0)
+                    {
+                        IterateWaypoint();
+                        UpdateDestination();
+                    }
+                }
+            }
+            else
+            {
+                if (random != 0)
+                {
+                    agent.speed = 0;
+                    step = false;
+                    Invoke("jalan", time);
+                }
+                if (random == 0)
+                {
+                    IterateWaypoint();
+                    UpdateDestination();
+                }
+            }
+           
         }
     }
     void stepSound()

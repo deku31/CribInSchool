@@ -37,7 +37,6 @@ public class EquipmentSlot : MonoBehaviour
         imageSkill = new Image[objectImage.Length];
         for (int i = 0; i < objectImage.Length; i++)
         {
-            
             imageSkill[i] = objectImage[i].GetComponent<Image>();
         }
     }
@@ -63,7 +62,7 @@ public class EquipmentSlot : MonoBehaviour
         DropArea.DropConditions.Add(disableDropCondition);
         draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
 
-        
+
     }
 
 
@@ -87,7 +86,6 @@ public class EquipmentSlot : MonoBehaviour
             return;
             
         }
-
         DropArea.DropConditions.Remove(disableDropCondition); //We dropped the component in another slot so we can remove the DisableDropCondition
         CurrentItem.OnBeginDragHandler -= CurrentItemOnBeginDrag; //We make sure to remove this listener as the item is no longer in this slot
         CurrentItem = null; //We no longer have an item in this slot, so we remove the refference
