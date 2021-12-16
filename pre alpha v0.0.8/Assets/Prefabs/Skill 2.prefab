@@ -333,6 +333,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7880570511300327195}
+        m_TargetAssemblyTypeName: AktifSkill_2, Assembly-CSharp
+        m_MethodName: Distract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1548658108174367149
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +458,7 @@ GameObject:
   - component: {fileID: 1548658108263599028}
   - component: {fileID: 1548658108263599029}
   - component: {fileID: 2002301786860873336}
+  - component: {fileID: 7880570511300327195}
   m_Layer: 5
   m_Name: Skill2
   m_TagString: Skill
@@ -541,6 +554,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01eb47ebcb04a4a4ba6ca05dc078726e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7880570511300327195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548658108263599027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d3a6048cd3f99428828a983d6407f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentGuru: {fileID: 0}
+  gm: {fileID: 0}
+  batu: {fileID: 9176718071704938749, guid: e52036dc251ae35448269607bc19b9f9, type: 3}
+  skillAktif: 0
+  distractSkill: 0
 --- !u!1 &1548658108964477355
 GameObject:
   m_ObjectHideFlags: 0
