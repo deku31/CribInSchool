@@ -70,7 +70,7 @@ public class FieldOfView : MonoBehaviour {
     }
     void endpanel()
     {
-        audiomanager.resultMethod(1);
+        audiomanager.resultMethod(0);
         _endPanel.SetActive(true);
     }
     void LateUpdate() {

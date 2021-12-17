@@ -22,19 +22,19 @@ public class AktifSkill_2 : MonoBehaviour
 
     private void Awake()
     {
-        //agentGuru = GameObject.FindGameObjectWithTag("guru").GetComponent<NavMeshAgent>();
+        agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
 
         gm = FindObjectOfType<Gamemanager>();
-        if (gm != null)
-        {
-            skillAktif = true;
-        }
-
-        OnDistraction += ThrowCoin;
+       
     }
 
     void Start()
     {
+        if (gm != null)
+        {
+            skillAktif = true;
+        }
+        OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
         AktifSkill_2.OnDistraction += GetDistracted;
 
@@ -44,11 +44,12 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Update()
     {
-        //agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+        agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+        gm = FindObjectOfType<Gamemanager>();
 
         if (distractSkill == true)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hitInfo))
@@ -113,7 +114,7 @@ public class AktifSkill_2 : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, pos)<= 15f)
         {
-            StopAllCoroutines();
+            //StopAllCoroutines();
             _distracted = true;
             agentGuru.SetDestination(pos);
             StartCoroutine(FollowDistraction(pos));

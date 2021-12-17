@@ -54,6 +54,10 @@ public class player : MonoBehaviour
     [Header("pause")]
     public PauseManager pause;
 
+
+    public Skill3 skill3;
+    public GameObject ManagerPesawat;
+
     public  bool stargame;
     private void Awake()
     {
@@ -78,7 +82,7 @@ public class player : MonoBehaviour
     }
     private void Start()
     {
-       
+        skill3 = FindObjectOfType<Skill3>();
         pesawat.SetActive(false);
         munculPuzzle = false;
         Invoke("addplayer", 0.2f);
@@ -115,6 +119,8 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        skill3 = FindObjectOfType<Skill3>();
+
         if (pause.gameIsPaused==false)
        
         if (_slection != null)
@@ -162,7 +168,21 @@ public class player : MonoBehaviour
                     }
                     if (stargame==true)
                     {
-                        pesawat.SetActive(true);
+                        if (skill3!=null)
+                        {
+                            if (skill3.invisible==true)
+                            {
+                                pesawat.SetActive(false);
+                            }
+                            else
+                            {
+                                pesawat.SetActive(true);
+                            }
+                        }
+                        else
+                        {
+                            pesawat.SetActive(true);
+                        }
                         tanda.SetActive(false);
                         peringatanObj.SetActive(false);
                         audiomanager.transferMethod(0);

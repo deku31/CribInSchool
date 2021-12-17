@@ -103,12 +103,12 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 				return;
 			}
         }
-        Selection.FindObjectOfType<Selection>().skill_1.nomer = 0;
+        //Selection.FindObjectOfType<Selection>().skill_1.nomer = 0;
 
         print(Selection.FindObjectOfType<Selection>().selectSkill_1);
 
         //rectTransform.anchoredPosition = StartPosition;
-        Selection.FindObjectOfType<Selection>().skill_2.nomer = 0;
+        //Selection.FindObjectOfType<Selection>().skill_2.nomer = 0;
         rectTransform.anchoredPosition = StartPosition;
         upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);

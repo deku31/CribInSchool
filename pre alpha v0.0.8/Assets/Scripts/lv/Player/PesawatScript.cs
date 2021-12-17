@@ -8,16 +8,25 @@ public class PesawatScript : MonoBehaviour
     public Gamemanager gamemanager;
     public GameObject _endPanel;
     [SerializeField] private endManager panelscript;
-
+    public SoundManager sfx;
     public ProgressBarPlayer[] pemain;
-
+    public endManager end;
     //audio manager
     [SerializeField] private SoundManager audiomanager;
     int urutan;
+
+    //skill
+    Skill3 skill3;
     private void Awake()
     {
+        sfx = FindObjectOfType<SoundManager>();
+        //end = FindObjectOfType<endManager>();
         urutan = playermanager.acakpencontek;
         audiomanager = FindObjectOfType<SoundManager>();
+    }
+    private void Update()
+    {
+        skill3 = FindObjectOfType<Skill3>();
     }
     void endpanelMethod()
     {
@@ -70,8 +79,29 @@ public class PesawatScript : MonoBehaviour
         }
         if (other.transform.tag == "enemy")//jika terkena murid cepu 
         {
-            Destroy(playermanager.pesawat);
-            _endPanel.SetActive(true);
+            if (skill3!=null)
+            {
+                if (skill3.invisible==false)
+                {
+                    end.ketahuan = true;
+
+                    Destroy(playermanager.pesawat);
+                    _endPanel.SetActive(true);
+                    sfx.resultMethod(1);
+
+
+                }
+            }
+            else
+            {
+
+                Destroy(playermanager.pesawat);
+                end.ketahuan = true;
+
+                _endPanel.SetActive(true);
+                sfx.resultMethod(1);
+            }
+            print("lewat");
         }
 
     }

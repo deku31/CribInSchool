@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.57558316, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.5755825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2938,9 +2938,9 @@ GameObject:
   - component: {fileID: 533676134}
   - component: {fileID: 533676133}
   - component: {fileID: 533676136}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pesawatpos
-  m_TagString: pesawat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3156,6 +3156,8 @@ MonoBehaviour:
   peringatanObj: {fileID: 741354142}
   posisibar: {fileID: 1227835354}
   pause: {fileID: 0}
+  skill3: {fileID: 0}
+  ManagerPesawat: {fileID: 2042264611}
   stargame: 0
 --- !u!4 &551273112
 Transform:
@@ -3421,6 +3423,7 @@ GameObject:
   - component: {fileID: 642278087}
   - component: {fileID: 642278086}
   - component: {fileID: 642278089}
+  - component: {fileID: 642278090}
   m_Layer: 5
   m_Name: w
   m_TagString: Untagged
@@ -3492,9 +3495,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 642278089}
-        m_TargetAssemblyTypeName: SkillManager2, Assembly-CSharp
-        m_MethodName: frezee
+      - m_Target: {fileID: 642278090}
+        m_TargetAssemblyTypeName: Skill3, Assembly-CSharp
+        m_MethodName: Invisible
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3558,6 +3561,23 @@ MonoBehaviour:
   durasispawnDefault: 120
   skillaktif: 0
   frezeer: 0
+  gm: {fileID: 0}
+--- !u!114 &642278090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642278084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f926fd728cf204b94a1c78ec91e354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeinvisibleDefault: 2
+  durasispawnDefault: 120
+  skillaktif: 0
+  invisible: 0
   gm: {fileID: 0}
 --- !u!1 &658242130
 GameObject:
@@ -6878,7 +6898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1146606885
 Transform:
   m_ObjectHideFlags: 0
@@ -6887,7 +6907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146606884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.79, y: 0.01, z: -6.49}
+  m_LocalPosition: {x: 42.79, y: -1.1, z: -6.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 619905740}
@@ -11964,9 +11984,11 @@ MonoBehaviour:
   gamemanager: {fileID: 1378172961}
   _endPanel: {fileID: 835164175}
   panelscript: {fileID: 835164177}
+  sfx: {fileID: 0}
   pemain:
   - {fileID: 1378172963}
   - {fileID: 1696277889}
+  end: {fileID: 835164177}
   audiomanager: {fileID: 0}
 --- !u!54 &2042264614
 Rigidbody:
