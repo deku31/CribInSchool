@@ -3148,6 +3148,7 @@ MonoBehaviour:
   munculPuzzle: 0
   _transfer: 0
   speedTransfer: 5
+  speedTransferDefault: 0.9
   targetpostransfer: {fileID: 533676132}
   postransferawal: {fileID: 2042264612}
   pesawatpos: {fileID: 533676132}
@@ -3575,9 +3576,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeinvisibleDefault: 2
+  speedpesawat: 0.2
   durasispawnDefault: 120
   skillaktif: 0
   invisible: 0
+  playskill: 0
   gm: {fileID: 0}
 --- !u!1 &658242130
 GameObject:

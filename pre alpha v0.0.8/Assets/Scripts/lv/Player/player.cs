@@ -42,7 +42,8 @@ public class player : MonoBehaviour
     [Header("transfer")]
     //untuk transfer contekan
     public bool _transfer;
-    public int speedTransfer;
+    public float speedTransfer;
+    public float speedTransferDefault;
     public Transform targetpostransfer;//target player yang akan di bagikan contekan
     public Transform postransferawal;//target player awal contekan
     public Transform pesawatpos;//posisi pesawat
@@ -82,6 +83,7 @@ public class player : MonoBehaviour
     }
     private void Start()
     {
+        speedTransfer = speedTransferDefault;
         skill3 = FindObjectOfType<Skill3>();
         pesawat.SetActive(false);
         munculPuzzle = false;
@@ -170,12 +172,15 @@ public class player : MonoBehaviour
                     {
                         if (skill3!=null)
                         {
+                           
                             if (skill3.invisible==true)
                             {
                                 pesawat.SetActive(false);
+                                speedTransfer =speedTransfer+skill3.speedpesawat;
                             }
                             else
                             {
+                                speedTransfer = speedTransferDefault;
                                 pesawat.SetActive(true);
                             }
                         }
@@ -198,6 +203,20 @@ public class player : MonoBehaviour
     //function atau method untuk script tranfer
     void transfer(Transform postransfer)
     {
+        if (skill3 != null)
+        {
+
+            if (skill3.invisible == true)
+            {
+                pesawat.SetActive(false);
+                speedTransfer = speedTransfer +skill3.speedpesawat;
+            }
+            else
+            {
+                speedTransfer = speedTransferDefault;
+                pesawat.SetActive(true);
+            }
+        }
         pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, speedTransfer * Time.deltaTime);
     }
 
