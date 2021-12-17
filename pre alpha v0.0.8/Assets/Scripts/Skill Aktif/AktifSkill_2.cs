@@ -11,6 +11,16 @@ public class AktifSkill_2 : MonoBehaviour
 
     public NavMeshAgent agentGuru;
     public Gamemanager gm;
+    public GameObject plane;
+    public Image darkMask;
+    public Text textCooldownActived;
+    public Text textCooldownSpawn;
+
+    public float timeDistractDefault = 10f;
+    private float timeDistract;
+
+    public float durasispawnDefault = 120;
+    private float durasispawn;
 
     [SerializeField]
     private GameObject batu;
@@ -22,55 +32,94 @@ public class AktifSkill_2 : MonoBehaviour
 
     private void Awake()
     {
-        agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
-
-        gm = FindObjectOfType<Gamemanager>();
-       
+        //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
+        //gm = FindObjectOfType<Gamemanager>();
     }
 
     void Start()
     {
+        textCooldownActived.enabled = false;
         if (gm != null)
         {
             skillAktif = true;
+            timeDistract = timeDistractDefault;
+            durasispawn = durasispawnDefault;
+            textCooldownActived.enabled = false;
         }
         OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
         AktifSkill_2.OnDistraction += GetDistracted;
-
-        //agentGuru = GameObject.Find("guru").GetComponent<NavMeshAgent>();
-        //agentGuru = FindInActiveObjectByTag("guru").GetComponent<NavMeshAgent>();
     }
 
     public void Update()
     {
-        agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+        AktifSkill_2.OnDistraction += GetDistracted;
+
         gm = FindObjectOfType<Gamemanager>();
 
         if (distractSkill == true)
         {
-            if (Input.GetMouseButtonDown(0))
+            agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+
+            if (timeDistract > 0.1f)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                timeDistract -= Time.deltaTime;
+                float roundedCd = Mathf.Round(timeDistract);
+                textCooldownActived.text = roundedCd.ToString();
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (!(OnDistraction is null))
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out RaycastHit hitInfo))
                     {
-                        OnDistraction(hitInfo.point);
+                        if (hitInfo.collider.tag == "Plane")
+                        {
+                            if (!(OnDistraction is null))
+                                OnDistraction(hitInfo.point);
+                        }
                     }
                 }
+            }
+            else
+            {
+                distractSkill = false;
+                timeDistract = timeDistractDefault;
+                textCooldownActived.enabled = false;
+            }
+        }
+
+        if (skillAktif == false)
+        {
+            if (durasispawn > 0.1f)
+            {
+                textCooldownSpawn.enabled = true;
+                durasispawn -= Time.deltaTime;
+                float roundedCd = Mathf.Round(durasispawn);
+                textCooldownSpawn.text = roundedCd.ToString();
+            }
+            else
+            {
+                skillAktif = true;
+                durasispawn = durasispawnDefault;
             }
         }
     }
 
+    private void FixedUpdate()
+    {
+
+    }
+
     public void Distract()
     {
+
         if (gm != null)
         {
             if (skillAktif == true)
             {
                 distractSkill = true;
                 skillAktif = false;
+                textCooldownActived.enabled = true;
             }
             else
             {
@@ -101,7 +150,7 @@ public class AktifSkill_2 : MonoBehaviour
     private void OnDestroy()
     {
         AktifSkill_2.OnDistraction -= GetDistracted;
-        //OnDistraction -= ThrowCoin;
+        OnDistraction -= ThrowCoin;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,11 +159,11 @@ public class AktifSkill_2 : MonoBehaviour
             return;
     }
 
-    private void GetDistracted(Vector3 pos)
+    public void GetDistracted(Vector3 pos)
     {
-        if (Vector3.Distance(transform.position, pos)<= 15f)
+        if (Vector3.Distance(transform.position, pos) <= 15f)
         {
-            //StopAllCoroutines();
+            StopAllCoroutines();
             _distracted = true;
             agentGuru.SetDestination(pos);
             StartCoroutine(FollowDistraction(pos));

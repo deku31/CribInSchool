@@ -24,6 +24,9 @@ TagManager:
   - popupbtn2
   - popupbtnkanan
   - point
+  - Skill
+  - Sprite
+  - Plane
   layers:
   - Default
   - TransparentFX
@@ -31,7 +34,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - TargetSkill2
   - 
   - Target
   - 

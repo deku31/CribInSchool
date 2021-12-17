@@ -25,6 +25,7 @@ public class TeacherAI : MonoBehaviour
     public float time;//durasi guru diam
     public float Defaulttime=3f;//durasi guru diam
     public Skill1 skill1;
+    public AktifSkill_2 skill_2;
 
 
     public float defauldspeed;
@@ -32,6 +33,7 @@ public class TeacherAI : MonoBehaviour
     {
         time = Defaulttime;
         skill1 = FindObjectOfType<Skill1>();
+        skill_2 = FindObjectOfType<AktifSkill_2>().GetComponent<AktifSkill_2>();
         volume = 0.3f;
         step = true;
         audiomanager = FindObjectOfType<SoundManager>();
@@ -94,6 +96,14 @@ public class TeacherAI : MonoBehaviour
                 anim.SetBool("jalan", true);
 
                 jalan();
+            }
+        }
+
+        if (skill_2!=null)
+        {
+            if(skill_2.distractSkill == true)
+            {
+                
             }
         }
        
