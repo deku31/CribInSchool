@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Skill3 : MonoBehaviour
 {
-    public float timeinvisibleDefault = 2f;
+    public float timeinvisibleDefault = 30f;
     private float timeinvisible;
-
-    public float durasispawnDefault = 120;
+    public float speedpesawat=0.2f;
+    public float durasispawnDefault = 90;
     private float durasispawn;
 
     public bool skillaktif;
     public bool invisible;
+    public bool playskill;
     public Gamemanager gm;
     // Start is called before the first frame update
 
@@ -56,9 +57,12 @@ public class Skill3 : MonoBehaviour
             else
             {
                 skillaktif = true;
+                playskill = false;
                 durasispawn = durasispawnDefault;
             }
         }
+       
+        
 
     }
     public void Invisible()//method tombol untuk invisible

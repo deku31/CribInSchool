@@ -553,10 +553,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f926fd728cf204b94a1c78ec91e354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeinvisibleDefault: 2
-  durasispawnDefault: 120
+  timeinvisibleDefault: 30
+  speedpesawat: 0.2
+  durasispawnDefault: 90
   skillaktif: 0
   invisible: 0
+  playskill: 0
   gm: {fileID: 0}
 --- !u!1 &3616807374035566553
 GameObject:
