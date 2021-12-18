@@ -13,8 +13,8 @@ public class AktifSkill_2 : MonoBehaviour
     public Gamemanager gm;
     public GameObject plane;
     public Image darkMask;
-    public Text textCooldownActived;
-    public Text textCooldownSpawn;
+    public Text textCooldownActived; //text cooldown saat skill telah aktif
+    public Text textCooldownSpawn; //text cooldown durasi skill
 
     public float timeDistractDefault = 10f;
     private float timeDistract;
@@ -59,6 +59,8 @@ public class AktifSkill_2 : MonoBehaviour
 
         if (distractSkill == true)
         {
+            textCooldownSpawn.gameObject.SetActive(false);
+            darkMask.gameObject.SetActive(false);
             agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
 
             if (timeDistract > 0.1f)
@@ -85,6 +87,9 @@ public class AktifSkill_2 : MonoBehaviour
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
                 textCooldownActived.enabled = false;
+                textCooldownSpawn.gameObject.SetActive(true);
+                darkMask.gameObject.SetActive(true);
+                darkMask.rectTransform.sizeDelta = new Vector2(79f, 67f);
             }
         }
 
@@ -92,10 +97,14 @@ public class AktifSkill_2 : MonoBehaviour
         {
             if (durasispawn > 0.1f)
             {
-                textCooldownSpawn.enabled = true;
                 durasispawn -= Time.deltaTime;
+
+                textCooldownSpawn.enabled = true;
                 float roundedCd = Mathf.Round(durasispawn);
                 textCooldownSpawn.text = roundedCd.ToString();
+
+                darkMask.enabled = true;
+                darkMask.fillAmount = (durasispawn / durasispawnDefault);
             }
             else
             {
