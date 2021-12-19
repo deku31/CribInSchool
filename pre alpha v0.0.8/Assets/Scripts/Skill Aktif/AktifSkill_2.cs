@@ -11,6 +11,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public NavMeshAgent agentGuru;
     public Gamemanager gm;
+    public Transform transformBatu;
     public GameObject plane;
 
     public Image darkMaskCooldown;
@@ -22,7 +23,7 @@ public class AktifSkill_2 : MonoBehaviour
     public float timeDistractDefault = 10f;
     private float timeDistract;
 
-    public float durasispawnDefault = 120;
+    public float durasispawnDefault = 15;
     private float durasispawn;
 
     [SerializeField]
@@ -32,14 +33,16 @@ public class AktifSkill_2 : MonoBehaviour
     public bool distractSkill;
 
     private bool _distracted;
+    public bool spawnObject = false;
+    public GameObject spawnGameObject;
 
-    private void Awake()
+    public void Awake()
     {
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
         gm = FindObjectOfType<Gamemanager>();
     }
 
-    void Start()
+    public void Start()
     {
         textCooldownActived.enabled = false;
         if (gm != null)
@@ -49,14 +52,14 @@ public class AktifSkill_2 : MonoBehaviour
             durasispawn = durasispawnDefault;
             textCooldownActived.enabled = false;
         }
-        OnDistraction += ThrowCoin;
+        //OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
         AktifSkill_2.OnDistraction += GetDistracted;
     }
 
     public void Update()
     {
-        AktifSkill_2.OnDistraction += GetDistracted;
+        //AktifSkill_2.OnDistraction += GetDistracted;
 
         gm = FindObjectOfType<Gamemanager>();
 
@@ -64,7 +67,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             //textCooldownSpawn.gameObject.SetActive(false);
             darkMaskCooldown.gameObject.SetActive(false);
-            
+
             agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
 
             if (timeDistract > 0.1f)
@@ -84,6 +87,8 @@ public class AktifSkill_2 : MonoBehaviour
                     {
                         if (hitInfo.collider.tag == "Plane")
                         {
+                            transformBatu = FindInActiveObjectByTag("Batu").GetComponent<Transform>();
+
                             if (!(OnDistraction is null))
                                 OnDistraction(hitInfo.point);
                         }
@@ -94,6 +99,8 @@ public class AktifSkill_2 : MonoBehaviour
             {
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
+                spawnGameObject = FindInActiveObjectByTag("Batu");
+                Destroy(spawnGameObject, 20);
                 //textCooldownActived.enabled = false;
                 //textCooldownSpawn.gameObject.SetActive(true);
 
@@ -121,7 +128,10 @@ public class AktifSkill_2 : MonoBehaviour
             else
             {
                 skillAktif = true;
+                darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;
+                spawnObject = false;
+                
             }
         }
     }
@@ -140,6 +150,7 @@ public class AktifSkill_2 : MonoBehaviour
             {
                 distractSkill = true;
                 skillAktif = false;
+                
                 //textCooldownActived.enabled = true;
             }
             else
@@ -163,18 +174,26 @@ public class AktifSkill_2 : MonoBehaviour
         skillAktif = true;
     }
 
-    private void ThrowCoin(Vector3 pos)
+    public void ThrowCoin(Vector3 pos)
     {
-        Instantiate(batu, pos, Quaternion.identity);
+        if(spawnObject == false)
+        {
+            Instantiate(batu, pos, Quaternion.identity);
+            spawnObject = true;
+            //return;
+        }
+        
+
+        
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         AktifSkill_2.OnDistraction -= GetDistracted;
         OnDistraction -= ThrowCoin;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (_distracted)
             return;
@@ -191,7 +210,7 @@ public class AktifSkill_2 : MonoBehaviour
         }
     }
 
-    private IEnumerator FollowDistraction(Vector3 pos)
+    public IEnumerator FollowDistraction(Vector3 pos)
     {
         while (Vector3.Distance(transform.position, pos) > 2f)
             yield return null;

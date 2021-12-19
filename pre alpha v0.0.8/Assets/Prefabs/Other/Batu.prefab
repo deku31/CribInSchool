@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4127573992505254154}
   - component: {fileID: 3580570290426180019}
   - component: {fileID: 194843274056249852}
+  - component: {fileID: 2469107631555861077}
   m_Layer: 0
   m_Name: Batu
-  m_TagString: Untagged
+  m_TagString: Batu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +113,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2469107631555861077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176718071704938749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b501134a7ab4d2e468a3f26509bc2bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

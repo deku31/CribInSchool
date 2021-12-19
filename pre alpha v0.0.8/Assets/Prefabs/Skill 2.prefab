@@ -634,13 +634,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentGuru: {fileID: 0}
   gm: {fileID: 0}
+  transformBatu: {fileID: 0}
   plane: {fileID: 0}
   darkMaskCooldown: {fileID: 1011664230337335239}
   activedMaskSkill: {fileID: 328361907357373686}
   textCooldownActived: {fileID: 276250742851193422}
   textCooldownSpawn: {fileID: 8264544507107649946}
   timeDistractDefault: 10
-  durasispawnDefault: 120
+  durasispawnDefault: 15
   batu: {fileID: 9176718071704938749, guid: e52036dc251ae35448269607bc19b9f9, type: 3}
   skillAktif: 1
   distractSkill: 0
