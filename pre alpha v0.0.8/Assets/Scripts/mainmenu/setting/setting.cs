@@ -31,13 +31,17 @@ public class setting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        quality.value = UserDataManager.Progress.qualityvalue;
         //volumesetting.value = bgm.maxvol; 
         volumesetting.maxValue = bgm.maxvol;
+        volumesetting.value = UserDataManager.Progress.volumebgm;
+        volumesettingsfx.value = UserDataManager.Progress.volumesfx;
         //volumesettingsfx.value = sfx.maxvol; 
         volumesettingsfx.maxValue = 1;
     }
     public void optionex()
     {
+        UserDataManager.Save();
         sfx.buttonclickMethod();
         panel.SetActive(false);
     }
@@ -56,6 +60,8 @@ public class setting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UserDataManager.Progress.volumebgm = volumesetting.value;
+        UserDataManager.Progress.volumesfx = volumesettingsfx.value;
         bgm.volume = volumesetting.value;
         sfx.volumeafx = volumesettingsfx.value;
         qualitysetting();
@@ -67,15 +73,21 @@ public class setting : MonoBehaviour
         if (quality.captionText.text == "LOW")
         {
             lvquality = 1;
+            UserDataManager.Progress.qualityvalue = 2;
         }
         else if (quality.captionText.text == "MEDIUM")
         {
             lvquality = 2;
+            UserDataManager.Progress.qualityvalue = 1;
+
         }
         else if (quality.captionText.text == "HIGH")
         {
             lvquality = 3;
+            UserDataManager.Progress.qualityvalue = 0;
+
         }
+        //UserDataManager.Progress.qualityvalue = lvquality;
         PlayerPrefs.SetInt("masterQuality", lvquality);
         QualitySettings.SetQualityLevel(lvquality);
     }
