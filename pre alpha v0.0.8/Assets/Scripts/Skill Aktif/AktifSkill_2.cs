@@ -26,8 +26,7 @@ public class AktifSkill_2 : MonoBehaviour
     public float durasispawnDefault = 15;
     private float durasispawn;
 
-    [SerializeField]
-    private GameObject batu;
+    public GameObject batu;
 
     public bool skillAktif;
     public bool distractSkill;
@@ -36,6 +35,7 @@ public class AktifSkill_2 : MonoBehaviour
     public bool spawnObject = false;
     public GameObject spawnGameObject;
 
+    public bool gotobatu;
     public void Awake()
     {
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
@@ -87,6 +87,7 @@ public class AktifSkill_2 : MonoBehaviour
                     {
                         if (hitInfo.collider.tag == "Plane")
                         {
+                            gotobatu = true;
                             transformBatu = FindInActiveObjectByTag("Batu").GetComponent<Transform>();
 
                             if (!(OnDistraction is null))

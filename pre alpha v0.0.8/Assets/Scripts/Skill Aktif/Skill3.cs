@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill3 : MonoBehaviour
 {
@@ -14,13 +15,19 @@ public class Skill3 : MonoBehaviour
     public bool invisible;
     public bool playskill;
     public Gamemanager gm;
+
+    public Image maskSpawn;
+    public Image maskSkillactive;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        maskSpawn.enabled = false;
+        maskSkillactive.enabled = false;
         gm = FindObjectOfType<Gamemanager>();
         if (gm != null)
         {
+            maskSpawn.fillAmount = durasispawnDefault;
             skillaktif = true;
             timeinvisible = timeinvisibleDefault;
             durasispawn = durasispawnDefault;
@@ -44,8 +51,11 @@ public class Skill3 : MonoBehaviour
             }
             else
             {
+                maskSkillactive.enabled = false;
                 invisible = false;
                 timeinvisible = timeinvisibleDefault;
+                maskSpawn.rectTransform.sizeDelta = new Vector2(79f, 67f);
+                maskSpawn.enabled = true;
             }
         }
         if (skillaktif == false)
@@ -56,13 +66,15 @@ public class Skill3 : MonoBehaviour
             }
             else
             {
+                maskSpawn.enabled = false;
                 skillaktif = true;
                 playskill = false;
                 durasispawn = durasispawnDefault;
             }
         }
-       
-        
+
+        maskSpawn.fillAmount = durasispawn / durasispawnDefault;
+        maskSkillactive.fillAmount = timeinvisible / timeinvisibleDefault;
 
     }
     public void Invisible()//method tombol untuk invisible
@@ -71,6 +83,8 @@ public class Skill3 : MonoBehaviour
         {
             if (skillaktif == true)
             {
+                maskSkillactive.rectTransform.sizeDelta = new Vector2(79f, 67f);
+                maskSkillactive.enabled = true;
                 invisible = true;
                 skillaktif = false;
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill1 : MonoBehaviour
 {
@@ -13,13 +14,20 @@ public class Skill1 : MonoBehaviour
     public bool skillaktif;
     public bool frezeer;
     public Gamemanager gm;
+
+    public Image maskSpawn;
+    public Image maskSkillactive;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        maskSpawn.enabled = false;
+        maskSkillactive.enabled = false;
         gm = FindObjectOfType<Gamemanager>();
         if (gm!=null)
         {
+           
+            maskSpawn.fillAmount = durasispawnDefault;
             skillaktif = true;
             timefrezzer = timefrezzerDefault;
             durasispawn = durasispawnDefault;
@@ -34,8 +42,8 @@ public class Skill1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (frezeer==true)
+        
+        if (frezeer == true)
         {
             if (timefrezzer > 0.1f)
             {
@@ -43,11 +51,14 @@ public class Skill1 : MonoBehaviour
             }
             else
             {
+                maskSkillactive.enabled = false;
                 frezeer = false;
                 timefrezzer = timefrezzerDefault;
+                maskSpawn.rectTransform.sizeDelta = new Vector2(79f, 67f);
+                maskSpawn.enabled = true;
             }
         }
-        if (skillaktif==false)
+        if (skillaktif == false)
         {
             if (durasispawn > 0.1f)
             {
@@ -55,11 +66,15 @@ public class Skill1 : MonoBehaviour
             }
             else
             {
+                maskSpawn.enabled = false;
                 skillaktif = true;
                 durasispawn = durasispawnDefault;
             }
         }
-        
+        maskSpawn.fillAmount = durasispawn / durasispawnDefault;
+        maskSkillactive.fillAmount = timefrezzer/ timefrezzerDefault;
+
+
     }
     public void frezee()//method tombol untik frezze guru
     {
@@ -67,6 +82,8 @@ public class Skill1 : MonoBehaviour
         {
             if (skillaktif == true)
             {
+                maskSkillactive.rectTransform.sizeDelta = new Vector2(79f, 67f);
+                maskSkillactive.enabled = true;
                 frezeer = true;
                 skillaktif = false;
             }
