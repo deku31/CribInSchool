@@ -107,7 +107,17 @@ public class TeacherAI : MonoBehaviour
         {
             if(skill_2.distractSkill == true)
             {
-                AktifSkill_2.OnDistraction += skill_2.GetDistracted;
+                if (skill_2.spawnObject == true)
+                {
+                    targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
+                    agent.SetDestination(targetDistract.transform.position);
+                    //Destroy(skill_2.spawnGameObject, 5);
+                    if (agent.transform.position == targetDistract.transform.position)
+                    {
+                        Debug.Log("Guru diposisi");
+                    }
+                }
+                
             }
         }
        
@@ -130,6 +140,7 @@ public class TeacherAI : MonoBehaviour
                     }
                 }
             }
+
             else
             {
                 if (random != 0)

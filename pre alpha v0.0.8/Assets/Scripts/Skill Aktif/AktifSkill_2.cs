@@ -99,8 +99,8 @@ public class AktifSkill_2 : MonoBehaviour
             {
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
-                spawnGameObject = FindInActiveObjectByTag("Batu");
-                Destroy(spawnGameObject, 20);
+                //spawnGameObject = FindInActiveObjectByTag("Batu");
+                //Destroy(spawnGameObject, 5);
                 //textCooldownActived.enabled = false;
                 //textCooldownSpawn.gameObject.SetActive(true);
 
@@ -178,7 +178,7 @@ public class AktifSkill_2 : MonoBehaviour
     {
         if(spawnObject == false)
         {
-            Instantiate(batu, pos, Quaternion.identity);
+            spawnGameObject = Instantiate(batu, pos, Quaternion.identity);
             spawnObject = true;
             //return;
         }
