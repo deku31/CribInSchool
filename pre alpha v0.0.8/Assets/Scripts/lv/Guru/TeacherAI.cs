@@ -107,19 +107,21 @@ public class TeacherAI : MonoBehaviour
         {
             if(skill_2.distractSkill == true)
             {
-                if (skill_2.gotobatu == true)
+                if (skill_2.spawnGameObject == true)
                 {
                     targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
                     agent.SetDestination(targetDistract.transform.position);
                     ////Destroy(skill_2.spawnGameObject, 5);
-                    //if (agent.transform.position == targetDistract.transform.position)
-                    //{
-                    //    Debug.Log("Guru diposisi");
-                    //}
+                    if (!skill_2.spawnGameObject.activeSelf == true)
+                    {
+                        Debug.Log("BatuDes");
+                    }
+                    
                 }
                 else
                 {
-                    UpdateDestination();
+                    
+                    //UpdateDestination();
                 }
                 
             }
@@ -191,8 +193,11 @@ public class TeacherAI : MonoBehaviour
         {
             if (other.transform.tag == "Batu")
             {
-                Destroy(GameObject.Find("Batu(Clone)"));
-                skill_2.gotobatu = false;
+                Invoke("UpdateDestination", 5);
+                Destroy(skill_2.spawnGameObject, 5);
+                //Destroy(GameObject.Find("Batu(Clone)"),5);
+                //skill_2.gotobatu = false;
+                
             }
         }
        

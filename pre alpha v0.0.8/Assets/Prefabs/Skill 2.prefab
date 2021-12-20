@@ -58,20 +58,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91e68d941d41b604682af106efcc5785, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 039b29f535a727549a5ce5d8165a786b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 0
+  m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -641,12 +641,13 @@ MonoBehaviour:
   textCooldownActived: {fileID: 276250742851193422}
   textCooldownSpawn: {fileID: 8264544507107649946}
   timeDistractDefault: 10
-  durasispawnDefault: 15
+  durasispawnDefault: 90
   batu: {fileID: 9176718071704938749, guid: e52036dc251ae35448269607bc19b9f9, type: 3}
   skillAktif: 1
   distractSkill: 0
   spawnObject: 0
   spawnGameObject: {fileID: 0}
+  skill1: {fileID: 0}
 --- !u!1 &1548658108964477355
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +821,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4452556780144866738}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -833,13 +834,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 334c3a6946de1804ca5708c403117962, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70068c02358fb514da6396ce343dd3a4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 0
+  m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -860,7 +861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8448210342185237952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -939,7 +940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8942516655233160463
 RectTransform:
   m_ObjectHideFlags: 0

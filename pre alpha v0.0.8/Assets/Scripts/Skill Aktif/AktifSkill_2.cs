@@ -23,7 +23,7 @@ public class AktifSkill_2 : MonoBehaviour
     public float timeDistractDefault = 10f;
     private float timeDistract;
 
-    public float durasispawnDefault = 15;
+    public float durasispawnDefault = 90;
     private float durasispawn;
 
     public GameObject batu;
@@ -35,7 +35,10 @@ public class AktifSkill_2 : MonoBehaviour
     public bool spawnObject = false;
     public GameObject spawnGameObject;
 
-    public bool gotobatu;
+    public Skill1 skill1;
+
+    //public bool gotobatu;
+
     public void Awake()
     {
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
@@ -60,6 +63,7 @@ public class AktifSkill_2 : MonoBehaviour
     public void Update()
     {
         //AktifSkill_2.OnDistraction += GetDistracted;
+        
 
         gm = FindObjectOfType<Gamemanager>();
 
@@ -67,7 +71,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             //textCooldownSpawn.gameObject.SetActive(false);
             darkMaskCooldown.gameObject.SetActive(false);
-
+            skill1 = FindInActiveObjectByName("Skill1").GetComponent<Skill1>();
             agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
 
             if (timeDistract > 0.1f)
@@ -75,6 +79,7 @@ public class AktifSkill_2 : MonoBehaviour
                 timeDistract -= Time.deltaTime;
                 float roundedCd = Mathf.Round(timeDistract);
                 //textCooldownActived.text = roundedCd.ToString();
+                //skill1.maskSkillactive.enabled = true;
 
                 activedMaskSkill.gameObject.SetActive(true);
                 activedMaskSkill.enabled = true;
@@ -87,7 +92,7 @@ public class AktifSkill_2 : MonoBehaviour
                     {
                         if (hitInfo.collider.tag == "Plane")
                         {
-                            gotobatu = true;
+                            //gotobatu = true;
                             transformBatu = FindInActiveObjectByTag("Batu").GetComponent<Transform>();
 
                             if (!(OnDistraction is null))
@@ -144,14 +149,13 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Distract()
     {
-
+        
         if (gm != null)
         {
             if (skillAktif == true)
             {
                 distractSkill = true;
                 skillAktif = false;
-                
                 //textCooldownActived.enabled = true;
             }
             else
