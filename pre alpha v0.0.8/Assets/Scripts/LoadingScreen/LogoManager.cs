@@ -22,6 +22,7 @@ public class LogoManager : MonoBehaviour
         }
         else
         {
+            UserDataManager.Load();
             SceneManager.LoadScene(scene);
         }
     }

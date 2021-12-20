@@ -79,6 +79,7 @@ public class endManager : MonoBehaviour
         {
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
+            UserDataManager.Progress.lvunlock = bukalv;
             lm.lvUnlock[bukalv - 1] = true;
 
         }
@@ -95,6 +96,7 @@ public class endManager : MonoBehaviour
         }
         if (ending==true)
         {
+            UserDataManager.Save();
             timestop -= Time.deltaTime;
             if (timestop<0.1f)
             {
@@ -118,6 +120,7 @@ public class endManager : MonoBehaviour
 
     public void Next()
     {
+        lm.lvpanel.SetActive(true);
         DontDestroyOnLoad(lm);
         SceneManager.LoadScene("Level 1");
         Time.timeScale = 1;
