@@ -22,6 +22,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public float timeDistractDefault = 10f;
     private float timeDistract;
+    private float timeAktifDistract = 0;
 
     public float durasispawnDefault = 90;
     private float durasispawn;
@@ -87,13 +88,14 @@ public class AktifSkill_2 : MonoBehaviour
             if (timeDistract > 0.1f)
             {
                 timeDistract -= Time.deltaTime;
+                timeAktifDistract += Time.deltaTime;
                 float roundedCd = Mathf.Round(timeDistract);
                 //textCooldownActived.text = roundedCd.ToString();
                 //skill1.maskSkillactive.enabled = true;
 
                 activedMaskSkill.gameObject.SetActive(true);
                 activedMaskSkill.enabled = true;
-                activedMaskSkill.fillAmount = (timeDistract / timeDistractDefault);
+                activedMaskSkill.fillAmount = (timeAktifDistract / timeDistractDefault);
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -115,6 +117,7 @@ public class AktifSkill_2 : MonoBehaviour
             {
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
+                timeAktifDistract = 0;
                 //spawnGameObject = FindInActiveObjectByTag("Batu");
                 //Destroy(spawnGameObject, 5);
                 //textCooldownActived.enabled = false;
@@ -132,7 +135,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             if (durasispawn > 0.1f)
             {
-                skill1.lockimg.enabled = true;
+                //skill1.lockimg.enabled = true;
                 durasispawn -= Time.deltaTime;
 
                 //textCooldownSpawn.enabled = true;

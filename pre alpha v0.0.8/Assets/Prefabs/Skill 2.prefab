@@ -70,8 +70,8 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillAmount: 0
+  m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -756,6 +756,7 @@ MonoBehaviour:
   bintang: {fileID: 866120346765397858, guid: ed51fa690bf486440b016047d21dd878, type: 3}
   parrent: {fileID: 7863920935062439007}
   lvskill: 1
+  gotobatu: 0
 --- !u!1 &1548658108964477355
 GameObject:
   m_ObjectHideFlags: 0

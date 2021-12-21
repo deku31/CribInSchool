@@ -7,7 +7,10 @@ public class Skill3 : MonoBehaviour
 {
     public float timeinvisibleDefault = 30f;
     private float timeinvisible;
+    private float timeAktifInvisible = 0;
+
     public float speedpesawat=0.2f;
+
     public float durasispawnDefault = 90;
     private float durasispawn;
 
@@ -56,6 +59,7 @@ public class Skill3 : MonoBehaviour
             if (timeinvisible > 0.1f)
             {
                 timeinvisible -= Time.deltaTime;
+                timeAktifInvisible += Time.deltaTime;
             }
             else
             {
@@ -64,6 +68,7 @@ public class Skill3 : MonoBehaviour
                 timeinvisible = timeinvisibleDefault;
                 maskSpawn.rectTransform.sizeDelta = new Vector2(79f, 67f);
                 maskSpawn.enabled = true;
+                timeAktifInvisible = 0;
             }
         }
         if (skillaktif == false)
@@ -82,7 +87,7 @@ public class Skill3 : MonoBehaviour
         }
 
         maskSpawn.fillAmount = durasispawn / durasispawnDefault;
-        maskSkillactive.fillAmount = timeinvisible / timeinvisibleDefault;
+        maskSkillactive.fillAmount = timeAktifInvisible / timeinvisibleDefault;
 
     }
     public void Invisible()//method tombol untuk invisible
