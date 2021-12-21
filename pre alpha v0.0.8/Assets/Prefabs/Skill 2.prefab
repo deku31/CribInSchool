@@ -646,7 +646,7 @@ MonoBehaviour:
   skillAktif: 1
   distractSkill: 0
   spawnObject: 0
-  spawnGameObject: {fileID: 0}
+  spawnGameObject: {fileID: 4452556780144866738}
   skill1: {fileID: 0}
 --- !u!1 &1548658108964477355
 GameObject:
@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4333075634994539898
 RectTransform:
   m_ObjectHideFlags: 0

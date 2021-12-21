@@ -63,8 +63,8 @@ public class AktifSkill_2 : MonoBehaviour
     public void Update()
     {
         //AktifSkill_2.OnDistraction += GetDistracted;
-        
 
+        skill1 = FindObjectOfType<Skill1>();
         gm = FindObjectOfType<Gamemanager>();
 
         if (distractSkill == true)
@@ -122,6 +122,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             if (durasispawn > 0.1f)
             {
+                skill1.lockimg.enabled = true;
                 durasispawn -= Time.deltaTime;
 
                 //textCooldownSpawn.enabled = true;
@@ -133,6 +134,7 @@ public class AktifSkill_2 : MonoBehaviour
             }
             else
             {
+                skill1.lockimg.enabled = false;
                 skillAktif = true;
                 darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;

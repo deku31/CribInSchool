@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ff13b56ba8afe4386054b914c34dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   wayPoint:
   - {fileID: 0}
   - {fileID: 0}
@@ -287,6 +288,11 @@ MonoBehaviour:
   - {fileID: 0}
   anim: {fileID: 3038808470263617786}
   random: 0
+  time: 0
+  Defaulttime: 3
+  skill1: {fileID: 0}
+  skill_2: {fileID: 0}
+  targetDistract: {fileID: 0}
   defauldspeed: 0
 --- !u!1 &5791900939337450516
 GameObject:

@@ -7,6 +7,7 @@ public class Skill1 : MonoBehaviour
 {
     public float timefrezzerDefault=2f;
     private float timefrezzer;
+    private float timeActivefrezzer=0;
     
     public float durasispawnDefault=120;
     private float durasispawn;
@@ -17,6 +18,7 @@ public class Skill1 : MonoBehaviour
 
     public Image maskSpawn;
     public Image maskSkillactive;
+    public Image lockimg;
     // Start is called before the first frame update
 
     private void Awake()
@@ -48,17 +50,19 @@ public class Skill1 : MonoBehaviour
             if (timefrezzer > 0.1f)
             {
                 timefrezzer -= Time.deltaTime;
+                timeActivefrezzer += Time.deltaTime;
             }
             else
             {
                 maskSkillactive.enabled = false;
                 frezeer = false;
                 timefrezzer = timefrezzerDefault;
+                timeActivefrezzer = 0;
                 maskSpawn.rectTransform.sizeDelta = new Vector2(79f, 67f);
                 maskSpawn.enabled = true;
             }
         }
-        if (skillaktif == false)
+        if (skillaktif == false&&maskSpawn.enabled==true)
         {
             if (durasispawn > 0.1f)
             {
@@ -72,7 +76,7 @@ public class Skill1 : MonoBehaviour
             }
         }
         maskSpawn.fillAmount = durasispawn / durasispawnDefault;
-        maskSkillactive.fillAmount = timefrezzer/ timefrezzerDefault;
+        maskSkillactive.fillAmount = timeActivefrezzer/ timefrezzerDefault;
 
 
     }

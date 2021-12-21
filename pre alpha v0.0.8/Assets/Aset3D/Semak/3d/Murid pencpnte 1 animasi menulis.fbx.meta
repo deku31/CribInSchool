@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 734a8fbc3b4f5a84187cd8e1472a2e35
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 3034919938418811970
+    second: Cube|---
+  - first:
+      74: 7177056893500147972
+    second: Cube|-----
+  - first:
+      74: -5832854327909974095
+    second: Cube|--------
+  - first:
+      74: 3691439776673355391
+    second: Cube|IDLE
+  - first:
+      74: 71624298734540555
+    second: Cube|IDLE PENSIL
+  - first:
+      74: 7387374925456919637
+    second: Cube|PENSIL NOLEH
+  - first:
+      74: -6269533078487702609
+    second: kepala|---
+  - first:
+      74: 7966330395698951967
+    second: kepala|-----
+  - first:
+      74: -6795907645512197225
+    second: kepala|--------
+  - first:
+      74: 1291747485187862041
+    second: kepala|IDLE
+  - first:
+      74: 6415408259615636703
+    second: kepala|IDLE PENSIL
+  - first:
+      74: -9173290291725597634
+    second: kepala|PENSIL NOLEH
+  - first:
+      74: -1067500728213308085
+    second: Body Armature|---
+  - first:
+      74: 3824298423932858589
+    second: Body Armature|-----
+  - first:
+      74: 815328800388826389
+    second: Body Armature|--------
+  - first:
+      74: 5652558941105979080
+    second: Body Armature|IDLE
+  - first:
+      74: 3124940220471874581
+    second: Body Armature|IDLE PENSIL
+  - first:
+      74: -1509938405113618401
+    second: Body Armature|NOLEH
+  - first:
+      74: -6101828961280734260
+    second: Body Armature|PENSIL NOLEH
+  - first:
+      74: -4452616792701453624
+    second: rambut|---
+  - first:
+      74: 6016213453829793551
+    second: rambut|-----
+  - first:
+      74: 3574147203828251470
+    second: rambut|--------
+  - first:
+      74: 767671870481132017
+    second: rambut|IDLE PENSIL
+  - first:
+      74: -8278583488811690339
+    second: rambut|PENSIL NOLEH
+  - first:
+      74: -3265408174779962898
+    second: pensil|---
+  - first:
+      74: -5911225818995487874
+    second: pensil|-----
+  - first:
+      74: 8098478693478949821
+    second: pensil|--------
+  - first:
+      74: -3582968396483000402
+    second: pensil|IDLE PENSIL
+  - first:
+      74: 8432389933632319493
+    second: pensil|PENSIL NOLEH
+  - first:
+      74: 1781477157176879460
+    second: Cube.002|---
+  - first:
+      74: -816743269561910170
+    second: Cube.002|-----
+  - first:
+      74: 8357599725185499576
+    second: Cube.002|--------
+  - first:
+      74: 4125405158459254005
+    second: Cube.002|IDLE PENSIL
+  - first:
+      74: 1572247998103117448
+    second: Cube.002|PENSIL NOLEH
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
