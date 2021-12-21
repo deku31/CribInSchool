@@ -45,6 +45,8 @@ public class PesawatScript : MonoBehaviour
         playermanager._transfer = false;
         audiomanager.transferMethod(1);
         playermanager.nourut = urutan;
+        //skill setting speed
+        playermanager.transferpesawat = false;
         if (playermanager.pzm.solvedPuzzle == true)
         {
             panelscript.totallulus += 1;

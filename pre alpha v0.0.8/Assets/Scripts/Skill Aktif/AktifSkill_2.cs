@@ -25,6 +25,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public float durasispawnDefault = 90;
     private float durasispawn;
+    public float speedguru;//update speed
 
     public GameObject batu;
 
@@ -36,11 +37,19 @@ public class AktifSkill_2 : MonoBehaviour
     public GameObject spawnGameObject;
 
     public Skill1 skill1;
-
-    //public bool gotobatu;
+    public GameObject bintang;
+    public Transform parrent;
+    public int lvskill ;
+    public bool gotobatu;
 
     public void Awake()
     {
+        speedguru = speedguru+ UserDataManager.Progress.skill2;
+        lvskill = UserDataManager.Progress.lvskill[1];
+        for (int i = 0; i < lvskill; i++)
+        {
+            Instantiate(bintang, parrent);
+        }
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
         gm = FindObjectOfType<Gamemanager>();
     }
@@ -62,6 +71,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Update()
     {
+        Debug.Log(UserDataManager.Progress.lvskill.Length);
         //AktifSkill_2.OnDistraction += GetDistracted;
 
         skill1 = FindObjectOfType<Skill1>();
@@ -92,7 +102,7 @@ public class AktifSkill_2 : MonoBehaviour
                     {
                         if (hitInfo.collider.tag == "Plane")
                         {
-                            //gotobatu = true;
+                            gotobatu = true;
                             transformBatu = FindInActiveObjectByTag("Batu").GetComponent<Transform>();
 
                             if (!(OnDistraction is null))
@@ -134,7 +144,6 @@ public class AktifSkill_2 : MonoBehaviour
             }
             else
             {
-                skill1.lockimg.enabled = false;
                 skillAktif = true;
                 darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;
@@ -190,8 +199,6 @@ public class AktifSkill_2 : MonoBehaviour
             //return;
         }
         
-
-        
     }
 
     public void OnDestroy()
@@ -216,7 +223,22 @@ public class AktifSkill_2 : MonoBehaviour
             StartCoroutine(FollowDistraction(pos));
         }
     }
-
+    public void upgradeskill()//method upgrade skill dan simpan progress skill
+    {
+        if (lvskill<3)
+        {
+            UserDataManager.Progress.lvskill[1]++;
+            lvskill++;
+            speedguru += 0.5f;
+            UserDataManager.Progress.skill2 += 0.5f;
+            Instantiate(bintang, parrent);
+            UserDataManager.Save();
+        }
+        else
+        {
+            print("skill penuh");
+        }
+    }
     public IEnumerator FollowDistraction(Vector3 pos)
     {
         while (Vector3.Distance(transform.position, pos) > 2f)

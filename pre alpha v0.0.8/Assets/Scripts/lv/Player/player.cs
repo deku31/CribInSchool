@@ -58,6 +58,7 @@ public class player : MonoBehaviour
 
     public Skill3 skill3;
     public GameObject ManagerPesawat;
+    public bool transferpesawat;
 
     public  bool stargame;
     private void Awake()
@@ -121,6 +122,20 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //==============================skil3 setting speed===========================================
+
+        if (skill3!=null)
+        {
+            if (transferpesawat == true)
+            {
+                speedTransfer = speedTransfer + skill3.speedpesawat;
+            }
+            else
+            {
+                speedTransfer = speedTransferDefault;
+            }
+        }
+        //============================================================================================
         skill3 = FindObjectOfType<Skill3>();
 
         if (pause.gameIsPaused==false)
@@ -176,7 +191,7 @@ public class player : MonoBehaviour
                             if (skill3.invisible==true)
                             {
                                 pesawat.SetActive(false);
-                                speedTransfer =speedTransfer+skill3.speedpesawat;
+                                transferpesawat = true;
                             }
                             else
                             {

@@ -24,10 +24,9 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
     public int nomorSkill;
 
     public Sprite spriteChange;
-
+    public GameObject panelbintang;
     private void Awake()
 	{
-
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
 	}
@@ -57,7 +56,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 	public void OnDrag(PointerEventData eventData)
 	{
         upgradeButton.SetActive(false);
-
+        panelbintang.SetActive(false);
 		if (!CanDrag)
 		{
 			return;
@@ -110,6 +109,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
         //rectTransform.anchoredPosition = StartPosition;
         //Selection.FindObjectOfType<Selection>().skill_2.nomer = 0;
         rectTransform.anchoredPosition = StartPosition;
+        panelbintang.SetActive(true);
         upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);
 	}

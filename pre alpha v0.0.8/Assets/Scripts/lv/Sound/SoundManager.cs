@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource clickButton;
 
     public AudioClip guruWalkClip;//sfx suara guru jalan
-    private AudioSource guruWalk;
+    public  AudioSource guruWalk;
 
     public AudioClip[] transferClip;//sfx suara lempar
     private AudioSource transfer;
@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour
     {
         popup = GetComponent<AudioSource>();
         clickButton = GetComponent<AudioSource>();
-        guruWalk = GetComponent<AudioSource>();
+        //guruWalk = ;
         transfer = GetComponent<AudioSource>();
         //puzzle sfx
         sfxSlidingPuzzle = GetComponent<AudioSource>();

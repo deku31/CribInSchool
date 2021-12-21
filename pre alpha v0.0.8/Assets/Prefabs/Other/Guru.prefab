@@ -286,6 +286,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  defaultspeed: 0.8
   anim: {fileID: 3038808470263617786}
   random: 0
   time: 0
@@ -293,7 +294,7 @@ MonoBehaviour:
   skill1: {fileID: 0}
   skill_2: {fileID: 0}
   targetDistract: {fileID: 0}
-  defauldspeed: 0
+  defauldspeed: 0.8
 --- !u!1 &5791900939337450516
 GameObject:
   m_ObjectHideFlags: 0

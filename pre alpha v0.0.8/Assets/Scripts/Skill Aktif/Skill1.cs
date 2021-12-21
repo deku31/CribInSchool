@@ -19,16 +19,24 @@ public class Skill1 : MonoBehaviour
     public Image maskSpawn;
     public Image maskSkillactive;
     public Image lockimg;
-    // Start is called before the first frame update
 
+    public GameObject bintang;
+    public Transform parrent;
+    public int lvskill;
     private void Awake()
     {
+        timefrezzerDefault = timefrezzerDefault + UserDataManager.Progress.skill1;
+        lvskill = UserDataManager.Progress.lvskill[0];
+        for (int i = 0; i < lvskill; i++)
+        {
+            Instantiate(bintang, parrent);
+        }
         maskSpawn.enabled = false;
         maskSkillactive.enabled = false;
+       
         gm = FindObjectOfType<Gamemanager>();
         if (gm!=null)
         {
-           
             maskSpawn.fillAmount = durasispawnDefault;
             skillaktif = true;
             timefrezzer = timefrezzerDefault;
@@ -108,5 +116,22 @@ public class Skill1 : MonoBehaviour
     void activeButtonSkills()//mengaktifkan button skill
     {
         skillaktif = true;
+    }
+
+    public void upgrade()
+    {
+        if (lvskill < 3)
+        {
+            UserDataManager.Progress.lvskill[0]++;
+            lvskill++;
+            timefrezzerDefault += 2;
+            UserDataManager.Progress.skill1 += 2;
+            Instantiate(bintang, parrent);
+            UserDataManager.Save();
+        }
+        else
+        {
+            print("Lv penuh");
+        }
     }
 }

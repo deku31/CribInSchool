@@ -10,6 +10,7 @@ public class TeacherAI : MonoBehaviour
     int wayPoitIndex;
     Vector3 target;
     bool step;
+    public float defaultspeed=0.8f;
     //audio manager
     private SoundManager audiomanager;
     private float volume;
@@ -30,7 +31,7 @@ public class TeacherAI : MonoBehaviour
     public Transform targetDistract;
 
 
-    public float defauldspeed;
+    public float defauldspeed=0.8f;
     void Start()
     {
         time = Defaulttime;
@@ -45,7 +46,7 @@ public class TeacherAI : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         random = 0;
-        defauldspeed = agent.speed;
+        agent.speed=defauldspeed;
 
         UpdateDestination();
     }
@@ -57,6 +58,7 @@ public class TeacherAI : MonoBehaviour
             Invoke("stepSound", 1.5f-agent.speed);
             step = false;
         }
+        
         if (playermanager.munculPuzzle==true)
         {
             if (mendekat == true && volume < 1)
@@ -87,16 +89,31 @@ public class TeacherAI : MonoBehaviour
             }
 
         }
+        //==========================================================================
+        //bagianskill
         if (skill1!=null)
         {
+            bool skilaktif=false;
             if (skill1.frezeer == true)
             {
-                agent.speed = 0;
-                step = false;
                 anim.SetBool("jalan", false);
+                agent.speed = 0;
+                agent.Stop();
+                step = false;
+                skilaktif = true;
+                audiomanager.guruWalk.Stop();
+
             }
             else
             {
+                agent.Resume();
+                agent.speed = defauldspeed;
+                if (skilaktif==true)
+                {
+                    step = true;
+                    stepSound();
+                    skilaktif = false;
+                }
                 anim.SetBool("jalan", true);
 
                 jalan();
@@ -109,6 +126,10 @@ public class TeacherAI : MonoBehaviour
             {
                 if (skill_2.spawnGameObject == true)
                 {
+                    if (skill_2.gotobatu==true)
+                    {
+                        agent.speed = agent.speed + skill_2.speedguru;
+                    }
                     targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
                     agent.SetDestination(targetDistract.transform.position);
                     ////Destroy(skill_2.spawnGameObject, 5);
@@ -193,7 +214,11 @@ public class TeacherAI : MonoBehaviour
         {
             if (other.transform.tag == "Batu")
             {
+                agent.speed = agent.speed - skill_2.speedguru;
                 Invoke("UpdateDestination", 5);
+                Invoke("stepSound", 5);
+                step = false;
+                audiomanager.guruWalk.Stop();
                 Destroy(skill_2.spawnGameObject, 5);
                 //Destroy(GameObject.Find("Batu(Clone)"),5);
                 //skill_2.gotobatu = false;
