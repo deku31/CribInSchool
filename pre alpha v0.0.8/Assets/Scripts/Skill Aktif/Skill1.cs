@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Skill1 : MonoBehaviour
 {
+    public SkillManager skm;
+
     public float timefrezzerDefault=2f;
     private float timefrezzer;
     private float timeActivefrezzer=0;
@@ -23,8 +25,20 @@ public class Skill1 : MonoBehaviour
     public GameObject bintang;
     public Transform parrent;
     public int lvskill;
+
+    public bool lockskill;
+    public GameObject skillTerkunci;
+
+    //public GameObject notif;
     private void Awake()
     {
+        //notif.SetActive( false);
+        skm = FindObjectOfType<SkillManager>();
+        lockskill = UserDataManager.Progress.lockskill[0];
+        if (lockskill==false)
+        {
+            skillTerkunci.SetActive(false);
+        }
         timefrezzerDefault = timefrezzerDefault + UserDataManager.Progress.skill1;
         lvskill = UserDataManager.Progress.lvskill[0];
         for (int i = 0; i < lvskill; i++)
@@ -118,20 +132,53 @@ public class Skill1 : MonoBehaviour
         skillaktif = true;
     }
 
-    public void upgrade()
+    public void unlockskillmethod()
     {
-        if (lvskill < 3)
+        if (skm!=null)
         {
-            UserDataManager.Progress.lvskill[0]++;
-            lvskill++;
-            timefrezzerDefault += 2;
-            UserDataManager.Progress.skill1 += 2;
-            Instantiate(bintang, parrent);
+            if (skm.koin >= 1)
+            {
+                UserDataManager.Progress.lvskill[0]++;
+                lvskill++;
+                Instantiate(bintang, parrent);
+
+                UserDataManager.Progress.lockskill[0] = false;
+                skillTerkunci.SetActive(false);
+                lockskill = false;
+                skm.koin -= 1;
+                UserDataManager.Progress.koin -= 1;
+            }
             UserDataManager.Save();
         }
-        else
+    }
+
+    public void upgrade()
+    {
+        if (lockskill==false)
         {
-            print("Lv penuh");
+            if (skm.koin>=1)
+            {
+                if (lvskill < 3)
+                {
+                    skm.koin -= 1;
+                    UserDataManager.Progress.koin -= 1;
+                    UserDataManager.Progress.lvskill[0]++;
+                    lvskill++;
+                    timefrezzerDefault += 2;
+                    UserDataManager.Progress.skill1 += 2;
+                    Instantiate(bintang, parrent);
+                    UserDataManager.Save();
+                }
+                else
+                {
+                    print("Lv penuh");
+                }
+            }
+            else
+            {
+                print("Koin Kurang");
+            }
         }
+        
     }
 }

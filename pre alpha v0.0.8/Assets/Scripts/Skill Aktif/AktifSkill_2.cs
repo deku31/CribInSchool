@@ -43,8 +43,21 @@ public class AktifSkill_2 : MonoBehaviour
     public int lvskill ;
     public bool gotobatu;
 
+
+    //exp dan koin
+    public bool lockskill;
+    public GameObject skillTerkunci;
+    public SkillManager skm;
+
+
     public void Awake()
     {
+        skm = FindObjectOfType<SkillManager>();
+        lockskill = UserDataManager.Progress.lockskill[1];
+        if (lockskill == false)
+        {
+            skillTerkunci.SetActive(false);
+        }
         speedguru = speedguru+ UserDataManager.Progress.skill2;
         lvskill = UserDataManager.Progress.lvskill[1];
         for (int i = 0; i < lvskill; i++)
@@ -226,21 +239,56 @@ public class AktifSkill_2 : MonoBehaviour
             StartCoroutine(FollowDistraction(pos));
         }
     }
-    public void upgradeskill()//method upgrade skill dan simpan progress skill
+
+    public void unlockskillmethod()
     {
-        if (lvskill<3)
+        if (skm != null)
         {
-            UserDataManager.Progress.lvskill[1]++;
-            lvskill++;
-            speedguru += 0.5f;
-            UserDataManager.Progress.skill2 += 0.5f;
-            Instantiate(bintang, parrent);
+            if (skm.koin >= 1)
+            {
+                UserDataManager.Progress.lvskill[1]++;
+                lvskill++;
+                Instantiate(bintang, parrent);
+
+                UserDataManager.Progress.lockskill[1] = false;
+                skillTerkunci.SetActive(false);
+                lockskill = false;
+                skm.koin -= 1;
+                UserDataManager.Progress.koin -= 1;
+            }
             UserDataManager.Save();
         }
-        else
+    }
+
+    public void upgradeskill()//method upgrade skill dan simpan progress skill
+    {
+        if (lockskill == false)
         {
-            print("skill penuh");
+            if (skm.koin >= 1)
+            {
+                if (lvskill < 3)
+                {
+                    skm.koin -= 1;
+                    UserDataManager.Progress.koin -= 1;
+
+                    UserDataManager.Progress.lvskill[1]++;
+                    lvskill++;
+                    speedguru += 0.5f;
+                    UserDataManager.Progress.skill2 += 0.5f;
+                    Instantiate(bintang, parrent);
+                    UserDataManager.Save();
+                }
+                else
+                {
+                    print("skill penuh");
+                }
+            }
+            else
+            {
+                print("Koin Kurang");
+            }
         }
+       
     }
     public IEnumerator FollowDistraction(Vector3 pos)
     {

@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SkillManager : MonoBehaviour
 {
+    public Text kointxt;
+    public Text exptxt;
+    //expscript
+    public int koin = 1;
+    public int exprequitment = 500;
+    public int expPemain;
+
     public static SkillManager instance;
     public Skill[] skills;
     public SkillButton[] skillButton;
@@ -13,6 +21,11 @@ public class SkillManager : MonoBehaviour
 
     public void Awake()
     {
+        koin = UserDataManager.Progress.koin;
+        expPemain = UserDataManager.Progress.expPlayer;
+        kointxt.text = koin.ToString();
+        exptxt.text = expPemain + "/" + exprequitment + " exp";
+
         if (instance == null)
         {
             instance = this;
@@ -34,6 +47,14 @@ public class SkillManager : MonoBehaviour
 
     public void Update()
     {
-        
+        kointxt.text = koin.ToString();
+        exptxt.text = expPemain + "/" + exprequitment + " exp";
+        if (expPemain >= exprequitment)
+        {
+            UserDataManager.Progress.expPlayer -= exprequitment;
+            expPemain -= exprequitment;
+            UserDataManager.Progress.koin++;
+            koin++;
+        }
     }
 }

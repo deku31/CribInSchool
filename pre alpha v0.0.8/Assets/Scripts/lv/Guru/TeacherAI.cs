@@ -116,7 +116,7 @@ public class TeacherAI : MonoBehaviour
                 }
                 anim.SetBool("jalan", true);
 
-                jalan();
+                //jalan();
             }
         }
 
@@ -156,12 +156,35 @@ public class TeacherAI : MonoBehaviour
                 {
                     if (random != 0)
                     {
+                        agent.Stop();
                         agent.speed = 0;
                         step = false;
                         Invoke("jalan", time);
                     }
                     if (random == 0)
                     {
+                        agent.Resume();
+                        IterateWaypoint();
+                        UpdateDestination();
+                    }
+                }
+            }
+            else if (skill_2!=null)
+            {
+                if (skill_2.distractSkill== false)
+                {
+                    if (random != 0)
+                    {
+                        agent.Stop();
+
+                        agent.speed = 0;
+                        step = false;
+                        Invoke("jalan", time);
+                    }
+                    if (random == 0)
+                    {
+                        agent.Resume();
+
                         IterateWaypoint();
                         UpdateDestination();
                     }
@@ -173,11 +196,13 @@ public class TeacherAI : MonoBehaviour
                 if (random != 0)
                 {
                     agent.speed = 0;
+                    agent.Stop();
                     step = false;
                     Invoke("jalan", time);
                 }
                 if (random == 0)
                 {
+                    agent.Resume();
                     IterateWaypoint();
                     UpdateDestination();
                 }

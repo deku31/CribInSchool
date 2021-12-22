@@ -8,10 +8,13 @@ using UnityEngine.SceneManagement;
 public class endManager : MonoBehaviour
 {
     //======================================================================================================================
-    //lv unlock fariabel
+    //lv unlock variabel
     levelmanager lm;
     public int bukalv;//nomor lv yang ingin dibuka
 
+    //exp dan koin variabel
+    public Text exptext;
+    public int expRecived;
 
     //======================================================================================================================
 
@@ -75,27 +78,39 @@ public class endManager : MonoBehaviour
         lulustxt.text = totallulus.ToString();
         hasilAkhir.text = puzzle.score.ToString();
         //panel akhir setting
+        int kurang=1;
+        if (puzzle.jumlahSoal>=5)
+        {
+            kurang = 2;
+        }
         if (jawabanBenar==nilaitertinggi&& ketahuan==false)
         {
+            UserDataManager.Progress.expPlayer += 100;
+
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
+            expRecived = 100;
             UserDataManager.Progress.lvunlock = bukalv;
             lm.lvUnlock[bukalv - 1] = true;
 
         }
-        else if (jawabanBenar>=nilaitertinggi-1 && ketahuan == false)
+        else if (jawabanBenar>=nilaitertinggi-kurang && ketahuan == false)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
             lm.lvUnlock[bukalv - 1] = true;
+            expRecived = 80;
         }
-        else 
+        else if(ketahuan==true||jawabanBenar<nilaitertinggi-kurang)
         {
+            expRecived = 10;
             title.sprite = gagal[0];
             grade.sprite = gagal[2];
         }
+        exptext.text = "+"+expRecived+"Exp";
         if (ending==true)
         {
+            print(UserDataManager.Progress.expPlayer);
             UserDataManager.Save();
             timestop -= Time.deltaTime;
             if (timestop<0.1f)
@@ -120,9 +135,8 @@ public class endManager : MonoBehaviour
 
     public void Next()
     {
-        lm.lvpanel.SetActive(true);
-        DontDestroyOnLoad(lm);
-        SceneManager.LoadScene("Level 1");
+        UserDataManager.Progress.expPlayer += expRecived;
+        UserDataManager.Save();
         Time.timeScale = 1;
     }
 }

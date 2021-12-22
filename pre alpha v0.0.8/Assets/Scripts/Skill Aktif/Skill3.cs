@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class Skill3 : MonoBehaviour
 {
+    //exp dan koin
+    public bool lockskill;
+    public GameObject skillTerkunci;
+    public SkillManager skm;
+
+
     public float timeinvisibleDefault = 30f;
     private float timeinvisible;
     private float timeAktifInvisible = 0;
@@ -27,6 +33,12 @@ public class Skill3 : MonoBehaviour
     public int lvskill;
     private void Awake()
     {
+        skm = FindObjectOfType<SkillManager>();
+        lockskill = UserDataManager.Progress.lockskill[2];
+        if (lockskill == false)
+        {
+            skillTerkunci.SetActive(false);
+        }
         speedpesawat = speedpesawat+ UserDataManager.Progress.skill3;
         lvskill = UserDataManager.Progress.lvskill[2];
         for (int i = 0; i < lvskill; i++)
@@ -119,20 +131,56 @@ public class Skill3 : MonoBehaviour
     {
         skillaktif = true;
     }
-    public void upgrade()
+
+
+    public void unlockskillmethod()//unlock skill
     {
-        if (lvskill < 3)
+        if (skm != null)
         {
-            UserDataManager.Progress.lvskill[2]++;
-            lvskill++;
-            speedpesawat += 0.5f;
-            UserDataManager.Progress.skill3 += 0.5f;
-            Instantiate(bintang, parrent);
+            if (skm.koin >= 1)
+            {
+                UserDataManager.Progress.lvskill[2]++;
+                lvskill++;
+                Instantiate(bintang, parrent);
+
+                UserDataManager.Progress.lockskill[2] = false;
+                skillTerkunci.SetActive(false);
+                lockskill = false;
+                skm.koin -= 1;
+                UserDataManager.Progress.koin -= 1;
+            }
             UserDataManager.Save();
         }
-        else
+    }
+    public void upgrade()
+    {
+        if (lockskill == false)
         {
-            print("Lv penuh");
+            if (skm.koin >= 1)
+            {
+                if (lvskill < 3)
+                {
+                    skm.koin -= 1;
+                    UserDataManager.Progress.koin -= 1;
+
+                    UserDataManager.Progress.lvskill[2]++;
+                    lvskill++;
+                    speedpesawat += 0.5f;
+                    UserDataManager.Progress.skill3 += 0.5f;
+                    Instantiate(bintang, parrent);
+                    UserDataManager.Save();
+                }
+                else
+                {
+                    print("Lv penuh");
+                }
+            }
+            else
+            {
+                print("Koin Kurang");
+            }
         }
+
+        
     }
 }

@@ -80,5 +80,6 @@ public class ScenesManager : MonoBehaviour
     public void btnpertama(string lv)
     {
         SceneManager.LoadScene(lv + " " + (level.nomorlv + level.urutanNumber).ToString());
+        UserDataManager.Load();
     }
 }
