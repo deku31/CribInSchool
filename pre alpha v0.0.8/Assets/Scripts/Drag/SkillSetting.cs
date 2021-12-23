@@ -23,6 +23,7 @@ public class SkillSetting : MonoBehaviour
     public void Start()
     {
 
+<<<<<<< Updated upstream
 
         //dragScript_1 = FindInActiveObjectByName("Skill1").GetComponent<DraggableComponent>();
         //dragScript_2 = FindInActiveObjectByName("Skill2").GetComponent<DraggableComponent>();
@@ -48,6 +49,8 @@ public class SkillSetting : MonoBehaviour
 
 
 
+=======
+>>>>>>> Stashed changes
     }
 
     public void Update()
