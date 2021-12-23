@@ -85,7 +85,6 @@ public class endManager : MonoBehaviour
         }
         if (jawabanBenar==nilaitertinggi&& ketahuan==false)
         {
-            UserDataManager.Progress.expPlayer += 100;
 
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];

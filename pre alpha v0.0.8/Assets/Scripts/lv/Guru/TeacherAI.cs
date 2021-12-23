@@ -142,9 +142,8 @@ public class TeacherAI : MonoBehaviour
                 else
                 {
                     
-                    //UpdateDestination();
                 }
-                
+
             }
         }
        
@@ -241,7 +240,7 @@ public class TeacherAI : MonoBehaviour
             {
                 agent.speed = agent.speed - skill_2.speedguru;
                 Invoke("UpdateDestination", 5);
-                Invoke("stepSound", 5);
+                //Invoke("stepSound", 5);
                 step = false;
                 audiomanager.guruWalk.Stop();
                 Destroy(skill_2.spawnGameObject, 5);

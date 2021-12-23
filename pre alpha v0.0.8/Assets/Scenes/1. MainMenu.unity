@@ -5887,7 +5887,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5.823758
+  orthographic size: 6.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8389,14 +8389,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: KANAN
-      m_Image: {fileID: 0}
-    - m_Text: KIRI
-      m_Image: {fileID: 0}
-    - m_Text: KIRI
-      m_Image: {fileID: 0}
-    - m_Text: KIRI
-      m_Image: {fileID: 0}
-    - m_Text: KIRI
       m_Image: {fileID: 0}
     - m_Text: KIRI
       m_Image: {fileID: 0}

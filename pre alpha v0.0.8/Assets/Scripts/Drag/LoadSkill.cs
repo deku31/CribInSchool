@@ -30,7 +30,7 @@ public class LoadSkill : MonoBehaviour
 
     public void Start()
     {
-        
+
 
         int selectSkill_1 = PlayerPrefs.GetInt("selectSkill_1");
         int selectSkill_2 = PlayerPrefs.GetInt("selectSkill_2");
@@ -38,25 +38,27 @@ public class LoadSkill : MonoBehaviour
         prefab_1 = skillPrefabs[selectSkill_1];
         prefab_2 = skillPrefabs[selectSkill_2];
 
-        //GameObject clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, Quaternion.identity);
-        //GameObject clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, Quaternion.identity);
-        if (selectSkill_1!=selectSkill_2)
-        {
-            clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
-            clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
+        clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
 
-        }
-        else
-        {
-            foreach (var item in imageClone)
-            {
-                item.enabled = false;
-            }
-        }
+        clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
+
+        //if (selectSkill_1 != selectSkill_2)
+        //{
+        //    clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
+        //    clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
+
+        //}
+        //else
+        //{
+        //    foreach (var item in imageClone)
+        //    {
+        //        item.enabled = false;
+        //    }
+        //}
 
         ObjectImageClone = GameObject.FindGameObjectsWithTag("Skill");
         imageClone = new Image[ObjectImageClone.Length];
-        for(int i = 0; i<ObjectImageClone.Length; i++)
+        for (int i = 0; i < ObjectImageClone.Length; i++)
         {
             imageClone[i] = ObjectImageClone[i].GetComponent<Image>();
         }
@@ -66,7 +68,7 @@ public class LoadSkill : MonoBehaviour
     {
         imageClone[0].transform.position = spawnPointSkill_1.position;
         imageClone[1].transform.position = spawnPointSkill_2.position;
-        
+
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
@@ -87,5 +89,5 @@ public class LoadSkill : MonoBehaviour
         return null;
     }
 
-    
+
 }

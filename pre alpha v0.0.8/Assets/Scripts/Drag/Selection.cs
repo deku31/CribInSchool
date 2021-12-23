@@ -14,7 +14,7 @@ public class Selection : MonoBehaviour
 
     public void Awake()
     {
-        
+
     }
 
     public void Update()
@@ -27,25 +27,25 @@ public class Selection : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectSkill_1", selectSkill_1);
         PlayerPrefs.SetInt("selectSkill_2", selectSkill_2);
-        
+
         SceneManager.LoadScene("lodingScane", LoadSceneMode.Single);
     }
 
     //GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
     //{
 
-        //Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
-        //for (int i = 0; i < objs.Length; i++)
-        //{
-            //if (objs[i].hideFlags == HideFlags.None)
-            //{
-                //if (objs[i].CompareTag(tag))
-                //{
+    //Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+    //for (int i = 0; i < objs.Length; i++)
+    //{
+    //if (objs[i].hideFlags == HideFlags.None)
+    //{
+    //if (objs[i].CompareTag(tag))
+    //{
 
-                    //return objs[i].gameObject;
-                //}
-            //}
-        //}
-        //return null;
+    //return objs[i].gameObject;
+    //}
+    //}
+    //}
+    //return null;
     //}
 }

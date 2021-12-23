@@ -46,7 +46,7 @@ public class SkillSetting : MonoBehaviour
         //skillManager[i] = objectSkillManager[i].GetComponent<SkillManager>();
         //}
 
-        
+
 
     }
 
