@@ -1,76 +1,543 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.24f1 (79c78de19888) revision 7980941'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10  (10.0.18363) 64bit Professional' Language: 'en' Physical Memory: 8032 MB
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'en' Physical Memory: 8060 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 2020.3.24f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/githubRepositori/GitHub/CribInSchool/pre alpha v0.0.8
+C:/Users/Lezh/Documents/GitHub/CribInSchool/pre alpha v0.0.8
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49836
-Successfully changed project path to: D:/githubRepositori/GitHub/CribInSchool/pre alpha v0.0.8
-D:/githubRepositori/GitHub/CribInSchool/pre alpha v0.0.8
+61776
+Successfully changed project path to: C:/Users/Lezh/Documents/GitHub/CribInSchool/pre alpha v0.0.8
+C:/Users/Lezh/Documents/GitHub/CribInSchool/pre alpha v0.0.8
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 518.22 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 70.80 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.24f1 (79c78de19888)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2020.3.24f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/githubRepositori/GitHub/CribInSchool/pre alpha v0.0.8/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Lezh/Documents/GitHub/CribInSchool/pre alpha v0.0.8/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 540M (ID=0xdf4)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GT 1030 (ID=0x1d01)
     Vendor:   
-    VRAM:     1974 MB
-    Driver:   23.21.13.9135
+    VRAM:     1982 MB
+    Driver:   30.0.14.9709
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity 2020.3.24f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity 2020.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity 2020.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56276
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity 2020.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.260421 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001595 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 167.37 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 67.48 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  7.929 seconds
+- Completed reload, in  0.584 seconds
 Domain Reload Profiling:
-	ReloadAssembly (7930ms)
-		BeginReloadAssembly (5484ms)
+	ReloadAssembly (585ms)
+		BeginReloadAssembly (55ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2011ms)
-			LoadAssemblies (5479ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (468ms)
+			LoadAssemblies (53ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1042ms)
+			SetupTypeCache (151ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (84ms)
-			SetupLoadedEditorAssemblies (593ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (196ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (168ms)
-				BeforeProcessingInitializeOnLoad (56ms)
-				ProcessInitializeOnLoadAttributes (266ms)
-				ProcessInitializeOnLoadMethodAttributes (93ms)
+				RefreshPlugins (68ms)
+				BeforeProcessingInitializeOnLoad (15ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 1.537602 seconds.
+Registered in 0.005208 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000026F88756690 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Purchasing.Common.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F889E9040 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88D4CC30 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F889E9040 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D5AF490 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.WinRTCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D625420 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F889BE910 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E9D5000 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleMacosStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8933FC40 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D9E0430 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F891A5010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F889BD060 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D9F0440 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E99F020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D9F0440 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D86AC30 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D6DF010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E99F020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E87FF10 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Analytics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88A6D790 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E0DF010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E792A80 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E87F590 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.WinRTStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026DF8B84C40 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E99F020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Services.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D6BA840 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88E02310 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88DCDD50 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D7DB010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E0AFE20 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D447040 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F89467A30 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D803620 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F893D1040 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Monetization.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D80C030 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.Purchasing.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E9D5000 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D5AF490 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E9D6720 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88DD36E0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.DevX.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.147 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1148ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (966ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (256ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (477ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (58ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (282ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2276 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 103.9 MB.
+System memory in use after: 68.5 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2698.
+Total: 7.256200 ms (FindLiveObjects: 0.233700 ms CreateObjectMapping: 0.105300 ms MarkObjects: 6.813900 ms  DeleteObjects: 0.101800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Level 1.unity
+  artifactKey: Guid(54977574eb60dc945855005c94247d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1.unity using Guid(54977574eb60dc945855005c94247d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9cd95fa2d9f4faa6336b75bdaad329c') in 0.016384 seconds 
+  Import took 0.020098 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.903107 seconds.
+  path: Assets/Aset3D/Murid pencpntek anim3d.fbx
+  artifactKey: Guid(f3381662303833b48a43c3e368903274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Aset3D/Murid pencpntek anim3d.fbx using Guid(f3381662303833b48a43c3e368903274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75352e9eab32ce3b2414733b6e0613f2') in 0.209150 seconds 
+  Import took 0.212910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 226.774098 seconds.
+  path: Assets/Scenes/starScane.unity
+  artifactKey: Guid(d843a2d0ae957524f91d1d5a62b62088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/starScane.unity using Guid(d843a2d0ae957524f91d1d5a62b62088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4864d5892dd2f83c8b88f8ca6b6ba362') in 0.008212 seconds 
+  Import took 0.011800 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004566 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000026F92E180D0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Purchasing.Common.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88DD0A50 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8DB6C020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E7A3FB0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026DF80267E0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.WinRTCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8DB6C020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F93160EA0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92FB5F50 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleMacosStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E113C30 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8DB6C020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D625420 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8EB8A770 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D9F0440 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E3B0020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E527040 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F93160EA0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F891A5010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E3B0020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E880170 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Analytics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92D9CA00 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8DF2D020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92FD4C10 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E880630 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.WinRTStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92CA5AD0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E3B0020 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Services.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026DF8B4DF50 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92CAA690 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D653630 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8D7DB010 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F90FE3030 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E9A3030 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E793C70 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F90FE3030 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8E4C7A50 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Monetization.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F8F404230 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.Purchasing.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F92FB11B0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Purchasing.AppleStub.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026DF80267E0 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F906B0080 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000026F88CA6450 doesn't match image C:\Users\Lezh\Documents\GitHub\CribInSchool\pre alpha v0.0.8\Library\ScriptAssemblies\UnityEngine.Advertisements.DevX.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.051 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1051ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (877ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (309ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (338ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2257 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.0 MB.
+System memory in use after: 106.2 MB.
+
+Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 2743.
+Total: 5.316400 ms (FindLiveObjects: 0.227800 ms CreateObjectMapping: 0.105600 ms MarkObjects: 4.956600 ms  DeleteObjects: 0.025200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 106.245811 seconds.
+  path: Assets/Scenes/Level 1.unity
+  artifactKey: Guid(54977574eb60dc945855005c94247d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1.unity using Guid(54977574eb60dc945855005c94247d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de979794eb0248fe12b96943ae4a1308') in 0.013026 seconds 
+  Import took 0.016895 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.807505 seconds.
+  path: Assets/Aset3D/kursi murid.fbx
+  artifactKey: Guid(9c6f00f4b8e8c0640a3cf8b30d01d04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Aset3D/kursi murid.fbx using Guid(9c6f00f4b8e8c0640a3cf8b30d01d04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0fec045628d8d698e52937dc9f4a4e2') in 0.074791 seconds 
+  Import took 0.078502 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.724531 seconds.
+  path: Assets/Aset3D/Murid pencpntek anim3d.fbx
+  artifactKey: Guid(f3381662303833b48a43c3e368903274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Aset3D/Murid pencpntek anim3d.fbx using Guid(f3381662303833b48a43c3e368903274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb5c526d143c9d93e3048a97482ce8bd') in 0.100430 seconds 
+  Import took 0.104131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1169.627509 seconds.
+  path: Assets/Aset3D/karakter pengawas animasi berjalan.fbx
+  artifactKey: Guid(a5a8e8f168856f243a575d9e6f4e6dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Aset3D/karakter pengawas animasi berjalan.fbx using Guid(a5a8e8f168856f243a575d9e6f4e6dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bedb4518771764c55929e666c50aa201') in 0.105875 seconds 
+  Import took 0.109928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 368.142831 seconds.
+  path: Assets/Aset3D/2karakter pengawas animasi berjalan.fbx
+  artifactKey: Guid(b273604cb3ce9554abe379257e3c44d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Aset3D/2karakter pengawas animasi berjalan.fbx using Guid(b273604cb3ce9554abe379257e3c44d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2627cbf1b9005f2ff59a306f13e9f22') in 0.105190 seconds 
+  Import took 0.109166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 645.513188 seconds.
+  path: Assets/Scripts/Drag/LoadSkill.cs
+  artifactKey: Guid(ef0e9e1942c4a2a4eb5436c53336dc52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/LoadSkill.cs using Guid(ef0e9e1942c4a2a4eb5436c53336dc52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c380093e250e84893aeb743214d5ac95') in 0.012116 seconds 
+  Import took 0.016368 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.115956 seconds.
+  path: Assets/Scripts/Drag/Selection.cs
+  artifactKey: Guid(de640f9d02fc0a3499dd4028e5466b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/Selection.cs using Guid(de640f9d02fc0a3499dd4028e5466b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '045ba370ffebd6ac5f7855eb4a4343b2') in 0.011386 seconds 
+  Import took 0.015747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.648542 seconds.
+  path: Assets/Prefabs/Skill 1.prefab
+  artifactKey: Guid(c753ebcd5062e8d4d941d94015e02622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Skill 1.prefab using Guid(c753ebcd5062e8d4d941d94015e02622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f47d9020071c912edc398d43ad0229') in 0.043530 seconds 
+  Import took 0.047490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 130.728155 seconds.
+  path: Assets/Scripts/Drag/EquipmentSlot.cs
+  artifactKey: Guid(a29c77827c7b28e4ba452bfc38d99fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/EquipmentSlot.cs using Guid(a29c77827c7b28e4ba452bfc38d99fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be0bb302aff805d80c37963a0d3e1f1a') in 0.010343 seconds 
+  Import took 0.014987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.938784 seconds.
+  path: Assets/Scripts/Drag/DraggableComponent.cs
+  artifactKey: Guid(fb3666194a0f0104fb720c4ee6739843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/DraggableComponent.cs using Guid(fb3666194a0f0104fb720c4ee6739843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd39d186a8e0e3f28ab7b8966dc2e4eb0') in 0.007434 seconds 
+  Import took 0.010986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.263195 seconds.
+  path: Assets/Scripts/Drag/FakeInventory.cs
+  artifactKey: Guid(d357675f50b10d348bb722444835a0ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/FakeInventory.cs using Guid(d357675f50b10d348bb722444835a0ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7b1bd1dc8e1f42b35e4bea4cb2b6794') in 0.012212 seconds 
+  Import took 0.017586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.536766 seconds.
+  path: Assets/Scripts/Drag/SkillSetting.cs
+  artifactKey: Guid(a7b942834d995f44c881a3ceae6b8bda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Drag/SkillSetting.cs using Guid(a7b942834d995f44c881a3ceae6b8bda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee4970d938419af5af9fc3cf79a8a653') in 0.009523 seconds 
+  Import took 0.013921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 319.341943 seconds.
+  path: Assets/Prefabs/Other/Guru.prefab
+  artifactKey: Guid(8fe167bf385371041b7a69c5267a3e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Other/Guru.prefab using Guid(8fe167bf385371041b7a69c5267a3e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea1424f2c223e73db4d2fb13e99d18c') in 0.024903 seconds 
+  Import took 0.029904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.646062 seconds.
+  path: Assets/Animasi/FOV.controller
+  artifactKey: Guid(016bde9ed54cafa4194806c88f07b546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/FOV.controller using Guid(016bde9ed54cafa4194806c88f07b546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '074f8a864829367a98a2c9fd275db3a7') in 0.010177 seconds 
+  Import took 0.013534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.119945 seconds.
+  path: Assets/Animasi/headGuru.anim
+  artifactKey: Guid(7b429023e241a2c4ebc8ca03b6cc8512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/headGuru.anim using Guid(7b429023e241a2c4ebc8ca03b6cc8512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf5c86ffc40bf70140dc45559feefde') in 0.010366 seconds 
+  Import took 0.014097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.949376 seconds.
+  path: Assets/Animasi/btn muncul.anim
+  artifactKey: Guid(8f935b98f0374784395b2a141a78425d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/btn muncul.anim using Guid(8f935b98f0374784395b2a141a78425d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1baffb6635b7fb14353cbe1397381bfe') in 0.008337 seconds 
+  Import took 0.012017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.221408 seconds.
+  path: Assets/Animasi/ContohPuzzle.controller
+  artifactKey: Guid(546acc394841c414e9ce4d39615a8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/ContohPuzzle.controller using Guid(546acc394841c414e9ce4d39615a8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3ed2df29f6aa5164fa0d2e6456f8f07') in 0.008898 seconds 
+  Import took 0.012183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.245203 seconds.
+  path: Assets/Animasi/New Sprite.controller
+  artifactKey: Guid(039dc1cb7d6ee124f860dccbd515112a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/New Sprite.controller using Guid(039dc1cb7d6ee124f860dccbd515112a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b87be3a9228f9862ba22c0afceb2737d') in 0.007701 seconds 
+  Import took 0.011234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.862732 seconds.
+  path: Assets/Animasi/player/Anime_character.controller
+  artifactKey: Guid(efc89adf1d3ee894abb4c7addde023ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/player/Anime_character.controller using Guid(efc89adf1d3ee894abb4c7addde023ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0cba379e7981571a387d5885d5dece8') in 0.007972 seconds 
+  Import took 0.011466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.806832 seconds.
+  path: Assets/Animasi/player/player awal.anim
+  artifactKey: Guid(011fc3a39c6e30c47859206b7e48a6a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/player/player awal.anim using Guid(011fc3a39c6e30c47859206b7e48a6a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9adef82b7aee56331a55d0500aadb62') in 0.008065 seconds 
+  Import took 0.011511 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.745256 seconds.
+  path: Assets/Animasi/puzzle
+  artifactKey: Guid(6a574348c577db34d9e8c41170e4d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/puzzle using Guid(6a574348c577db34d9e8c41170e4d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cb494add0862b361978ac890cc0b5e4') in 0.007230 seconds 
+  Import took 0.010449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.554558 seconds.
+  path: Assets/Animasi/player/playermucul.anim
+  artifactKey: Guid(b6ef5d2f6d9228c46994a465a31b493d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animasi/player/playermucul.anim using Guid(b6ef5d2f6d9228c46994a465a31b493d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6003978e2d780d72a80b7e62a0e7933e') in 0.007979 seconds 
+  Import took 0.011890 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
