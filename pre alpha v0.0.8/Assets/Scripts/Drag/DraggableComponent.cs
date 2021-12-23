@@ -102,7 +102,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 				return;
 			}
         }
-        //Selection.FindObjectOfType<Selection>().skill_1.nomer = 0;
+        Selection.FindObjectOfType<Selection>().equipSlotSkill_1.nomer=0;
 
         print(Selection.FindObjectOfType<Selection>().selectSkill_1);
 

@@ -25,11 +25,16 @@ public class Selection : MonoBehaviour
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("selectSkill_1", selectSkill_1);
-        SceneManager.LoadScene("lodingScane", LoadSceneMode.Single);
+        if (equipSlotSkill_1.nomer!=0)
+        {
+            PlayerPrefs.SetInt("selectSkill_1", selectSkill_1);
+            SceneManager.LoadScene("lodingScane", LoadSceneMode.Single);
+        }
+        else
+        {
+            Debug.Log("pilih salah satu skill");
+        }
 
         //PlayerPrefs.SetInt("selectSkill_2", selectSkill_2);
-
-
     }
 }

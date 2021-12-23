@@ -55,7 +55,7 @@ public class TeacherAI : MonoBehaviour
     {
         if (step == true)
         {
-            Invoke("stepSound", 1.5f-agent.speed);
+            Invoke("stepSound", 2.3f-agent.speed);
             step = false;
         }
         
@@ -129,6 +129,7 @@ public class TeacherAI : MonoBehaviour
                     if (skill_2.gotobatu==true)
                     {
                         agent.speed = agent.speed + skill_2.speedguru;
+                        skill_2.gotobatu = false;
                     }
                     targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
                     agent.SetDestination(targetDistract.transform.position);
@@ -139,14 +140,11 @@ public class TeacherAI : MonoBehaviour
                     }
                     
                 }
-                else
-                {
-                    
-                }
-
+               
             }
+            
         }
-       
+
         if (Vector3.Distance(transform.position,target)<1)
         {
             if (skill1!=null)
@@ -238,7 +236,7 @@ public class TeacherAI : MonoBehaviour
         {
             if (other.transform.tag == "Batu")
             {
-                agent.speed = agent.speed - skill_2.speedguru;
+                agent.speed = defauldspeed;
                 Invoke("UpdateDestination", 5);
                 //Invoke("stepSound", 5);
                 step = false;

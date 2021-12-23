@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.57558316, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.5755825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2356,7 +2356,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 658242131}
           m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-          m_MethodName: start
+          m_MethodName: home
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3144,7 +3144,7 @@ PrefabInstance:
     - target: {fileID: 4915540516972497793, guid: bf20f8a1f5f400145b402d413c5f59f2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf20f8a1f5f400145b402d413c5f59f2, type: 3}
@@ -11777,7 +11777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063226616
 RectTransform:
   m_ObjectHideFlags: 0

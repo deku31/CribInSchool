@@ -273,8 +273,8 @@ public class AktifSkill_2 : MonoBehaviour
 
                     UserDataManager.Progress.lvskill[1]++;
                     lvskill++;
-                    speedguru += 0.5f;
-                    UserDataManager.Progress.skill2 += 0.5f;
+                    speedguru += 0.2f;
+                    UserDataManager.Progress.skill2 += 0.2f;
                     Instantiate(bintang, parrent);
                     UserDataManager.Save();
                 }
