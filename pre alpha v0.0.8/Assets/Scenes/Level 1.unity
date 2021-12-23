@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.5755825, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.57558316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7083,8 +7083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b942834d995f44c881a3ceae6b8bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeSkill_1: {x: 79, y: 67}
-  sizeSkill_2: {x: 79, y: 67}
   objectDrag: []
   dragComponent: []
   objectImage: []
@@ -7106,6 +7104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillPrefabs:
+  - {fileID: 1401566155703998999, guid: def51dc2bf41c324eb9113c50c519279, type: 3}
   - {fileID: 1401566155703998999, guid: c753ebcd5062e8d4d941d94015e02622, type: 3}
   - {fileID: 1548658108174367149, guid: ed17b897f67230743a5cd96a0274474e, type: 3}
   - {fileID: 3616807372794889804, guid: b714fe81ff8e7354f82adfd473abf99c, type: 3}

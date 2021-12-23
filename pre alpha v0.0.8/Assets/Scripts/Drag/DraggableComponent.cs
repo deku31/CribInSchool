@@ -109,6 +109,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
         //rectTransform.anchoredPosition = StartPosition;
         //Selection.FindObjectOfType<Selection>().skill_2.nomer = 0;
         rectTransform.anchoredPosition = StartPosition;
+
         panelbintang.SetActive(true);
         upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);

@@ -30,31 +30,15 @@ public class LoadSkill : MonoBehaviour
 
     public void Start()
     {
-
-
         int selectSkill_1 = PlayerPrefs.GetInt("selectSkill_1");
-        int selectSkill_2 = PlayerPrefs.GetInt("selectSkill_2");
+        //int selectSkill_2 = PlayerPrefs.GetInt("selectSkill_2");
 
         prefab_1 = skillPrefabs[selectSkill_1];
-        prefab_2 = skillPrefabs[selectSkill_2];
+        //prefab_2 = skillPrefabs[selectSkill_2];
 
         clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
 
-        clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
-
-        //if (selectSkill_1 != selectSkill_2)
-        //{
-        //    clone_1 = Instantiate(prefab_1, spawnPointSkill_1.position, prefab_1.transform.rotation);
-        //    clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
-
-        //}
-        //else
-        //{
-        //    foreach (var item in imageClone)
-        //    {
-        //        item.enabled = false;
-        //    }
-        //}
+        //clone_2 = Instantiate(prefab_2, spawnPointSkill_2.position, prefab_2.transform.rotation);
 
         ObjectImageClone = GameObject.FindGameObjectsWithTag("Skill");
         imageClone = new Image[ObjectImageClone.Length];
@@ -67,7 +51,7 @@ public class LoadSkill : MonoBehaviour
     public void Update()
     {
         imageClone[0].transform.position = spawnPointSkill_1.position;
-        imageClone[1].transform.position = spawnPointSkill_2.position;
+        //imageClone[1].transform.position = spawnPointSkill_2.position;
 
     }
 
