@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205094805164653879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.209, y: 0, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3436775686592860429}
@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 1558701175961483095, guid: 72e6aae1630ebde42b2d8fd5d1c4347b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -1.71
       objectReference: {fileID: 0}
     - target: {fileID: 1558701175961483095, guid: 72e6aae1630ebde42b2d8fd5d1c4347b,
         type: 3}
@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1747289796077601505, guid: 72e6aae1630ebde42b2d8fd5d1c4347b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2227679666223361517, guid: 72e6aae1630ebde42b2d8fd5d1c4347b,
         type: 3}
       propertyPath: m_Name
@@ -479,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: karakter pengawas animasi berjalan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682538436822843953, guid: 8dee57ae3a98bd4488c6b35b32784a95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057973741269555339, guid: 8dee57ae3a98bd4488c6b35b32784a95,
         type: 3}
