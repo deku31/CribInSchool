@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -974,7 +974,7 @@ MonoBehaviour:
   hitungScore: 0
   puzzleanim: {fileID: 198891970}
   btnPopuppuzzle: {fileID: 1719751241}
-  jumlahSoal: 0
+  jumlahSoal: 4
   jumlahseluruhpuzzle: 4
   solvedPuzzle: 0
   EndPanel: {fileID: 835164175}
@@ -4879,12 +4879,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5fea1a2157bee514ab68e72632023b42, type: 3}
   - {fileID: 21300000, guid: b4641b01acb1bb04aa0ae184361b5958, type: 3}
   papan: {fileID: 166162694}
-  endPanel: {fileID: 0}
+  endPanel: {fileID: 166162694}
   jawabanBenar: 0
-  nilaitertinggi: 3
+  nilaitertinggi: 4
   puzzle: {fileID: 198891969}
   ketahuan: 0
-  playermanager: {fileID: 0}
+  playermanager: {fileID: 551273111}
 --- !u!222 &835164179
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class SkillManager : MonoBehaviour
     //expscript
     public int koin = 1;
     public int exprequitment = 500;
-    public int expPemain;
+    public float expPemain;
 
     public static SkillManager instance;
     public Skill[] skills;
