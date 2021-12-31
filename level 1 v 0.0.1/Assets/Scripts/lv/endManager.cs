@@ -15,7 +15,7 @@ public class endManager : MonoBehaviour
 
     //exp dan koin variabel
     public Text exptext;
-    public int expRecived;
+    public float expRecived;
 
     //======================================================================================================================
 
@@ -24,6 +24,7 @@ public class endManager : MonoBehaviour
     //isi panel
     public Text lulustxt;
     public int totallulus;
+    private float persen;
 
     //jumlah puzzle benar
     public Text hasilAkhir;
@@ -48,6 +49,7 @@ public class endManager : MonoBehaviour
 
     void Awake()
     {
+        //puzzle = FindObjectOfType<PuzzleManager>();
         lskl = FindObjectOfType<LoadSkill>();
         lm = FindObjectOfType<levelmanager>();
         playermanager = FindObjectOfType<player>();
@@ -57,10 +59,16 @@ public class endManager : MonoBehaviour
     }
     private void Start()
     {
+        nilaitertinggi = puzzle.jumlahSoal;
         bgm.bgm.Stop();
         lskl.clone_1.SetActive(false);
         lskl.panelskill.SetActive(false);
         //audiomanager.resultMethod(2);
+        persen = (puzzle.score / nilaitertinggi) * 100;
+        lulustxt.text = totallulus.ToString();
+
+        hasilAkhir.text = puzzle.score.ToString();
+
     }
 
     // Update is called once per frame
@@ -77,19 +85,16 @@ public class endManager : MonoBehaviour
         //        totallulus += 0;
         //    }
         //}
-       
-        nilaitertinggi = puzzle.jumlahSoal;
-        lulustxt.text = totallulus.ToString();
-        hasilAkhir.text = puzzle.score.ToString();
+        Debug.Log(puzzle.score);
+        print("progres"+persen+"%");
         //panel akhir setting
-        int kurang=1;
-        if (puzzle.jumlahSoal>=5)
+        int kurang =1;
+        //if (puzzle.jumlahSoal>=5)
+        //{
+        //    kurang = 2;
+        //}
+        if (persen==100&& ketahuan==false)
         {
-            kurang = 2;
-        }
-        if (jawabanBenar==nilaitertinggi&& ketahuan==false)
-        {
-
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
             expRecived = 100;
@@ -97,16 +102,16 @@ public class endManager : MonoBehaviour
             lm.lvUnlock[bukalv - 1] = true;
 
         }
-        else if (jawabanBenar>=nilaitertinggi-kurang && ketahuan == false)
+        else if (persen>=75&& ketahuan == false)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
             lm.lvUnlock[bukalv - 1] = true;
-            expRecived = 80;
+            expRecived = persen;
         }
-        else if(ketahuan==true||jawabanBenar<nilaitertinggi-kurang)
+        else if(ketahuan==true||persen<80)
         {
-            expRecived = 10;
+            expRecived = persen;
             title.sprite = gagal[0];
             grade.sprite = gagal[2];
         }

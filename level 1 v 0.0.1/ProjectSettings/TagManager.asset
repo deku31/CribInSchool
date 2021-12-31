@@ -28,6 +28,7 @@ TagManager:
   - Sprite
   - Plane
   - Batu
+  - player3
   layers:
   - Default
   - TransparentFX

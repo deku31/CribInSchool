@@ -69,6 +69,7 @@ public class slidingpuzzlescript : MonoBehaviour
 
     private void Awake()
     {
+        pzm = FindObjectOfType<PuzzleManager>();
         audiomanager = FindObjectOfType<SoundManager>();
         playermanager = FindObjectOfType<player>();
     }
@@ -140,7 +141,6 @@ public class slidingpuzzlescript : MonoBehaviour
                 {
                     hitungwaktu = false;
                     playermanager.progresplayer[playermanager.nourut].current++;
-
                     pzm.score++;
                     EndGame();
                 }

@@ -50,7 +50,7 @@ public class PuzzleManager : MonoBehaviour
 
     //menghitung jumlah soal seluruh puzzle
     public int jumlahSoal;
-    public int jumlahseluruhpuzzle=3;
+    public int jumlahseluruhpuzzle;
 
     //end game
     public bool solvedPuzzle;
@@ -69,6 +69,7 @@ public class PuzzleManager : MonoBehaviour
     }
     private void Update()
     {
+        //end.jawabanBenar = score;
         if (PuzzleNUmber == 0)
         {
             cam.enabled = false;

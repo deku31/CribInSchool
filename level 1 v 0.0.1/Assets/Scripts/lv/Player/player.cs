@@ -63,6 +63,10 @@ public class player : MonoBehaviour
     public  bool stargame;
     private void Awake()
     {
+        foreach (var item in progresplayer)
+        {
+            item.maxlenght = pzm.jumlahSoal;
+        }
         audiomanager = FindObjectOfType<SoundManager>();
         pause = FindObjectOfType<PauseManager>();
         stargame = false;

@@ -19,7 +19,7 @@ public class ProgressData
     public bool[] lockskill = { false, true, true };//menyimpan progress skill yang terkunci
 
     //exp dan koin
-    public int expPlayer=0;//jumlah exp pemain
+    public float expPlayer=0;//jumlah exp pemain
     public int koin;//jumlah koin pemain
 
 }
