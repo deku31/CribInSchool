@@ -19,6 +19,7 @@ public class TeacherAI : MonoBehaviour
     private player playermanager;
     //animasi
     public Animator anim;
+    public Animator animasiGuru;
 
     //skill setting;
     // random
@@ -96,7 +97,8 @@ public class TeacherAI : MonoBehaviour
             bool skilaktif=false;
             if (skill1.frezeer == true)
             {
-                anim.SetBool("jalan", false);
+                //anim.SetBool("jalan", false);
+                //animasiGuru.SetBool("isWalking", false);
                 agent.speed = 0;
                 agent.Stop();
                 step = false;
@@ -114,7 +116,8 @@ public class TeacherAI : MonoBehaviour
                     stepSound();
                     skilaktif = false;
                 }
-                anim.SetBool("jalan", true);
+                //anim.SetBool("jalan", true);
+                //animasiGuru.SetBool("isWalking", true);
 
                 //jalan();
             }
@@ -256,7 +259,8 @@ public class TeacherAI : MonoBehaviour
         if (other.transform.tag=="point")
         {
             random = Random.Range(0,2);
-            anim.SetBool("jalan", false);
+            //anim.SetBool("jalan", false);
+            //animasiGuru.SetBool("diam", true);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -267,7 +271,8 @@ public class TeacherAI : MonoBehaviour
         }
         if (other.transform.tag == "point")
         {
-            anim.SetBool("jalan", true);
+            //anim.SetBool("jalan", true);
+            //animasiGuru.SetBool("diam", false);
         }
     }
 }
