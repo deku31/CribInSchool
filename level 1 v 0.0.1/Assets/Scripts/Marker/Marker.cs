@@ -36,7 +36,7 @@ public class Marker : MonoBehaviour
 
 		StartCoroutine ("FindTargetsWithDelay", .2f);
 
-        markerAktif = true;
+        //markerAktif = true;
         
 	}
 

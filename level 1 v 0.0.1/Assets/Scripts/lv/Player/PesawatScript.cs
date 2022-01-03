@@ -20,6 +20,10 @@ public class PesawatScript : MonoBehaviour
     public int progress2=1;
     //skill
     Skill3 skill3;
+
+    public GameObject[] objectMarker;
+    public Marker[] markerPlayer;
+
     private void Awake()
     {
         while (progress2==progress1)
@@ -30,6 +34,11 @@ public class PesawatScript : MonoBehaviour
         //end = FindObjectOfType<endManager>();
         urutan = playermanager.acakpencontek;
         audiomanager = FindObjectOfType<SoundManager>();
+    }
+
+    private void Start()
+    {
+        
     }
     private void Update()
     {
@@ -64,6 +73,13 @@ public class PesawatScript : MonoBehaviour
         //}
 
         skill3 = FindObjectOfType<Skill3>();
+
+        objectMarker = GameObject.FindGameObjectsWithTag("Marker");
+        markerPlayer = new Marker[objectMarker.Length];
+        for (int i = 0; i < objectMarker.Length; i++)
+        {
+            markerPlayer[i] = objectMarker[i].GetComponent<Marker>();
+        }
     }
     void endpanelMethod()
     {
@@ -108,6 +124,7 @@ public class PesawatScript : MonoBehaviour
             progress1 = 0;
             triggercallplayer(progress1, progress2);
             progress2 = progress1;
+            markerPlayer[1].markerAktif = true;
             if (playermanager.stargame == true)
             {
                 playermanager.nourut = progress1;
@@ -122,6 +139,7 @@ public class PesawatScript : MonoBehaviour
             progress1 = 1;
             triggercallplayer(progress1, progress2);
             progress2 = progress1;
+            markerPlayer[0].markerAktif = true;
             if (playermanager.stargame == true)
             {
                 playermanager.nourut = progress1;
@@ -164,5 +182,17 @@ public class PesawatScript : MonoBehaviour
             print("lewat");
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "barplayer0")
+        {
+            markerPlayer[1].markerAktif = false;
+        }
+        else if (other.transform.tag == "barplayer1")
+        {
+            markerPlayer[0].markerAktif = false;
+        }
     }
 }

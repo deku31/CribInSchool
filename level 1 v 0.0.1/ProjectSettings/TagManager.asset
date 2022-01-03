@@ -32,6 +32,7 @@ TagManager:
   - barplayer2
   - Penghapus
   - Undefined
+  - Marker
   layers:
   - Default
   - TransparentFX
