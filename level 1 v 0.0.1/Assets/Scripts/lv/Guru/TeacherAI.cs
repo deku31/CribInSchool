@@ -238,7 +238,7 @@ public class TeacherAI : MonoBehaviour
     {
         if (skill_2!=null)
         {
-            if (other.transform.tag == "Batu")
+            if (other.transform.tag == "Penghapus")
             {
                 agent.speed = defauldspeed;
                 Invoke("UpdateDestination", 5);

@@ -465,6 +465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guru Pengawas 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2227679666223361517, guid: 72e6aae1630ebde42b2d8fd5d1c4347b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e6aae1630ebde42b2d8fd5d1c4347b, type: 3}
 --- !u!1 &796848744565362551 stripped

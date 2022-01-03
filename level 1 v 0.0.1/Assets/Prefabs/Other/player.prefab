@@ -245,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &344
 Transform:
   m_ObjectHideFlags: 0
@@ -432,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Murid 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436748755553468263, guid: d240996b9c0103e4ba4647d68a5b9563,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 956016569701098973, guid: d240996b9c0103e4ba4647d68a5b9563,
         type: 3}

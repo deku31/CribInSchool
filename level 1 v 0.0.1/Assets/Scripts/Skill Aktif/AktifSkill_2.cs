@@ -127,7 +127,7 @@ public class AktifSkill_2 : MonoBehaviour
                         if (hitInfo.collider.tag == "Plane")
                         {
                             gotobatu = true;
-                            transformBatu = FindInActiveObjectByTag("Batu").GetComponent<Transform>();
+                            transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
 
                             if (!(OnDistraction is null))
                                 OnDistraction(hitInfo.point);
