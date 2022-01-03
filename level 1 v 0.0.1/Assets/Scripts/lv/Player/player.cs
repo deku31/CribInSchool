@@ -163,12 +163,10 @@ public class player : MonoBehaviour
                 var selection = hit.transform;
                 if (selection.CompareTag("Player"))
                 {
+                    print("click");
                     transferPesawatMethod(selection);
                 }
-                else if (selection.CompareTag("player2"))
-                {
-                    transferPesawatMethod(selection);
-                }
+
             }
 
         }
@@ -183,7 +181,7 @@ public class player : MonoBehaviour
             {
                 if (_transfer == false&&selection.position!=targetpostransfer.position)
                 {
-                    if (selection.position.x!=targetpostransfer.position.x)
+                    if (selection.position!=targetpostransfer.position)
                     {
                         stargame = true;
                     }

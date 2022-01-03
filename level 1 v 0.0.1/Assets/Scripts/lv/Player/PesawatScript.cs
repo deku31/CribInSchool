@@ -5,6 +5,7 @@ using UnityEngine;
 public class PesawatScript : MonoBehaviour
 {
     public player playermanager;
+    public GameObject pesawat;
     public Gamemanager gamemanager;
     public GameObject _endPanel;
     [SerializeField] private endManager panelscript;
@@ -15,10 +16,16 @@ public class PesawatScript : MonoBehaviour
     [SerializeField] private SoundManager audiomanager;
     int urutan;
 
+    public int progress1=0;
+    public int progress2=1;
     //skill
     Skill3 skill3;
     private void Awake()
     {
+        while (progress2==progress1)
+        {
+            progress2 = Random.Range(0, 1);
+        }
         sfx = FindObjectOfType<SoundManager>();
         //end = FindObjectOfType<endManager>();
         urutan = playermanager.acakpencontek;
@@ -26,6 +33,36 @@ public class PesawatScript : MonoBehaviour
     }
     private void Update()
     {
+        ////for (int i = 0; i < playermanager.progresplayer.Length-1; i++)
+        ////{
+        ////    progress1 = i;
+        ////    if (transform.position==playermanager.progresplayer[i].transform.position)
+        ////    {
+        ////        for (int j = 0; j < playermanager.progresplayer.Length-1; j++)
+        ////        {
+        ////            progress2=j;
+        ////            if (transform.position!=playermanager.progresplayer[i].transform.position)
+        ////            {
+        ////                triggercallplayer(progress1, progress2);
+        ////            }
+        ////            if (transform.position == playermanager.progresplayer[j].transform.position)
+        ////            {
+        ////                int progress = i;
+        ////                j = progress;
+        ////                i = j;
+        ////            }
+        ////        }
+        ////        if (playermanager.stargame == true)
+        ////        {
+        ////            playermanager.nourut = progress1;
+        ////            int switchprogress = progress1;
+        ////            progress1 = progress2;
+        ////            progress2 = switchprogress;
+
+        ////        }
+        ////    }
+        //}
+
         skill3 = FindObjectOfType<Skill3>();
     }
     void endpanelMethod()
@@ -50,7 +87,10 @@ public class PesawatScript : MonoBehaviour
         if (playermanager.pzm.solvedPuzzle == true)
         {
             panelscript.totallulus += 1;
-            playermanager.jumlahPlayer--;
+            if (playermanager.progresplayer[progress1].current != playermanager.progresplayer[progress2].current)
+            {
+                playermanager.jumlahPlayer--;
+            }
             if (playermanager.jumlahPlayer==0)
             {
                 Invoke("endpanelMethod", 0.5f);
@@ -63,20 +103,38 @@ public class PesawatScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "barplayer0")
         {
-            triggercallplayer( 0, 1);
-            if (playermanager.stargame==true)
-            {
-                playermanager.nourut = 0;
-            }
-        }
-        else if (other.transform.tag == "player2")
-        {
-            triggercallplayer( 1,0 );
+            progress1 = 0;
+            triggercallplayer(progress1, progress2);
+            progress2 = progress1;
             if (playermanager.stargame == true)
             {
-                playermanager.nourut = 1;
+                playermanager.nourut = progress1;
+                int switchprogress = progress1;
+                progress1 = progress2;
+                progress2 = switchprogress;
+
+            }
+        }
+        else if (other.transform.tag == "barplayer1")
+        {
+            progress1 = 1;
+            triggercallplayer(progress1, progress2);
+            progress2 = progress1;
+            if (playermanager.stargame == true)
+            {
+                playermanager.nourut = progress1;
+            }
+        }
+        else if (other.transform.tag=="barplayer2")
+        {
+            progress1 = 2;
+            triggercallplayer(progress1, progress2);
+            progress2 = progress1;
+            if (playermanager.stargame == true)
+            {
+                playermanager.nourut = progress1;
             }
         }
         if (other.transform.tag == "enemy")//jika terkena murid cepu 

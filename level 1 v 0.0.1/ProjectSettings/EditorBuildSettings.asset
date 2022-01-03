@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 54977574eb60dc945855005c94247d88
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
-    guid: bd52ba111abf76e46b268e0496a247c6
+    guid: b64768f7f88499545aa454d4f5cb829a
   - enabled: 0
     path: Assets/Scenes/Level 1 lama.unity
     guid: 656a0cf0cef34c14782967eaf4910e9e

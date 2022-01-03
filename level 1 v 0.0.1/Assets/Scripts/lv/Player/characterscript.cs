@@ -14,7 +14,7 @@ public class characterscript : MonoBehaviour
     {
         playermanager = FindObjectOfType<player>();
         //tanda.SetActive(false);
-        manager();
+       // manager();
     }
     private void manager()
     {
@@ -23,10 +23,6 @@ public class characterscript : MonoBehaviour
             if (pencontekawal == true)
             {
                 transform.gameObject.tag = "Player";
-            }
-            else if(i>0)
-            {
-                transform.gameObject.tag = "player"+(i+1);
             }
         }
        
