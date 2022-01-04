@@ -8,6 +8,8 @@ public class PuzzleManager : MonoBehaviour
     public player player;
     //untuk menentukan kamera puzzle
     public Camera cam;
+    //untuk menentukan level permainan berapa
+    public int levelpermainan;
 
     /*kamera gamepalay 
      * yang atas tag main camera bertujuan untuk select player
@@ -67,51 +69,108 @@ public class PuzzleManager : MonoBehaviour
         munculpuzzle = true;
         hitungScore = false;
     }
+    public void PilihanLevel(int lvke)//untuk menambah puzzle tambahkan disini jika berbeda level
+    {
+        if (lvke==1)
+        {
+            if (PuzzleNUmber == 0)
+            {
+                cam.enabled = false;
+                slidingPuzzle(0);
+            }
+            else if (PuzzleNUmber == 1)
+            {
+                cam.enabled = false;
+                WordScramble(0);
+
+            }
+            else if (PuzzleNUmber == 2)
+            {
+                cam.enabled = false;
+                WordSearching();
+            }
+
+            else if (PuzzleNUmber == 3)
+            {
+                cam.enabled = false;
+
+                WordScramble(1);
+            }
+            else
+            {
+                if (jumlahseluruhpuzzle == 0)
+                {
+                    solved();
+                }
+                else if (jumlahseluruhpuzzle >= 1 && PuzzleNUmber != 0)
+                {
+                    PuzzleNUmber = 0;
+                }
+
+            }
+            if (player.munculPuzzle == true)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    keluar();
+                }
+            }
+        }
+        else if (lvke==2)
+        {
+            if (PuzzleNUmber == 0)
+            {
+                cam.enabled = false;
+                slidingPuzzle(0);
+            }
+            else if (PuzzleNUmber == 1)
+            {
+                cam.enabled = false;
+                WordScramble(0);
+
+            }
+            else if (PuzzleNUmber == 2)
+            {
+                cam.enabled = false;
+                WordSearching();
+            }
+            else if (PuzzleNUmber == 3)
+            {
+                cam.enabled = false;
+                slidingPuzzle(1);
+            }
+            else if (PuzzleNUmber == 4)
+            {
+                cam.enabled = false;
+
+                WordScramble(1);
+            }
+            else
+            {
+                if (jumlahseluruhpuzzle == 0)
+                {
+                    solved();
+                }
+                else if (jumlahseluruhpuzzle >= 1 && PuzzleNUmber != 0)
+                {
+                    PuzzleNUmber = 0;
+                }
+
+            }
+            if (player.munculPuzzle == true)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    keluar();
+                }
+            }
+        }
+    }
     private void Update()
     {
+        PilihanLevel(levelpermainan);
         //end.jawabanBenar = score;
-        if (PuzzleNUmber == 0)
-        {
-            cam.enabled = false;
-            slidingPuzzle();
-        }
-        else if (PuzzleNUmber == 1)
-        {
-            cam.enabled = false;
-            WordScramble(0);
-
-        }
-        else if (PuzzleNUmber == 2)
-        {
-            cam.enabled = false;
-            WordSearching();
-        }
-
-        else if (PuzzleNUmber == 3)
-        {
-            cam.enabled = false;
-
-            WordScramble(1);
-        }
-        else
-        {
-            if (jumlahseluruhpuzzle==0)
-            {
-                solved();
-            }
-            else if(jumlahseluruhpuzzle>=1&&PuzzleNUmber!=0)
-            {
-                PuzzleNUmber=0;
-            }
-           
-        }
-        if (player.munculPuzzle == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                keluar();
-            }
-        }
+       
     }
     //=============================================================================================================================
     private void WordScramble(int urutan)
@@ -137,17 +196,17 @@ public class PuzzleManager : MonoBehaviour
         }
     }    
     //=============================================================================================================================
-    private void slidingPuzzle()
+    private void slidingPuzzle(int urutan)
     {
-        slidingscript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
+        slidingscript[urutan].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
 
             munculpuzzle = false;
-            instance(SlidingpuzzlePrefabs,0);
+            instance(SlidingpuzzlePrefabs,urutan);
 
         }
-        if (GameObject.Find(SlidingpuzzlePrefabs[urutanPuzzle].name + "(Clone)") == null)
+        if (GameObject.Find(SlidingpuzzlePrefabs[urutan].name + "(Clone)") == null)
         {
             //score += 1;
             jumlahseluruhpuzzle -= 1;

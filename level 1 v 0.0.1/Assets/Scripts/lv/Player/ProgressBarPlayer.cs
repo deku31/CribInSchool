@@ -11,14 +11,20 @@ public class ProgressBarPlayer : MonoBehaviour
 
     public Image imgProgressPuzzle;
     public endManager panelscript;
+    public bool selesai;
 
     void Start()
     {
+        selesai = false;
         panelscript = FindObjectOfType<endManager>();
     }
 
     void Update()
     {
+        if (current==maxlenght)
+        {
+            selesai = true;
+        }
         if (imgProgressPuzzle.fillAmount>=maxlenght/0.8f)
         {
             panelscript.totallulus += 1;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,13 +842,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 551273111}
   cam: {fileID: 198891972}
+  levelpermainan: 2
   gamePlayCamera: {fileID: 1042394397}
   gamePlaycamera2: {fileID: 1039058531}
   score: 0
   SlidingpuzzlePrefabs:
-  - {fileID: 151, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 151, guid: 4c3b2b22455f7584b84fcf9f4a14daf4, type: 3}
+  - {fileID: 151, guid: 37dec5e5e71f73444b50117a7e4f7226, type: 3}
   slidingscript:
-  - {fileID: 495, guid: 0072c86b14d07084fb1a99bf1139b0dc, type: 3}
+  - {fileID: 495, guid: 4c3b2b22455f7584b84fcf9f4a14daf4, type: 3}
+  - {fileID: 495, guid: 37dec5e5e71f73444b50117a7e4f7226, type: 3}
   _WordScramble:
   - {fileID: 2456878920465875380, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
   - {fileID: 2456878920465875380, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
@@ -861,14 +864,14 @@ MonoBehaviour:
   - {fileID: 3145171775230084367, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
   perent: {fileID: 95810395}
   PuzzleNUmber: 2
-  jumlahPuzzle: 3
+  jumlahPuzzle: 4
   urutanPuzzle: 0
   munculpuzzle: 0
   hitungScore: 0
   puzzleanim: {fileID: 198891970}
   btnPopuppuzzle: {fileID: 1719751241}
-  jumlahSoal: 4
-  jumlahseluruhpuzzle: 4
+  jumlahSoal: 5
+  jumlahseluruhpuzzle: 5
   solvedPuzzle: 0
   EndPanel: {fileID: 835164175}
   end: {fileID: 835164177}
@@ -3007,11 +3010,14 @@ MonoBehaviour:
   pzm: {fileID: 198891969}
   selecttag: Player
   playerpref:
-  - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
   - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
   - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
   - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
+  - {fileID: 3682188550219657269, guid: 69e3f8c77097d2a4fa1b73f12ae6cca2, type: 3}
   - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
   - {fileID: 631, guid: de57871895987a646996c93ae58fb177, type: 3}
@@ -3026,6 +3032,9 @@ MonoBehaviour:
   - {fileID: 1025647505}
   - {fileID: 691936843}
   - {fileID: 1676986745}
+  - {fileID: 1323835333}
+  - {fileID: 917641419}
+  - {fileID: 1765125075}
   posisibarplayer:
   - {fileID: 1290740484}
   - {fileID: 1594748551}
@@ -3036,14 +3045,17 @@ MonoBehaviour:
   - {fileID: 780330962}
   - {fileID: 847823573}
   - {fileID: 969478986}
-  nomorKursi: 000000000100000002000000030000000400000005000000060000000700000008000000
+  - {fileID: 1879857271}
+  - {fileID: 1345015347}
+  - {fileID: 1240845520}
+  nomorKursi: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   jumlahPlayer: 3
-  pemainAwal: 6
-  PencontekAwal: 6
-  temanPencontek: 0200000001000000
+  pemainAwal: 9
+  PencontekAwal: 9
+  temanPencontek: 0500000004000000
   acakpencontek: 0
   progresplayer:
-  - {fileID: 1378172963}
+  - {fileID: 1426464725}
   - {fileID: 1696277889}
   - {fileID: 1445725143}
   nourut: 0
@@ -3084,6 +3096,9 @@ Transform:
   - {fileID: 1025647505}
   - {fileID: 691936843}
   - {fileID: 1676986745}
+  - {fileID: 1323835333}
+  - {fileID: 917641419}
+  - {fileID: 1765125075}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4394,9 +4409,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774819617}
+  - component: {fileID: 774819618}
+  - component: {fileID: 774819619}
   m_Layer: 0
   m_Name: poisis bar player awal
-  m_TagString: Untagged
+  m_TagString: barplayer2
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4415,6 +4432,32 @@ Transform:
   m_Father: {fileID: 1495369759}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774819618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774819616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 1445725142}
+--- !u!65 &774819619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774819616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &780330961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,7 +4471,7 @@ GameObject:
   - component: {fileID: 780330964}
   m_Layer: 0
   m_Name: poisis bar player awal
-  m_TagString: barplayer0
+  m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4454,7 +4497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780330961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
   m_Name: 
@@ -4468,10 +4511,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780330961}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &802443648
 GameObject:
@@ -4805,7 +4848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lskl: {fileID: 0}
-  bukalv: 2
+  bukalv: 3
   exptext: {fileID: 1461089557}
   expRecived: 0
   audiomanager: {fileID: 0}
@@ -4878,6 +4921,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 847823573}
+  - component: {fileID: 847823574}
+  - component: {fileID: 847823575}
   m_Layer: 0
   m_Name: poisis bar player awal
   m_TagString: Untagged
@@ -4899,6 +4944,32 @@ Transform:
   m_Father: {fileID: 691936843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847823574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847823572}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &847823575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847823572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &851948588
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,6 +5132,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901707421}
   m_Mesh: {fileID: -1151992765155037293, guid: aa2c5f94b26ef0a49ab03bcee0e2c4d6, type: 3}
+--- !u!1 &917641418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917641419}
+  m_Layer: 0
+  m_Name: Kursi Belakang (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917641419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917641418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.34999847, y: 1.3, z: 5.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1345015347}
+  m_Father: {fileID: 551273112}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918151071
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,6 +5919,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969478986}
+  - component: {fileID: 969478987}
+  - component: {fileID: 969478988}
   m_Layer: 0
   m_Name: poisis bar player awal
   m_TagString: Untagged
@@ -5838,6 +5942,32 @@ Transform:
   m_Father: {fileID: 1676986745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &969478987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969478985}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &969478988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969478985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &978297760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7885,6 +8015,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240845519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240845520}
+  - component: {fileID: 1240845521}
+  - component: {fileID: 1240845522}
+  m_Layer: 0
+  m_Name: poisis bar player awal
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1240845520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240845519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1765125075}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240845521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240845519}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &1240845522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240845519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1264224732
 GameObject:
   m_ObjectHideFlags: 0
@@ -8258,7 +8446,7 @@ GameObject:
   - component: {fileID: 1290740486}
   m_Layer: 0
   m_Name: poisis bar player awal
-  m_TagString: barplayer2
+  m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8284,7 +8472,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290740483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
   m_Name: 
@@ -8467,6 +8655,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresPuzzle: {fileID: 1719751242}
+--- !u!1 &1323835332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323835333}
+  m_Layer: 0
+  m_Name: Kursi Belakang (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1323835333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323835332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5999985, y: 1.3, z: 5.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1879857271}
+  m_Father: {fileID: 551273112}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332663370
 GameObject:
   m_ObjectHideFlags: 0
@@ -8476,9 +8695,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332663371}
+  - component: {fileID: 1332663372}
+  - component: {fileID: 1332663373}
   m_Layer: 0
   m_Name: poisis bar player awal
-  m_TagString: Untagged
+  m_TagString: barplayer1
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8497,6 +8718,32 @@ Transform:
   m_Father: {fileID: 1168279470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1332663372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332663370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 1696277886}
+--- !u!65 &1332663373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332663370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1335366108
 GameObject:
   m_ObjectHideFlags: 0
@@ -8774,6 +9021,64 @@ Transform:
   m_Father: {fileID: 1525525869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1345015346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345015347}
+  - component: {fileID: 1345015348}
+  - component: {fileID: 1345015349}
+  m_Layer: 0
+  m_Name: poisis bar player awal
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1345015347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345015346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 917641419}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1345015348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345015346}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &1345015349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345015346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1373277217
 GameObject:
   m_ObjectHideFlags: 0
@@ -8898,7 +9203,6 @@ GameObject:
   - component: {fileID: 1378172960}
   - component: {fileID: 1378172961}
   - component: {fileID: 1378172962}
-  - component: {fileID: 1378172963}
   m_Layer: 0
   m_Name: gameplaymanager
   m_TagString: Untagged
@@ -8953,22 +9257,6 @@ MonoBehaviour:
   buttonSfx: {fileID: 0}
   pausePanel: {fileID: 1487813533}
   gameIsPaused: 0
---- !u!114 &1378172963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378172959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxlenght: 4
-  current: 0
-  imgProgressPuzzle: {fileID: 1297187583}
-  panelscript: {fileID: 0}
 --- !u!1 &1379887327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9144,6 +9432,7 @@ GameObject:
   - component: {fileID: 1426464722}
   - component: {fileID: 1426464724}
   - component: {fileID: 1426464723}
+  - component: {fileID: 1426464725}
   m_Layer: 5
   m_Name: bg
   m_TagString: BarPlayer
@@ -9209,6 +9498,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426464721}
   m_CullTransparentMesh: 0
+--- !u!114 &1426464725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426464721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxlenght: 5
+  current: 0
+  imgProgressPuzzle: {fileID: 1297187583}
+  panelscript: {fileID: 0}
 --- !u!1 &1428636887
 GameObject:
   m_ObjectHideFlags: 0
@@ -9566,7 +9871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxlenght: 4
+  maxlenght: 5
   current: 0
   imgProgressPuzzle: {fileID: 1134961254}
   panelscript: {fileID: 0}
@@ -9898,6 +10203,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492573051}
+  - component: {fileID: 1492573052}
+  - component: {fileID: 1492573053}
   m_Layer: 0
   m_Name: poisis bar player awal
   m_TagString: Untagged
@@ -9919,6 +10226,32 @@ Transform:
   m_Father: {fileID: 999617940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492573052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492573050}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &1492573053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492573050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1495369758
 GameObject:
   m_ObjectHideFlags: 0
@@ -10572,6 +10905,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594748551}
+  - component: {fileID: 1594748552}
+  - component: {fileID: 1594748553}
   m_Layer: 0
   m_Name: poisis bar player awal
   m_TagString: Untagged
@@ -10593,6 +10928,32 @@ Transform:
   m_Father: {fileID: 919721420}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594748552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594748550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 0}
+--- !u!65 &1594748553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594748550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1606115550
 GameObject:
   m_ObjectHideFlags: 0
@@ -11073,7 +11434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e71ac2903097b488029de784ce35fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxlenght: 4
+  maxlenght: 5
   current: 0
   imgProgressPuzzle: {fileID: 1909288970}
   panelscript: {fileID: 0}
@@ -11622,6 +11983,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752434784}
   m_Mesh: {fileID: 4300006, guid: a879874a19024a544bfb885dc54f8b58, type: 3}
+--- !u!1 &1765125074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765125075}
+  m_Layer: 0
+  m_Name: Kursi Belakang (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765125075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765125074}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9099998, y: 1.3, z: 5.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1240845520}
+  m_Father: {fileID: 551273112}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796371639
 GameObject:
   m_ObjectHideFlags: 0
@@ -12202,6 +12594,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878355438}
   m_Mesh: {fileID: 4300000, guid: 9c6f00f4b8e8c0640a3cf8b30d01d04f, type: 3}
+--- !u!1 &1879857270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879857271}
+  - component: {fileID: 1879857273}
+  - component: {fileID: 1879857272}
+  m_Layer: 0
+  m_Name: poisis bar player awal
+  m_TagString: barplayer0
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879857271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879857270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1323835333}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1879857272
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879857270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1879857273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879857270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresPuzzle: {fileID: 1426464722}
 --- !u!1 &1884356913
 GameObject:
   m_ObjectHideFlags: 0
@@ -13576,7 +14026,7 @@ MonoBehaviour:
   panelscript: {fileID: 835164177}
   sfx: {fileID: 0}
   pemain:
-  - {fileID: 1378172963}
+  - {fileID: 1426464725}
   - {fileID: 1696277889}
   - {fileID: 1445725143}
   end: {fileID: 835164177}
@@ -13612,8 +14062,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.5745997, y: 8.06531, z: 5.1360536}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7.5745997, y: 7.2204914, z: 5.1360536}
+  m_Center: {x: 0, y: -2.289986, z: 0}
 --- !u!23 &2042264616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13976,7 +14426,7 @@ GameObject:
   - component: {fileID: 2069997502}
   m_Layer: 0
   m_Name: poisis bar player awal
-  m_TagString: barplayer1
+  m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14002,7 +14452,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069997499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0215787896c63e4429630f11b9e9b34e, type: 3}
   m_Name: 
