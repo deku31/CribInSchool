@@ -8,7 +8,7 @@ public class PesawatScript : MonoBehaviour
     public GameObject pesawat;
     public Gamemanager gamemanager;
     public GameObject _endPanel;
-    [SerializeField] private endManager panelscript;
+    public endManager panelscript;
     public SoundManager sfx;
     public ProgressBarPlayer[] pemain;
     public endManager end;
@@ -100,12 +100,14 @@ public class PesawatScript : MonoBehaviour
         playermanager.nourut = urutan;
         //skill setting speed
         playermanager.transferpesawat = false;
+
         if (playermanager.pzm.solvedPuzzle == true)
         {
-            panelscript.totallulus += 1;
-            if (playermanager.progresplayer[progress1].current != playermanager.progresplayer[progress2].current)
+            if (playermanager.progresplayer[progress1].selesai == false)
             {
+                panelscript.totallulus += 1;
                 playermanager.jumlahPlayer--;
+                playermanager.progresplayer[progress1].selesai = true;
             }
             if (playermanager.jumlahPlayer==0)
             {
@@ -166,13 +168,10 @@ public class PesawatScript : MonoBehaviour
                     Destroy(playermanager.pesawat);
                     _endPanel.SetActive(true);
                     sfx.resultMethod(1);
-
-
                 }
             }
             else
             {
-
                 Destroy(playermanager.pesawat);
                 end.ketahuan = true;
 

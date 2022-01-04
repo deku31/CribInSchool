@@ -18,7 +18,6 @@ public class TeacherAI : MonoBehaviour
     //player manager
     private player playermanager;
     //animasi
-    public Animator anim;
     public Animator animasiGuru;
 
     //skill setting;
@@ -35,6 +34,8 @@ public class TeacherAI : MonoBehaviour
     public float defauldspeed=0.8f;
     void Start()
     {
+        animasiGuru.SetBool("isWalking", true);
+
         time = Defaulttime;
         skill1 = FindObjectOfType<Skill1>();
 
@@ -196,6 +197,8 @@ public class TeacherAI : MonoBehaviour
             {
                 if (random != 0)
                 {
+                    animasiGuru.SetBool("isWalking", false);
+
                     agent.speed = 0;
                     agent.Stop();
                     step = false;
@@ -203,6 +206,8 @@ public class TeacherAI : MonoBehaviour
                 }
                 if (random == 0)
                 {
+                    animasiGuru.SetBool("isWalking", true);
+
                     agent.Resume();
                     IterateWaypoint();
                     UpdateDestination();
@@ -223,6 +228,8 @@ public class TeacherAI : MonoBehaviour
     }
     void jalan()
     {
+        animasiGuru.SetBool("isWalking", true);
+
         random = 0;
         agent.speed = defauldspeed;
     }
@@ -259,6 +266,18 @@ public class TeacherAI : MonoBehaviour
         if (other.transform.tag=="point")
         {
             random = Random.Range(0,2);
+            if (random != 0)
+            {
+                animasiGuru.SetBool("isWalking", false);
+
+                agent.speed = 0;
+                agent.Stop();
+                step = false;
+                Invoke("jalan", time);
+            }
+            if (random == 0)
+            {
+            }
             //anim.SetBool("jalan", false);
             //animasiGuru.SetBool("diam", true);
         }

@@ -1,0 +1,21 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.24f1 (79c78de19888) revision 7980941'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.18363) 64bit Professional' Language: 'en' Physical Memory: 8032 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2020.3.24f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/githubRepositori/GitHub/CribInSchool/level 1 v 0.0.1
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+50822
+Successfully changed project path to: D:/githubRepositori/GitHub/CribInSchool/level 1 v 0.0.1
+D:/githubRepositori/GitHub/CribInSchool/level 1 v 0.0.1
+Using Asset Import Pipeline V2.

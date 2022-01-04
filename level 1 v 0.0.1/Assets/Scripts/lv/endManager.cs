@@ -74,39 +74,31 @@ public class endManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //for (int i = 0; i < playermanager.jumlahPlayer; i++)
-        //{
-        //    if (playermanager.progresplayer[i].current>=playermanager.progresplayer[i].maxlenght*0.8f)
-        //    {
-        //        totallulus = 1;
-        //    }
-        //    else
-        //    {
-        //        totallulus += 0;
-        //    }
-        //}
-        Debug.Log(puzzle.score);
+       Debug.Log(puzzle.score);
         print("progres"+persen+"%");
         //panel akhir setting
-        int kurang =1;
-        //if (puzzle.jumlahSoal>=5)
-        //{
-        //    kurang = 2;
-        //}
-        if (persen==100&& ketahuan==false)
+       if (persen==100&& ketahuan==false)
         {
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
-            expRecived = 100;
-            UserDataManager.Progress.lvunlock = bukalv;
-            lm.lvUnlock[bukalv - 1] = true;
+            expRecived = persen;
+            if (lm.lvUnlock[bukalv - 1] == false)
+            {
+                UserDataManager.Progress.lvunlock = bukalv;
+                lm.lvUnlock[bukalv - 1] = true;
+            }
+           
 
         }
         else if (persen>=75&& ketahuan == false)
         {
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
-            lm.lvUnlock[bukalv - 1] = true;
+            if (lm.lvUnlock[bukalv - 1] == false)
+            {
+                UserDataManager.Progress.lvunlock = bukalv;
+                lm.lvUnlock[bukalv - 1] = true;
+            }
             expRecived = persen;
         }
         else if(ketahuan==true||persen<80)
