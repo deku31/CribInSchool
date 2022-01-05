@@ -167,7 +167,7 @@ public class PesawatScript : MonoBehaviour
                 progress1 = 0;
                 triggercallplayer(progress1, progress2);
                 progress2 = progress1;
-                //markerPlayer[0].markerAktif = true;
+                markerPlayer[0].markerAktif = true;
                 if (playermanager.stargame == true)
                 {
                     playermanager.nourut = progress1;
@@ -183,7 +183,7 @@ public class PesawatScript : MonoBehaviour
 
                 triggercallplayer(progress1, progress2);
                 progress2 = progress1;
-                //markerPlayer[1].markerAktif = true;
+                markerPlayer[1].markerAktif = true;
                 if (playermanager.stargame == true)
                 {
                     playermanager.nourut = progress1;
@@ -196,6 +196,7 @@ public class PesawatScript : MonoBehaviour
                 progress1 = 2;
                 triggercallplayer(progress1, progress2);
                 progress2 = progress1;
+                markerPlayer[2].markerAktif = true;
                 if (playermanager.stargame == true)
                 {
                     playermanager.nourut = progress1;

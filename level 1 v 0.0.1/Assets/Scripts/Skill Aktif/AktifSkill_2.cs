@@ -51,6 +51,7 @@ public class AktifSkill_2 : MonoBehaviour
     //exp dan koin
     public bool lockskill;
     public GameObject skillTerkunci;
+    public GameObject tombolUpgrade;
     public SkillManager skm;
 
 
@@ -62,6 +63,12 @@ public class AktifSkill_2 : MonoBehaviour
         if (lockskill == false)
         {
             skillTerkunci.SetActive(false);
+            tombolUpgrade.SetActive(true);
+        }
+
+        if (lockskill == true)
+        {
+            tombolUpgrade.SetActive(false);
         }
         speedguru = speedguru+ UserDataManager.Progress.skill2;
         lvskill = UserDataManager.Progress.lvskill[1];
@@ -268,6 +275,7 @@ public class AktifSkill_2 : MonoBehaviour
 
                 UserDataManager.Progress.lockskill[1] = false;
                 skillTerkunci.SetActive(false);
+                tombolUpgrade.SetActive(true);
                 lockskill = false;
                 skm.koin -= 1;
                 UserDataManager.Progress.koin -= 1;
