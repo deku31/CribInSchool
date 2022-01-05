@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.159091
+  orthographic size: 7.875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4901ca1b00ef30540b475d523109626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGemedata: {fileID: 11400000, guid: b606c6f44d365be478f17d9eef1511f1, type: 2}
+  currentGemedata: {fileID: 11400000, guid: 50be629c71573bc409bdfe2b4af3737a, type: 2}
   serchingWordGameData: {fileID: 9094080644882787332, guid: d19c19335b6d70a4e890345524fe2786,
     type: 3}
   offset: 5
@@ -694,7 +694,7 @@ MonoBehaviour:
   timer: {fileID: 4190133684801984441}
   progressbar: {fileID: 4823782013143305883}
   pzm: {fileID: 0}
-  currentGameData: {fileID: 11400000, guid: b606c6f44d365be478f17d9eef1511f1, type: 2}
+  currentGameData: {fileID: 11400000, guid: 50be629c71573bc409bdfe2b4af3737a, type: 2}
   x: 0
   cek: 0
   solved: 0
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ee466c932d3c643bff931b8d8eb769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameData: {fileID: 11400000, guid: b606c6f44d365be478f17d9eef1511f1, type: 2}
+  currentGameData: {fileID: 11400000, guid: 50be629c71573bc409bdfe2b4af3737a, type: 2}
   _gridSquarePrefab: {fileID: 5006410423858939789, guid: 15635a1485e72954dafa44531d6858a7,
     type: 3}
   AlfabetData: {fileID: 11400000, guid: 7a703d691f9ae014585d5287b61cc467, type: 2}

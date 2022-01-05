@@ -87,7 +87,7 @@ public class PuzzleManager : MonoBehaviour
             else if (PuzzleNUmber == 2)
             {
                 cam.enabled = false;
-                WordSearching();
+                WordSearching(0);
             }
 
             else if (PuzzleNUmber == 3)
@@ -132,7 +132,7 @@ public class PuzzleManager : MonoBehaviour
             else if (PuzzleNUmber == 2)
             {
                 cam.enabled = false;
-                WordSearching();
+                WordSearching(0);
             }
             else if (PuzzleNUmber == 3)
             {
@@ -142,8 +142,8 @@ public class PuzzleManager : MonoBehaviour
             else if (PuzzleNUmber == 4)
             {
                 cam.enabled = false;
-
-                WordScramble(1);
+                WordSearching(1);
+                
             }
             else
             {
@@ -224,16 +224,16 @@ public class PuzzleManager : MonoBehaviour
       
     }
     //=============================================================================================================================
-    private void WordSearching()
+    private void WordSearching(int urutan)
     {
-        WordSearchingScript[urutanPuzzle].pzm = GetComponent<PuzzleManager>();
+        WordSearchingScript[urutan].pzm = GetComponent<PuzzleManager>();
         if (munculpuzzle == true)
         {
             munculpuzzle = false;
-            Instantiate(wordSearchingPref[urutanPuzzle], perent);
+            Instantiate(wordSearchingPref[urutan], perent);
 
         }
-        else if (GameObject.Find(wordSearchingPref[urutanPuzzle].name + "(Clone)") == null)
+        else if (GameObject.Find(wordSearchingPref[urutan].name + "(Clone)") == null)
         {
             jumlahseluruhpuzzle -= 1;
             if (jumlahseluruhpuzzle > 0)
@@ -268,6 +268,7 @@ public class PuzzleManager : MonoBehaviour
     {
         solvedPuzzle = true;
         player.jumlahPlayer--;
+        player.progresplayer[PesawatScript.FindObjectOfType<PesawatScript>().progress1].selesai = true;
         end.nilaitertinggi = jumlahSoal;
         end.jawabanBenar = score;
         gamePlaycamera2.SetActive(false);

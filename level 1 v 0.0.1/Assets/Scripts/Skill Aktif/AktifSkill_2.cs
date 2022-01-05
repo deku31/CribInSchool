@@ -91,7 +91,6 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(UserDataManager.Progress.lvskill.Length);
         //AktifSkill_2.OnDistraction += GetDistracted;
 
         skill1 = FindObjectOfType<Skill1>();

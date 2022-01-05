@@ -229,7 +229,7 @@ public class TeacherAI : MonoBehaviour
     void jalan()
     {
         animasiGuru.SetBool("isWalking", true);
-
+        agent.Resume();
         random = 0;
         agent.speed = defauldspeed;
     }
@@ -268,11 +268,11 @@ public class TeacherAI : MonoBehaviour
             random = Random.Range(0,2);
             if (random != 0)
             {
-                animasiGuru.SetBool("isWalking", false);
 
-                agent.speed = 0;
                 agent.Stop();
                 step = false;
+                animasiGuru.SetBool("isWalking", false);
+
                 Invoke("jalan", time);
             }
             if (random == 0)

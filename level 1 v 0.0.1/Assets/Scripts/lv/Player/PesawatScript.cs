@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PesawatScript : MonoBehaviour
 {
+    [Header("Menentukan posisi level")]
+    [SerializeField] private int lv;
+
+
     public player playermanager;
     public GameObject pesawat;
     public Gamemanager gamemanager;
@@ -103,11 +107,18 @@ public class PesawatScript : MonoBehaviour
 
         if (playermanager.pzm.solvedPuzzle == true)
         {
+
             if (playermanager.progresplayer[progress1].selesai == false)
             {
+                Debug.Log("sudah .....");
+
                 panelscript.totallulus += 1;
                 playermanager.jumlahPlayer--;
                 playermanager.progresplayer[progress1].selesai = true;
+            }
+            else if(playermanager.progresplayer[progress1].selesai == true)
+            {
+                Debug.Log("sudah selesai");
             }
             if (playermanager.jumlahPlayer==0)
             {
@@ -115,48 +126,89 @@ public class PesawatScript : MonoBehaviour
             }
         }
     }
+    public void lvMethod(Collider other)
+    {
+        if(lv == 1)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    print(playermanager.nourut);
+
+                }
+            }
+        }
+        else if (lv == 2)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    print(playermanager.nourut);
+
+                }
+            }
+            else if (other.transform.tag == "barplayer2")
+            {
+                progress1 = 2;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
+            }
+        }
+    }
     /*
-     * jika terkena tag player maka posisi nya akan berubah ke posisi ditentukan
-     * jika terkena tag enemy bakal keluar panel end
+     *  jika terkena tag enemy bakal keluar panel end
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "barplayer0")
-        {
-            progress1 = 0;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            markerPlayer[0].markerAktif = true;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-                int switchprogress = progress1;
-                progress1 = progress2;
-                progress2 = switchprogress;
-
-            }
-        }
-        else if (other.transform.tag == "barplayer1")
-        {
-            progress1 = 1;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            markerPlayer[1].markerAktif = true;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-            }
-        }
-        else if (other.transform.tag=="barplayer2")
-        {
-            progress1 = 2;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-            }
-        }
+        lvMethod(other);
         if (other.transform.tag == "enemy")//jika terkena murid cepu 
         {
             if (skill3!=null)

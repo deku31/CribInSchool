@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -853,15 +853,15 @@ MonoBehaviour:
   - {fileID: 495, guid: 4c3b2b22455f7584b84fcf9f4a14daf4, type: 3}
   - {fileID: 495, guid: 37dec5e5e71f73444b50117a7e4f7226, type: 3}
   _WordScramble:
-  - {fileID: 2456878920465875380, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
-  - {fileID: 2456878920465875380, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
+  - {fileID: 2456878920465875380, guid: 19bd6143739a828418f92c01c614ef7f, type: 3}
   wordScrambleScript:
-  - {fileID: 214094147881659110, guid: e586392ac6f0ca347a158cecae96ef56, type: 3}
-  - {fileID: 214094147881659110, guid: dcd9b19d17f10cc4d959b215c9c93e3c, type: 3}
+  - {fileID: 214094147881659110, guid: 19bd6143739a828418f92c01c614ef7f, type: 3}
   wordSearchingPref:
-  - {fileID: 2456878920465875380, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
+  - {fileID: 2456878920465875380, guid: 4d364ec90bab23b4cbae47557620e001, type: 3}
+  - {fileID: 2456878920465875380, guid: 9c33cba45d3e09a4db63851d182e6740, type: 3}
   WordSearchingScript:
-  - {fileID: 3145171775230084367, guid: a27329c5a590e274387a65c9ede0f4a9, type: 3}
+  - {fileID: 3145171775230084367, guid: 4d364ec90bab23b4cbae47557620e001, type: 3}
+  - {fileID: 3145171775230084367, guid: 9c33cba45d3e09a4db63851d182e6740, type: 3}
   perent: {fileID: 95810395}
   PuzzleNUmber: 2
   jumlahPuzzle: 4
@@ -4851,6 +4851,7 @@ MonoBehaviour:
   bukalv: 3
   exptext: {fileID: 1461089557}
   expRecived: 0
+  poin: 0
   audiomanager: {fileID: 0}
   bgm: {fileID: 0}
   lulustxt: {fileID: 516104639}
@@ -11198,7 +11199,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Level 1
+            m_StringArgument: Level 2
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1651246002
@@ -14022,6 +14023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2288ebac0aaa044b152bbb78423c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lv: 2
   playermanager: {fileID: 551273111}
   pesawat: {fileID: 0}
   gamemanager: {fileID: 1378172961}
@@ -14036,7 +14038,6 @@ MonoBehaviour:
   audiomanager: {fileID: 0}
   progress1: 0
   progress2: 1
-  objectMarker: []
   markerPlayer: []
 --- !u!54 &2042264614
 Rigidbody:
