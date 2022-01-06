@@ -122,7 +122,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3616807373471281196}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -682,8 +682,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3616807372933655460}
-  - {fileID: 8844702397107366873}
   - {fileID: 3426828191336444099}
+  - {fileID: 8844702397107366873}
   - {fileID: 3616807374035566554}
   m_Father: {fileID: 1782444796}
   m_RootOrder: 0
@@ -764,6 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockskill: 0
   skillTerkunci: {fileID: 900453765510707953}
+  tombolUpgrade: {fileID: 3616807374035566553}
   skm: {fileID: 0}
   timeinvisibleDefault: 30
   speedpesawat: 0.2
@@ -958,7 +959,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3616807373471281196}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

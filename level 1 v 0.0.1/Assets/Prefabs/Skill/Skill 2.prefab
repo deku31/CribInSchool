@@ -761,6 +761,7 @@ MonoBehaviour:
   gotobatu: 0
   lockskill: 0
   skillTerkunci: {fileID: 5092353503998082315}
+  tombolUpgrade: {fileID: 1548658108964477355}
   skm: {fileID: 0}
 --- !u!1 &1548658108964477355
 GameObject:

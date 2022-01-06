@@ -36,6 +36,7 @@ public class Skill3 : MonoBehaviour
     public int lvskill;
     private void Awake()
     {
+        
         sfx = FindObjectOfType<SoundManager>();
         skm = FindObjectOfType<SkillManager>();
         lockskill = UserDataManager.Progress.lockskill[2];
@@ -59,6 +60,7 @@ public class Skill3 : MonoBehaviour
         gm = FindObjectOfType<Gamemanager>();
         if (gm != null)
         {
+            tombolUpgrade.SetActive(false);
             maskSpawn.fillAmount = durasispawnDefault;
             skillaktif = true;
             timeinvisible = timeinvisibleDefault;
@@ -116,6 +118,7 @@ public class Skill3 : MonoBehaviour
     {
         if (gm != null)
         {
+
             sfx.buttonclickMethod();
 
             if (skillaktif == true)

@@ -90,6 +90,7 @@ public class AktifSkill_2 : MonoBehaviour
             timeDistract = timeDistractDefault;
             durasispawn = durasispawnDefault;
             textCooldownActived.enabled = false;
+            tombolUpgrade.SetActive(false);
         }
         //OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
@@ -194,6 +195,8 @@ public class AktifSkill_2 : MonoBehaviour
         
         if (gm != null)
         {
+            tombolUpgrade.SetActive(false);
+
             sfx.buttonclickMethod();
 
             if (skillAktif == true)

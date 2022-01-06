@@ -52,6 +52,9 @@ public class player : MonoBehaviour
     public GameObject peringatanObj;//peringatan
     public Transform posisibar;//membaca posisi bar kalo mau ganti objek tambahin function transform baru
 
+    //animasi
+    public bool ketahuan;
+
     [Header("pause")]
     public PauseManager pause;
 
@@ -88,6 +91,7 @@ public class player : MonoBehaviour
     }
     private void Start()
     {
+        ketahuan = false;
         speedTransfer = speedTransferDefault;
         skill3 = FindObjectOfType<Skill3>();
         pesawat.SetActive(false);
@@ -126,6 +130,12 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pzm.end.ketahuan==true)
+        {
+            print("aa");
+            ketahuan = true;
+        }
+        
         //==============================skil3 setting speed===========================================
 
         if (skill3!=null)

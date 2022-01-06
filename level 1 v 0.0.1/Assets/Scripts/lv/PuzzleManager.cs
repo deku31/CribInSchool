@@ -108,13 +108,6 @@ public class PuzzleManager : MonoBehaviour
                 }
 
             }
-            if (player.munculPuzzle == true)
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    keluar();
-                }
-            }
         }
         else if (lvke==2)
         {
@@ -157,12 +150,54 @@ public class PuzzleManager : MonoBehaviour
                 }
 
             }
-            if (player.munculPuzzle == true)
+        }
+        else if (lvke==3)
+        {
+            if (PuzzleNUmber == 0)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
+                cam.enabled = false;
+                slidingPuzzle(0);
+            }
+            else if (PuzzleNUmber == 1)
+            {
+                cam.enabled = false;
+                WordScramble(0);
+
+            }
+            else if (PuzzleNUmber == 2)
+            {
+                cam.enabled = false;
+                WordSearching(0);
+            }
+            else if (PuzzleNUmber == 3)
+            {
+                cam.enabled = false;
+                slidingPuzzle(1);
+            }
+            else if (PuzzleNUmber == 4)
+            {
+                cam.enabled = false;
+                WordSearching(1);
+                
+            }
+            else
+            {
+                if (jumlahseluruhpuzzle == 0)
                 {
-                    keluar();
+                    solved();
                 }
+                else if (jumlahseluruhpuzzle >= 1 && PuzzleNUmber != 0)
+                {
+                    PuzzleNUmber = 0;
+                }
+            }
+        }
+       
+        if (player.munculPuzzle == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                keluar();
             }
         }
     }
@@ -258,6 +293,16 @@ public class PuzzleManager : MonoBehaviour
         gamePlayCamera.SetActive(true);
         gameObject.SetActive(false);
         
+        player.munculPuzzle = false;
+        if (solvedPuzzle == false)
+        {
+            btnPopuppuzzle.SetActive(true);
+        }
+    }
+    public void keluarketahuan()
+    {
+        gameObject.SetActive(false);
+
         player.munculPuzzle = false;
         if (solvedPuzzle == false)
         {

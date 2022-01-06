@@ -7,6 +7,9 @@ public class characterscript : MonoBehaviour
     public bool pencontekawal;
     public GameObject tanda;
     public Transform posisi;
+    //animasi setting
+    public Animator anim;
+
 
     [SerializeField] private player playermanager;
 
@@ -29,6 +32,10 @@ public class characterscript : MonoBehaviour
     }
     private void Update()
     {
+        if (playermanager.ketahuan==true)
+        {
+            anim.SetBool("Ketahuan", true);
+        }
         manager();
     }
 }

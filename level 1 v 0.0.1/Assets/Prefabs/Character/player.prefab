@@ -185,6 +185,7 @@ MonoBehaviour:
   pencontekawal: 1
   tanda: {fileID: 531178321077859386}
   posisi: {fileID: 344}
+  anim: {fileID: 2676981426199805047}
   playermanager: {fileID: 0}
 --- !u!54 &379
 Rigidbody:

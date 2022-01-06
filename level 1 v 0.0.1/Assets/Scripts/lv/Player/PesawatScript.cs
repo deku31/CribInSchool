@@ -7,6 +7,8 @@ public class PesawatScript : MonoBehaviour
     [Header("Menentukan posisi level")]
     [SerializeField] private int lv;
 
+    public GameObject CameraWin;
+    public GameObject maincamera;
 
     public player playermanager;
     public GameObject pesawat;
@@ -30,6 +32,7 @@ public class PesawatScript : MonoBehaviour
 
     private void Awake()
     {
+        CameraWin.SetActive(false);
         while (progress2==progress1)
         {
             progress2 = Random.Range(0, 1);
@@ -87,8 +90,9 @@ public class PesawatScript : MonoBehaviour
     }
     void endpanelMethod()
     {
+        CameraWin.SetActive(true);
+        maincamera.SetActive(false);
         _endPanel.SetActive(true);
-        audiomanager.resultMethod(3);
     }
     void triggercallplayer(int pemain1, int pemain2)//jika menambah player tambah fungsi ini
     {
@@ -122,7 +126,9 @@ public class PesawatScript : MonoBehaviour
             }
             if (playermanager.jumlahPlayer==0)
             {
-                Invoke("endpanelMethod", 0.5f);
+                audiomanager.resultMethod(3);
+                
+                Invoke("endpanelMethod", 1f);
             }
         }
     }
@@ -203,6 +209,60 @@ public class PesawatScript : MonoBehaviour
                 }
             }
         }
+        else if (lv == 3)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    print(playermanager.nourut);
+
+                }
+            }
+            else if (other.transform.tag == "barplayer2")
+            {
+                progress1 = 2;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[2].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
+            }
+            else if (other.transform.tag == "barplayer3")
+            {
+                progress1 = 3;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                //markerPlayer[2].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
+            }
+        }
     }
     /*
      *  jika terkena tag enemy bakal keluar panel end
@@ -226,6 +286,7 @@ public class PesawatScript : MonoBehaviour
             else
             {
                 Destroy(playermanager.pesawat);
+                
                 end.ketahuan = true;
 
                 _endPanel.SetActive(true);

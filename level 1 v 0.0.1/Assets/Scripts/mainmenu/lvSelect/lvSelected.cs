@@ -171,6 +171,6 @@ public class lvSelected : MonoBehaviour
     }
     public void btnketiga()
     {
-        nomorlv = 2;
+        nomorlv = 3;
     }
 }
