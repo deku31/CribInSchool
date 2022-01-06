@@ -10,12 +10,19 @@ public class characterscript : MonoBehaviour
     //animasi setting
     public Animator anim;
 
+    //public Marker marker_0;
+    //public Marker marker_1;
+
 
     [SerializeField] private player playermanager;
 
     private void Start()
     {
         playermanager = FindObjectOfType<player>();
+
+        //marker_1 = GameObject.Find("Marker 1").GetComponent<Marker>();
+        //marker_0 = GameObject.Find("Marker 2").GetComponent<Marker>();
+
         //tanda.SetActive(false);
        // manager();
     }
@@ -37,5 +44,15 @@ public class characterscript : MonoBehaviour
             anim.SetBool("Ketahuan", true);
         }
         manager();
+
+        //if (marker_1.markerAktif == true)
+        //{
+        //    anim.SetBool("Noleh", true);
+        //}
+
+        //if (marker_1.markerAktif == false)
+        //{
+            //anim.SetBool("Noleh", false);
+        //}
     }
 }

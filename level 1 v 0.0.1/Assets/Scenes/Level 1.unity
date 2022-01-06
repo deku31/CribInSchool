@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2930,14 +2930,14 @@ MonoBehaviour:
   pzm: {fileID: 198891969}
   selecttag: Player
   playerpref:
-  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
+  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
   - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
   - {fileID: 631, guid: ab6309468a10e0348aa8aa7fe11128d6, type: 3}
-  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
+  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
   - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
-  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
+  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
   - {fileID: 631, guid: ab6309468a10e0348aa8aa7fe11128d6, type: 3}
   posisi:
   - {fileID: 1082307922}
@@ -2980,6 +2980,7 @@ MonoBehaviour:
   tanda: {fileID: 1701587190}
   peringatanObj: {fileID: 741354142}
   posisibar: {fileID: 1227835354}
+  ketahuan: 0
   pause: {fileID: 0}
   skill3: {fileID: 0}
   ManagerPesawat: {fileID: 2042264611}
