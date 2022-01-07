@@ -98,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3567605756734351805
 Transform:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8599989699442605311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.365, z: 0}
+  m_LocalPosition: {x: 0, y: -50.51982, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8599989699833393073}
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 1
-  markerAktif: 0
+  markerAktif: 1
   defaultRadius: 1
   viewAngle: 360
   targetMask:
@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 6101774788811288546}
   - component: {fileID: 3682188550219657269}
   - component: {fileID: 690008394879623381}
+  - component: {fileID: 1479336272753926633}
   m_Layer: 0
   m_Name: musuh
   m_TagString: enemy
@@ -550,6 +551,8 @@ MonoBehaviour:
   tanda: {fileID: 6804337616992787248}
   posisi: {fileID: 4298939905540618361}
   anim: {fileID: 0}
+  dipilih: 0
+  jumlah: 0
   playermanager: {fileID: 0}
 --- !u!54 &690008394879623381
 Rigidbody:
@@ -567,6 +570,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1479336272753926633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214655749359387698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28e98883e18e384697119b8f4da18cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7486286346057532435}
 --- !u!1001 &672934009239628807
 PrefabInstance:
   m_ObjectHideFlags: 0

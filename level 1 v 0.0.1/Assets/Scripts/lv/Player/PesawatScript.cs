@@ -27,8 +27,10 @@ public class PesawatScript : MonoBehaviour
     //skill
     Skill3 skill3;
 
+    public MuridCepu muridCepu;
     //public GameObject[] objectMarker;
     public Marker[] markerPlayer;
+
 
     private void Awake()
     {
@@ -81,11 +83,22 @@ public class PesawatScript : MonoBehaviour
 
         skill3 = FindObjectOfType<Skill3>();
 
+        if (lv == 2)
+        {
+            muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
+        }
+
+        if (lv == 3)
+        {
+            muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
+        }
+
+
         //objectMarker = GameObject.FindGameObjectsWithTag("Marker");
         //markerPlayer = new Marker[objectMarker.Length];
         //for (int i = 0; i < objectMarker.Length; i++)
         //{
-            //markerPlayer[i] = objectMarker[i].GetComponent<Marker>();
+        //markerPlayer[i] = objectMarker[i].GetComponent<Marker>();
         //}
     }
     void endpanelMethod()
@@ -276,6 +289,7 @@ public class PesawatScript : MonoBehaviour
             {
                 if (skill3.invisible==false)
                 {
+                    muridCepu.anim.SetBool("Lapor", true);
                     end.ketahuan = true;
 
                     Destroy(playermanager.pesawat);
@@ -285,8 +299,10 @@ public class PesawatScript : MonoBehaviour
             }
             else
             {
+                muridCepu.anim.SetBool("Lapor", true);
                 Destroy(playermanager.pesawat);
                 playermanager.pzm.keluarketahuan();
+
                 end.ketahuan = true;
 
                 sfx.resultMethod(1);
@@ -303,13 +319,54 @@ public class PesawatScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "barplayer0")
+        if (lv == 1)
         {
-            markerPlayer[0].markerAktif = false;
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
         }
-        else if (other.transform.tag == "barplayer1")
+
+        if (lv == 2)
         {
-            markerPlayer[1].markerAktif = false;
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
+
+            else if (other.transform.tag == "barplayer2")
+            {
+                markerPlayer[2].markerAktif = false;
+            }
+        }
+
+        if (lv == 3)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
+
+            else if (other.transform.tag == "barplayer2")
+            {
+                markerPlayer[2].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer3")
+            {
+                markerPlayer[3].markerAktif = false;
+            }
         }
     }
 }

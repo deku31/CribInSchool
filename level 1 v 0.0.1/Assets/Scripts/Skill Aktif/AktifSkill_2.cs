@@ -13,7 +13,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public static Action<Vector3> OnDistraction;
 
-    public NavMeshAgent agentGuru;
+    //public NavMeshAgent agentGuru;
     public Gamemanager gm;
     public Transform transformBatu;
     public GameObject plane;
@@ -54,7 +54,7 @@ public class AktifSkill_2 : MonoBehaviour
     public GameObject tombolUpgrade;
     public SkillManager skm;
 
-    bool click;
+    public bool click;
 
     public void Awake()
     {
@@ -113,7 +113,7 @@ public class AktifSkill_2 : MonoBehaviour
             //textCooldownSpawn.gameObject.SetActive(false);
             darkMaskCooldown.gameObject.SetActive(false);
             skill1 = FindInActiveObjectByName("Skill1").GetComponent<Skill1>();
-            agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+            //agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
 
             if (timeDistract > 0.1f)
             {
@@ -137,14 +137,15 @@ public class AktifSkill_2 : MonoBehaviour
                         {
                             if (Input.GetMouseButtonDown(0))
                             {
-                                if (click==false)
+                                if (click==true)
                                 {
                                     gotobatu = true;
                                     transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
-
+                                    click = false;
                                     if (!(OnDistraction is null))
                                         OnDistraction(hitInfo.point);
                                 }
+                                
                             }
                         }
 
@@ -189,7 +190,6 @@ public class AktifSkill_2 : MonoBehaviour
                 darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;
                 spawnObject = false;
-                click = true;
             }
         }
     }
@@ -211,6 +211,7 @@ public class AktifSkill_2 : MonoBehaviour
             if (skillAktif == true)
             {
                 distractSkill = true;
+                click = true;
                 skillAktif = false;
                 //textCooldownActived.enabled = true;
             }
@@ -268,7 +269,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             StopAllCoroutines();
             _distracted = true;
-            agentGuru.SetDestination(pos);
+            //agentGuru.SetDestination(pos);
             StartCoroutine(FollowDistraction(pos));
         }
     }
@@ -331,7 +332,7 @@ public class AktifSkill_2 : MonoBehaviour
     {
         while (Vector3.Distance(transform.position, pos) > 2f)
             yield return null;
-        agentGuru.SetDestination(transform.position);
+        //agentGuru.SetDestination(transform.position);
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag
