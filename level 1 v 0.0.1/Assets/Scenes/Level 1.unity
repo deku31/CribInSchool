@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2985,6 +2985,7 @@ MonoBehaviour:
   skill3: {fileID: 0}
   ManagerPesawat: {fileID: 2042264611}
   transferpesawat: 0
+  nomorurutpemain: 560894464
   stargame: 0
 --- !u!4 &551273112
 Transform:
@@ -12270,6 +12271,8 @@ MonoBehaviour:
   audiomanager: {fileID: 0}
   progress1: 0
   progress2: 1
+  urutanplayer: 0
+  nomorurutpemain: 0200000006000000
   markerPlayer:
   - {fileID: 249141523}
   - {fileID: 121704973}
@@ -14285,8 +14288,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.028090779, y: 0.061676253, z: 0.01}
-  m_Center: {x: -0.0000025318002, y: 0.027997307, z: 1.0288353e-14}
+  m_Size: {x: 0.022665126, y: 0.061676253, z: 0.01}
+  m_Center: {x: 0.0014990494, y: 0.027997306, z: -5.972641e-16}
 --- !u!218 &5024398172053146864
 Terrain:
   m_ObjectHideFlags: 0

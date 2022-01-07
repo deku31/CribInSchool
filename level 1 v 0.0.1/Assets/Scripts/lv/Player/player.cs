@@ -176,7 +176,10 @@ public class player : MonoBehaviour
                     print("click");
                     transferPesawatMethod(selection);
                 }
-
+                else
+                {
+                    print("bukan pemain");
+                }
             }
 
         }

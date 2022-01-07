@@ -10,7 +10,7 @@ public class TeacherAI : MonoBehaviour
     int wayPoitIndex;
     Vector3 target;
     bool step;
-    public float defaultspeed=0.8f;
+    public float defaultspeed=1f;
     //audio manager
     private SoundManager audiomanager;
     private float volume;
@@ -31,9 +31,11 @@ public class TeacherAI : MonoBehaviour
     public Transform targetDistract;
 
 
-    public float defauldspeed=0.8f;
+    public float defauldspeed=0.3f;
     void Start()
     {
+        animasiGuru.SetFloat("speed",1);
+
         animasiGuru.SetBool("isWalking", true);
 
         time = Defaulttime;
@@ -60,7 +62,10 @@ public class TeacherAI : MonoBehaviour
             Invoke("stepSound", 2.3f-agent.speed);
             step = false;
         }
-        
+        else
+        {
+            audiomanager.guruWalk.Stop();
+        }
         if (playermanager.munculPuzzle==true)
         {
             if (mendekat == true && volume < 1)
@@ -99,7 +104,7 @@ public class TeacherAI : MonoBehaviour
             if (skill1.frezeer == true)
             {
                 //anim.SetBool("jalan", false);
-                //animasiGuru.SetBool("isWalking", false);
+                animasiGuru.SetBool("isWalking", false);
                 agent.speed = 0;
                 agent.Stop();
                 step = false;
@@ -113,12 +118,11 @@ public class TeacherAI : MonoBehaviour
                 agent.speed = defauldspeed;
                 if (skilaktif==true)
                 {
-                    step = true;
                     stepSound();
                     skilaktif = false;
                 }
                 //anim.SetBool("jalan", true);
-                //animasiGuru.SetBool("isWalking", true);
+                animasiGuru.SetBool("isWalking", true);
 
                 //jalan();
             }
@@ -134,10 +138,14 @@ public class TeacherAI : MonoBehaviour
                     {
                         agent.Resume();
                         agent.speed = agent.speed + skill_2.speedguru;
+                        animasiGuru.SetBool("isWalking", true);
+                        animasiGuru.SetFloat("speed",animasiGuru.speed+skill_2.speedguru);
                         skill_2.gotobatu = false;
+                        targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
+                        agent.SetDestination(targetDistract.transform.position);
                     }
-                    targetDistract = skill_2.spawnGameObject.GetComponent<Transform>();
-                    agent.SetDestination(targetDistract.transform.position);
+                    
+                    
                     ////Destroy(skill_2.spawnGameObject, 5);
                     if (!skill_2.spawnGameObject.activeSelf == true)
                     {
@@ -159,6 +167,8 @@ public class TeacherAI : MonoBehaviour
                     if (random != 0)
                     {
                         agent.Stop();
+                        animasiGuru.SetBool("isWalking", false);
+
                         agent.speed = 0;
                         step = false;
                         Invoke("jalan", time);
@@ -175,10 +185,11 @@ public class TeacherAI : MonoBehaviour
             {
                 if (skill_2.distractSkill== false)
                 {
+                    animasiGuru.SetFloat("speed", 1);
                     if (random != 0)
                     {
                         agent.Stop();
-
+                        animasiGuru.SetBool("isWalking", false);
                         agent.speed = 0;
                         step = false;
                         Invoke("jalan", time);
@@ -189,6 +200,27 @@ public class TeacherAI : MonoBehaviour
 
                         IterateWaypoint();
                         UpdateDestination();
+                    }
+                }
+                else
+                {
+                    if (skill_2.gotobatu==false)
+                    {
+                        if (random != 0)
+                        {
+                            agent.Stop();
+                            animasiGuru.SetBool("isWalking", false);
+                            agent.speed = 0;
+                            step = false;
+                            Invoke("jalan", time);
+                        }
+                        if (random == 0)
+                        {
+                            agent.Resume();
+
+                            IterateWaypoint();
+                            UpdateDestination();
+                        }
                     }
                 }
             }
@@ -223,6 +255,10 @@ public class TeacherAI : MonoBehaviour
     }
     void UpdateDestination()
     {
+        if (skill_2!=null)
+        {
+            animasiGuru.SetBool("isWalking", true);
+        }
         target = wayPoint[wayPoitIndex].position;
         agent.SetDestination(target);
     }
@@ -248,9 +284,12 @@ public class TeacherAI : MonoBehaviour
             if (other.transform.tag == "Penghapus")
             {
                 agent.speed = defauldspeed;
+                animasiGuru.SetFloat("speed", 1);
+
+                step = false;
+                animasiGuru.SetBool("isWalking", false);
                 Invoke("UpdateDestination", 5);
                 //Invoke("stepSound", 5);
-                step = false;
                 audiomanager.guruWalk.Stop();
                 Destroy(skill_2.spawnGameObject, 5);
                 //Destroy(GameObject.Find("Batu(Clone)"),5);
@@ -266,12 +305,33 @@ public class TeacherAI : MonoBehaviour
         if (other.transform.tag=="point")
         {
             random = Random.Range(0,2);
-            if (random != 0)
+            if (skill_2 == null)
             {
+                if (random != 0)
+                {
+                    agent.Stop();
+                    step = false;
+                    animasiGuru.SetBool("isWalking", false);
 
+                    Invoke("jalan", time);
+                }
+            }
+            else if (skill_2 != null && skill_2.distractSkill==false)
+            {
+                if (random != 0)
+                {
+                    agent.Stop();
+                    step = false;
+                    animasiGuru.SetBool("isWalking", false);
+
+                    Invoke("jalan", time);
+                }
+            }
+            else if (skill1 != null)
+            {
+                animasiGuru.SetBool("isWalking", false);
                 agent.Stop();
                 step = false;
-                animasiGuru.SetBool("isWalking", false);
 
                 Invoke("jalan", time);
             }

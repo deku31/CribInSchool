@@ -185,10 +185,8 @@ MonoBehaviour:
   tanda: {fileID: 531178321077859386}
   posisi: {fileID: 344}
   anim: {fileID: 2676981426199805047}
-  marker_0: {fileID: 0}
-  marker_1: {fileID: 0}
-  marker_2: {fileID: 0}
-  marker_3: {fileID: 0}
+  dipilih: 1
+  jumlah: 0
   playermanager: {fileID: 0}
 --- !u!54 &379
 Rigidbody:

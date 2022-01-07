@@ -286,17 +286,21 @@ public class PesawatScript : MonoBehaviour
             else
             {
                 Destroy(playermanager.pesawat);
-                
+                playermanager.pzm.keluarketahuan();
                 end.ketahuan = true;
 
-                _endPanel.SetActive(true);
                 sfx.resultMethod(1);
+                Invoke("ending", 3f);
             }
             print("lewat");
         }
 
     }
+    public void ending()
+    {
+        _endPanel.SetActive(true);
 
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.transform.tag == "barplayer0")

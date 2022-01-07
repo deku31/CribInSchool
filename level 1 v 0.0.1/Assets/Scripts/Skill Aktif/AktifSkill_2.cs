@@ -44,7 +44,7 @@ public class AktifSkill_2 : MonoBehaviour
     public Skill1 skill1;
     public GameObject bintang;
     public Transform parrent;
-    public int lvskill ;
+    public int lvskill;
     public bool gotobatu;
 
 
@@ -54,6 +54,7 @@ public class AktifSkill_2 : MonoBehaviour
     public GameObject tombolUpgrade;
     public SkillManager skm;
 
+    bool click;
 
     public void Awake()
     {
@@ -70,7 +71,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             tombolUpgrade.SetActive(false);
         }
-        speedguru = speedguru+ UserDataManager.Progress.skill2;
+        speedguru = speedguru + UserDataManager.Progress.skill2;
         lvskill = UserDataManager.Progress.lvskill[1];
         for (int i = 0; i < lvskill; i++)
         {
@@ -131,14 +132,22 @@ public class AktifSkill_2 : MonoBehaviour
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out RaycastHit hitInfo))
                     {
+
                         if (hitInfo.collider.tag == "Plane")
                         {
-                            gotobatu = true;
-                            transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
+                            if (Input.GetMouseButtonDown(0))
+                            {
+                                if (click==false)
+                                {
+                                    gotobatu = true;
+                                    transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
 
-                            if (!(OnDistraction is null))
-                                OnDistraction(hitInfo.point);
+                                    if (!(OnDistraction is null))
+                                        OnDistraction(hitInfo.point);
+                                }
+                            }
                         }
+
                     }
                 }
             }
@@ -180,7 +189,7 @@ public class AktifSkill_2 : MonoBehaviour
                 darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;
                 spawnObject = false;
-                
+                click = true;
             }
         }
     }
@@ -192,7 +201,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Distract()
     {
-        
+
         if (gm != null)
         {
             tombolUpgrade.SetActive(false);
@@ -232,13 +241,13 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void ThrowCoin(Vector3 pos)
     {
-        if(spawnObject == false)
+        if (spawnObject == false)
         {
             spawnGameObject = Instantiate(batu, pos, Quaternion.identity);
             spawnObject = true;
             //return;
         }
-        
+
     }
 
     public void OnDestroy()
@@ -316,7 +325,7 @@ public class AktifSkill_2 : MonoBehaviour
                 print("Koin Kurang");
             }
         }
-       
+
     }
     public IEnumerator FollowDistraction(Vector3 pos)
     {

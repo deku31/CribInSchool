@@ -12,6 +12,10 @@ public class BgmManager : MonoBehaviour
     private void Awake()
     {
         bgm = GetComponent<AudioSource>();
+        if (bgm==null)
+        {
+            print("tidak ada");
+        }
     }
     void Start()
     {
@@ -31,7 +35,10 @@ public class BgmManager : MonoBehaviour
         * nomorbgm 1 blm dimasukan 
         */
         //bgm.PlayOneShot(bgmclip[nomorbgm]);
-        bgm.clip = bgmclip[nomorbgm];
-        bgm.Play();
+        if (bgm!=null)
+        {
+            bgm.clip = bgmclip[nomorbgm];
+            bgm.Play();
+        }
     }
 }

@@ -115,6 +115,8 @@ MonoBehaviour:
   tanda: {fileID: 0}
   posisi: {fileID: 0}
   anim: {fileID: 0}
+  dipilih: 1
+  jumlah: 0
   playermanager: {fileID: 0}
 --- !u!54 &378
 Rigidbody:

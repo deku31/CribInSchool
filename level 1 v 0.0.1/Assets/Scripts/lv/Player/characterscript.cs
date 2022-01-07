@@ -10,6 +10,8 @@ public class characterscript : MonoBehaviour
     //animasi setting
     public Animator anim;
 
+    public bool dipilih;
+    public int jumlah;
     //public Marker marker_0;
     //public Marker marker_1;
 
@@ -18,6 +20,8 @@ public class characterscript : MonoBehaviour
 
     private void Start()
     {
+        
+        dipilih = false;
         playermanager = FindObjectOfType<player>();
 
         //marker_1 = GameObject.Find("Marker 1").GetComponent<Marker>();
@@ -43,6 +47,15 @@ public class characterscript : MonoBehaviour
         {
             anim.SetBool("Ketahuan", true);
         }
+        if (playermanager.munculPuzzle == true)
+        {
+            anim.SetBool("Noleh", false);
+        }
+        else
+        {
+            anim.SetBool("Noleh", true);
+        }
+        
         manager();
 
         //if (marker_1.markerAktif == true)

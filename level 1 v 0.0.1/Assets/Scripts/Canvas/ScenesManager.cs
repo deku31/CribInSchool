@@ -34,7 +34,14 @@ public class ScenesManager : MonoBehaviour
     private void Start()
     {
         bgm.bgmMethod(nomorbgm);
-        settingpannel.SetActive(false);
+        if (settingpannel!=null)
+        {
+            settingpannel.SetActive(false);
+        }
+        else
+        {
+            print("tidak ada");
+        }
 
     }
     public void LoadScene(string screenName)
