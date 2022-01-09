@@ -77,10 +77,16 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     private void Start()
     {
+        contohNomerPuzzle = GameObject.FindGameObjectsWithTag("NomerSliding");
         contohpuzzle.SetActive(false);
         contohNomerPuzzle[0].SetActive(false);
         contohNomerPuzzle[1].SetActive(false);
         contohNomerPuzzle[2].SetActive(false);
+        contohNomerPuzzle[3].SetActive(false);
+        contohNomerPuzzle[4].SetActive(false);
+        contohNomerPuzzle[5].SetActive(false);
+        contohNomerPuzzle[6].SetActive(false);
+        contohNomerPuzzle[7].SetActive(false);
 
         pzm.jumlahSoal += 1;
         progressbarpuzzle.SetActive(true);
@@ -354,6 +360,11 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[0].SetActive(true);
             contohNomerPuzzle[1].SetActive(true);
             contohNomerPuzzle[2].SetActive(true);
+            contohNomerPuzzle[3].SetActive(true);
+            contohNomerPuzzle[4].SetActive(true);
+            contohNomerPuzzle[5].SetActive(true);
+            contohNomerPuzzle[6].SetActive(true);
+            contohNomerPuzzle[7].SetActive(true);
         }
         else
         {
@@ -361,6 +372,11 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[0].SetActive(false);
             contohNomerPuzzle[1].SetActive(false);
             contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
         }
     }
     public void lepasliatcontoh()
@@ -370,6 +386,11 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[0].SetActive(false);
             contohNomerPuzzle[1].SetActive(false);
             contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
 
             //contohpuzzle.SetActive(false);
             slidingpuzzleobj.SetActive(true);
@@ -379,6 +400,11 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[0].SetActive(false);
             contohNomerPuzzle[1].SetActive(false);
             contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
             //contohpuzzle.SetActive(false);
         }
     }

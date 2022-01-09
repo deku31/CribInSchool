@@ -33,6 +33,7 @@ TagManager:
   - Penghapus
   - Undefined
   - Marker
+  - NomerSliding
   layers:
   - Default
   - TransparentFX
