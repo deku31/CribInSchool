@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2907,7 +2907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &722717782079832918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1059588935113204389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4139,7 +4139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &2922497973170389470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4506,7 +4506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28164577, y: 0.2367778}
   m_AnchorMax: {x: 0.43275, y: 0.48800004}
-  m_AnchoredPosition: {x: 26.952576, y: -15.880043}
+  m_AnchoredPosition: {x: 26.952576, y: -15.880035}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2978103056921143752
@@ -5841,7 +5841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.24}
   m_AnchorMax: {x: 0.26, y: 0.49}
-  m_AnchoredPosition: {x: 26.952576, y: -15.880035}
+  m_AnchoredPosition: {x: 26.952637, y: -15.880035}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5363822739504333895
@@ -5980,7 +5980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.24}
   m_AnchorMax: {x: 0.26, y: 0.49}
-  m_AnchoredPosition: {x: 27.252625, y: -16.180023}
+  m_AnchoredPosition: {x: 27.252686, y: -16.180023}
   m_SizeDelta: {x: -1.4000244, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5419503135907195609
@@ -6247,7 +6247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28164577, y: 0.2367778}
   m_AnchorMax: {x: 0.43275, y: 0.48800004}
-  m_AnchoredPosition: {x: 27, y: -16.000008}
+  m_AnchoredPosition: {x: 27, y: -16}
   m_SizeDelta: {x: 1.3851318, y: 0.32000732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6293160869247778665
@@ -6980,7 +6980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d3a6048cd3f99428828a983d6407f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentGuru: {fileID: 0}
   gm: {fileID: 0}
   transformBatu: {fileID: 0}
   plane: {fileID: 0}
@@ -7005,6 +7004,7 @@ MonoBehaviour:
   skillTerkunci: {fileID: 6729000534201927172}
   tombolUpgrade: {fileID: 1059588935113204388}
   skm: {fileID: 0}
+  click: 0
 --- !u!224 &8569180972839862096
 RectTransform:
   m_ObjectHideFlags: 0

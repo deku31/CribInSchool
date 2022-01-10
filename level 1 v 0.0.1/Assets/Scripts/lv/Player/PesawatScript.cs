@@ -27,13 +27,18 @@ public class PesawatScript : MonoBehaviour
     //skill
     Skill3 skill3;
 
-    public MuridCepu muridCepu;
+    //public MuridCepu muridCepu;
     //public GameObject[] objectMarker;
     public Marker[] markerPlayer;
 
 
     private void Awake()
     {
+        if (lv!=1)
+        {
+            //muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
+
+        }
         CameraWin.SetActive(false);
         while (progress2==progress1)
         {
@@ -83,14 +88,9 @@ public class PesawatScript : MonoBehaviour
 
         skill3 = FindObjectOfType<Skill3>();
 
-        if (lv == 2)
+        if (lv != 1)
         {
-            muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
-        }
-
-        if (lv == 3)
-        {
-            muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
+            //muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
         }
 
 
@@ -175,7 +175,7 @@ public class PesawatScript : MonoBehaviour
                 {
                     playermanager.nourut = progress1;
                     print(playermanager.nourut);
-
+                    //playermanager.pesawat.transform.localRotation = playermanager.targetpostransfer.rotation;
                 }
             }
         }
@@ -289,24 +289,24 @@ public class PesawatScript : MonoBehaviour
             {
                 if (skill3.invisible==false)
                 {
-                    muridCepu.anim.SetBool("Lapor", true);
-                    end.ketahuan = true;
+                    playermanager.ketahuanMuridCepu = true;
+                    playermanager.postransferawal.position = playermanager.targetpostransfer.position;
 
                     Destroy(playermanager.pesawat);
-                    _endPanel.SetActive(true);
                     sfx.resultMethod(1);
+                    Invoke("ending", 2f);
                 }
             }
             else
             {
-                muridCepu.anim.SetBool("Lapor", true);
-                Destroy(playermanager.pesawat);
-                playermanager.pzm.keluarketahuan();
+                playermanager.ketahuanMuridCepu = true;
+                playermanager.postransferawal.position = playermanager.targetpostransfer.position;
 
-                end.ketahuan = true;
+                Destroy(playermanager.pesawat);
 
                 sfx.resultMethod(1);
-                Invoke("ending", 3f);
+                Invoke("ending", 2f);
+
             }
             print("lewat");
         }
@@ -314,8 +314,7 @@ public class PesawatScript : MonoBehaviour
     }
     public void ending()
     {
-        _endPanel.SetActive(true);
-
+        playermanager.pzm.keluarketahuan();
     }
     private void OnTriggerExit(Collider other)
     {

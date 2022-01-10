@@ -43,7 +43,7 @@ public class Skill3 : MonoBehaviour
         if (lockskill == false)
         {
             skillTerkunci.SetActive(false);
-            tombolUpgrade.SetActive(true);
+            //tombolUpgrade.SetActive(true);
         }
         if (lockskill == true)
         {
@@ -53,7 +53,7 @@ public class Skill3 : MonoBehaviour
         lvskill = UserDataManager.Progress.lvskill[2];
         for (int i = 0; i < lvskill; i++)
         {
-            Instantiate(bintang, parrent);
+            //Instantiate(bintang, parrent);
         }
         maskSpawn.enabled = false;
         maskSkillactive.enabled = false;
@@ -158,12 +158,12 @@ public class Skill3 : MonoBehaviour
                 sfx.powerskillmethod(0);
                 UserDataManager.Progress.lvskill[2]++;
                 lvskill++;
-                Instantiate(bintang, parrent);
+                //Instantiate(bintang, parrent);
 
                 UserDataManager.Progress.lockskill[2] = false;
                 skillTerkunci.SetActive(false);
                 lockskill = false;
-                tombolUpgrade.SetActive(true);
+                //tombolUpgrade.SetActive(true);
                 skm.koin -= 1;
                 UserDataManager.Progress.koin -= 1;
             }

@@ -64,7 +64,7 @@ public class AktifSkill_2 : MonoBehaviour
         if (lockskill == false)
         {
             skillTerkunci.SetActive(false);
-            tombolUpgrade.SetActive(true);
+            //tombolUpgrade.SetActive(true);
         }
 
         if (lockskill == true)
@@ -75,7 +75,7 @@ public class AktifSkill_2 : MonoBehaviour
         lvskill = UserDataManager.Progress.lvskill[1];
         for (int i = 0; i < lvskill; i++)
         {
-            Instantiate(bintang, parrent);
+            //Instantiate(bintang, parrent);
         }
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
         gm = FindObjectOfType<Gamemanager>();
@@ -284,11 +284,11 @@ public class AktifSkill_2 : MonoBehaviour
 
                 UserDataManager.Progress.lvskill[1]++;
                 lvskill++;
-                Instantiate(bintang, parrent);
+                //Instantiate(bintang, parrent);
 
                 UserDataManager.Progress.lockskill[1] = false;
                 skillTerkunci.SetActive(false);
-                tombolUpgrade.SetActive(true);
+                //tombolUpgrade.SetActive(true);
                 lockskill = false;
                 skm.koin -= 1;
                 UserDataManager.Progress.koin -= 1;

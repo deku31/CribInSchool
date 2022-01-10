@@ -30,7 +30,9 @@ public class player : MonoBehaviour
     public int PencontekAwal; //Nomer Kursi Player awal
     public int[] temanPencontek;
     public int acakpencontek;
-
+    [Header("murid cepu")]
+    public MuridCepu[] muridcepu;
+    public Transform[] posisiMuridCepu;
     [Header("Progress Player")]
     public ProgressBarPlayer[] progresplayer;
     public int nourut;
@@ -54,6 +56,7 @@ public class player : MonoBehaviour
 
     //animasi
     public bool ketahuan;
+    public bool ketahuan2;
 
     [Header("pause")]
     public PauseManager pause;
@@ -62,6 +65,8 @@ public class player : MonoBehaviour
     public Skill3 skill3;
     public GameObject ManagerPesawat;
     public bool transferpesawat;
+
+    public bool ketahuanMuridCepu;
 
     public  bool stargame;
     private void Awake()
@@ -92,6 +97,8 @@ public class player : MonoBehaviour
     private void Start()
     {
         ketahuan = false;
+        ketahuan2 = false;
+        ketahuanMuridCepu = false;
         speedTransfer = speedTransferDefault;
         skill3 = FindObjectOfType<Skill3>();
         pesawat.SetActive(false);
@@ -115,13 +122,31 @@ public class player : MonoBehaviour
             {
                 playerpref[i].name = "player" + i;
 
-                Instantiate(playerpref[i], posisi[nomorKursi[i]]);
+                if (muridcepu.Length>0)
+                {
+                    if (posisi[nomorKursi[i]] == posisiMuridCepu[0])
+                    {
+                        playerpref[i].enabled = false;
+                        Instantiate(muridcepu[0], posisi[nomorKursi[i]]);
+                    }
+                    else
+                    {
+                        Instantiate(playerpref[i], posisi[nomorKursi[i]]);
+                    }
+                }
+                else
+                {
+                    Instantiate(playerpref[i], posisi[nomorKursi[i]]);
+                }
+
             }
             else
             {
                 Debug.Log("jumlah nomor kurang");
             }
         }
+        
+        
         targetpostransfer.position=posisibarplayer[pemainAwal].position;
         posisibar.position = posisibarplayer[pemainAwal].position;
         pesawatpos.position = posisibar.position;
@@ -132,10 +157,15 @@ public class player : MonoBehaviour
     {
         if (pzm.end.ketahuan==true)
         {
-            print("aa");
             ketahuan = true;
+            pzm.keluarketahuan();
         }
-        
+        if (ketahuanMuridCepu==true)
+        {
+            ketahuan2 = true;
+            Invoke("ending", 1f);
+        }
+       
         //==============================skil3 setting speed===========================================
 
         if (skill3!=null)
@@ -184,7 +214,11 @@ public class player : MonoBehaviour
 
         }
     }
-
+    void ending()
+    {
+        pzm.end.ketahuan = true;
+        PesawatScript.FindObjectOfType<PesawatScript>()._endPanel.SetActive(true);
+    }
     public void transferPesawatMethod(Transform selection)//berfungsi kalo mau menambahkan player
     {
         var selectionrenderer = selection.GetComponent<Renderer>();
@@ -248,6 +282,7 @@ public class player : MonoBehaviour
             }
         }
         pesawatpos.position = Vector3.MoveTowards(pesawatpos.position, postransfer.position, speedTransfer * Time.deltaTime);
+        pesawatpos.LookAt(postransfer);
     }
 
     public void openPuzzle()

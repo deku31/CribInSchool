@@ -49,6 +49,7 @@ public class SkillSetting : MonoBehaviour
         }
 
         dragComponent[0].enabled = false;
+       
         //dragComponent[1].enabled = false;
 
         if (dragComponent[0].enabled == false)

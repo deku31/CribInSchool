@@ -17,7 +17,7 @@ public class PuzzleManager : MonoBehaviour
     */
     public GameObject gamePlayCamera;
     public GameObject gamePlaycamera2;
-
+    public GameObject cameralose;
     //setiap puzzle yang diselesaikan akan menambah skor atau dengan katalain jumlah puzzle yang telah diselesaikan dengan benar
     public int score = 0;
 
@@ -301,13 +301,15 @@ public class PuzzleManager : MonoBehaviour
     }
     public void keluarketahuan()
     {
-        gameObject.SetActive(false);
-
+        cameralose.SetActive(true);
+        gamePlaycamera2.SetActive(false);
         player.munculPuzzle = false;
         if (solvedPuzzle == false)
         {
-            btnPopuppuzzle.SetActive(true);
+            btnPopuppuzzle.SetActive(false);
         }
+        gameObject.SetActive(false);
+
     }
     public void solved()
     {
