@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class characterscript : MonoBehaviour
 {
     public bool pencontekawal;
@@ -10,7 +11,7 @@ public class characterscript : MonoBehaviour
     //animasi setting
     public Animator anim;
 
-    public bool dipilih;
+    //public bool dipilih;
     public int jumlah;
     //public Marker marker_0;
     //public Marker marker_1;
@@ -21,7 +22,7 @@ public class characterscript : MonoBehaviour
     private void Start()
     {
         
-        dipilih = false;
+        //dipilih = false;
         playermanager = FindObjectOfType<player>();
 
         //marker_1 = GameObject.Find("Marker 1").GetComponent<Marker>();
@@ -43,6 +44,8 @@ public class characterscript : MonoBehaviour
     }
     private void Update()
     {
+        manager();
+
         if (playermanager.ketahuan==true)
         {
             anim.SetBool("Ketahuan", true);
@@ -56,7 +59,6 @@ public class characterscript : MonoBehaviour
             anim.SetBool("Noleh", true);
         }
         
-        manager();
 
         //if (marker_1.markerAktif == true)
         //{

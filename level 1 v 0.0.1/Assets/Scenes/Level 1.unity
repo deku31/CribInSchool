@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837625, g: 0.48643982, b: 0.56671435, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -872,9 +872,9 @@ GameObject:
   - component: {fileID: 202810239}
   - component: {fileID: 202810238}
   - component: {fileID: 202810237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera (2)
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -887,7 +887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202810235}
   m_LocalRotation: {x: 0.04494348, y: 0.95125127, z: -0.25488704, w: 0.16773133}
-  m_LocalPosition: {x: -5.083, y: 1.5320001, z: 1.4200001}
+  m_LocalPosition: {x: -3.35, y: 1.5320001, z: 1.4200001}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1227835354}
@@ -2619,7 +2619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39516437, y: 0.35700002}
   m_AnchorMax: {x: 0.58724993, y: 0.573}
-  m_AnchoredPosition: {x: 0.7279587, y: -0.7138901}
+  m_AnchoredPosition: {x: 0.7279663, y: -0.7138977}
   m_SizeDelta: {x: 2.6200562, y: 11.61763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529963074
@@ -2866,15 +2866,15 @@ MonoBehaviour:
   pzm: {fileID: 198891969}
   selecttag: Player
   playerpref:
-  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
+  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
-  - {fileID: 631, guid: ab6309468a10e0348aa8aa7fe11128d6, type: 3}
-  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
+  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
+  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   - {fileID: 668, guid: bfa7807596648e24b901428858f44c3e, type: 3}
-  - {fileID: 631, guid: 8276ae90b7a0335468480e42ddea84a1, type: 3}
-  - {fileID: 631, guid: ab6309468a10e0348aa8aa7fe11128d6, type: 3}
+  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
+  - {fileID: 631, guid: fbe0a9bf2caedf74ba4d9a885c22503c, type: 3}
   posisi:
   - {fileID: 1082307922}
   - {fileID: 919721420}

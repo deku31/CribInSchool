@@ -23,7 +23,7 @@ public class slidingpuzzlescript : MonoBehaviour
     private Camera _Camera;
 
     //sliding puzzle script
-    public GameObject contohpuzzle;
+    //public GameObject contohpuzzle;
     public GameObject[] contohNomerPuzzle;
 
     public GameObject progressbarpuzzle;
@@ -78,7 +78,7 @@ public class slidingpuzzlescript : MonoBehaviour
     private void Start()
     {
         contohNomerPuzzle = GameObject.FindGameObjectsWithTag("NomerSliding");
-        contohpuzzle.SetActive(false);
+        //contohpuzzle.SetActive(false);
         contohNomerPuzzle[0].SetActive(false);
         contohNomerPuzzle[1].SetActive(false);
         contohNomerPuzzle[2].SetActive(false);
@@ -224,7 +224,7 @@ public class slidingpuzzlescript : MonoBehaviour
         }
         else
         {
-            //slidingpuzzleobj.SetActive(false);
+            slidingpuzzleobj.SetActive(false);
             iconsearchingObj.SetActive(true);
             buttonliat.SetActive(false);
         }

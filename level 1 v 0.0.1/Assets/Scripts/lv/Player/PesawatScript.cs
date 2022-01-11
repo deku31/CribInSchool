@@ -174,7 +174,6 @@ public class PesawatScript : MonoBehaviour
                 if (playermanager.stargame == true)
                 {
                     playermanager.nourut = progress1;
-                    print(playermanager.nourut);
                     //playermanager.pesawat.transform.localRotation = playermanager.targetpostransfer.rotation;
                 }
             }

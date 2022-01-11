@@ -1066,9 +1066,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3374}
     - Class: 114
+      Script: {instanceID: 3660}
+    - Class: 114
       Script: {instanceID: 3812}
     - Class: 114
       Script: {instanceID: 3980}
+    - Class: 114
+      Script: {instanceID: 4468}
     - Class: 114
       Script: {instanceID: 4748}
     - Class: 114
@@ -1174,7 +1178,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 27865ee05a3933258d5ef2022427ba77
+      Hash: 6b8f336e3fe9c5649d6f890c747c45cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PuzzleManager
@@ -1354,7 +1358,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 95f594efe8898ed6ca9ecf3b1bccd95a
+      Hash: b186641f6081e843821e2f96527d6881
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: slidingpuzzlescript
@@ -1462,7 +1466,7 @@ ScriptsOnlyBuild:
     className: PopUpCanvas
   - hash:
       serializedVersion: 2
-      Hash: b46594ba1d3901e4f2b974a0ae7ddb6d
+      Hash: 4cb0575c6b3ed6dd599bf98d12d4d9cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: characterscript
@@ -2141,4 +2145,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level 1.unity
   - Assets/Scenes/Level 2.unity
   - Assets/Scenes/Level 3.unity
-  playerPath: D:/githubRepositori/GitHub/build/CribInSchool v0.1.9.apk
+  playerPath: D:/githubRepositori/GitHub/build/CribInSchool v0.2.0.apk
