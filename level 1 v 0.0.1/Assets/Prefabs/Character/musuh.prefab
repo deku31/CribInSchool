@@ -551,7 +551,6 @@ MonoBehaviour:
   tanda: {fileID: 6804337616992787248}
   posisi: {fileID: 4298939905540618361}
   anim: {fileID: 0}
-  dipilih: 0
   jumlah: 0
   playermanager: {fileID: 0}
 --- !u!54 &690008394879623381
@@ -583,6 +582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 7486286346057532435}
+  ketahuan: 0
+  playermanager: {fileID: 0}
 --- !u!1001 &672934009239628807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,17 +599,17 @@ PrefabInstance:
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.34999996
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 350
+      value: 355
       objectReference: {fileID: 0}
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.34999996
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
@@ -623,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 4707273417737219693, guid: d38c9aa81c0cd21429bab1ba1076c1ae,
         type: 3}
