@@ -59,8 +59,12 @@ public class FieldOfView : MonoBehaviour {
     {
         if (gameover==true)
         {
+            var puzzle = PuzzleManager.FindObjectOfType<PuzzleManager>();
+            puzzle.keluarketahuan();
+            audiomanager.resultMethod(0);
+           
             gm.ketahuan = true;
-            Invoke("endpanel", 0.5f);
+            Invoke("endpanel", 3f);
             Debug.Log("Kamu Ketahuan");
         }
         else
@@ -70,7 +74,6 @@ public class FieldOfView : MonoBehaviour {
     }
     void endpanel()
     {
-        audiomanager.resultMethod(0);
         _endPanel.SetActive(true);
     }
     void LateUpdate() {

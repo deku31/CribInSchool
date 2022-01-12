@@ -10,6 +10,7 @@ public class Skill3 : MonoBehaviour
     //exp dan koin
     public bool lockskill;
     public GameObject skillTerkunci;
+    public GameObject tombolUpgrade;
     public SkillManager skm;
 
 
@@ -35,24 +36,31 @@ public class Skill3 : MonoBehaviour
     public int lvskill;
     private void Awake()
     {
+        
         sfx = FindObjectOfType<SoundManager>();
         skm = FindObjectOfType<SkillManager>();
         lockskill = UserDataManager.Progress.lockskill[2];
         if (lockskill == false)
         {
             skillTerkunci.SetActive(false);
+            //tombolUpgrade.SetActive(true);
+        }
+        if (lockskill == true)
+        {
+            tombolUpgrade.SetActive(false);
         }
         speedpesawat = speedpesawat+ UserDataManager.Progress.skill3;
         lvskill = UserDataManager.Progress.lvskill[2];
         for (int i = 0; i < lvskill; i++)
         {
-            Instantiate(bintang, parrent);
+            //Instantiate(bintang, parrent);
         }
         maskSpawn.enabled = false;
         maskSkillactive.enabled = false;
         gm = FindObjectOfType<Gamemanager>();
         if (gm != null)
         {
+            tombolUpgrade.SetActive(false);
             maskSpawn.fillAmount = durasispawnDefault;
             skillaktif = true;
             timeinvisible = timeinvisibleDefault;
@@ -110,6 +118,7 @@ public class Skill3 : MonoBehaviour
     {
         if (gm != null)
         {
+
             sfx.buttonclickMethod();
 
             if (skillaktif == true)
@@ -149,11 +158,12 @@ public class Skill3 : MonoBehaviour
                 sfx.powerskillmethod(0);
                 UserDataManager.Progress.lvskill[2]++;
                 lvskill++;
-                Instantiate(bintang, parrent);
+                //Instantiate(bintang, parrent);
 
                 UserDataManager.Progress.lockskill[2] = false;
                 skillTerkunci.SetActive(false);
                 lockskill = false;
+                //tombolUpgrade.SetActive(true);
                 skm.koin -= 1;
                 UserDataManager.Progress.koin -= 1;
             }

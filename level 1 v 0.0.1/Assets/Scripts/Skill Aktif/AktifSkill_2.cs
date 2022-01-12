@@ -13,7 +13,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public static Action<Vector3> OnDistraction;
 
-    public NavMeshAgent agentGuru;
+    //public NavMeshAgent agentGuru;
     public Gamemanager gm;
     public Transform transformBatu;
     public GameObject plane;
@@ -23,6 +23,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public Text textCooldownActived; //text cooldown saat skill telah aktif
     public Text textCooldownSpawn; //text cooldown durasi skill
+    public Text skill2Text;
 
     public float timeDistractDefault = 10f;
     private float timeDistract;
@@ -44,15 +45,17 @@ public class AktifSkill_2 : MonoBehaviour
     public Skill1 skill1;
     public GameObject bintang;
     public Transform parrent;
-    public int lvskill ;
+    public int lvskill;
     public bool gotobatu;
 
 
     //exp dan koin
     public bool lockskill;
     public GameObject skillTerkunci;
+    public GameObject tombolUpgrade;
     public SkillManager skm;
 
+    public bool click;
 
     public void Awake()
     {
@@ -62,12 +65,18 @@ public class AktifSkill_2 : MonoBehaviour
         if (lockskill == false)
         {
             skillTerkunci.SetActive(false);
+            //tombolUpgrade.SetActive(true);
         }
-        speedguru = speedguru+ UserDataManager.Progress.skill2;
+
+        if (lockskill == true)
+        {
+            tombolUpgrade.SetActive(false);
+        }
+        speedguru = speedguru + UserDataManager.Progress.skill2;
         lvskill = UserDataManager.Progress.lvskill[1];
         for (int i = 0; i < lvskill; i++)
         {
-            Instantiate(bintang, parrent);
+            //Instantiate(bintang, parrent);
         }
         //agentGuru = GameObject.FindGameObjectWithTag("Guru(Clone)").GetComponent<NavMeshAgent>();
         gm = FindObjectOfType<Gamemanager>();
@@ -83,6 +92,8 @@ public class AktifSkill_2 : MonoBehaviour
             timeDistract = timeDistractDefault;
             durasispawn = durasispawnDefault;
             textCooldownActived.enabled = false;
+            tombolUpgrade.SetActive(false);
+            skill2Text = FindInActiveObjectByName("Skill 2 Text").GetComponent<Text>();
         }
         //OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
@@ -91,7 +102,6 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(UserDataManager.Progress.lvskill.Length);
         //AktifSkill_2.OnDistraction += GetDistracted;
 
         skill1 = FindObjectOfType<Skill1>();
@@ -105,10 +115,11 @@ public class AktifSkill_2 : MonoBehaviour
             //textCooldownSpawn.gameObject.SetActive(false);
             darkMaskCooldown.gameObject.SetActive(false);
             skill1 = FindInActiveObjectByName("Skill1").GetComponent<Skill1>();
-            agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
+            //agentGuru = FindInActiveObjectByName("Guru(Clone)").GetComponent<NavMeshAgent>();
 
             if (timeDistract > 0.1f)
             {
+                skill2Text.gameObject.SetActive(true);
                 timeDistract -= Time.deltaTime;
                 timeAktifDistract += Time.deltaTime;
                 float roundedCd = Mathf.Round(timeDistract);
@@ -119,24 +130,37 @@ public class AktifSkill_2 : MonoBehaviour
                 activedMaskSkill.enabled = true;
                 activedMaskSkill.fillAmount = (timeAktifDistract / timeDistractDefault);
 
+                
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out RaycastHit hitInfo))
                     {
+
                         if (hitInfo.collider.tag == "Plane")
                         {
-                            gotobatu = true;
-                            transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
-
-                            if (!(OnDistraction is null))
-                                OnDistraction(hitInfo.point);
+                            if (Input.GetMouseButtonDown(0))
+                            {
+                                if (click==true)
+                                {
+                                    
+                                    gotobatu = true;
+                                    transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
+                                    click = false;
+                                    if (!(OnDistraction is null))
+                                        OnDistraction(hitInfo.point);
+                                }
+                                
+                            }
                         }
+
                     }
                 }
             }
             else
             {
+                skill2Text.gameObject.SetActive(false);
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
                 timeAktifDistract = 0;
@@ -173,7 +197,6 @@ public class AktifSkill_2 : MonoBehaviour
                 darkMaskCooldown.enabled = false;
                 durasispawn = durasispawnDefault;
                 spawnObject = false;
-                
             }
         }
     }
@@ -183,16 +206,21 @@ public class AktifSkill_2 : MonoBehaviour
 
     }
 
+    
+
     public void Distract()
     {
-        
+
         if (gm != null)
         {
+            tombolUpgrade.SetActive(false);
+
             sfx.buttonclickMethod();
 
             if (skillAktif == true)
             {
                 distractSkill = true;
+                click = true;
                 skillAktif = false;
                 //textCooldownActived.enabled = true;
             }
@@ -223,13 +251,13 @@ public class AktifSkill_2 : MonoBehaviour
 
     public void ThrowCoin(Vector3 pos)
     {
-        if(spawnObject == false)
+        if (spawnObject == false)
         {
             spawnGameObject = Instantiate(batu, pos, Quaternion.identity);
             spawnObject = true;
             //return;
         }
-        
+
     }
 
     public void OnDestroy()
@@ -250,7 +278,7 @@ public class AktifSkill_2 : MonoBehaviour
         {
             StopAllCoroutines();
             _distracted = true;
-            agentGuru.SetDestination(pos);
+            //agentGuru.SetDestination(pos);
             StartCoroutine(FollowDistraction(pos));
         }
     }
@@ -265,10 +293,11 @@ public class AktifSkill_2 : MonoBehaviour
 
                 UserDataManager.Progress.lvskill[1]++;
                 lvskill++;
-                Instantiate(bintang, parrent);
+                //Instantiate(bintang, parrent);
 
                 UserDataManager.Progress.lockskill[1] = false;
                 skillTerkunci.SetActive(false);
+                //tombolUpgrade.SetActive(true);
                 lockskill = false;
                 skm.koin -= 1;
                 UserDataManager.Progress.koin -= 1;
@@ -306,13 +335,13 @@ public class AktifSkill_2 : MonoBehaviour
                 print("Koin Kurang");
             }
         }
-       
+
     }
     public IEnumerator FollowDistraction(Vector3 pos)
     {
         while (Vector3.Distance(transform.position, pos) > 2f)
             yield return null;
-        agentGuru.SetDestination(transform.position);
+        //agentGuru.SetDestination(transform.position);
     }
 
     GameObject FindInActiveObjectByTag(string tag) //fungsi mencari object yang tidak aktif menggunakan tag

@@ -23,7 +23,7 @@ public class SkillManager : MonoBehaviour
     {
         koin = UserDataManager.Progress.koin;
         expPemain = UserDataManager.Progress.expPlayer;
-        kointxt.text = koin.ToString();
+        kointxt.text = koin+" Poin";
         exptxt.text = expPemain + "/" + exprequitment + " exp";
 
         if (instance == null)
@@ -47,7 +47,7 @@ public class SkillManager : MonoBehaviour
 
     public void Update()
     {
-        kointxt.text = koin.ToString();
+        kointxt.text = koin+" Poin";
         exptxt.text = expPemain + "/" + exprequitment + " exp";
         if (expPemain >= exprequitment)
         {

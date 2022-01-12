@@ -21,10 +21,7 @@ public class ProgressBarPlayer : MonoBehaviour
 
     void Update()
     {
-        if (current==maxlenght)
-        {
-            selesai = true;
-        }
+        
         if (imgProgressPuzzle.fillAmount>=maxlenght/0.8f)
         {
             panelscript.totallulus += 1;

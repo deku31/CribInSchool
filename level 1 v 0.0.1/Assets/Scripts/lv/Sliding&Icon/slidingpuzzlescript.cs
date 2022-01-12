@@ -23,7 +23,9 @@ public class slidingpuzzlescript : MonoBehaviour
     private Camera _Camera;
 
     //sliding puzzle script
-    public GameObject contohpuzzle;
+    //public GameObject contohpuzzle;
+    public GameObject[] contohNomerPuzzle;
+
     public GameObject progressbarpuzzle;
     public GameObject progressbarTime;
     [Header("tiles")]
@@ -75,7 +77,18 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     private void Start()
     {
-        contohpuzzle.SetActive(false);
+        contohNomerPuzzle = GameObject.FindGameObjectsWithTag("NomerSliding");
+        //contohpuzzle.SetActive(false);
+        contohNomerPuzzle[0].SetActive(false);
+        contohNomerPuzzle[1].SetActive(false);
+        contohNomerPuzzle[2].SetActive(false);
+        contohNomerPuzzle[3].SetActive(false);
+        contohNomerPuzzle[4].SetActive(false);
+        contohNomerPuzzle[5].SetActive(false);
+        contohNomerPuzzle[6].SetActive(false);
+        contohNomerPuzzle[7].SetActive(false);
+        contohNomerPuzzle[8].SetActive(false);
+
         pzm.jumlahSoal += 1;
         progressbarpuzzle.SetActive(true);
         poskotakbenar = Random.Range(0, poskotak.Length);
@@ -212,7 +225,7 @@ public class slidingpuzzlescript : MonoBehaviour
         }
         else
         {
-            //slidingpuzzleobj.SetActive(false);
+            slidingpuzzleobj.SetActive(false);
             iconsearchingObj.SetActive(true);
             buttonliat.SetActive(false);
         }
@@ -339,27 +352,65 @@ public class slidingpuzzlescript : MonoBehaviour
     }
     public void liatcontoh()
     {
-        if (slidingPuzzle==true)
+        if (slidingPuzzle == true)
         {
-            slidingpuzzleobj.SetActive(false);
+            //slidingpuzzleobj.SetActive(false);
             audiomanager.buttonclickMethod();
-            contohpuzzle.SetActive(true);
+            //contohpuzzle.SetActive(true);
+
+            contohNomerPuzzle[0].SetActive(true);
+            contohNomerPuzzle[1].SetActive(true);
+            contohNomerPuzzle[2].SetActive(true);
+            contohNomerPuzzle[3].SetActive(true);
+            contohNomerPuzzle[4].SetActive(true);
+            contohNomerPuzzle[5].SetActive(true);
+            contohNomerPuzzle[6].SetActive(true);
+            contohNomerPuzzle[7].SetActive(true);
+            contohNomerPuzzle[8].SetActive(true);
         }
         else
         {
-            contohpuzzle.SetActive(false);
+            //contohpuzzle.SetActive(false);
+            contohNomerPuzzle[0].SetActive(false);
+            contohNomerPuzzle[1].SetActive(false);
+            contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
         }
     }
     public void lepasliatcontoh()
     {
         if (slidingPuzzle==true)
         {
-            contohpuzzle.SetActive(false);
+            contohNomerPuzzle[0].SetActive(false);
+            contohNomerPuzzle[1].SetActive(false);
+            contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
+
+            //contohpuzzle.SetActive(false);
             slidingpuzzleobj.SetActive(true);
         }
         else
         {
-            contohpuzzle.SetActive(false);
+            contohNomerPuzzle[0].SetActive(false);
+            contohNomerPuzzle[1].SetActive(false);
+            contohNomerPuzzle[2].SetActive(false);
+            contohNomerPuzzle[3].SetActive(false);
+            contohNomerPuzzle[4].SetActive(false);
+            contohNomerPuzzle[5].SetActive(false);
+            contohNomerPuzzle[6].SetActive(false);
+            contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
+            //contohpuzzle.SetActive(false);
         }
     }
 

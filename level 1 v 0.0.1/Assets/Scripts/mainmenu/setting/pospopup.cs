@@ -13,8 +13,8 @@ public class pospopup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        poskanan = GameObject.FindGameObjectWithTag("popupbtnkanan");
-        this.transform.position = poskanan.transform.position;
-        this.transform.rotation = poskanan.transform.rotation;
+        //poskanan = GameObject.FindGameObjectWithTag("popupbtnkanan");
+        //this.transform.position = poskanan.transform.position;
+        //this.transform.rotation = poskanan.transform.rotation;
     }
 }

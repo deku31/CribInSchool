@@ -33,6 +33,7 @@ TagManager:
   - Penghapus
   - Undefined
   - Marker
+  - NomerSliding
   layers:
   - Default
   - TransparentFX
@@ -43,7 +44,7 @@ TagManager:
   - TargetSkill2
   - Obstacle
   - Target
-  - 
+  - puzzle
   - 
   - 
   - 

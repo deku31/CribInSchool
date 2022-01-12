@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PesawatScript : MonoBehaviour
 {
+    [Header("Menentukan posisi level")]
+    [SerializeField] private int lv;
+
+    public GameObject CameraWin;
+    public GameObject maincamera;
+
     public player playermanager;
     public GameObject pesawat;
     public Gamemanager gamemanager;
@@ -21,11 +27,19 @@ public class PesawatScript : MonoBehaviour
     //skill
     Skill3 skill3;
 
-    public GameObject[] objectMarker;
+    //public MuridCepu muridCepu;
+    //public GameObject[] objectMarker;
     public Marker[] markerPlayer;
+
 
     private void Awake()
     {
+        if (lv!=1)
+        {
+            //muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
+
+        }
+        CameraWin.SetActive(false);
         while (progress2==progress1)
         {
             progress2 = Random.Range(0, 1);
@@ -74,17 +88,24 @@ public class PesawatScript : MonoBehaviour
 
         skill3 = FindObjectOfType<Skill3>();
 
-        objectMarker = GameObject.FindGameObjectsWithTag("Marker");
-        markerPlayer = new Marker[objectMarker.Length];
-        for (int i = 0; i < objectMarker.Length; i++)
+        if (lv != 1)
         {
-            markerPlayer[i] = objectMarker[i].GetComponent<Marker>();
+            //muridCepu = GameObject.FindGameObjectWithTag("enemy").GetComponent<MuridCepu>();
         }
+
+
+        //objectMarker = GameObject.FindGameObjectsWithTag("Marker");
+        //markerPlayer = new Marker[objectMarker.Length];
+        //for (int i = 0; i < objectMarker.Length; i++)
+        //{
+        //markerPlayer[i] = objectMarker[i].GetComponent<Marker>();
+        //}
     }
     void endpanelMethod()
     {
+        CameraWin.SetActive(true);
+        maincamera.SetActive(false);
         _endPanel.SetActive(true);
-        audiomanager.resultMethod(3);
     }
     void triggercallplayer(int pemain1, int pemain2)//jika menambah player tambah fungsi ini
     {
@@ -103,95 +124,247 @@ public class PesawatScript : MonoBehaviour
 
         if (playermanager.pzm.solvedPuzzle == true)
         {
+
             if (playermanager.progresplayer[progress1].selesai == false)
             {
+                Debug.Log("sudah .....");
+
                 panelscript.totallulus += 1;
                 playermanager.jumlahPlayer--;
                 playermanager.progresplayer[progress1].selesai = true;
             }
+            else if(playermanager.progresplayer[progress1].selesai == true)
+            {
+                Debug.Log("sudah selesai");
+            }
             if (playermanager.jumlahPlayer==0)
             {
-                Invoke("endpanelMethod", 0.5f);
+                audiomanager.resultMethod(3);
+                
+                Invoke("endpanelMethod", 1f);
+            }
+        }
+    }
+    public void lvMethod(Collider other)
+    {
+        if(lv == 1)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //playermanager.pesawat.transform.localRotation = playermanager.targetpostransfer.rotation;
+                }
+            }
+        }
+        else if (lv == 2)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    print(playermanager.nourut);
+
+                }
+            }
+            else if (other.transform.tag == "barplayer2")
+            {
+                progress1 = 2;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[2].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
+            }
+        }
+        else if (lv == 3)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                progress1 = 0;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[0].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    //int switchprogress = progress1;
+                    //progress1 = progress2;
+                    //progress2 = switchprogress;
+
+                }
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                progress1 = 1;
+
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[1].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                    print(playermanager.nourut);
+
+                }
+            }
+            else if (other.transform.tag == "barplayer2")
+            {
+                progress1 = 2;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[2].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
+            }
+            else if (other.transform.tag == "barplayer3")
+            {
+                progress1 = 3;
+                triggercallplayer(progress1, progress2);
+                progress2 = progress1;
+                markerPlayer[3].markerAktif = true;
+                if (playermanager.stargame == true)
+                {
+                    playermanager.nourut = progress1;
+                }
             }
         }
     }
     /*
-     * jika terkena tag player maka posisi nya akan berubah ke posisi ditentukan
-     * jika terkena tag enemy bakal keluar panel end
+     *  jika terkena tag enemy bakal keluar panel end
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "barplayer0")
-        {
-            progress1 = 0;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            markerPlayer[1].markerAktif = true;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-                int switchprogress = progress1;
-                progress1 = progress2;
-                progress2 = switchprogress;
-
-            }
-        }
-        else if (other.transform.tag == "barplayer1")
-        {
-            progress1 = 1;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            markerPlayer[0].markerAktif = true;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-            }
-        }
-        else if (other.transform.tag=="barplayer2")
-        {
-            progress1 = 2;
-            triggercallplayer(progress1, progress2);
-            progress2 = progress1;
-            if (playermanager.stargame == true)
-            {
-                playermanager.nourut = progress1;
-            }
-        }
+        lvMethod(other);
         if (other.transform.tag == "enemy")//jika terkena murid cepu 
         {
             if (skill3!=null)
             {
                 if (skill3.invisible==false)
                 {
-                    end.ketahuan = true;
+                    playermanager.ketahuanMuridCepu = true;
+                    playermanager.postransferawal.position = playermanager.targetpostransfer.position;
 
                     Destroy(playermanager.pesawat);
-                    _endPanel.SetActive(true);
                     sfx.resultMethod(1);
+                    Invoke("ending", 2f);
                 }
             }
             else
             {
-                Destroy(playermanager.pesawat);
-                end.ketahuan = true;
+                playermanager.ketahuanMuridCepu = true;
+                playermanager.postransferawal.position = playermanager.targetpostransfer.position;
 
-                _endPanel.SetActive(true);
+                Destroy(playermanager.pesawat);
+
                 sfx.resultMethod(1);
+                Invoke("ending", 2f);
+
             }
             print("lewat");
         }
 
     }
-
+    public void ending()
+    {
+        playermanager.pzm.keluarketahuan();
+    }
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "barplayer0")
+        if (lv == 1)
         {
-            markerPlayer[1].markerAktif = false;
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
         }
-        else if (other.transform.tag == "barplayer1")
+
+        if (lv == 2)
         {
-            markerPlayer[0].markerAktif = false;
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
+
+            else if (other.transform.tag == "barplayer2")
+            {
+                markerPlayer[2].markerAktif = false;
+            }
+        }
+
+        if (lv == 3)
+        {
+            if (other.transform.tag == "barplayer0")
+            {
+                markerPlayer[0].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer1")
+            {
+                markerPlayer[1].markerAktif = false;
+            }
+
+            else if (other.transform.tag == "barplayer2")
+            {
+                markerPlayer[2].markerAktif = false;
+            }
+            else if (other.transform.tag == "barplayer3")
+            {
+                markerPlayer[3].markerAktif = false;
+            }
         }
     }
 }

@@ -109,12 +109,10 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
         print(Selection.FindObjectOfType<Selection>().selectSkill_1);
 
-        //rectTransform.anchoredPosition = StartPosition;
-        //Selection.FindObjectOfType<Selection>().skill_2.nomer = 0;
         rectTransform.anchoredPosition = StartPosition;
         sfx.popupMetohod(0);
-        panelbintang.SetActive(true);
-        upgradeButton.SetActive(true);
+        //panelbintang.SetActive(true);
+        //upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);
 	}
 

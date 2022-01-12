@@ -47,7 +47,7 @@ public class Skill1 : MonoBehaviour
         lvskill = UserDataManager.Progress.lvskill[0];
         for (int i = 0; i < lvskill; i++)
         {
-            Instantiate(bintang, parrent);
+            //Instantiate(bintang, parrent);
         }
         maskSpawn.enabled = false;
         maskSkillactive.enabled = false;
@@ -147,7 +147,7 @@ public class Skill1 : MonoBehaviour
 
                 UserDataManager.Progress.lvskill[0]++;
                 lvskill++;
-                Instantiate(bintang, parrent);
+                //Instantiate(bintang, parrent);
 
                 UserDataManager.Progress.lockskill[0] = false;
                 skillTerkunci.SetActive(false);

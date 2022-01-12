@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SkillButton : MonoBehaviour
 {
     SoundManager sfx;
+    SkillManager skm;
     public Text skillNameText;
     public Text skilDeskripsiText;
     public Sprite spriteChange;
@@ -14,9 +15,13 @@ public class SkillButton : MonoBehaviour
 
     void Start()
     {
+        skm = FindObjectOfType<SkillManager>(); ;
         sfx = FindObjectOfType<SoundManager>();
-        skillNameText = FindInActiveObjectByName("Nama Skill").GetComponent<Text>();
-        skilDeskripsiText = FindInActiveObjectByName("Deskripsi Skill").GetComponent<Text>();
+        if (skm!=null)
+        {
+            skilDeskripsiText = FindInActiveObjectByName("Deskripsi Skill").GetComponent<Text>();
+            skillNameText = FindInActiveObjectByName("Nama Skill").GetComponent<Text>();
+        }
     }
 
     void Update()
@@ -26,7 +31,7 @@ public class SkillButton : MonoBehaviour
 
     public void SkillDeskripsi()
     {
-        if (skillNameText!=null&&skilDeskripsiText!=null)
+        if (skm!=null)
         {
             sfx.buttonclickMethod();
             SkillManager.instance.activateSkill = transform.GetComponent<Skill>();

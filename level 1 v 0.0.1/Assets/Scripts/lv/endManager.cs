@@ -16,6 +16,7 @@ public class endManager : MonoBehaviour
     //exp dan koin variabel
     public Text exptext;
     public float expRecived;
+    public int poin;
 
     //======================================================================================================================
 
@@ -74,14 +75,13 @@ public class endManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Debug.Log(puzzle.score);
-        print("progres"+persen+"%");
         //panel akhir setting
        if (persen==100&& ketahuan==false)
         {
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
             expRecived = persen;
+            poin = +2;
             if (lm.lvUnlock[bukalv - 1] == false)
             {
                 UserDataManager.Progress.lvunlock = bukalv;
@@ -92,6 +92,7 @@ public class endManager : MonoBehaviour
         }
         else if (persen>=75&& ketahuan == false)
         {
+            poin = +1;
             title.sprite = berhasil[0];
             grade.sprite = gagal[1];
             if (lm.lvUnlock[bukalv - 1] == false)
@@ -107,7 +108,8 @@ public class endManager : MonoBehaviour
             title.sprite = gagal[0];
             grade.sprite = gagal[2];
         }
-        exptext.text = "+"+expRecived+"Exp";
+        //exptext.text = "+"+expRecived+"Exp";
+        exptext.text = "+"+poin+"Poin";
         if (ending==true)
         {
             UserDataManager.Save();
@@ -136,6 +138,7 @@ public class endManager : MonoBehaviour
     {
         audiomanager.result.Stop();
         UserDataManager.Progress.expPlayer += expRecived;
+        UserDataManager.Progress.koin += poin;
         UserDataManager.Save();
         Time.timeScale = 1;
     }
