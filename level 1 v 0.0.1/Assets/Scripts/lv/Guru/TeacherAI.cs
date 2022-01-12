@@ -26,6 +26,8 @@ public class TeacherAI : MonoBehaviour
     public float time;//durasi guru diam
     public float Defaulttime=3f;//durasi guru diam
     public Skill1 skill1;
+    public GameObject pusing3D;
+    public bool pusing;
 
     public AktifSkill_2 skill_2;
     public Transform targetDistract;
@@ -53,6 +55,9 @@ public class TeacherAI : MonoBehaviour
         agent.speed=defauldspeed;
 
         UpdateDestination();
+
+        pusing = false;
+        pusing3D.SetActive(false);
     }
 
     void Update()
@@ -111,6 +116,9 @@ public class TeacherAI : MonoBehaviour
                 skilaktif = true;
                 audiomanager.guruWalk.Stop();
 
+                pusing = true;
+                pusing3D.SetActive(true);
+
             }
             else
             {
@@ -124,6 +132,8 @@ public class TeacherAI : MonoBehaviour
                 //anim.SetBool("jalan", true);
                 animasiGuru.SetBool("isWalking", true);
 
+                pusing = false;
+                pusing3D.SetActive(false);
                 //jalan();
             }
         }

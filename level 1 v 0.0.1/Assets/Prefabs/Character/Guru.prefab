@@ -292,6 +292,8 @@ MonoBehaviour:
   time: 0
   Defaulttime: 3
   skill1: {fileID: 0}
+  pusing3D: {fileID: 2213807056035367172}
+  pusing: 0
   skill_2: {fileID: 0}
   targetDistract: {fileID: 0}
   defauldspeed: 0.8
@@ -1191,3 +1193,98 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &7713830631656463870
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 19466967408219597}
+    m_Modifications:
+    - target: {fileID: 2497715344805381110, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: guru
+      value: 
+      objectReference: {fileID: 3436775686592860428}
+    - target: {fileID: 8481419248757167354, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_Name
+      value: Tanda Tanya (Pusing) 3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.143
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151276450943635008, guid: fb2480eeafe269048ac9254b4bab8268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb2480eeafe269048ac9254b4bab8268, type: 3}
+--- !u!1 &2213807056035367172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8481419248757167354, guid: fb2480eeafe269048ac9254b4bab8268,
+    type: 3}
+  m_PrefabInstance: {fileID: 7713830631656463870}
+  m_PrefabAsset: {fileID: 0}
