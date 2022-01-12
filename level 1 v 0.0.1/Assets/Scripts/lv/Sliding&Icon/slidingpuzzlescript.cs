@@ -87,6 +87,7 @@ public class slidingpuzzlescript : MonoBehaviour
         contohNomerPuzzle[5].SetActive(false);
         contohNomerPuzzle[6].SetActive(false);
         contohNomerPuzzle[7].SetActive(false);
+        contohNomerPuzzle[8].SetActive(false);
 
         pzm.jumlahSoal += 1;
         progressbarpuzzle.SetActive(true);
@@ -365,6 +366,7 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[5].SetActive(true);
             contohNomerPuzzle[6].SetActive(true);
             contohNomerPuzzle[7].SetActive(true);
+            contohNomerPuzzle[8].SetActive(true);
         }
         else
         {
@@ -377,6 +379,7 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[5].SetActive(false);
             contohNomerPuzzle[6].SetActive(false);
             contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
         }
     }
     public void lepasliatcontoh()
@@ -391,6 +394,7 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[5].SetActive(false);
             contohNomerPuzzle[6].SetActive(false);
             contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
 
             //contohpuzzle.SetActive(false);
             slidingpuzzleobj.SetActive(true);
@@ -405,6 +409,7 @@ public class slidingpuzzlescript : MonoBehaviour
             contohNomerPuzzle[5].SetActive(false);
             contohNomerPuzzle[6].SetActive(false);
             contohNomerPuzzle[7].SetActive(false);
+            contohNomerPuzzle[8].SetActive(false);
             //contohpuzzle.SetActive(false);
         }
     }

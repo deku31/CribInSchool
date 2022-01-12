@@ -23,6 +23,7 @@ public class AktifSkill_2 : MonoBehaviour
 
     public Text textCooldownActived; //text cooldown saat skill telah aktif
     public Text textCooldownSpawn; //text cooldown durasi skill
+    public Text skill2Text;
 
     public float timeDistractDefault = 10f;
     private float timeDistract;
@@ -92,6 +93,7 @@ public class AktifSkill_2 : MonoBehaviour
             durasispawn = durasispawnDefault;
             textCooldownActived.enabled = false;
             tombolUpgrade.SetActive(false);
+            skill2Text = FindInActiveObjectByName("Skill 2 Text").GetComponent<Text>();
         }
         //OnDistraction += ThrowCoin;
         OnDistraction += ThrowCoin;
@@ -117,6 +119,7 @@ public class AktifSkill_2 : MonoBehaviour
 
             if (timeDistract > 0.1f)
             {
+                skill2Text.gameObject.SetActive(true);
                 timeDistract -= Time.deltaTime;
                 timeAktifDistract += Time.deltaTime;
                 float roundedCd = Mathf.Round(timeDistract);
@@ -126,6 +129,8 @@ public class AktifSkill_2 : MonoBehaviour
                 activedMaskSkill.gameObject.SetActive(true);
                 activedMaskSkill.enabled = true;
                 activedMaskSkill.fillAmount = (timeAktifDistract / timeDistractDefault);
+
+                
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -139,6 +144,7 @@ public class AktifSkill_2 : MonoBehaviour
                             {
                                 if (click==true)
                                 {
+                                    
                                     gotobatu = true;
                                     transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
                                     click = false;
@@ -154,6 +160,7 @@ public class AktifSkill_2 : MonoBehaviour
             }
             else
             {
+                skill2Text.gameObject.SetActive(false);
                 distractSkill = false;
                 timeDistract = timeDistractDefault;
                 timeAktifDistract = 0;
@@ -198,6 +205,8 @@ public class AktifSkill_2 : MonoBehaviour
     {
 
     }
+
+    
 
     public void Distract()
     {
