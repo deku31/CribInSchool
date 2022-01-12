@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43837598, g: 0.48643953, b: 0.566714, a: 1}
+  m_IndirectSpecularColor: {r: 0.43837544, g: 0.4864394, b: 0.5667134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2982,9 +2982,9 @@ MonoBehaviour:
   - {fileID: 999617940}
   progresplayer:
   - {fileID: 1426464725}
-  - {fileID: 1696277889}
-  - {fileID: 1445725143}
   - {fileID: 1956771565}
+  - {fileID: 1445725143}
+  - {fileID: 1696277889}
   nourut: 0
   munculPuzzle: 0
   _transfer: 0
