@@ -17,7 +17,6 @@ public class EquipmentSlot : MonoBehaviour
     public Selection select;
 
     public int nomer;
-    public bool adaisi=false;
 
     private Vector3 resize = new Vector3(259f, 247f, 0f);
     public GameObject[] objectImage;
@@ -32,7 +31,7 @@ public class EquipmentSlot : MonoBehaviour
 
     public void Start()
     {
-        select = FindInActiveObjectByName("Slot Skill").GetComponent<Selection>();
+        select = FindInActiveObjectByName("Selection Slot Skill").GetComponent<Selection>();
 
         objectImage = GameObject.FindGameObjectsWithTag("Sprite");
         imageSkill = new Image[objectImage.Length];
@@ -55,20 +54,17 @@ public class EquipmentSlot : MonoBehaviour
 
     private void OnItemDropped(DraggableComponent draggable)
 	{
+        Debug.Log("Skill Dropped");
+
+        draggable.transform.position = transform.position;
+        CurrentItem = draggable;
+
+        DropArea.DropConditions.Add(disableDropCondition);
+        draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+
         draggable.upgradeButton.SetActive(false);
         draggable.sfx.popupMetohod(0);
         nomer = draggable.nomorSkill;
-        if (adaisi==false)
-        {
-            draggable.transform.position = transform.position;
-            CurrentItem = draggable;
-
-            DropArea.DropConditions.Add(disableDropCondition);
-            draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
-            adaisi = true;
-        }
-
-
     }
 
 
@@ -76,25 +72,28 @@ public class EquipmentSlot : MonoBehaviour
     //Current item is being dragged so we listen for the EndDrag event
     private void CurrentItemOnBeginDrag(PointerEventData eventData)
     {
-        DropArea.DropConditions.Remove(disableDropCondition);
-        //CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
+        Debug.Log("begin drag handler");
+        CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
 
     }
 
     private void CurrentItemEndDragHandler(PointerEventData eventData, bool dropped)
     {
+        Debug.Log("end drag handler");
 
         CurrentItem.OnEndDragHandler -= CurrentItemEndDragHandler;
-
-        if (!dropped)
-        {
-            
-            return;
-            
-        }
-        //DropArea.DropConditions.Remove(disableDropCondition); //We dropped the component in another slot so we can remove the DisableDropCondition
+        DropArea.DropConditions.Remove(disableDropCondition); //We dropped the component in another slot so we can remove the DisableDropCondition
         CurrentItem.OnBeginDragHandler -= CurrentItemOnBeginDrag; //We make sure to remove this listener as the item is no longer in this slot
         CurrentItem = null; //We no longer have an item in this slot, so we remove the refference
+
+        nomer = 0;
+
+        //if (!dropped)
+        //{
+
+        // return;
+
+        //}
     }
 
     GameObject FindInActiveObjectByName(string name) //fungsi mencari object yang tidak aktif menggunakan nama

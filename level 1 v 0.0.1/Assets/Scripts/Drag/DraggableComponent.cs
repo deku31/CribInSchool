@@ -28,7 +28,9 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
     public Sprite spriteChange;
     public GameObject panelbintang;
 
-    public EquipmentSlot es;
+    public EquipmentSlot es; 
+
+
     private void Awake()
 	{
         sfx = FindObjectOfType<SoundManager>();
@@ -60,8 +62,6 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
 	public void OnDrag(PointerEventData eventData)
 	{
-        upgradeButton.SetActive(false);
-        panelbintang.SetActive(false);
 		if (!CanDrag)
 		{
 			return;
@@ -73,7 +73,10 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 		{
 			rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 		}
-	}
+
+        upgradeButton.SetActive(false);
+        panelbintang.SetActive(false);
+    }
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
@@ -107,17 +110,15 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 				return;
 			}
         }
-        Selection.FindObjectOfType<Selection>().equipSlotSkill_1.nomer=0;
-
-        print(Selection.FindObjectOfType<Selection>().selectSkill_1);
 
         rectTransform.anchoredPosition = StartPosition;
+        OnEndDragHandler?.Invoke(eventData, false);
+
         sfx.popupMetohod(0);
-        es.adaisi = false;
         //panelbintang.SetActive(true);
         //upgradeButton.SetActive(true);
-        OnEndDragHandler?.Invoke(eventData, false);
-	}
+        
+    }
 
 	public void OnInitializePotentialDrag(PointerEventData eventData)
 	{

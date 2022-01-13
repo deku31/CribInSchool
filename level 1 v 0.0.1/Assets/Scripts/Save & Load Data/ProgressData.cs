@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class ProgressData
 {
-    public int lvunlock=1; // awal = 1
+    public int lvunlock=3; // awal = 1
     public int lvcomingsoon=3; // tergantung lv yang telah dibuat
     //setting
     public int qualityvalue=1;
