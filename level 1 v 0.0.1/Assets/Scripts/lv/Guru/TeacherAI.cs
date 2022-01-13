@@ -110,6 +110,7 @@ public class TeacherAI : MonoBehaviour
             {
                 //anim.SetBool("jalan", false);
                 animasiGuru.SetBool("isWalking", false);
+                animasiGuru.SetBool("skill1", true);
                 agent.speed = 0;
                 agent.Stop();
                 step = false;
@@ -131,6 +132,8 @@ public class TeacherAI : MonoBehaviour
                 }
                 //anim.SetBool("jalan", true);
                 animasiGuru.SetBool("isWalking", true);
+                animasiGuru.SetBool("skill1", false);
+
 
                 pusing = false;
                 pusing3D.SetActive(false);

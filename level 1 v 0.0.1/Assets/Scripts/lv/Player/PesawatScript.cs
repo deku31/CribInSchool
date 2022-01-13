@@ -121,7 +121,7 @@ public class PesawatScript : MonoBehaviour
         playermanager.nourut = urutan;
         //skill setting speed
         playermanager.transferpesawat = false;
-
+        playermanager.pesawatpos.rotation = playermanager.targetpostransfer.rotation;
         if (playermanager.pzm.solvedPuzzle == true)
         {
 

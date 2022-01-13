@@ -47,6 +47,9 @@ public class endManager : MonoBehaviour
 
     //player manager
     [SerializeField] private player playermanager;
+    // tombol restar dan home
+    public GameObject btnFiled;
+    public GameObject btnwin;
 
     void Awake()
     {
@@ -87,7 +90,8 @@ public class endManager : MonoBehaviour
                 UserDataManager.Progress.lvunlock = bukalv;
                 lm.lvUnlock[bukalv - 1] = true;
             }
-           
+            btnFiled.SetActive(false);
+            btnwin.SetActive(true);
 
         }
         else if (persen>=75&& ketahuan == false)
@@ -101,12 +105,16 @@ public class endManager : MonoBehaviour
                 lm.lvUnlock[bukalv - 1] = true;
             }
             expRecived = persen;
+            btnFiled.SetActive(false);
+            btnwin.SetActive(true);
         }
         else if(ketahuan==true||persen<80)
         {
             expRecived = persen;
             title.sprite = gagal[0];
             grade.sprite = gagal[2];
+            btnFiled.SetActive(true);
+            btnwin.SetActive(false);
         }
         //exptext.text = "+"+expRecived+"Exp";
         exptext.text = "+"+poin+"Poin";
