@@ -87,12 +87,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -302,9 +296,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4704}
     - Class: 114
-      Script: {instanceID: 5102}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5436}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -481,25 +475,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4906}
     - Class: 114
-      Script: {instanceID: 5102}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5318}
+      Script: {instanceID: 5316}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5436}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5470}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 5928}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5934}
     - Class: 114
-      Script: {instanceID: 6002}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 6120}
+      Script: {instanceID: 6118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -694,25 +688,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4906}
     - Class: 114
-      Script: {instanceID: 5102}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5318}
+      Script: {instanceID: 5316}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5436}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5470}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 5928}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5934}
     - Class: 114
-      Script: {instanceID: 6002}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 6120}
+      Script: {instanceID: 6118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -907,25 +901,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4906}
     - Class: 114
-      Script: {instanceID: 5102}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5318}
+      Script: {instanceID: 5316}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5436}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5470}
     - Class: 114
-      Script: {instanceID: 5830}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5930}
+      Script: {instanceID: 5928}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5934}
     - Class: 114
-      Script: {instanceID: 6002}
+      Script: {instanceID: 6000}
     - Class: 114
-      Script: {instanceID: 6120}
+      Script: {instanceID: 6118}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1081,11 +1075,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4806}
     - Class: 114
-      Script: {instanceID: 5142}
+      Script: {instanceID: 5140}
     - Class: 114
-      Script: {instanceID: 5538}
+      Script: {instanceID: 5536}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1933,7 +1927,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 8d98e6144208588e41848feca2dbb691
+      Hash: d0b209bec9500bcc48f312115e9cdbe2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: endManager
@@ -2150,4 +2144,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level 1.unity
   - Assets/Scenes/Level 2.unity
   - Assets/Scenes/Level 3.unity
-  playerPath: D:/githubRepositori/GitHub/build/CribInSchool v0.2.0 lock lv.apk
+  playerPath: C:/Users/Lezh/Documents/GitHub/CribInSchool/level 1 v 0.0.1/Crib in
+    School.apk

@@ -26,7 +26,7 @@ public class EquipmentSlot : MonoBehaviour
 	{
 		DropArea = GetComponent<DropArea>() ?? gameObject.AddComponent<DropArea>();
 		DropArea.OnDropHandler += OnItemDropped;
-        //disableDropCondition = new DisableDropCondition();
+        disableDropCondition = new DisableDropCondition();
     }
 
     public void Start()
@@ -60,8 +60,9 @@ public class EquipmentSlot : MonoBehaviour
 
         draggable.transform.position = transform.position;
         CurrentItem = draggable;
-        //DropArea.DropConditions.Add(disableDropCondition);
-        //draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+
+        DropArea.DropConditions.Add(disableDropCondition);
+        draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
 
 
     }
@@ -71,8 +72,8 @@ public class EquipmentSlot : MonoBehaviour
     //Current item is being dragged so we listen for the EndDrag event
     private void CurrentItemOnBeginDrag(PointerEventData eventData)
     {
-        //DropArea.DropConditions.Remove(disableDropCondition);
-        CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
+        DropArea.DropConditions.Remove(disableDropCondition);
+        //CurrentItem.OnEndDragHandler += CurrentItemEndDragHandler;
 
     }
 
