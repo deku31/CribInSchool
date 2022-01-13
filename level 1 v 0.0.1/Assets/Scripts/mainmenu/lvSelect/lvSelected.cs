@@ -31,6 +31,7 @@ public class lvSelected : MonoBehaviour
 
     [Header("lock lv")]
     public Image[] lockimg;
+    public Image[] cominngsoonimg;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class lvSelected : MonoBehaviour
         selectlcnumber[0].sprite = selectlcnumberimg[urutanNumber + 0];
         selectlcnumber[1].sprite = selectlcnumberimg[urutanNumber + 1];
         selectlcnumber[2].sprite = selectlcnumberimg[urutanNumber + 2];
+        lvcomingsoon();
         lvlockManager();
         frame[0].sprite = framelv[lvnumber];
         pengawas[0].sprite = imgPengawas[lvnumber];
@@ -102,6 +104,33 @@ public class lvSelected : MonoBehaviour
         else
         {
             lockimg[urutanNumber + 2].enabled = true;
+        }
+    }
+    void lvcomingsoon()
+    {
+        if (lm.lvcomingsoon[urutanNumber + 0] == true)
+        {
+            cominngsoonimg[urutanNumber + 0].enabled = false;
+        }
+        else
+        {
+            cominngsoonimg[urutanNumber + 0].enabled = true;
+        }
+        if (lm.lvcomingsoon[urutanNumber + 1] == true)
+        {
+            cominngsoonimg[urutanNumber + 1].enabled = false;
+        }
+        else
+        {
+            cominngsoonimg[urutanNumber + 1].enabled = true;
+        }
+        if (lm.lvcomingsoon[urutanNumber + 2] == true)
+        {
+            cominngsoonimg[urutanNumber + 2].enabled = false;
+        }
+        else
+        {
+            cominngsoonimg[urutanNumber + 2].enabled = true;
         }
     }
     void siluet()

@@ -27,6 +27,8 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
     public Sprite spriteChange;
     public GameObject panelbintang;
+
+    public EquipmentSlot es;
     private void Awake()
 	{
         sfx = FindObjectOfType<SoundManager>();
@@ -111,6 +113,7 @@ public class DraggableComponent : MonoBehaviour, IInitializePotentialDragHandler
 
         rectTransform.anchoredPosition = StartPosition;
         sfx.popupMetohod(0);
+        es.adaisi = false;
         //panelbintang.SetActive(true);
         //upgradeButton.SetActive(true);
         OnEndDragHandler?.Invoke(eventData, false);

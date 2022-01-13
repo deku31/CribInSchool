@@ -738,7 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d3a6048cd3f99428828a983d6407f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentGuru: {fileID: 0}
   gm: {fileID: 0}
   transformBatu: {fileID: 0}
   plane: {fileID: 0}
@@ -746,6 +745,7 @@ MonoBehaviour:
   activedMaskSkill: {fileID: 328361907357373686}
   textCooldownActived: {fileID: 276250742851193422}
   textCooldownSpawn: {fileID: 8264544507107649946}
+  skill2Text: {fileID: 0}
   timeDistractDefault: 10
   durasispawnDefault: 90
   speedguru: 1
@@ -763,6 +763,7 @@ MonoBehaviour:
   skillTerkunci: {fileID: 5092353503998082315}
   tombolUpgrade: {fileID: 1548658108964477355}
   skm: {fileID: 0}
+  click: 0
 --- !u!1 &1548658108964477355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1056,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38c80565c052bf34b91b1f1676220152, type: 3}
+  m_Sprite: {fileID: -7670485267309540912, guid: 38c80565c052bf34b91b1f1676220152,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

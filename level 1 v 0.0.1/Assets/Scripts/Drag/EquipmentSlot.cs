@@ -17,6 +17,7 @@ public class EquipmentSlot : MonoBehaviour
     public Selection select;
 
     public int nomer;
+    public bool adaisi=false;
 
     private Vector3 resize = new Vector3(259f, 247f, 0f);
     public GameObject[] objectImage;
@@ -57,12 +58,15 @@ public class EquipmentSlot : MonoBehaviour
         draggable.upgradeButton.SetActive(false);
         draggable.sfx.popupMetohod(0);
         nomer = draggable.nomorSkill;
+        if (adaisi==false)
+        {
+            draggable.transform.position = transform.position;
+            CurrentItem = draggable;
 
-        draggable.transform.position = transform.position;
-        CurrentItem = draggable;
-
-        DropArea.DropConditions.Add(disableDropCondition);
-        draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+            DropArea.DropConditions.Add(disableDropCondition);
+            draggable.OnBeginDragHandler += CurrentItemOnBeginDrag;
+            adaisi = true;
+        }
 
 
     }
