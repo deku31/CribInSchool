@@ -3016,6 +3016,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 214094147881659110}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: resetbtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2766563523758796565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3179,7 @@ Camera:
   far clip plane: 1000
   field of view: 113
   orthographic: 1
-  orthographic size: 4.3615384
+  orthographic size: 5.315625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

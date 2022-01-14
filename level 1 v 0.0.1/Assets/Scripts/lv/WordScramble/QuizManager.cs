@@ -117,7 +117,10 @@ public class QuizManager : MonoBehaviour
         }
 
     }
-
+    public void resetbtn()
+    {
+        audiomanager.buttonclickMethod();
+    }
     //Method called on Reset Button click and on new question
     public void ResetQuestion()
     {

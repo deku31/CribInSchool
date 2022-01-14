@@ -84,7 +84,7 @@ public class endManager : MonoBehaviour
             title.sprite = berhasil[0];
             grade.sprite = berhasil[1];
             expRecived = persen;
-            poin = +2;
+            poin = +1;
             if (lm.lvUnlock[bukalv - 1] == false)
             {
                 UserDataManager.Progress.lvunlock = bukalv;

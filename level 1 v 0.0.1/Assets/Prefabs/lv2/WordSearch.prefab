@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.269231
+  orthographic size: 8.859375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1174,36 +1174,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bg
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -695
-      objectReference: {fileID: 0}
-    - target: {fileID: 5109837981398232481, guid: 75ee0b61bb04d724eb3d76bd4c529799,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75ee0b61bb04d724eb3d76bd4c529799, type: 3}

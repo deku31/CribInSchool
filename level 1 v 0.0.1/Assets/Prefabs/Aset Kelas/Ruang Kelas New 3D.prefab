@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1541105393961456508}
   m_Layer: 0
   m_Name: Papan Kayu (1)
-  m_TagString: Plane
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4126,7 +4126,7 @@ GameObject:
   - component: {fileID: 2711532363149240497}
   m_Layer: 0
   m_Name: Papan Kayu (3)
-  m_TagString: Plane
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5190,7 +5190,7 @@ GameObject:
   - component: {fileID: 8571983747611973861}
   m_Layer: 0
   m_Name: Papan Kayu (4)
-  m_TagString: Plane
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

@@ -294,6 +294,7 @@ MonoBehaviour:
   skill1: {fileID: 0}
   pusing3D: {fileID: 2213807056035367172}
   pusing: 0
+  fov: {fileID: 5791900939337450516}
   skill_2: {fileID: 0}
   targetDistract: {fileID: 0}
   defauldspeed: 0.8

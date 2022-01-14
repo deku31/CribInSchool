@@ -119,7 +119,7 @@ public class AktifSkill_2 : MonoBehaviour
 
             if (timeDistract > 0.1f)
             {
-                skill2Text.gameObject.SetActive(true);
+                //skill2Text.gameObject.SetActive(true);
                 timeDistract -= Time.deltaTime;
                 timeAktifDistract += Time.deltaTime;
                 float roundedCd = Mathf.Round(timeDistract);
@@ -144,7 +144,8 @@ public class AktifSkill_2 : MonoBehaviour
                             {
                                 if (click==true)
                                 {
-                                    
+                                    skill2Text.gameObject.SetActive(false);
+
                                     gotobatu = true;
                                     transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
                                     click = false;
@@ -213,6 +214,8 @@ public class AktifSkill_2 : MonoBehaviour
 
         if (gm != null)
         {
+            skill2Text.gameObject.SetActive(true);
+
             tombolUpgrade.SetActive(false);
 
             sfx.buttonclickMethod();

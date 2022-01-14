@@ -28,6 +28,7 @@ public class TeacherAI : MonoBehaviour
     public Skill1 skill1;
     public GameObject pusing3D;
     public bool pusing;
+    public GameObject fov;
 
     public AktifSkill_2 skill_2;
     public Transform targetDistract;
@@ -57,6 +58,7 @@ public class TeacherAI : MonoBehaviour
         UpdateDestination();
 
         pusing = false;
+        fov.SetActive(true);
         pusing3D.SetActive(false);
     }
 
@@ -118,6 +120,7 @@ public class TeacherAI : MonoBehaviour
                 audiomanager.guruWalk.Stop();
 
                 pusing = true;
+                fov.SetActive(false);
                 pusing3D.SetActive(true);
 
             }
@@ -136,6 +139,7 @@ public class TeacherAI : MonoBehaviour
 
 
                 pusing = false;
+                fov.SetActive(true);
                 pusing3D.SetActive(false);
                 //jalan();
             }

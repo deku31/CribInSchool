@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class ProgressData
 {
-    public int lvunlock=3; // awal = 1
+    public int lvunlock=1; // awal = 1
     public int lvcomingsoon=3; // tergantung lv yang telah dibuat
     //setting
     public int qualityvalue=1;
@@ -20,7 +20,7 @@ public class ProgressData
     public bool[] lockskill = { false, true, true };//menyimpan progress skill yang terkunci
 
     //exp dan koin
-    public float expPlayer=10000;//jumlah exp pemain // awal = 0
+    public float expPlayer=0;//jumlah exp pemain // awal = 0
     public int koin;//jumlah koin pemain
 
 }
