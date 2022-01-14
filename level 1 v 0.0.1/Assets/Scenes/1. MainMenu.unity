@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2451,18 +2451,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialimg:
+  - {fileID: 21300000, guid: 4faed5e4ee4898246bae856410864b83, type: 3}
+  - {fileID: 21300000, guid: 010da734f6d32e44691cd5aa8fd2a73c, type: 3}
+  - {fileID: 21300000, guid: bdab9d13f799cba4c82ddd011e9a1775, type: 3}
+  - {fileID: 21300000, guid: 43f58c3460958e640a0815fa31745211, type: 3}
   - {fileID: 21300000, guid: 2f77b9f9b8ffc8244933aaef3e732199, type: 3}
   - {fileID: 21300000, guid: 30a510cbbb98b1b4996fcca4919cf0b2, type: 3}
   - {fileID: 21300000, guid: 41ef58bebc8557c46bd6ae17f31fef16, type: 3}
   - {fileID: 21300000, guid: 352ebfd2fbab2da4ead774a7c83541c6, type: 3}
   - {fileID: 21300000, guid: 3823ecfed3ce99547888779af231987e, type: 3}
   - {fileID: 21300000, guid: 4bce0dc136bbc1f428b7e025eef1bc30, type: 3}
-  - {fileID: 21300000, guid: 154f217191d51eb459397aac791eef40, type: 3}
-  - {fileID: 21300000, guid: 64cd0a3b8aeeaa247857411ba0dc8840, type: 3}
-  - {fileID: 21300000, guid: 1608a54dd9f1a814f8d51db437c3c220, type: 3}
+  - {fileID: 21300000, guid: 1f533f12cef09f646aeb191dcb6b4997, type: 3}
+  - {fileID: 21300000, guid: 15192bf6089328349acbc30a9758ff5d, type: 3}
+  - {fileID: 21300000, guid: fcc1c06d4e795da469cc987fcd696619, type: 3}
   - {fileID: 21300000, guid: c6d89f7e60c6802429d6e48fb40648d9, type: 3}
   - {fileID: 21300000, guid: e218e7e0de99deb419ba78ccbeaeabcb, type: 3}
-  - {fileID: 21300000, guid: 3e9b76b92c89f6e4590896efb1634be8, type: 3}
+  - {fileID: 21300000, guid: 56657397d5e63344db85d4cee9ffafeb, type: 3}
   - {fileID: 21300000, guid: f8d65f760aa7f194797f792a95ab9f52, type: 3}
   - {fileID: 21300000, guid: 2af811a199debac45831ed6667bdaa3b, type: 3}
   tutorialobj: {fileID: 328138169}
@@ -6047,7 +6051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.000004, y: 0}
+  m_AnchoredPosition: {x: -15, y: 0}
   m_SizeDelta: {x: -158, y: -57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179738892
@@ -6142,7 +6146,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5.8153844
+  orthographic size: 5.968421
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10201,7 +10205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.000015, y: 0}
+  m_AnchoredPosition: {x: -15.0000305, y: 0}
   m_SizeDelta: {x: -158, y: -57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631429504

@@ -145,7 +145,7 @@ public class AktifSkill_2 : MonoBehaviour
                                 if (click==true)
                                 {
                                     skill2Text.gameObject.SetActive(false);
-
+                                    sfx.powerskillmethod(1);
                                     gotobatu = true;
                                     transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
                                     click = false;
