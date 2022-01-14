@@ -87,6 +87,7 @@ public class AktifSkill_2 : MonoBehaviour
         textCooldownActived.enabled = false;
         if (gm != null)
         {
+            transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
             pzm = FindObjectOfType<PuzzleManager>();
             skillAktif = true;
             timeDistract = timeDistractDefault;
@@ -144,10 +145,10 @@ public class AktifSkill_2 : MonoBehaviour
                             {
                                 if (click==true)
                                 {
+                                    transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
                                     skill2Text.gameObject.SetActive(false);
                                     sfx.powerskillmethod(1);
                                     gotobatu = true;
-                                    transformBatu = FindInActiveObjectByTag("Penghapus").GetComponent<Transform>();
                                     click = false;
                                     if (!(OnDistraction is null))
                                         OnDistraction(hitInfo.point);
