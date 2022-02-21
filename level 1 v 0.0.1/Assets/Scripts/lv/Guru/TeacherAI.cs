@@ -294,10 +294,10 @@ public class TeacherAI : MonoBehaviour
     }
     void UpdateDestination()
     {
-        //if (skill_2 != null)
-        //{
-        //    animasiGuru.SetBool("isWalking", true);
-        //}
+        if (skill_2 != null)
+        {
+            animasiGuru.SetBool("isWalking", true);
+        }
         target = wayPoint[wayPoitIndex].position;
         agent.SetDestination(target);
     }
