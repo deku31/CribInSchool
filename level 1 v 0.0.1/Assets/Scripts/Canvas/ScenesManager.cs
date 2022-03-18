@@ -78,7 +78,7 @@ public class ScenesManager : MonoBehaviour
     {
         sfx.buttonclickMethod();
         Application.Quit();
-
+        
     }
     void exitmethod()
     {
